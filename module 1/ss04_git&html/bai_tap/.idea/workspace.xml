@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2eac8cf4-a4af-455a-92f6-abcfc368c34c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../KHOA HOC CODE.ORG/khoa 1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pseudo-code và Flowchart/BAI TAP/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pseudo-code và Flowchart/BAI TAP/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pseudo-code và Flowchart/BAI TAP/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pseudo-code và Flowchart/BAI TAP/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pseudo-code và Flowchart/BAI TAP/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pseudo-code và Flowchart/BAI TAP/PSEUDO-CODE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pseudo-code và Flowchart/THUC HANH/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pseudo-code và Flowchart/THUC HANH/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pseudo-code và Flowchart/THUC HANH/PSEUDO-CODE.TXT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh/new project" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2204tu3wOTQwKJpQ6VfA7zaBE6N" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../GitProject/GitProject/source/news.html" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2eac8cf4-a4af-455a-92f6-abcfc368c34c" name="Changes" comment="" />
+      <created>1638961392684</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638961392684</updated>
+      <workItem from="1638961394192" duration="1507000" />
+      <workItem from="1639119690833" duration="253000" />
+      <workItem from="1639120088696" duration="179000" />
+      <workItem from="1639135536526" duration="553000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
