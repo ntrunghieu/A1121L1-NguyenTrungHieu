@@ -5,6 +5,36 @@
     <title>[Bài tập] Game puzzle</title>
 </head>
 <body>
+<img id="img1" src="a1/monkey_part1x1.jpg" onclick="changepic()" alt="error" >
+<script>
+    function changepic() {
+        if (document.getElementById('img1').src.endsWith("a1/monkey_part1x1.jpg")) {
+            if (document.getElementById('img1').src.endsWith("a1/monkey_part2x1.jpg")) {
+                if (document.getElementById('img1').src.endsWith("a1/monkey_part3x1.jpg")) {
+                    if (document.getElementById('img1').src.endsWith("a1/monkey_part4x1.jpg")) {
+                        if (document.getElementById('img1').src.endsWith("a1/monkey_part5x1.jpg")) {
+                            document.getElementById('img1').src = "a1/monkey_part1x1.jpg";
+                        else
+                            {
+                                document.getElementById('img1').src = "a1/monkey_part5x1.jpg";
+                            }
+                        } else {
+                            document.getElementById('img1').src = "a1/monkey_part4x1.jpg";
+                        }
+                    else
+                        {
+                            document.getElementById('img1').src = "a1/monkey_part4x1.jpg";
+                        }
+                    else
+                        {
+                            document.getElementById('img1').src = "a1/monkey_part5x1.jpg";
+                        }
+                    }
+                    }
+                }
+            }
+        }
 
+</script>
 </body>
 </html>

@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <title>Ứng dụng good-fast-cheap</title>
     <style>
+        body{
+            font-size: 30px;
+            font-weight: bold;
+            margin: 0;
+            background: #eaeff3;
+            color: #000;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
         :root{
             --transition-effect: .25s cubic-bezier(.23,-0.58,.86,1.71);
 
@@ -12,8 +20,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 20vh;
+            margin-top:50px ;
         }
+
+
         .swtich-toggle1{
             width: 90px;
             height: 50px;
@@ -55,36 +65,56 @@
             box-shadow: 0 0 6px rgba(0, 0, 0, .3);
             transition: var(--transition-effect);
         }
-        .swtich-toggle1:checked{
+        .swtich-toggle1.switch1:checked{
             background: #749dd6;
+        }
+        .swtich-toggle1.switch2:checked{
+            background: #668b5e;
+        }
+        .swtich-toggle1.switch3:checked{
+            background: #ee4866;
         }
         .swtich-toggle1:checked::before{
             left: 40px;
         }
+
     </style>
 </head>
 <body>
 <div class="wrapper" >
-    <h4>GOOD</h4>
-    <input type="checkbox" class="switch1 swtich-toggle1" id="light-dark1" value="a" onclick="good()">
+    <input type="checkbox" class="switch1 swtich-toggle1" id="light-dark1" onclick="check('good')">
+    <br>
+    <label class="blue" for="light-dark1">GOOD</label>
+
+    <input type="checkbox" class="switch2 swtich-toggle1" id="light-dark2" onclick="check('fast')" >
+    <br>
+    <label class="green" for="light-dark2">FAST</label>
+
+    <input type="checkbox" class="switch3 swtich-toggle1" id="light-dark3" onclick="check('cheap')">
+    <br>
+    <label class="red" for="light-dark3">CHEAP</label>
 </div>
-<div class="wrapper">
-    <h4>FAST</h4>
-    <input type="checkbox" class="switch2 swtich-toggle1" id="light-dark2" value="b" onclick="fast()">
-</div>
-<div class="wrapper">
-    <h4>CHEAP</h4>
-    <input type="checkbox" class="switch3 swtich-toggle1" id="light-dark3" value="c" onclick="cheap()">
-</div>
+
+
 
 <script>
-   let a=document.getElementById('light-dark1');
-   let b=document.getElementById('light-dark2');
-   let c=document.getElementById('light-dark3');
 
-   function good(){
+    let good=document.getElementById('light-dark1');
+    let fast=document.getElementById('light-dark2');
+    let cheap=document.getElementById('light-dark3');
+function check(value){
+    console.log(cheap.checked)
+    switch (value){
+        case 'good':
+            if (fast.checked && cheap.checked ){
+                cheap.checked=false;
+            }else if (good.checked && cheap.checked){
+                good.checked=false;
+            }
 
-   }
+    }
+}
+
 
 
 

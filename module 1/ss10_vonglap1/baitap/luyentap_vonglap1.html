@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập vòng lặp 01</title>
+</head>
+<body>
+<!--
+<script>
+    for ( let i=1 ; i<=100 ; i++){
+        document.write(i + ' ,' );
+        if (i==100){
+            alert('bạn đã hoàn thành');
+            break;
+        }
+    }
+</script>
+-->
+<!--
+<script>
+    let nhietdo=prompt("Nhap vao nhiet do cua ban")
+    if(nhietdo>100)
+    {
+        alert("vui long ha nhiet do")
+
+    }
+    else (nhietdo<20)
+    {
+        alert("vui long tang nhiet do")
+    }
+</script>
+-->
+
+<!--
+<script>
+    let n=parseInt(prompt('nhap n: '));
+    let f0 =0, f1=1, fn;
+    for (let i = 0 ; i < n ; i++){
+        if (n <= 1){
+            fn = i;
+        }else {
+            fn=f0+f1;
+            f0=f1;
+            f1=fn;
+        }
+        document.write(fn + ' ,')
+    }
+</script>
+-->
+<!--
+<script>
+    let n=parseInt(prompt('nhap n: '));
+    let f0 =0, f1=1, fn;
+    for (let i = 0 ; i < n ; i++){
+        if (n <= 1){
+            fn = i;
+        }else {
+            fn=f0+f1;
+            f0=f1;
+            f1=fn;
+            if (fn % 5 == 0){
+                document.write('số đầu tiên chia hết cho 5 là:  ' +fn);
+                break;
+            }
+        }
+
+    }
+</script>
+-->
+
+<!--
+<script>
+    let n=parseInt(prompt('nhap n: '));
+    let f0 =0, f1=1, fn;
+    let sum=0;
+    for (let i = 0 ; i < n ; i++){
+        if (n <= 1){
+            fn = i;
+        }else {
+            fn=f0+f1;
+            f0=f1;
+            f1=fn;
+            sum+=fn;
+        }
+
+    }
+    document.write('Tổng 20 số fibonacci đầu tiên là:  '+sum );
+</script>
+-->
+<script>
+    let num=parseInt(prompt('nhap n: '))
+    for (let i=0 ; i < num ; i++){
+        
+    }
+
+</script>
+
+
+
+
+</body>
+</html>
