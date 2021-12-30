@@ -5,7 +5,7 @@
     <title>[*Bài tập] Luyện tập vòng lặp 01</title>
 </head>
 <body>
-<!--
+<!--bai1
 <script>
     for ( let i=1 ; i<=100 ; i++){
         document.write(i + ' ,' );
@@ -16,7 +16,9 @@
     }
 </script>
 -->
-<!--
+
+
+<!--bai2
 <script>
     let nhietdo=prompt("Nhap vao nhiet do cua ban")
     if(nhietdo>100)
@@ -31,7 +33,7 @@
 </script>
 -->
 
-<!--
+<!--bai3
 <script>
     let n=parseInt(prompt('nhap n: '));
     let f0 =0, f1=1, fn;
@@ -47,7 +49,9 @@
     }
 </script>
 -->
-<!--
+
+
+<!--bai4
 <script>
     let n=parseInt(prompt('nhap n: '));
     let f0 =0, f1=1, fn;
@@ -68,7 +72,7 @@
 </script>
 -->
 
-<!--
+<!--bai5
 <script>
     let n=parseInt(prompt('nhap n: '));
     let f0 =0, f1=1, fn;
@@ -87,16 +91,42 @@
     document.write('Tổng 20 số fibonacci đầu tiên là:  '+sum );
 </script>
 -->
+
+<!--bai6
 <script>
-    let num=parseInt(prompt('nhap n: '))
-    for (let i=0 ; i < num ; i++){
-        
+    let count = 0, sum = 0, i=1;
+    while (count<=29){
+            if(i%7==0) {
+                sum+=i;
+                count+=1;
+        }
+            i++;
     }
-
+    document.write(sum)
 </script>
+-->
 
-
-
-
+<!--bai7
+<script>
+    let count=1;
+    let text="";
+    for (; count<=100 ; count++){
+        if (count%3 == 0 && count%5 ==0){
+            text+='fizzBuzz <br>';
+        }
+        else if (count%3==0){
+                text+='fizz <br>';
+            }else if(count % 5 == 0){ //15
+            text += "Buzz <br>";
+        } else {
+            text += count + "<br>";
+        }
+    }
+    document.write(text);
+</script>
+-->
+<script>
+    for (var i=0; i<5;i++){ doccument.write(""apple""); }
+</script>
 </body>
 </html>

@@ -28,7 +28,7 @@
             width: 90px;
             height: 50px;
             appearance: none;
-            background: #83d8ff;
+            background: #4b4c4d;
             border-radius: 26px;
             position: relative;
             cursor: pointer;
@@ -38,7 +38,7 @@
             width: 90px;
             height: 50px;
             appearance: none;
-            background: darkgreen;
+            background: #4b4c4d;
             border-radius: 26px;
             position: relative;
             cursor: pointer;
@@ -48,7 +48,7 @@
             width: 90px;
             height: 50px;
             appearance: none;
-            background: darkred;
+            background: #4b4c4d;
             border-radius: 26px;
             position: relative;
             cursor: pointer;
@@ -82,17 +82,16 @@
 </head>
 <body>
 <div class="wrapper" >
+    <h3>GOOD</h3>
     <input type="checkbox" class="switch1 swtich-toggle1" id="light-dark1" onclick="check('good')">
-    <br>
-    <label class="blue" for="light-dark1">GOOD</label>
-
+</div>
+<div class="wrapper">
+    <h3>FAST</h3>
     <input type="checkbox" class="switch2 swtich-toggle1" id="light-dark2" onclick="check('fast')" >
-    <br>
-    <label class="green" for="light-dark2">FAST</label>
-
+</div>
+<div class="wrapper">
+    <h3>CHEAP</h3>
     <input type="checkbox" class="switch3 swtich-toggle1" id="light-dark3" onclick="check('cheap')">
-    <br>
-    <label class="red" for="light-dark3">CHEAP</label>
 </div>
 
 
@@ -103,15 +102,22 @@
     let fast=document.getElementById('light-dark2');
     let cheap=document.getElementById('light-dark3');
 function check(value){
-    console.log(cheap.checked)
     switch (value){
-        case 'good':
-            if (fast.checked && cheap.checked ){
-                cheap.checked=false;
-            }else if (good.checked && cheap.checked){
-                good.checked=false;
+        case 'cheap':
+            if (fast.checked && good.checked) {
+                fast.checked = false;
+                break;
             }
-
+        case 'fast':
+            if (good.checked && cheap.checked){
+                good.checked=false;
+                break;
+            }
+         case 'good':
+             if (fast.checked && cheap.checked){
+                 cheap.checked=false;
+                 break;
+             }
     }
 }
 
