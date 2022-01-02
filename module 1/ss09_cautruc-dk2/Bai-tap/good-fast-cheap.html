@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <title>Ứng dụng good-fast-cheap</title>
     <style>
+        body.dark1{
+            background: #749dd6;
+            transition: var(--transition-effect);
+
+        }
+        body.dark2{
+            background: #668b5e;
+            transition: var(--transition-effect);
+        }
+        body.dark3{
+            background: #ee4866;
+            transition: var(--transition-effect);
+        }
         body{
             font-size: 30px;
             font-weight: bold;
@@ -14,7 +27,6 @@
         }
         :root{
             --transition-effect: .25s cubic-bezier(.23,-0.58,.86,1.71);
-
         }
         .wrapper{
             display: flex;
@@ -80,7 +92,7 @@
 
     </style>
 </head>
-<body>
+<body class="dark1 dark2 dark3">
 <div class="wrapper" >
     <h3>GOOD</h3>
     <input type="checkbox" class="switch1 swtich-toggle1" id="light-dark1" onclick="check('good')">
@@ -120,6 +132,24 @@ function check(value){
              }
     }
 }
+    let checkbox_toggle1=good;
+    let checkbox_toggle2=fast;
+    let checkbox_toggle3=cheap;
+
+checkbox_toggle1.addEventListener('change',function (){
+    document.body.classList.toggle('dark1');
+    }
+);
+
+checkbox_toggle2.addEventListener('change',function (){
+            document.body.classList.toggle('dark2');
+        }
+    );
+
+checkbox_toggle3.addEventListener('change',function (){
+            document.body.classList.toggle('dark3');
+        }
+    );
 
 
 
