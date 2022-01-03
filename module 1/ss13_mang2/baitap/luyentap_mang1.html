@@ -112,21 +112,72 @@
         }
 </script>
 -->
+<!--bai7
+<script>
+    let arr=[]
+    let n=parseInt(prompt("Nhap vao so luong mang"))
+    for (let i=0;i<n;i++){
+        let arr1=parseInt(prompt("phan tu "+i))
+        arr.push(arr1)
+    }
+    let num=parseInt(prompt("Nhap phan tu can tim"))
+    document.write(arr+'<br>')
+    if(arr.indexOf(num)>0) {
+
+
+        document.write(" So can tim  "+arr.splice(arr.indexOf(num), 1) + "<br>")
+    }
+    else{
+        document.write("khong co")
+    }
+    document.write("Mang moi : "+arr)
+</script>
+-->
+<!--bai7
+<script>
+    let arr=[]
+    let n=parseInt(prompt("Nhap vao so luong mang"))
+    for (let i=0;i<n;i++){
+        let arr1=parseInt(prompt("phan tu "+i))
+
+
+        arr.push(arr1)
+
+
+    }
+    let res=arr.sort(index)
+    function index(a,b) {
+        return a - b;
+    }
+    document.write(res)
+
+</script>
+-->
 <!--bai7-->
 <script>
-    let n=parseInt(prompt("Nhap vao so luong mang"))
-    let arr=[];
-    for (let i=0 ; i<n ; i++){
-        let arr1=parseInt(prompt("phan tu thu: "+i))
-        arr.push(arr1);
-    }
-    let V=parseInt(prompt("Nhap phan tu can tim"))
-    document.write(arr+'<br>')
+    let arr=[]
+    let n=parseInt(prompt("Nhap vao so luong mang a"))
+    for (let i=0;i<n;i++){
+        let ele=parseInt(prompt("phan tu "+i))
 
-   if (arr.indexOf(V)>0){
-       document.write(" So can tim  "+arr.splice(arr.indexOf(V), 1) + "<br>")
-   }
-    document.write("Mang moi : "+arr)
+
+        arr.push(ele)
+
+
+    }
+    let arr1=[]
+    let m=parseInt(prompt("Nhap vao so luong mang b"))
+    for (let i=0;i<m;i++){
+        let ele1=parseInt(prompt("phan tu "+i))
+
+
+        arr1.push(ele1)
+
+
+    }
+    arr2=[1,2,3,4,5,6,7,8,9,10,11,12,13,15]
+    document.write(" Mang c moi "+arr2.concat(arr.concat(arr1)))
+
 
 </script>
 </body>
