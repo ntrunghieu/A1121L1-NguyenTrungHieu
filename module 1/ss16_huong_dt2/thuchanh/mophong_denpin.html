@@ -7,56 +7,56 @@
 <body>
 <script>
     class Battery {
-        constructor() {
-
+        constructor() {}
+        setEnergy(energy){
+            this.energy=energy;
         }
-        setEnergy(energy) {
-            this.energy = energy
+        getEnergy(){
+            return this.energy;
         }
-        getEnergy() {
-            return this.energy
-        }
-        decreaseEnergy() {
-            if(this.energy>0)
-                this.energy--
-        }
-    }
-    class FlashLamp {
-        constructor(battery) {
-
-        }
-        setBattery(battery) {
-            this.battery = battery
-        }
-        getBatteryInfo() {
-            return this.battery
-        }
-        light() {
-            if(this.status) alert('Lighting')
-            else alert('Not lighting')
-        }
-        turnOn() {
-            this.status = true
-        }
-        turnOff() {
-            this.status = false
+        decreaseEnergy(){
+            if (this.energy>0){
+                this.energy--;
+            }
         }
     }
+   class flashLamp {
+       constructor() {
+       }
+       setBattery(battery){
+           this.battery=battery;
+       }
+       getBattery(){
+           return this.battery.getEnergy();
+       }
+       light(){
+           if (this.status){
+               alert('lighting')
+           }else {
+               alert('not lighting')
+           }
+       }
+       turnOn(){
+           this.status=true;
+       }
+       turnOff(){
+           this.status=false;
+       }
 
-    let battery = new Battery();
-    battery.setEnergy(100);
-    let batteryEnergy = battery.getEnergy();
-    console.log(batteryEnergy);
+   }
+   let battery=new Battery();
+    battery.setEnergy(10);
+    let flashlamp=new flashLamp();
+    flashlamp.setBattery(battery);
+    document.write("Battery info:" + flashlamp.getBattery() + "<br/>");
+    flashlamp.light();
+    document.write("Turn on<br/>")
+    flashlamp.turnOn();
+    flashlamp.light();
 
 
-    let flashLamp = new FlashLamp();
-    flashLamp.setBattery(battery);
-    let flashLampBattery = flashLamp.getBatteryInfo();
-    console.log(flashLampBattery)
 
 
-    flashLamp.turnOff();
-    flashLamp.light();
 
 
 </script>

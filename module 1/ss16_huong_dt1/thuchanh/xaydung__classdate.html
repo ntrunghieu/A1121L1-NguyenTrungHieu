@@ -36,25 +36,14 @@
             this.year=newYear;
         }
         toString(){
-            return this.day+'/'+this.month+'/'+this.year;
+            return this.day+'-'+this.month+'-'+this.year;
         }
     }
     let date= new myDate(2,2,2007);
-    let day=date.getDay();
-    let month=date.getMonth();
-    let year=date.getYear();
-    console.log(day+'/'+month+'/'+year)
+    date.setDate(27,3,2002)
+    alert(date.toString())
 
-    date.setDay(27);
-    date.setMonth(3);
-    date.setYear(2002);
-    console.log(day+'/'+month+'/'+year);
 
-    date.setDate(15,5,1984);
-    console.log(day+'/'+month+'/'+year);
-
-    let toString=date.toString();
-    console.log(toString);
 
 </script>
 </body>
