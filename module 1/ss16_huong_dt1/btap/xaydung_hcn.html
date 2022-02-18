@@ -23,14 +23,14 @@
         drawRect() {
             let rect = document.getElementById('myCanvas').getContext('2d');
             rect.fillStyle = 'blue';
-            rect.fillRect(100,50,this.width,this.height);
+            rect.fillRect(50,50,this.width,this.height);
         }
         setChange(newWidth,newHeight) {
             this.width = newWidth;
             this.height = newHeight;
         }
     }
-    let myRect = new Rectangle(80,20);
+    let myRect = new Rectangle(20,20);
     myRect.drawRect();
     myRect.setChange(100,50);
     let a = myRect.getArea();

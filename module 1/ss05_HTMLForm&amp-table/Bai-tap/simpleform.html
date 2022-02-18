@@ -7,40 +7,39 @@
         .a{
             text-align: center;
         }
-    </style>
-    <style>
-        .mau{
+        .mau {
             color: royalblue;
-            font-family:Arial;
+            font-family: Arial;
         }
-    </style>
-    <style>
-        .mau1{
+        .mau1 {
             color: orange;
             font-family: "Times New Roman";
         }
-    </style>
-    <style>
         table{
             background-color: #fdfca8;color:#0837fd;font-family: "Lucida Sans";
         }
         th{
             background-color: #d3fcd5;color: #0837fd;font-family: "Lucida Sans";
         }
-        .cangiua{
+        .a{
             text-align: center;
         }
+        .all{
+            margin-inline: 150px;
+            margin-block: 50px;
+        }
     </style>
+
 </head>
 <body>
 
             <!--form1 -->
-
+<div class="all">
 <fieldset  style="width: 400px" >
     <h3 style="background: darkorange" class="a"><span style="color: aliceblue">SỞ THÍCH CỦA BẠN</span></h3>
+    <form name="form1" class="a" action="simpleform.html " method="get">
         <table>
 
-            <form name="form1" class="a" action="simpleform.html " method="get">
             <tr>
 
                 <td class="mau"><label for="name" >Họ và tên:</label></td>
@@ -50,7 +49,7 @@
             <tr>
 
                 <td class="mau"><label for="email">Email:</label></td>
-                <td><input name="email" ìd="email" type="email"></td>
+                <td><input name="email" type="email"></td>
 
             </tr>
             <tr>
@@ -58,15 +57,15 @@
                 <td>
                     <table>
                         <tr>
-                            <td class="mau1"> <input name="the_thao" ìd="hobby" type="checkbox"/> Thể thao</td>
-                            <td class="mau1"> <input name="am_nhac" ìd="hobby" type="checkbox"/> Âm nhạc</td>
-                            <td class="mau1"> <input name="doc_sach" ìd="hobby" type="checkbox"/> Đọc sách</td>
+                            <td class="mau1"> <input name="the_thao"  type="checkbox"/> Thể thao</td>
+                            <td class="mau1"> <input name="am_nhac"  type="checkbox"/> Âm nhạc</td>
+                            <td class="mau1"> <input name="doc_sach"  type="checkbox"/> Đọc sách</td>
                         </tr>
 
                         <tr>
-                            <td class="mau1"> <input name="luot_web" ìd="hobby" type="checkbox"/> Lướt web</td>
-                            <td class="mau1"> <input name="choi_game" ìd="hobby" type="checkbox"/> Chơi game</td>
-                            <td class="mau1"> <input name="dien_anh" ìd="hobby" type="checkbox"/> Điện ảnh</td>
+                            <td class="mau1"> <input name="luot_web"  type="checkbox"/> Lướt web</td>
+                            <td class="mau1"> <input name="choi_game"  type="checkbox"/> Chơi game</td>
+                            <td class="mau1"> <input name="dien_anh"  type="checkbox"/> Điện ảnh</td>
                         </tr>
 
                         <tr>
@@ -83,16 +82,18 @@
                         </div>
                     </td>
                 </tr>
-            </form>
+
         </table>
+    </form>
 </fieldset>
+</div>
             <br><br><br><br>
 
 
             <!--form2 -->
-
+<form name="form2" action="simpleform.html" method="post">
 <table>
-    <form name="form2" action="simpleform.html" method="post">
+
         <tr>
             <th colspan="2" >ĐĂNG KÝ HỌC VIÊN</th>
         </tr>
@@ -121,8 +122,8 @@
         <td>Lớp: </td>
         <td>
             <select>
-                <option>---Chọn lớp---</option>
-                <option>A1121i1</option>
+                <option >---Chọn lớp---</option>
+                <option selected>A1121i1</option>
             </select>
         </td>
         </tr>
@@ -142,7 +143,7 @@
                 <button type="reset">Nhập lại</button></td>
 
         </tr>
-    </form>
 </table>
+</form>
 </body>
 </html>
