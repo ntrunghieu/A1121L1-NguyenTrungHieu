@@ -97,12 +97,12 @@ public class DisplayPics {
                 int height = input.nextInt();
                 for (int i=1;i<=height;i++){
                     for (int j=height;j>i;j--){
-                        System.out.print(" ");
+                        System.out.print("   ");
                     }
                     for (int k=1;k<=2*i-1;k++){
                         System.out.print(" * ");
                     }
-                    System.out.println("");
+                    System.out.println("  ");
                 }
             } else if (choice == 0) {
                 System.exit(0);
