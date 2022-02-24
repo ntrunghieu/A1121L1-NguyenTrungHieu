@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class ConvertTemperature {
     public static void main(String[] args) {
        int num;
-        int number = 6; while (number > 0) { number -= 3; System.out.print(number + " "); }
-       double celsius;
+       double Celsius;
        double Fahrenheit;
         do {
             Scanner scanner = new Scanner(System.in);
@@ -23,8 +22,8 @@ public class ConvertTemperature {
                      break;
                  case 2:
                      System.out.println("Enter celsius: ");
-                     celsius = scanner.nextDouble();
-                     System.out.println("Fahrenheit to Celsius: "+celsiusToFahrenheit(celsius));
+                     Celsius = scanner.nextDouble();
+                     System.out.println("Fahrenheit to Celsius: "+celsiusToFahrenheit(Celsius));
                      break;
                  case 0:
                      System.exit(0);
