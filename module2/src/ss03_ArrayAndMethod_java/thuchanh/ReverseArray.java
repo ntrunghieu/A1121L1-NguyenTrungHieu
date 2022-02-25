@@ -18,7 +18,7 @@ public class ReverseArray {
         array = new int[size];
         int i = 0;
         while (i < array.length) {
-            System.out.println("nhap phan tu thu " + (i + 1) + ":");
+            System.out.print("nhap phan tu thu " + (i + 1) + ":");
             array[i] = scanner.nextInt();
             i++;
         }
