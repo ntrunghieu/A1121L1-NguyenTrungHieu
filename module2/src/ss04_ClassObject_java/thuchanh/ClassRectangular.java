@@ -15,7 +15,7 @@ public class ClassRectangular {
         return (this.width+this.height)*2;
     }
     public String display(){
-        return "Rectangle{" + "width=" + width + ", height=" + height + "}";
+        return "Rectangle { " + "width=" + width + ", height=" + height + " } ";
     }
 }
 

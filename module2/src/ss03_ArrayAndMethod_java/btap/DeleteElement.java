@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class DeleteElement {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int[] arr = {10, 4, 6, 7, 8, 6, 0, 2, 0};
+        int[] arr = {10, 4,5 , 7, 8, 6, 0, 2, 1};
         int[] arr1 = new int[arr.length - 1];
         System.out.println("nhap phan tu can xoa: ");
         int x = scanner.nextInt();
