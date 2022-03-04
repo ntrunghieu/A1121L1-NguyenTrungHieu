@@ -1,16 +1,13 @@
 package ss06_Inheritance.btap;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
-public class Point2D {
+public class Point {
     private float x = 0.0f;
     private float y = 0.0f;
 
-    public Point2D() {
+    public Point() {
     }
 
-    public Point2D(float x, float y) {
+    public Point(float x, float y) {
         this.x = x;
         this.y = y;
     }
@@ -30,17 +27,20 @@ public class Point2D {
     public void setY(float y) {
         this.y = y;
     }
-
     public float[] getXY() {
         float[] arr={this.x, this.y};
         return arr;
     }
+    public void setXY(float x, float y){
+        this.x=x;
+        this.y=y;
+    }
 
     @Override
     public String toString() {
-        return "Point2D{" +
-                "x = " + x +
-                ", y = " + y +
+        return "Point{" +
+                "x=" + x +
+                ", y=" + y +
                 '}';
     }
 }

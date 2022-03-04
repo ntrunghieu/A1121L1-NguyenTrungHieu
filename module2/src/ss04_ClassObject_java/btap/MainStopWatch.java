@@ -9,11 +9,9 @@ public class MainStopWatch {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ClassStopWatch stopWatch=new ClassStopWatch();
-        Date start=stopWatch.getStartTime();
+        long start=stopWatch.getStartTime();
         System.out.println(start);
-        Date end=stopWatch.getEndTime();
-        System.out.println(end);
-        System.out.println("Elapsed time is " + stopWatch.getElapsedTime(start,end));
+
 
 
         int[] array = {2,56,88,3,17};
@@ -31,5 +29,9 @@ public class MainStopWatch {
             array[index] = temp;
         }
         System.out.println("Array is " + Arrays.toString(array));
+
+        long end=stopWatch.getEndTime();
+        System.out.println(end);
+        System.out.println("Elapsed time is " + stopWatch.getElapsedTime());
     }
 }
