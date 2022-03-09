@@ -1,5 +1,7 @@
 package ss07_AbstractClass_Interface.thuchanh;
+import ss06_Inheritance.thuchanh.Circle;
 
+import java.util.Comparator;
 public class ComparableCircle extends Circle implements Comparable<ComparableCircle> {
 
     public ComparableCircle() {
@@ -21,4 +23,5 @@ public class ComparableCircle extends Circle implements Comparable<ComparableCir
         } else if (getRadius() < object.getRadius()) return -1;
         else return 1;
     }
+    //(getRadius() > o.getRadius()) ? 1: (getRadius() < o.getRadius()) ? -1:0;
 }
