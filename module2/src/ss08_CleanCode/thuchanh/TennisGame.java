@@ -1,6 +1,16 @@
 package ss08_CleanCode.thuchanh;
 
+import java.util.Scanner;
+
 public class TennisGame {
+
+    public static final String LOVE_ALL = "Love-All";
+    public static final String FIFTEEN_ALL = "Fifteen-All";
+    public static final String THIRTY_ALL = "Thirty-All";
+    public static final String FORTY_ALL = "Forty-All";
+    public static final String DEUCE = "Deuce";
+    public static final String ADDITION = "-";
+
     public static String getScore(String player1Name, String player2Name, int scorePlayer1, int scorePlayer2) {
         String score = "";
         int tempScore = 0;
@@ -26,7 +36,7 @@ public class TennisGame {
                 if (i == 1) {
                     tempScore = scorePlayer1;
                 } else {
-                    score += "-";
+                    score += ADDITION;
                     tempScore = scorePlayer2;
                 }
                 score=getString(tempScore);
@@ -41,23 +51,27 @@ public class TennisGame {
         String score;
         switch (scorePlayer1) {
             case 0:
-                score = "Love-All";
+                score = LOVE_ALL;
                 break;
             case 1:
-                score = "Fifteen-All";
+                score = FIFTEEN_ALL;
                 break;
             case 2:
-                score = "Thirty-All";
+                score = THIRTY_ALL;
                 break;
             case 3:
-                score = "Forty-All";
+                score = FORTY_ALL;
                 break;
             default:
-                score = "Deuce";
+                score = DEUCE;
                 break;
 
         }
         return score;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
     }
 }
 
