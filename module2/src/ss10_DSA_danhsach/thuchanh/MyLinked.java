@@ -32,33 +32,30 @@ public class MyLinked<E> {
         holder = temp.next;
         temp.next = new Node(data);
         temp.next.next = holder;
-        numNode++;
     }
-    public void addFirst(Object data){
-        Node temp=head;
-        head=new Node(data);
-        head.next=temp;
-        numNode++;
+
+    public void addFirst(Object data) {
+        Node temp = head;
+        head = new Node(data);
+        head.next = temp;
     }
-    public Node get(int index){
-        Node temp=head;
+
+    public Node get(int index) {
+        Node temp = head;
 
         for (int i = 0; i < index; i++) {
-            temp=temp.next;
+            temp = temp.next;
         }
         return temp;
     }
 
-    public void printList(){
-        Node temp=head;
-        while (temp!=null){
+    public void printList() {
+        Node temp = head;
+        while (temp != null) {
             System.out.println(temp.data);
-            temp=temp.next;
+            temp = temp.next;
         }
     }
-
-
-
 
 
 }

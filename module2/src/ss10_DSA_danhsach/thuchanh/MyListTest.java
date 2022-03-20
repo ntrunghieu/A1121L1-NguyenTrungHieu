@@ -21,8 +21,8 @@ public class MyListTest {
 //        System.out.println("element 6: "+myList.get(6));
 
 
+        System.out.println(myList.get(2));
 
-        myList.get(2);
         System.out.println("element 2: " + myList.get(2));
 
         System.out.println(Arrays.toString(myList.getElement()));
