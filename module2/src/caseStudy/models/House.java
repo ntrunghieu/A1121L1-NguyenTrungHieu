@@ -1,4 +1,4 @@
-package caseStudy.controller;
+package caseStudy.models;
 
 public class House extends Facility{
     private  String standardRoom;

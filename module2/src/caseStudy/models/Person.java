@@ -1,10 +1,10 @@
-package caseStudy.controller;
+package caseStudy.models;
 
 import java.util.Date;
 
 public abstract class Person {
     public String name;
-    public Date date;
+//    public Date date;
     public int IDCard;
     public int phoneNumber;
     public String email;
@@ -13,9 +13,8 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(String name, Date date, int IDCard, int phoneNumber, String email, String gender) {
+    public Person(String name, int IDCard, int phoneNumber, String email, String gender) {
         this.name = name;
-        this.date = date;
         this.IDCard = IDCard;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -30,13 +29,13 @@ public abstract class Person {
         this.name = name;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
+//    public Date getDate() {
+//        return date;
+//    }
+//
+//    public void setDate(Date date) {
+//        this.date = date;
+//    }
 
     public int getIDCard() {
         return IDCard;

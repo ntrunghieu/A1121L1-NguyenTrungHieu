@@ -1,6 +1,4 @@
-package caseStudy.controller;
-
-import java.util.Date;
+package caseStudy.models;
 
 public abstract class Facility {
     public String nameService;
@@ -8,6 +6,4 @@ public abstract class Facility {
     public double rentalFee;
     public double maxPeople;
     public int rentalType;
-
-
 }

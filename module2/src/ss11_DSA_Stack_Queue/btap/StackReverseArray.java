@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Stack_ReverseArray {
+public class StackReverseArray {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         reverseNum();

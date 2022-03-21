@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeMap;
 
-public class CountWord_TreeMap {
+public class CountWordTreeMap {
     public static void main(String[] args) {
         countWord();
     }
@@ -31,7 +31,7 @@ public class CountWord_TreeMap {
         Iterator i =map.keySet().iterator();
         while (i.hasNext()){
             key=(String)i.next();
-            System.out.println("T'"+key+"' xuất hiện "+map.get(key)+" lần");
+            System.out.println("Từ "+key+"' xuất hiện "+map.get(key)+" lần");
         }
 
 
