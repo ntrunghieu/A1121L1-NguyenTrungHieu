@@ -38,11 +38,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.println("Position: ");
         String position=scanner.nextLine();
         System.out.print("ID card: ");
-        int idCard=scanner.nextInt();
+        int idCard=Integer.parseInt(scanner.nextLine());
         System.out.println("Phone number: ");
-        int phone=scanner.nextInt();
+        int phone=Integer.parseInt(scanner.nextLine());
         System.out.println("Salary: ");
-        int salary=scanner.nextInt();
+        int salary=Integer.parseInt(scanner.nextLine());
         Employee employee=new Employee(name,idCard,phone,email,gender,idEmployee,level,position,salary);
         employeeArrayList.add(employee);
 
