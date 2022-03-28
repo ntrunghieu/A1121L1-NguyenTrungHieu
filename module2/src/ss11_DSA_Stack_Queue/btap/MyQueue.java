@@ -1,5 +1,9 @@
 package ss11_DSA_Stack_Queue.btap;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Iterator;
+
 public class MyQueue {
     private int capacity;
     private int queueArr[];
@@ -56,13 +60,13 @@ public class MyQueue {
         }
     }
     public static void main(String[] args) {
-        MyQueue queue = new MyQueue(1);
+        MyQueue queue = new MyQueue(5);
         queue.enQueue(5);
 //        queue.dequeue();
-//        queue.enQueue(56);
-//        queue.enQueue(2);
-//        queue.enQueue(67);
-//        queue.dequeue();
+        queue.enQueue(56);
+        queue.enQueue(2);
+        queue.enQueue(67);
+        queue.dequeue();
 //        queue.dequeue();
 //        queue.enQueue(24);
 //        queue.dequeue();
@@ -70,7 +74,7 @@ public class MyQueue {
 //        queue.enQueue(45);
 //        queue.enQueue(23);
 //        queue.enQueue(435);
-        queue.dequeue();
+//        queue.dequeue();
         System.out.println(queue.currentSize);
         System.out.println(queue.tail);
     }
