@@ -13,12 +13,12 @@ public class ArrayExample {
         }
         return arr;
     }
-    public void triangle(int x,int y, int z){
+    public static void triangle(int x,int y, int z){
         try {
             if (x+y>z && x+z>y && x+y>z){
                 System.out.println("triangle");
             }
-        }catch (Exception e){
+        }catch (IllegalArgumentException e){
             System.out.println("loi "+e.getMessage());
         }
     }

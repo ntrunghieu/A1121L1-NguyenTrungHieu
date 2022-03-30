@@ -1,6 +1,5 @@
 package caseStudy.services.Impl;
 
-import caseStudy.models.Contract;
 import caseStudy.services.ContractService;
 
 public class ContractServiceImpl implements ContractService {
@@ -11,6 +10,7 @@ public class ContractServiceImpl implements ContractService {
 
     @Override
     public void addNew() {
+
 
     }
 

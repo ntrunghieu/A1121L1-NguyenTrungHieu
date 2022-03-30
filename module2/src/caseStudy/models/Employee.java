@@ -2,7 +2,7 @@ package caseStudy.models;
 
 import java.util.Date;
 
-public class Employee extends Person{
+public class Employee extends Person {
     private String IDEmployee;
     private String level;
     private String position;
@@ -11,14 +11,13 @@ public class Employee extends Person{
     public Employee() {
     }
 
-    public Employee(String name, int IDCard, int phoneNumber, String email, String gender, String IDEmployee, String level, String position,int salary) {
+    public Employee(String name, int IDCard, int phoneNumber, String email, String gender, String IDEmployee, String level, String position, int salary) {
         super(name, IDCard, phoneNumber, email, gender);
         this.IDEmployee = IDEmployee;
         this.level = level;
         this.position = position;
-        this.salary=salary;
+        this.salary = salary;
     }
-
     public String getIDEmployee() {
         return IDEmployee;
     }
@@ -49,6 +48,22 @@ public class Employee extends Person{
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+    public int getPhone() {
+        return phoneNumber;
+    }
+    public void setPhone(int phone) {
+        this.phoneNumber = phone;
+    }
+
+    @Override
+    public String getName() {
+        return super.getName();
+    }
+
+    @Override
+    public void setName(String name) {
+        super.setName(name);
     }
 
     @Override
