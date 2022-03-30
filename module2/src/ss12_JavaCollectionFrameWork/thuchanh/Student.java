@@ -13,6 +13,7 @@ public class Student {
         this.name = name;
         this.age = age;
         this.address = address;
+        System.out.println("ádfas");
     }
 
     public String getName() {

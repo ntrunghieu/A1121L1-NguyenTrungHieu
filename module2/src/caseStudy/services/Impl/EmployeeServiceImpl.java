@@ -59,28 +59,21 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void edit() {
-        Employee employeeFound = null;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Update by ID Employee");
         System.out.print("Enter the employee ID to edit: ");
         String checkId = scanner.nextLine();
 
-        for (Employee item: employeeArrayList) {
-            employeeFound=item;
-            break;
-        }
-        if (employeeFound!=null){
+
             for (int i = 0; i < employeeArrayList.size(); i++) {
                 if (employeeArrayList.get(i).getIDEmployee().contains(checkId)) {
                     System.out.println("Input update information");
                     Employee employee = getEmployee();
                     employeeArrayList.set(i, employee);
+                } else {
+                    System.out.println("Khong tim thay ma nhan vien: " + checkId);
                 }
             }
-        }else {
-            System.out.println("Khong tim thay ma nhan vien: "+checkId);
-        }
-
 
 
 //            System.out.println(" 1.Name \n 2.Email \n 3.Gender \n 4.ID Employee \n 5.Level \n 6.Position \n 7.ID Card" +

@@ -2,6 +2,7 @@ package caseStudy.controller;
 
 import caseStudy.services.Impl.CustomerServiceImpl;
 import caseStudy.services.Impl.EmployeeServiceImpl;
+import caseStudy.services.Impl.FacilityServiceImpl;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -107,7 +108,7 @@ public class FuramaController {
     private static void displayListFacility() {
         boolean check = true;
         Scanner scanner = new Scanner(System.in);
-        EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
         while (check) {
             System.out.println("1. \tDisplay list facility");
             System.out.println("2. \tAdd new facility");
@@ -117,9 +118,10 @@ public class FuramaController {
             int ip = scanner.nextInt();
             switch (ip) {
                 case 1:
-
+                    facilityService.displayService();
                 case 2:
-
+                    addNewFacility();
+                    break;
                 case 4:
                     displayMainMenu();
                     break;
@@ -160,7 +162,7 @@ public class FuramaController {
             System.out.println("1.\tDisplay list customers use service");
             System.out.println("2.\tDisplay list customers get voucher");
             System.out.println("3.\tReturn main menu");
-            System.out.print("Enter number which you wanna choose");
+            System.out.print("Enter number which you wanna choose: ");
             int ip = scanner.nextInt();
             switch (ip) {
                 case 1:
@@ -169,6 +171,35 @@ public class FuramaController {
 
                 case 3:
                     displayMainMenu();
+                    break;
+            }
+        }
+    }
+
+    private static void addNewFacility() {
+        boolean check = true;
+        Scanner scanner = new Scanner(System.in);
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
+        while (check) {
+            System.out.println("1.\tAdd new villa");
+            System.out.println("2.\tAdd new room");
+            System.out.println("3.\tAdd new house");
+            System.out.println("4.\tBack to menu");
+
+            System.out.print("Enter number which you wanna choose: ");
+            int ip = scanner.nextInt();
+            switch (ip) {
+                case 1:
+                    facilityService.addNewVilla();
+                    break;
+                case 2:
+                    facilityService.addNewRoom();
+                    break;
+                case 3:
+                    facilityService.addNewHouse();
+                    break;
+                case 4:
+                    displayListFacility();
                     break;
             }
         }
