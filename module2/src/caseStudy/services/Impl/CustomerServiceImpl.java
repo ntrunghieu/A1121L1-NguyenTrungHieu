@@ -4,12 +4,16 @@ import caseStudy.models.Customer;
 import caseStudy.models.Employee;
 import caseStudy.services.CustomerService;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class CustomerServiceImpl implements CustomerService {
+    final String COMMA=",";
     static List<Customer> customerLinkedList=new LinkedList<>();
     static {
         System.out.println("----------- CUSTOMER MANAGEMENT INFORMATION -------------");
@@ -26,6 +30,16 @@ public class CustomerServiceImpl implements CustomerService {
     public void addNew() {
         Customer customer=getCustomer();
         customerLinkedList.add(customer);
+        try (BufferedWriter bf = new BufferedWriter(new FileWriter("D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\customer.txt",true))){
+            for (Customer i: customerLinkedList) {
+                bf.newLine();
+                bf.write("Name: "+i.name+COMMA+" Email: "+i.email+COMMA+" Gender: "+i.gender+COMMA+
+                        " ID Customer: "+i.IDCustomer+COMMA+" Phone: "+i.phoneNumber);
+                bf.flush();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }
@@ -43,9 +57,9 @@ public class CustomerServiceImpl implements CustomerService {
         System.out.println("Type customer: ");
         String typeMember=scanner.nextLine();
         System.out.print("ID card: ");
-        int idCard=scanner.nextInt();
+        int idCard=Integer.parseInt(scanner.nextLine());
         System.out.println("Phone number: ");
-        int phone=scanner.nextInt();
+        String phone=scanner.nextLine();
 
         return new Customer(name,idCard,phone,email,gender,idCustomer,typeMember,address);
     }

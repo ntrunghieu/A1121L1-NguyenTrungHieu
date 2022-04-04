@@ -48,7 +48,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.print("ID card: ");
         int idCard = Integer.parseInt(scanner.nextLine());
         System.out.println("Phone number: ");
-        int phone = Integer.parseInt(scanner.nextLine());
+        String phone = scanner.nextLine();
         System.out.println("Salary: ");
         int salary = Integer.parseInt(scanner.nextLine());
 //        Employee employee=new Employee(name,idCard,phone,email,gender,idEmployee,level,position,salary);

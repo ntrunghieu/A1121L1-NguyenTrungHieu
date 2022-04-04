@@ -11,7 +11,7 @@ public class Employee extends Person {
     public Employee() {
     }
 
-    public Employee(String name, int IDCard, int phoneNumber, String email, String gender, String IDEmployee, String level, String position, int salary) {
+    public Employee(String name, int IDCard, String phoneNumber, String email, String gender, String IDEmployee, String level, String position, int salary) {
         super(name, IDCard, phoneNumber, email, gender);
         this.IDEmployee = IDEmployee;
         this.level = level;
@@ -49,10 +49,10 @@ public class Employee extends Person {
     public void setSalary(int salary) {
         this.salary = salary;
     }
-    public int getPhone() {
+    public String getPhone() {
         return phoneNumber;
     }
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phoneNumber = phone;
     }
 

@@ -3,14 +3,14 @@ package caseStudy.models;
 import java.util.Date;
 
 public class Customer extends Person{
-    private String IDCustomer;
+    public String IDCustomer;
     private String typeCustomer;
     private String address;
 
 
     public Customer() {};
 
-    public Customer(String name, int IDCard, int phoneNumber, String email, String gender, String ID, String typeCustomer, String address) {
+    public Customer(String name, int IDCard, String phoneNumber, String email, String gender, String ID, String typeCustomer, String address) {
         super(name, IDCard, phoneNumber, email, gender);
         this.IDCustomer = ID;
         this.typeCustomer = typeCustomer;

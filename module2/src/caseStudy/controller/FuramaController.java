@@ -1,5 +1,6 @@
 package caseStudy.controller;
 
+import caseStudy.services.Impl.BookingServiceImpl;
 import caseStudy.services.Impl.CustomerServiceImpl;
 import caseStudy.services.Impl.EmployeeServiceImpl;
 import caseStudy.services.Impl.FacilityServiceImpl;
@@ -22,7 +23,7 @@ public class FuramaController {
             System.out.println("1.\tEmployee Management");
             System.out.println("2.\tCustomer Management");
             System.out.println("3.\tFacility Management ");
-            System.out.println("4.\tBooking Managerment");
+            System.out.println("4.\tBooking Management");
             System.out.println("5.\tPromotion Management");
             System.out.println("6.\tExit");
             System.out.println("----------------------------");
@@ -132,7 +133,7 @@ public class FuramaController {
     private static void displayBooking() {
         boolean check = true;
         Scanner scanner = new Scanner(System.in);
-        EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
+        BookingServiceImpl bookingService=new BookingServiceImpl();
         while (check) {
             System.out.println("1.\tAdd new booking");
             System.out.println("2.\tDisplay list booking");
@@ -144,9 +145,11 @@ public class FuramaController {
             int ip = scanner.nextInt();
             switch (ip) {
                 case 1:
-
+                    bookingService.addNew();
+                    break;
                 case 2:
-
+                    bookingService.displayService();
+                    break;
                 case 6:
                     displayMainMenu();
                     break;
@@ -157,7 +160,7 @@ public class FuramaController {
     private static void displayPromotion() {
         boolean check = true;
         Scanner scanner = new Scanner(System.in);
-        EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
+
         while (check) {
             System.out.println("1.\tDisplay list customers use service");
             System.out.println("2.\tDisplay list customers get voucher");

@@ -10,7 +10,6 @@ public class Main {
         Student student1 = new Student("Nam",20, "HN");
         Student student2 = new Student("Hung",21, "HN");
         Student student3 = new Student("Ha",22, "HN");
-        Student student=new Student()
         Map<Integer, Student> studentMap = new HashMap<Integer, Student>();
         studentMap.put(1,student1);
         studentMap.put(2,student2);
