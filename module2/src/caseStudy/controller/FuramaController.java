@@ -59,7 +59,8 @@ public class FuramaController {
             System.out.println("1. \tDisplay list employees");
             System.out.println("2. \tAdd new employee");
             System.out.println("3. \tEdit employee");
-            System.out.println("4. \tReturn main menu");
+            System.out.println("4. \tDelete employee");
+            System.out.println("5. \tReturn main menu");
             System.out.print("Enter number which you wanna choose: ");
             int ip = scanner.nextInt();
             switch (ip) {
@@ -73,6 +74,9 @@ public class FuramaController {
                     employeeService.edit();
                     break;
                 case 4:
+                    employeeService.remove();
+                    break;
+                case 5:
                     displayMainMenu();
                     break;
             }
@@ -87,7 +91,8 @@ public class FuramaController {
             System.out.println("1.\tDisplay list customers");
             System.out.println("2.\tAdd new customer");
             System.out.println("3.\tEdit customer");
-            System.out.println("4.\tReturn main menu");
+            System.out.println("4. \tDelete customer");
+            System.out.println("5. \tReturn main menu");
             System.out.print("Enter number which you wanna choose");
             int ip = scanner.nextInt();
             switch (ip) {
@@ -99,7 +104,11 @@ public class FuramaController {
                     break;
                 case 3:
                     customerService.edit();
+                    break;
                 case 4:
+                   customerService.remove();
+                    break;
+                case 5:
                     displayMainMenu();
                     break;
             }

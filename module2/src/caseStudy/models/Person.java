@@ -1,8 +1,9 @@
 package caseStudy.models;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public abstract class Person {
+public abstract class Person implements Serializable {
     public String name;
 //    public Date date;
     public int IDCard;

@@ -5,7 +5,9 @@ import caseStudy.models.House;
 import caseStudy.models.Room;
 import caseStudy.models.Villa;
 import caseStudy.services.FacilityService;
+import caseStudy.utils.WriteReadFile;
 
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -13,11 +15,12 @@ import java.util.Scanner;
 public class FacilityServiceImpl implements FacilityService {
     static Scanner scanner = new Scanner(System.in);
     static Map<Facility,Integer> facilityIntegerMap=new LinkedHashMap<Facility,Integer>();
-
+    static WriteReadFile writeReadFile=new WriteReadFile();
+    private final String path="D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\facility.csv";
     public Villa getVilla(){
         System.out.println("------ ADD NEW VILLA ---------");
 
-        System.out.println("Name Service: ");
+        System.out.println("Name Service : ");
         String nameService = scanner.nextLine();
         System.out.println("Area room: ");
         String areaRoom = scanner.nextLine();
@@ -79,6 +82,7 @@ public class FacilityServiceImpl implements FacilityService {
     }
     @Override
     public void displayService() {
+        facilityIntegerMap= (Map<Facility, Integer>) writeReadFile.readToFile1(path);
         for (Map.Entry<Facility, Integer> villa: facilityIntegerMap.entrySet()) {
             System.out.println(villa.getKey()+" Times: "+villa.getValue());
         }
@@ -110,6 +114,7 @@ public class FacilityServiceImpl implements FacilityService {
     public void addNewVilla() {
         Villa villa=getVilla();
         facilityIntegerMap.put(villa,0);
+        writeReadFile.writeToFile1( facilityIntegerMap,path);
         System.out.println("Congratulations. Thanks for believe in");
     }
 
@@ -117,6 +122,7 @@ public class FacilityServiceImpl implements FacilityService {
     public void addNewRoom() {
         Room room=getRoom();
         facilityIntegerMap.put(room,0);
+        writeReadFile.writeToFile1( facilityIntegerMap,path);
         System.out.println("Congratulations. Thanks for believe in");
 
     }
@@ -125,6 +131,7 @@ public class FacilityServiceImpl implements FacilityService {
     public void addNewHouse() {
         House house=getHouse();
         facilityIntegerMap.put(house,0);
+        writeReadFile.writeToFile1(facilityIntegerMap,path);
         System.out.println("Congratulations. Thanks for believe in");
 
     }

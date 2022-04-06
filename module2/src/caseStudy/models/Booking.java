@@ -1,8 +1,9 @@
 package caseStudy.models;
 
+import java.io.Serializable;
 import java.time.DayOfWeek;
 
-public class Booking {
+public class Booking implements Serializable {
     private Integer idBooking;
     private String dayStart;
     private String dayEnd;

@@ -6,6 +6,7 @@ import caseStudy.models.Facility;
 import caseStudy.models.Villa;
 import caseStudy.services.BookingService;
 import caseStudy.utils.BookingComparator;
+import caseStudy.utils.WriteReadFile;
 
 import java.awt.print.Book;
 import java.io.BufferedReader;
@@ -15,6 +16,10 @@ import java.util.*;
 
 public class BookingServiceImpl implements BookingService {
     static Scanner scanner = new Scanner(System.in);
+
+    static WriteReadFile writeReadFile=new WriteReadFile();
+
+    private final String path="D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\facility.csv";
 
     static Set<Booking> bookingSet = new TreeSet<>(new BookingComparator());
 
@@ -56,6 +61,7 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void displayService() {
+        facilityIntegerMap= (Map<Facility, Integer>) writeReadFile.readToFile(path);
         for (Booking booking : bookingSet) {
             System.out.println(booking.toString());
         }
@@ -77,7 +83,7 @@ public class BookingServiceImpl implements BookingService {
         Booking booking = new Booking(id, startDate, endDate, customer, facility);
 
         bookingSet.add(booking);
-
+        writeReadFile.writeToFile(bookingSet,path);
         System.out.println("Congratulations on your successful booking");
 
     }
@@ -93,19 +99,24 @@ public class BookingServiceImpl implements BookingService {
     }
 
     public static Customer chooseCustomer() {
+        String pathCustomer="D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\customer.csv";
         System.out.println("List the customer");
-        try (BufferedReader reader = new BufferedReader(new FileReader("D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\customer.txt"));) {
-            String line=null;
-//            line=reader.readLine();
-            while ((line = reader.readLine()) != null){
-                System.out.println(line);
-
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        for (Customer i : customerList) {
+//        try (BufferedReader reader = new BufferedReader(new FileReader("D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\customer.txt"));) {
+//            String line=null;
+////            line=reader.readLine();
+//            while ((line = reader.readLine()) != null){
+//                System.out.println(line);
+//
+//            }
+//            reader.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        for (Customer i : customerList) {
+//            System.out.println(i.toString());
+//        }
+        customerList= (List<Customer>) writeReadFile.readToFile(pathCustomer);
+        for (Customer i: customerList) {
             System.out.println(i.toString());
         }
         System.out.println("Enter the ID Customer: ");
@@ -113,7 +124,7 @@ public class BookingServiceImpl implements BookingService {
         boolean check = true;
         while (true) {
             for (Customer customer : customerList) {
-                if (idCustomer.equals(customer.getIDCustomer())) {
+                if (idCustomer.equals(customer.IDCustomer)) {
                     check = false;
                     return customer;
                 }
@@ -127,16 +138,21 @@ public class BookingServiceImpl implements BookingService {
     }
 
     public static Facility chooseFacility() {
+        String pathFacility="D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\facility.csv";
         System.out.println("List the facility");
+        facilityIntegerMap= writeReadFile.readToFile1(pathFacility);
+//        for (Booking booking : bookingSet) {
+//            System.out.println(booking.toString());
+//        }
         for (Map.Entry<Facility, Integer> i : facilityIntegerMap.entrySet()) {
             System.out.println(i.toString());
         }
-        System.out.println("Enter the ID Facility: ");
+        System.out.println("Enter the name Facility: ");
         String idService = scanner.nextLine();
         boolean check = true;
         while (true) {
             for (Map.Entry<Facility, Integer> i : facilityIntegerMap.entrySet()) {
-                if (idService.equals(i.getKey().getNameService())) {
+                if (idService.equals(i.getKey().nameService)) {
                     check = false;
                     return i.getKey();
                 }

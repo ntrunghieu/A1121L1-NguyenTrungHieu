@@ -2,6 +2,7 @@ package caseStudy.services.Impl;
 
 import caseStudy.models.Employee;
 import caseStudy.services.EmployeeService;
+import caseStudy.utils.WriteReadFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,8 @@ import java.util.Scanner;
 
 public class EmployeeServiceImpl implements EmployeeService {
     static List<Employee> employeeArrayList = new ArrayList<Employee>();
-
+    static WriteReadFile writeReadFile=new WriteReadFile();
+    private final String path="D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\employee.csv";
     static {
         System.out.println("----------- EMPLOYEE MANAGEMENT INFORMATION -------------");
     }
@@ -18,6 +20,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void displayService() {
+        employeeArrayList= (List<Employee>) writeReadFile.readToFile(path);
         for (Employee employee : employeeArrayList) {
             System.out.println(employee.toString());
         }
@@ -27,6 +30,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void addNew() {
         Employee employee = getEmployee();
         employeeArrayList.add(employee);
+        writeReadFile.writeToFile(employeeArrayList,path);
     }
 
 
@@ -76,6 +80,23 @@ public class EmployeeServiceImpl implements EmployeeService {
             }
 
 
+
+    }
+
+
+    @Override
+    public void remove() {
+        System.out.print("Enter the employee ID to edit: ");
+        String checkId = scanner.nextLine();
+        for (int i = 0; i < employeeArrayList.size(); i++) {
+            if (employeeArrayList.get(i).getIDEmployee().contains(checkId)) {
+                employeeArrayList.remove(i);
+            }
+        }
+        writeReadFile.writeToFile(employeeArrayList,path);
+        System.out.println("successful delete");
+
+    }
 //            System.out.println(" 1.Name \n 2.Email \n 3.Gender \n 4.ID Employee \n 5.Level \n 6.Position \n 7.ID Card" +
 //                    "\n 8.Phone \n 9.Salary");
 //            System.out.print("Enter the information you wanna edit: ");
@@ -127,11 +148,4 @@ public class EmployeeServiceImpl implements EmployeeService {
 //                    editEmployee.setSalary(salary);
 //                    break;
 //            }
-    }
-
-
-    @Override
-    public void remove() {
-
-    }
 }
