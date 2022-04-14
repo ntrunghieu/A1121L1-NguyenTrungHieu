@@ -3,16 +3,17 @@ package caseStudy.models;
 import java.io.Serializable;
 
 public abstract class Facility implements Serializable {
+
     public String nameService;
     public String areaRoomToUse;
-    public double rentalFee;
-    public int maxPeople;
+    public String rentalFee;
+    public String maxPeople;
     public String rentalType;
 
     public Facility() {
     }
 
-    public Facility(String nameService, String areaRoomToUse, double rentalFee, int maxPeople, String rentalType) {
+    public Facility(String nameService, String areaRoomToUse, String rentalFee, String maxPeople, String rentalType) {
         this.nameService = nameService;
         this.areaRoomToUse = areaRoomToUse;
         this.rentalFee = rentalFee;
@@ -36,19 +37,19 @@ public abstract class Facility implements Serializable {
         this.areaRoomToUse = areaRoomToUse;
     }
 
-    public double getRentalFee() {
+    public String getRentalFee() {
         return rentalFee;
     }
 
-    public void setRentalFee(double rentalFee) {
+    public void setRentalFee(String rentalFee) {
         this.rentalFee = rentalFee;
     }
 
-    public double getMaxPeople() {
+    public String getMaxPeople() {
         return maxPeople;
     }
 
-    public void setMaxPeople(int maxPeople) {
+    public void setMaxPeople(String maxPeople) {
         this.maxPeople = maxPeople;
     }
 

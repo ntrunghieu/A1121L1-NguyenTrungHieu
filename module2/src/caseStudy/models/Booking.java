@@ -21,6 +21,10 @@ public class Booking implements Serializable {
         this.infoService = infoService;
     }
 
+    public Booking(Integer idBooking) {
+        this.idBooking=idBooking;
+    }
+
     public Integer getIdBooking() {
         return idBooking;
     }
@@ -60,6 +64,7 @@ public class Booking implements Serializable {
     public void setInfoService(Facility infoService) {
         this.infoService = infoService;
     }
+
 
     @Override
     public String toString() {

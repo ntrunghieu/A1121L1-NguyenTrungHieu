@@ -1,14 +1,10 @@
 package caseStudy.services.Impl;
 
 import caseStudy.models.Customer;
-import caseStudy.models.Employee;
 import caseStudy.services.CustomerService;
-import caseStudy.utils.WriteReadFile;
+import caseStudy.utils.WriteReadFileBinary;
+import caseStudy.utils.WriteReadFileText;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,29 +12,62 @@ import java.util.Scanner;
 public class CustomerServiceImpl implements CustomerService {
     final String COMMA = ",";
     static List<Customer> customerLinkedList = new LinkedList<>();
-    static WriteReadFile writeReadFile=new WriteReadFile();
-    private final String path="D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\customer.csv";
+    static WriteReadFileBinary writeReadFileBinary =new WriteReadFileBinary();
+    private final String path="D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\cus.csv";
 
     static {
         System.out.println("----------- CUSTOMER MANAGEMENT INFORMATION -------------");
     }
 
     static Scanner scanner = new Scanner(System.in);
+    private WriteReadFileText<Customer> customerWriteReadFileText=new WriteReadFileText<>();
+
+
+    public CustomerServiceImpl() {
+        customerLinkedList=getAll();
+    }
+
+    public List<Customer> getAll(){
+        customerLinkedList.clear();
+        List<String> lines=customerWriteReadFileText.readText(path);
+        for (String line: lines) {
+            String[] arr=line.split(", ");
+            Customer customer1=new Customer(arr[0],Integer.parseInt(arr[1]),arr[2],arr[3],arr[4],arr[5],arr[6],arr[7]);
+            customerLinkedList.add(customer1);
+        }
+
+        return customerLinkedList;
+    }
+    public void show(List<Customer> customerList) {
+        System.out.println("--------------------------------------------------------------------------------------------------------");
+        System.out.printf("%-10s %-20s %-20s %-20s %-20s %-20s%n", "ID Customer", "NAME", "GENDER", "EMAIL", "PHONE", "ID CARD");
+        System.out.println("--------------------------------------------------------------------------------------------------------");
+        for (Customer customer : customerList) {
+            System.out.printf("%-10s %-20s %-20s %-20s %-20s %-20s%n", customer.getIDCustomer(), customer.getName(), customer.getGender(), customer.getEmail(), customer.getPhoneNumber(), customer.getIDCard());
+        }
+        System.out.println("--------------------------------------------------------------------------------------------------------");
+
+    }
+    public void showListCustomer(){
+        show(customerLinkedList);
+    }
+
 
     @Override
     public void displayService() {
-        customerLinkedList= (List<Customer>) writeReadFile.readToFile(path);
-        for (Customer customer : customerLinkedList) {
-            System.out.println(customer.toString());
-        }
+//        customerLinkedList= (List<Customer>) writeReadFileBinary.readToFile(path);
+//        for (Customer customer : customerLinkedList) {
+//            System.out.println(customer.toString());
+//        }
+
     }
 
     @Override
     public void addNew() {
         Customer customer = getCustomer();
         customerLinkedList.add(customer);
-        writeReadFile.writeToFile(customerLinkedList,path);
-
+//        writeReadFileBinary.writeToFile(customerLinkedList,path);
+        customerWriteReadFileText.writeText(customerLinkedList,path);
 //        try (BufferedWriter bf = new BufferedWriter(new FileWriter("D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\customer.txt", true))) {
 //            for (Customer i : customerLinkedList) {
 //                bf.newLine();
@@ -101,7 +130,7 @@ public class CustomerServiceImpl implements CustomerService {
                customerLinkedList.remove(i);
             }
         }
-        writeReadFile.writeToFile(customerLinkedList,path);
+        writeReadFileBinary.writeToFile(customerLinkedList,path);
         System.out.println("successful delete");
     }
 

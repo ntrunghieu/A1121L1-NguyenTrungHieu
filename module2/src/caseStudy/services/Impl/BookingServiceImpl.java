@@ -1,31 +1,34 @@
 package caseStudy.services.Impl;
 
-import caseStudy.models.Booking;
-import caseStudy.models.Customer;
-import caseStudy.models.Facility;
-import caseStudy.models.Villa;
+import caseStudy.models.*;
 import caseStudy.services.BookingService;
 import caseStudy.utils.BookingComparator;
-import caseStudy.utils.WriteReadFile;
+import caseStudy.utils.WriteReadFileBinary;
 
-import java.awt.print.Book;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.*;
 
 public class BookingServiceImpl implements BookingService {
     static Scanner scanner = new Scanner(System.in);
 
-    static WriteReadFile writeReadFile=new WriteReadFile();
+//    static WriteReadFileBinary writeReadFileBinaryStatic =new WriteReadFileBinary();
 
-    private final String path="D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\facility.csv";
+    private final WriteReadFileBinary writeReadFileBinary = new WriteReadFileBinary();
+
+    private final String pathBooking = "D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\booking.csv";
+    private static final String pathCustomer = "D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\customer.csv";
+    private static final String pathVilla = "D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\villa.csv";
+    private static final String pathRoom = "D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\room.csv";
+    private static final String pathHouse = "D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\house.csv";
 
     static Set<Booking> bookingSet = new TreeSet<>(new BookingComparator());
 
+    static List<Villa> villaList = new ArrayList<>();
+    static List<Room> roomArrayList = new ArrayList<>();
+    static List<House> houseArrayList = new ArrayList<>();
     static List<Customer> customerList = new ArrayList<>();
 
     static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<Facility, Integer>();
+
 
     static {
         System.out.println("----------- BOOKING MANAGEMENT INFORMATION -------------");
@@ -48,20 +51,24 @@ public class BookingServiceImpl implements BookingService {
 //        }
 
 
-        facilityIntegerMap.put(new Villa("vl01", "230m2", 1000, 5,
-                "thang", "vjp", "40", 4), 0);
-        facilityIntegerMap.put(new Villa("vl03", "77m2", 2000, 15,
-                "ngay", "vjp", "34", 3), 0);
-        facilityIntegerMap.put(new Villa("vl33", "100m2", 2500, 20,
-                "nam", "vjp", "23", 2), 0);
+//        facilityIntegerMap.put(new Villa("vl01", "230m2", 1000, 5,
+//                "thang", "vjp", "40", 4), 0);
+//        facilityIntegerMap.put(new Villa("vl03", "77m2", 2000, 15,
+//                "ngay", "vjp", "34", 3), 0);
+//        facilityIntegerMap.put(new Villa("vl33", "100m2", 2500, 20,
+//                "nam", "vjp", "23", 2), 0);
 
 
     }
 
+    public Set<Booking> getBooking() {
+        return bookingSet;
+    }
 
     @Override
     public void displayService() {
-        facilityIntegerMap= (Map<Facility, Integer>) writeReadFile.readToFile(path);
+//        facilityIntegerMap= (Map<Facility, Integer>) writeReadFileBinary.readToFile(path);
+        bookingSet = (Set<Booking>) writeReadFileBinary.readToFile(pathBooking);
         for (Booking booking : bookingSet) {
             System.out.println(booking.toString());
         }
@@ -83,7 +90,7 @@ public class BookingServiceImpl implements BookingService {
         Booking booking = new Booking(id, startDate, endDate, customer, facility);
 
         bookingSet.add(booking);
-        writeReadFile.writeToFile(bookingSet,path);
+        writeReadFileBinary.writeToFile(bookingSet, pathBooking);
         System.out.println("Congratulations on your successful booking");
 
     }
@@ -99,24 +106,10 @@ public class BookingServiceImpl implements BookingService {
     }
 
     public static Customer chooseCustomer() {
-        String pathCustomer="D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\customer.csv";
+
         System.out.println("List the customer");
-//        try (BufferedReader reader = new BufferedReader(new FileReader("D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\customer.txt"));) {
-//            String line=null;
-////            line=reader.readLine();
-//            while ((line = reader.readLine()) != null){
-//                System.out.println(line);
-//
-//            }
-//            reader.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        for (Customer i : customerList) {
-//            System.out.println(i.toString());
-//        }
-        customerList= (List<Customer>) writeReadFile.readToFile(pathCustomer);
-        for (Customer i: customerList) {
+        customerList = (List<Customer>) WriteReadFileBinary.readToFileStatic(pathCustomer);
+        for (Customer i : customerList) {
             System.out.println(i.toString());
         }
         System.out.println("Enter the ID Customer: ");
@@ -124,7 +117,7 @@ public class BookingServiceImpl implements BookingService {
         boolean check = true;
         while (true) {
             for (Customer customer : customerList) {
-                if (idCustomer.equals(customer.IDCustomer)) {
+                if (customer.IDCustomer.equals(idCustomer)) {
                     check = false;
                     return customer;
                 }
@@ -138,30 +131,64 @@ public class BookingServiceImpl implements BookingService {
     }
 
     public static Facility chooseFacility() {
-        String pathFacility="D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\facility.csv";
+
         System.out.println("List the facility");
-        facilityIntegerMap= writeReadFile.readToFile1(pathFacility);
+//        facilityIntegerMap= writeReadFileBinary.readToFile1(pathFacility);
+//        bookingSet= (Set<Booking>) writeReadFileBinary.readToFile(pathFacility);
 //        for (Booking booking : bookingSet) {
 //            System.out.println(booking.toString());
 //        }
-        for (Map.Entry<Facility, Integer> i : facilityIntegerMap.entrySet()) {
+//        for (Map.Entry<Facility, Integer> i : facilityIntegerMap.entrySet()) {
+//            System.out.println(i.getKey().toString());
+//        }
+        villaList = (List<Villa>) WriteReadFileBinary.readToFileStatic(pathVilla);
+        roomArrayList = (List<Room>) WriteReadFileBinary.readToFileStatic(pathRoom);
+
+        houseArrayList = (List<House>) WriteReadFileBinary.readToFileStatic(pathHouse);
+        for (Villa i : villaList) {
             System.out.println(i.toString());
         }
+        for (Room room : roomArrayList) {
+            System.out.println(room.toString());
+        }
+        for (House house : houseArrayList) {
+            System.out.println(house.toString());
+        }
         System.out.println("Enter the name Facility: ");
-        String idService = scanner.nextLine();
+        String nameService = scanner.nextLine();
         boolean check = true;
         while (true) {
-            for (Map.Entry<Facility, Integer> i : facilityIntegerMap.entrySet()) {
-                if (idService.equals(i.getKey().nameService)) {
+            for (Villa villa : villaList) {
+                if (nameService.equals(villa.nameService)) {
                     check = false;
-                    return i.getKey();
+                    return villa;
                 }
             }
+            for (Room room : roomArrayList) {
+                if (nameService.equals(room.nameService)) {
+                    check = false;
+                    return room;
+                }
+            }
+            for (House house : houseArrayList) {
+                if (nameService.equals(house.nameService)) {
+                    check = false;
+                    return house;
+                }
+            }
+
+//            for (Map.Entry<Facility, Integer> i : facilityIntegerMap.entrySet()) {
+//                if (idService.equals(i.getKey().nameService)) {
+//                    check = false;
+//                    return i.getKey();
+//                }
+//            }
             if (check) {
-                System.out.println("khong tim thay " + idService + ". Vui long nhap lai: ");
-                idService = scanner.nextLine();
+                System.out.println("khong tim thay " + nameService + ". Vui long nhap lai: ");
+                nameService = scanner.nextLine();
             }
         }
 
     }
+
 }
