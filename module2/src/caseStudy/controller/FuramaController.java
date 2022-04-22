@@ -7,12 +7,12 @@ import java.util.Scanner;
 
 public class FuramaController {
     static Scanner scanner = new Scanner(System.in);
-    private static final CustomerServiceImpl customerService= new CustomerServiceImpl();
-    private static final EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
-    private static final FacilityServiceImpl facilityService = new FacilityServiceImpl();
+    private static  CustomerServiceImpl customerService= new CustomerServiceImpl();
+    private static  EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
+    private static  FacilityServiceImpl facilityService = new FacilityServiceImpl();
 
-    private static final BookingServiceImpl bookingService = new BookingServiceImpl();
-    private static final ContractServiceImpl contractService = new ContractServiceImpl();
+    private static  BookingServiceImpl bookingService = new BookingServiceImpl();
+    private static  ContractServiceImpl contractService = new ContractServiceImpl();
     public static void main(String[] args) {
 
         displayMainMenu();
@@ -37,6 +37,7 @@ public class FuramaController {
 
             } catch (NumberFormatException e) {
                 System.out.println("Wrong format. Enter again!! ");
+                choice = Integer.parseInt(scanner.nextLine());
             }
             switch (choice) {
                 case 1:
@@ -70,13 +71,18 @@ public class FuramaController {
             System.out.println("2. \tAdd new employee");
             System.out.println("3. \tEdit employee");
             System.out.println("4. \tDelete employee");
-            System.out.println("5. \tReturn main menu");
+            System.out.println("5. \tSearch employee");
+            System.out.println("6. \tSort by name");
+            System.out.println("7. \tSort by salary");
+            System.out.println("8. \tSort by name length");
+            System.out.println("9. \tReturn main menu");
             System.out.print("Enter number which you wanna choose: ");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
 
             } catch (NumberFormatException e) {
                 System.out.println("Wrong format. Enter again!! ");
+                choice = Integer.parseInt(scanner.nextLine());
             }
             switch (choice) {
                 case 1:
@@ -92,6 +98,18 @@ public class FuramaController {
                     employeeService.remove();
                     break;
                 case 5:
+                    employeeService.search();
+                    break;
+                case 6:
+                    employeeService.sortName();
+                    break;
+                case 7:
+                    employeeService.sortSalary();
+                    break;
+                case 8:
+                    employeeService.sortNameLength();
+                    break;
+                case 9:
                     displayMainMenu();
                     break;
             }
@@ -106,13 +124,15 @@ public class FuramaController {
             System.out.println("2.\tAdd new customer");
             System.out.println("3.\tEdit customer");
             System.out.println("4. \tDelete customer");
-            System.out.println("5. \tReturn main menu");
+            System.out.println("5. \tSearch customer");
+            System.out.println("6. \tReturn main menu");
             System.out.print("Enter number which you wanna choose: ");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
 
             } catch (NumberFormatException e) {
                 System.out.println("Wrong format. Enter again!! ");
+                choice = Integer.parseInt(scanner.nextLine());
             }
             switch (choice) {
                 case 1:
@@ -128,6 +148,9 @@ public class FuramaController {
                     customerService.remove();
                     break;
                 case 5:
+                    customerService.search();
+                    break;
+                case 6:
                     displayMainMenu();
                     break;
             }
@@ -148,6 +171,7 @@ public class FuramaController {
                 choice = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Wrong format. Enter again!! ");
+                choice = Integer.parseInt(scanner.nextLine());
             }
             switch (choice) {
                 case 1:
@@ -178,6 +202,7 @@ public class FuramaController {
                 choice = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Wrong format. Enter again!! ");
+                choice = Integer.parseInt(scanner.nextLine());
             }
             switch (choice) {
                 case 1:
@@ -213,6 +238,7 @@ public class FuramaController {
                 choice = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Wrong format. Enter again!! ");
+                choice = Integer.parseInt(scanner.nextLine());
             }
             switch (choice) {
                 case 1:
@@ -241,6 +267,7 @@ public class FuramaController {
                 choice=Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Wrong format. Enter again!! ");
+                choice = Integer.parseInt(scanner.nextLine());
             }
             switch (choice) {
                 case 1:

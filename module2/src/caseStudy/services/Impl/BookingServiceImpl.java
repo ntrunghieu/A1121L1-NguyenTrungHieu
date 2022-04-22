@@ -3,16 +3,24 @@ package caseStudy.services.Impl;
 import caseStudy.models.*;
 import caseStudy.services.BookingService;
 import caseStudy.utils.BookingComparator;
+import caseStudy.utils.MyException;
 import caseStudy.utils.WriteReadFileBinary;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.Year;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class BookingServiceImpl implements BookingService {
     static Scanner scanner = new Scanner(System.in);
 
-//    static WriteReadFileBinary writeReadFileBinaryStatic =new WriteReadFileBinary();
-
-    private final WriteReadFileBinary writeReadFileBinary = new WriteReadFileBinary();
+    //    static WriteReadFileBinary writeReadFileBinaryStatic =new WriteReadFileBinary();
+    static WriteReadFileBinary writeReadFileBinary = new WriteReadFileBinary();
+//    private final WriteReadFileBinary writeReadFileBinary = new WriteReadFileBinary();
 
     private final String pathBooking = "D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\booking.csv";
     private static final String pathCustomer = "D:\\CODE\\A1121L1-NguyenTrungHieu\\module2\\src\\caseStudy\\data\\customer.csv";
@@ -31,7 +39,7 @@ public class BookingServiceImpl implements BookingService {
 
 
     static {
-        System.out.println("----------- BOOKING MANAGEMENT INFORMATION -------------");
+
 //        customerList.add(new Customer("hieu",1132,"09123","hieu123@",
 //                "nam","hieupro132","vjp","ngo quyen"));
 //        customerList.add(new Customer("khai",3122,"094","khai321@",
@@ -86,12 +94,12 @@ public class BookingServiceImpl implements BookingService {
         String startDate = scanner.nextLine();
         System.out.println("End date: ");
         String endDate = scanner.nextLine();
-
         Booking booking = new Booking(id, startDate, endDate, customer, facility);
 
         bookingSet.add(booking);
         writeReadFileBinary.writeToFile(bookingSet, pathBooking);
         System.out.println("Congratulations on your successful booking");
+
 
     }
 
@@ -108,23 +116,25 @@ public class BookingServiceImpl implements BookingService {
     public static Customer chooseCustomer() {
 
         System.out.println("List the customer");
-        customerList = (List<Customer>) WriteReadFileBinary.readToFileStatic(pathCustomer);
-        for (Customer i : customerList) {
-            System.out.println(i.toString());
-        }
+//        customerList = (List<Customer>) WriteReadFileBinary.readToFileStatic(pathCustomer);
+        CustomerServiceImpl customerService = new CustomerServiceImpl();
+        customerService.showListCustomer();
+//        for (Customer i : customerList) {
+//            System.out.println(i.toString());
+//        }
         System.out.println("Enter the ID Customer: ");
-        String idCustomer = scanner.nextLine();
+        int idCustomer = scanner.nextInt();
         boolean check = true;
         while (true) {
             for (Customer customer : customerList) {
-                if (customer.IDCustomer.equals(idCustomer)) {
+                if (idCustomer == customer.getIDCustomer()) {
                     check = false;
                     return customer;
                 }
             }
             if (check) {
                 System.out.println("khong tim thay " + idCustomer + ". Vui long nhap lai: ");
-                idCustomer = scanner.nextLine();
+                idCustomer = scanner.nextInt();
             }
         }
 
@@ -190,5 +200,6 @@ public class BookingServiceImpl implements BookingService {
         }
 
     }
+
 
 }

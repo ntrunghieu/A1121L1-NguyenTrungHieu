@@ -7,7 +7,7 @@ public abstract class Person implements Serializable {
 
     public String name;
 //    public Date date;
-    public int IDCard;
+    public String IDCard;
     public String phoneNumber;
     public String email;
     public String gender;
@@ -15,7 +15,7 @@ public abstract class Person implements Serializable {
     public Person() {
     }
 
-    public Person(String name, int IDCard, String phoneNumber, String email, String gender) {
+    public Person(String name, String IDCard, String phoneNumber, String email, String gender) {
         this.name = name;
         this.IDCard = IDCard;
         this.phoneNumber = phoneNumber;
@@ -39,11 +39,11 @@ public abstract class Person implements Serializable {
 //        this.date = date;
 //    }
 
-    public int getIDCard() {
+    public String getIDCard() {
         return IDCard;
     }
 
-    public void setIDCard(int IDCard) {
+    public void setIDCard(String IDCard) {
         this.IDCard = IDCard;
     }
 

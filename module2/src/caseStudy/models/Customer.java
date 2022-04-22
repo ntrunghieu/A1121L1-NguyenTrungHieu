@@ -3,25 +3,25 @@ package caseStudy.models;
 import java.util.Date;
 
 public class Customer extends Person{
-    public String IDCustomer;
+    private int IDCustomer;
     private String typeCustomer;
     private String address;
 
 
     public Customer() {};
 
-    public Customer(String name, int IDCard, String phoneNumber, String email, String gender, String ID, String typeCustomer, String address) {
+    public Customer(String name, String IDCard, String phoneNumber, String email, String gender, int ID, String typeCustomer, String address) {
         super(name, IDCard, phoneNumber, email, gender);
         this.IDCustomer = ID;
         this.typeCustomer = typeCustomer;
         this.address = address;
     }
 
-    public String getIDCustomer() {
+    public int getIDCustomer() {
         return IDCustomer;
     }
 
-    public void setIDCustomer(String IDCustomer) {
+    public void setIDCustomer(int IDCustomer) {
         this.IDCustomer = IDCustomer;
     }
 
@@ -43,14 +43,6 @@ public class Customer extends Person{
 
     @Override
     public String toString() {
-        return "Customer: " +
-                "IDCustomer='" + IDCustomer + '\'' +
-                ", typeCustomer='" + typeCustomer + '\'' +
-                ", address='" + address + '\'' +
-                ", name='" + name + '\'' +
-                ", IDCard=" + IDCard +
-                ", phoneNumber=" + phoneNumber +
-                ", email='" + email + '\'' +
-                ", gender='" + gender + '\'';
+         return getName()+","+getIDCard()+","+getPhoneNumber()+","+getEmail()+","+getGender()+","+getIDCustomer()+","+getTypeCustomer()+","+getAddress();
     }
 }

@@ -1,28 +1,32 @@
 package caseStudy.models;
 
-import java.util.Date;
+import java.util.Comparator;
+import java.util.Objects;
 
 public class Employee extends Person {
-    private String IDEmployee;
+    private int IDEmployee;
     private String level;
     private String position;
     private int salary;
+    public static int numberOfEmployee;
 
     public Employee() {
     }
 
-    public Employee(String name, int IDCard, String phoneNumber, String email, String gender, String IDEmployee, String level, String position, int salary) {
+    public Employee(String name, String IDCard, String phoneNumber, String email, String gender, int IDEmployee, String level, String position, int salary) {
         super(name, IDCard, phoneNumber, email, gender);
         this.IDEmployee = IDEmployee;
         this.level = level;
         this.position = position;
         this.salary = salary;
+        numberOfEmployee++;
     }
-    public String getIDEmployee() {
+
+    public int getIDEmployee() {
         return IDEmployee;
     }
 
-    public void setIDEmployee(String IDEmployee) {
+    public void setIDEmployee(int IDEmployee) {
         this.IDEmployee = IDEmployee;
     }
 
@@ -49,9 +53,11 @@ public class Employee extends Person {
     public void setSalary(int salary) {
         this.salary = salary;
     }
+
     public String getPhone() {
         return phoneNumber;
     }
+
     public void setPhone(String phone) {
         this.phoneNumber = phone;
     }
@@ -68,15 +74,18 @@ public class Employee extends Person {
 
     @Override
     public String toString() {
-        return "Employee: " +
-                "IDEmployee='" + IDEmployee + '\'' +
-                ", level='" + level + '\'' +
-                ", position='" + position + '\'' +
-                ", salary=" + salary +
-                ", name='" + name + '\'' +
-                ", IDCard=" + IDCard +
-                ", phoneNumber=" + phoneNumber +
-                ", email='" + email + '\'' +
-                ", gender='" + gender + '\'';
+        return getName() + "," + getIDCard() + "," + getPhoneNumber() + "," + getEmail() + "," + getGender() + "," + getIDEmployee() + "," + getLevel() + "," + getPosition() + "," + getSalary();
     }
+
+    public static class SortSalary implements Comparator<Employee> {
+        @Override
+        public int compare(Employee o1, Employee o2) {
+            if (o1.getSalary() > o2.getSalary()) return 1;
+            else if (o1.getSalary() < o2.getSalary()) return -1;
+            else return 0;
+
+        }
+    }
+
+    
 }

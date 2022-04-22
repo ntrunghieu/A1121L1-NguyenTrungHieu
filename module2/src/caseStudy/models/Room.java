@@ -21,14 +21,7 @@ public class Room extends Facility{
 
     @Override
     public String toString() {
-        return "Room{" +
-                "freeService='" + freeService + '\'' +
-                ", nameService='" + nameService + '\'' +
-                ", areaRoomToUse='" + areaRoomToUse + '\'' +
-                ", rentalFee=" + rentalFee +
-                ", maxPeople=" + maxPeople +
-                ", rentalType='" + rentalType + '\'' +
-                '}';
+        return getNameService()+","+getAreaRoomToUse()+","+getRentalFee()+","+getMaxPeople()+","+getRentalType()+","+getFreeService();
     }
 }
 

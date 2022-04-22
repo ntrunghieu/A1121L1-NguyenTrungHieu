@@ -9,6 +9,7 @@ public class RegexData {
         do {
             if (temp.matches(regex)){
                 check=false;
+                break;
             }else {
                 System.out.print(error);
                 temp=scanner.nextLine();
