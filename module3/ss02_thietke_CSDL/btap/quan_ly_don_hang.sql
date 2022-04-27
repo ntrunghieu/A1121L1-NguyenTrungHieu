@@ -5,7 +5,7 @@ create table nha_cc(
 ma_ncc int auto_increment PRIMARY KEY,
 ten_ncc varchar(100),
 dia_chi varchar(300),
-so_dt varchar(20) unique
+so_dt varchar(20) 
 );
 
 create table so_dt(

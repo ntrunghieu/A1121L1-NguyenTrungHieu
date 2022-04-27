@@ -2,21 +2,21 @@ create database quan_li_dat_hang;
 use quan_li_dat_hang;
 
 create table donvi_khach(
-ma_dv int primary key,
+ma_dv int primary key auto_increment,
 ten_dv varchar(50),
 dia_chi varchar(50),
 sdt int(30)
 );
 
 create table nguoi_dat(
-ma_nd int primary key,
+ma_nd int primary key auto_increment,
 ma_dv int,
 ten_nd varchar(50),
 foreign key(ma_dv) references donvi_khach(ma_dv)
 );
 
 create table hang(
-ma_hang int primary key,
+ma_hang int primary key auto_increment,
 ma_nd int,
 ma_nn int,
 ma_ddg int,
@@ -31,22 +31,22 @@ foreign key(ma_ng) references  nguoi_giao(ma_ng)
 );
 
 create table noi_giao(
-ma_ddg int primary key,
+ma_ddg int primary key auto_increment,
 ten_noi_giao varchar(50)
 );
 
 create table nguoi_giao(
-ma_ng int primary key,
+ma_ng int primary key auto_increment,
 ten_ng varchar(50)
 );
 
 create table nguoi_nhan(
-ma_nn int primary key,
+ma_nn int primary key auto_increment,
 ten_nn varchar(50)
 );
 
 create table dat_hang(
-so_dh int primary key,
+so_dh int primary key auto_increment,
 ma_nd int,
 ma_hang int,
 ngay_dat date,
@@ -57,7 +57,7 @@ foreign key(ma_hang) references hang(ma_hang)
 );
 
 create table giao(
-so_pg int primary key,
+so_pg int primary key auto_increment,
 ma_nn int,
 ma_ng int,
 ma_ddg int,
