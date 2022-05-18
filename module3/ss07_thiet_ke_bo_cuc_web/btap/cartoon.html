@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cartoon</title>
+    <style>
+        body{
+            font-family: Arial, Tahoma;
+            font-size: 12px;
+        }
+
+        #main{
+            width: 1000px;
+            padding: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+         #head{
+
+            background-color: #736d6d;
+            border: 1px solid #CDCDCD;
+             position: fixed;
+             top: 0;
+             right: 0;
+             left: 0;
+        }
+
+        #head-link{
+            margin-top: 98px;
+            height: 30px;
+            width: 100%;
+
+            line-height: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 1px solid #CDCDCD;
+            background-color: #F5F5F5;
+
+            clear: both;
+        }
+
+        #head-link p{
+            list-style-type: none;
+            line-height: 30px;
+            text-align: center;
+            margin: 0px;
+            font-size: 20px;
+        }
+
+        #head-link p a{
+            list-style-type: none;
+            color: black;
+
+        }
+
+        #right{
+            width: 600px;
+            min-height: 400px;
+            border: 1px solid #CDCDCD;
+            float:right;
+            margin-bottom: 5px;
+        }
+
+        #content{
+            width: 380px;
+            min-height: 400px;
+            border: 1px solid #CDCDCD;
+            float:left;
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        #footer {
+            height: 50px;
+            clear: both;
+            border: 1px solid #CDCDCD;
+            background-color: #F8F8FF;
+            top: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+        }
+        .col-md-1 {width: 8.33333%;}
+        .col-md-2 {width: 16.66667%;}
+        .col-md-3 {width: 25%;}
+        .col-md-4 {width: 33.33333%;}
+        .col-md-5 {width: 41.66667%;}
+        .col-md-6 {width: 50%;}
+        .col-md-7 {width: 58.33333%;}
+        .col-md-8 {width: 66.66667%;}
+        .col-md-9 {width: 75%;}
+        .col-md-10 {width: 83.33333%;}
+        .col-md-11 {width: 91.66667%;}
+        .col-md-12 {width: 100%;}
+        header  {
+            height: 100px;
+            color: #831c1c;
+        }
+    </style>
+</head>
+<body>
+<header class="row col-md-12">
+    <div style="height: 100%"><img src="http://images6.fanpop.com/image/photos/40400000/2004-Cartoon-Network-Logo-7-logos-40404371-709-471.png" style="height: 100%"></div>
+</header>
+<!--<div id="head">-->
+<!--    <img style="margin-top: 10px" src="data:image/png;base64,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" height="80px">-->
+<!--</div>-->
+
+<div id="head-link">
+    <p><a href="#">Phim hoạt hình    |       Phim yêu thích       |       Góp ý</a></p>
+</div>
+<div id="main">
+
+    <div id="content">
+        <div style="border: 50px">
+            <iframe width="100%" src="https://www.youtube.com/embed/UY4mIMlF2LA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p style="text-align: center">[S7] Tuyển Tập Doraemon - Phần 46 - Chaien Đến Nhà Ăn Chực, Búi Tóc Kết Giao Bạn Bè </p>
+        </div>
+
+        <div>
+            <iframe width="100%" src="https://www.youtube.com/embed/Ay3d_mNPEno" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </iframe>
+            <p style="text-align: center">Heo Peppa | Bữa tối giáng sinh | Tập đầy đủ | Heo Peppa Tiếng Việt | Phim Hoạt Hình</p>
+        </div>
+
+        <div>
+            <iframe  width="100%" src="https://www.youtube.com/embed/uQGjTGD3DA8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p style="text-align: center">Thám Tử Lừng Danh Conan - Tập 543 - Thuật dịch chuyển tức thời của Kid (Phần 1)-Trọn Bộ Conan</p>
+        </div>
+
+    </div>
+
+    <div id="right">
+        <iframe width="100%" height="400px" src="https://www.youtube.com/embed/CaimKeDcudo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p style="text-align: center">Disney Introduction </p>
+    </div>
+
+</div>
+<div id="footer">
+    <p style="text-align: center">@Design by Hieu Trung Nguyen</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        html{
+            font-family: Arial;
+        }
+
+        nav{
+            width: 100%;
+            position: fixed;
+            height: 50px;
+            background-color: black;
+            top: 0px;
+        }
+
+        footer{
+            width: 100%;
+            position: fixed;
+            height: 50px;
+            background-color: black;
+            bottom: 0px;
+        }
+
+        footer p{
+            line-height: 50px;
+            color: white;
+            text-align: center;
+        }
+
+        section{
+            margin-top: 50px;
+            height: 100vh;
+        }
+
+        nav li{
+            display: inline-block;
+            line-height: 50px;
+            width: 100px;
+            text-align: center;
+        }
+
+        nav li:hover{
+            background-color: grey;
+        }
+
+        nav li a{
+            list-style: none;
+            text-decoration: none;
+            color: white;
+        }
+
+        #menu{
+            width: 15%;
+            height: 100%;
+            float: left;
+            background-color: lightgray;
+        }
+
+        #menu li{
+            line-height: 50px;
+            text-align: center;
+        }
+
+        #menu li a{
+            list-style: none;
+            text-decoration: none;
+            font-size: 25px;
+        }
+
+        #menu li:hover{
+            background-color: red;
+        }
+
+        #content{
+            padding: 20px;
+            width: 70%;
+            height: 100%;
+            float: left;
+            background-color: lightyellow;
+        }
+        h1{
+            font-size: 50px;
+        }
+
+        h1 p{
+            font-size: 20px;
+        }
+
+        #adv{
+            width: 15%;
+            height: 100%;
+            float: left;
+            background-color: lightgray;
+        }
+
+        #adv .adv1{
+            text-align: center;
+            line-height: 50px;
+        }
+
+        #adv .adv1 p:hover{
+            background-color: red;
+        }
+
+        #adv .adv1 p{
+            border: 1px solid lightgray;
+            width: 50%;
+            height: 20%;
+            padding: 10px;
+            margin: 20px auto;
+            border-radius: 5%;
+            box-shadow: 2px 2px 4px grey;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#content">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Project</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<section>
+    <div id="menu">
+        <ul>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <h1>Welcome</h1>
+        <p>This is my demo website <br>
+            I want to practice more and more to improve my ability</p>
+    </div>
+    <div id="adv">
+        <div class="adv1">
+            <p>Liên hệ</p>
+        </div>
+        <div class="adv1">
+            <p>Liên hệ</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p> Design by Trung Hieu</p>
+</footer>
+</body>
+</html>

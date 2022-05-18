@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giao dien fb</title>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .fixed-top {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+
+        }
+
+        .header {
+            background-color: #1c1e21;
+            height: 2px;
+            padding-top: 6px;
+            padding-bottom: 46px;
+
+
+        }
+
+
+        .icon {
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .icon-facebook, .icon-search {
+            margin: 2.8px;
+        }
+        .icon-home{
+            color: white;
+        }
+
+        img#facebook {
+            left: 0px;
+            margin-top: -3px;
+        }
+
+        .header-3 {
+            vertical-align: middle;
+            white-space: nowrap;
+            position: relative;
+
+        }
+
+        .header-3 img#picture {
+            border-radius: 50%;
+            height: 30px;
+            border: none;
+            width: 30px;
+            margin-left: 6px;
+            padding-left: 0px;
+            margin-top: 6px;
+            left: 2px;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+
+
+        }
+
+        .container-1 {
+            width: 280px;
+            vertical-align: middle;
+            white-space: nowrap;
+            position: relative;
+
+        }
+        .container-2 {
+            top: 8px;
+
+            margin-left: 10px;
+        }
+
+
+        .container-1 input#search {
+            margin-top: -10px;
+            width: 250px;
+            height: 40px;
+            background: #2b303b;
+            border-radius: 30px;
+            border: none;
+            font-size: 12pt;
+            color: #63717f;
+            padding-left: 45px;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+
+        }
+
+        .container-4 .doreamon {
+            position: absolute;
+            top: 0;
+            margin-left: 17px;
+            margin-top: 1px;
+            z-index: 1;
+        }
+
+        .container-1 .icon-search {
+            position: absolute;
+            top: 10%;
+            margin-left: 17px;
+            margin-top: -3px;
+            z-index: 1;
+            color: #4f5b66;
+        }
+
+        .container-3 .icon-facebook {
+            position: absolute;
+            z-index: 1;
+            color: white;
+            margin-left: 17px;
+            margin-top: 1px;
+            top: 30%;
+        }
+
+        .color-text {
+            color: white;
+        }
+
+
+        .wrapper {
+            justify-content: center;
+            align-items: center;
+            margin-top: 2px;
+        }
+
+        .swtich-toggle1 {
+            width: 84px;
+            height: 36px;
+            appearance: none;
+            background: #4b4c4d;
+            border-radius: 26px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: inset 0 0 16px rgba(0, 0, 0, .3);
+        }
+
+        .col-md-1 {
+            width: 8.33333%;
+        }
+
+        .col-md-2 {
+            width: 16.66667%;
+        }
+
+        .col-md-3 {
+            width: 25%;
+        }
+
+        .col-md-4 {
+            width: 33.33333%;
+        }
+
+        .col-md-5 {
+            width: 41.66667%;
+        }
+
+        .col-md-6 {
+            width: 50%;
+        }
+
+        .col-md-7 {
+            width: 58.33333%;
+        }
+
+        .col-md-8 {
+            width: 66.66667%;
+        }
+
+        .col-md-9 {
+            width: 75%;
+        }
+
+        .col-md-10 {
+            width: 83.33333%;
+        }
+
+        .col-md-11 {
+            width: 91.66667%;
+        }
+
+        .col-md-12 {
+            width: 100%;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+<header class="fixed-top header">
+    <div class="col-md-12 icon ">
+        <span class="col-md-3 all-sear-fb ">
+            <div class="col-md-12 icon icon-facebook">
+                <img id="facebook" style="width: 42px; height: 42px"
+                     src="https://i.rada.vn/data/image/2020/08/21/Facebook-2020-200.png" alt="error"/>
+
+                <!--                <div class="icon-facebook">-->
+                <!--                <img style="width: 46px; height: 46px"-->
+                <!--                     src="https://i.rada.vn/data/image/2020/08/21/Facebook-2020-200.png"-->
+                <!--                     alt="error"/>-->
+                <!--                </div>-->
+                <!--                <div class="col-md-9 container-2 " style="color: white ; align-items: center ;display: flex">-->
+                <!--                    <div class="container-1">-->
+                <!--                        <span class="icon-search"> <i class="fas fa-search"></i></span>-->
+                <!--                        <input id="search" type="search" placeholder="Tìm kiếm trên Fb">-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <div class="container-1 container-2">
+                    <span class="icon-search"> <i class="fas fa-search"></i></span>
+                    <input id="search" type="search" placeholder="Tìm kiếm trên Fb">
+                </div>
+            </div>
+
+        </span>
+
+
+        <div class="col-md-6 icon ">
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <div class="container-3">
+                    <i class="fas fa-home-alt"></i>
+                    home
+                </div>
+            </div>
+            <div class="col-md-2">
+                watch
+            </div>
+            <div class="col-md-2">
+                store
+            </div>
+            <div class="col-md-2">
+                group
+            </div>
+            <div class="col-md-2">
+                game
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="col-md-3 icon wrapper">
+            <span class="header-3">
+                <div class="col-md-4 container-4" >
+                    <img id="picture" class="doreamon"
+                     src="https://thuthuatnhanh.com/wp-content/uploads/2019/05/hinh-anh-doremon-tha-bong-bay.jpg">
+                    <input type="checkbox" class="switch1 swtich-toggle1" id="light-dark1" >
+
+                </div>
+            </span>
+            <div class="col-md-2">
+                sd
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</header>
+<section id="sidebar-left">
+    <aside>
+
+    </aside>
+</section>
+<section id="sidebar-right">
+
+</section>
+
+<div class="col-md-12" style="justify-content: center"></div>
+<div class=""></div>
+
+<!--<div class="container-fluid">-->
+<!--    <div class="trung">-->
+<!--        <div class="col-3 a row">-->
+<!--            <div class="col-6 row">-->
+<!--                fb icon-->
+<!--            </div>-->
+<!--            <div class="col-6 row">-->
+<!--                seach-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-6 row">B</div>-->
+<!--        <div class="col-3 row">C</div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--        -->
+<!--    </div>-->
+
+<!--    <div class="row"></div>-->
+<!--</div>-->
+
+
+</body>
+
+
+</html>
