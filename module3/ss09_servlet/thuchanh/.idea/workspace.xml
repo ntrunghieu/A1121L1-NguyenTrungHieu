@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6befce8a-394a-4263-8bf3-8873e695142d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servlet_time/src/main/java/Servlet_Time.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servlet_time/src/main/java/Servlet_login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servlet_time/src/main/webapp/result.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/servlet_time/src/main/webapp/sum.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Rules.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/Java_NguyenTrungHieu/nganhang/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/Java_NguyenTrungHieu/nganhang/BankAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/Java_NguyenTrungHieu/nganhang/ListBankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/Java_NguyenTrungHieu/nganhang/ListBankAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/Java_NguyenTrungHieu/nganhang/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/Java_NguyenTrungHieu/nganhang/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/Java_NguyenTrungHieu/nganhang/RegexAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/Java_NguyenTrungHieu/nganhang/RegexAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/baitapngoai/Calculable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/baitapngoai/Calculable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/baitapngoai/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/baitapngoai/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/baitapngoai/MainStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/baitapngoai/MainStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/baitapngoai/MathCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/baitapngoai/MathCalc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/baitapngoai/MyCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/baitapngoai/MyCalc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/baitapngoai/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/baitapngoai/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/baitapngoai/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/baitapngoai/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/baitapngoai/TestShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/baitapngoai/TestShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/caseStudy/utils/RegexData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/caseStudy/utils/RegexData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/out/production/module2/Exam/utils/WriteReadCSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/out/production/module2/Exam/utils/WriteReadCSV.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/out/production/module2/baitapngoai/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/out/production/module2/baitapngoai/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/out/production/module2/caseStudy/utils/RegexData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/out/production/module2/caseStudy/utils/RegexData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/src/ss11_DSA_Stack_Queue/btap/DoiThapPhan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/src/ss11_DSA_Stack_Queue/btap/DoiThapPhan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../test.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="29NDmNR3Sw02j1tTj7GlOpIxVuu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6befce8a-394a-4263-8bf3-8873e695142d" name="Default Changelist" comment="" />
+      <created>1652944807522</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652944807522</updated>
+      <workItem from="1652944808887" duration="192000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="163" y="0" key="#Project_Structure" timestamp="1652944927519">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1652944927519" />
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1652944930340">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1652944930340" />
+    <state x="389" y="105" key="FileChooserDialogImpl" timestamp="1652945001728">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="389" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1652945001728" />
+    <state x="65" y="0" key="new project wizard" timestamp="1652944847704">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1652944847704" />
+  </component>
+</project>

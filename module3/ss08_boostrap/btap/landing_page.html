@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+          crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+        crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+          crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><img src="data:image/png;base64,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" width="100px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Computer<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Computer for business</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Accessories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Shop now</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Support</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div id="nav1">
+  <p><a href="#">Save big on Surface devices. Shop Deals ></a></p>
+</div>
+
+<h1>Microsoft Surface with Windows 11</h1>
+<h3>Surface laptops and 2-in-1s with Windows 11 are designed to fuel your originality, ideas and passions*.</h3>
+
+<div id="sub_nav">
+  <p><a href="#">Explore all productsShop >      Surface Pro 8>     Shop Surface Laptop Studio></a></p>
+</div>
+
+<img src="https://c.s-microsoft.com/en-us/CMSImages/Surface_Hero_Pro8_Accolade_New_Wo_text_V1.jpg?version=71ca2fe0-7c71-6052-7082-3675441c40e9" alt="" height="100% " width="100%">
+
+<footer>
+  <span>Follow this page</span>
+  <img src="https://i.pinimg.com/originals/19/58/36/1958364874dbd3456967a9ba6c753945.jpg" height="50px">
+
+  <img style="float: right" src="https://i.pinimg.com/originals/19/58/36/1958364874dbd3456967a9ba6c753945.jpg" height="50px">
+  <span style="float: right">Shape this page</span>
+
+</footer>
+</body>
+</html>

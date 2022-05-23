@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form login</title>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <style>
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: flex;
+            -ms-flex-align: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .form-signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+        .form-signin .checkbox {
+            font-weight: 400;
+        }
+        .form-signin .form-control {
+            position: relative;
+            box-sizing: border-box;
+            height: auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    </style>
+</head>
+<body class="text-center">
+    <form class="form-signin " >
+        <fieldset>
+
+        <img class="mb-4" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEVWPXz///9JK3TTztvOyddQNXiQg6bX095NMHZDIXCzq8FPM3dGJnJRNnlKLHRHKHJtWozx8PS6s8fg3OWflLFbQ4DFv9CZjq308/ZqVoo/G26DdZ2Je6Gtpb3o5ezb2OJ4Z5RkT4aNgKSnnbjAuct9bphsWIteSIJyYZA0AGc8FGzJw9OAa6GxAAAG4UlEQVR4nO2da3eiOhRAE6wIJuEhKAj1Tadzr////12w9dZam9gxOQcy2R+7VrPYC0gwOQ9Cb5I1eZ3MyVCYJ3XeZLdVyI2/LWoeB0xgX/aPECyIeb24xzAteDQsuQ9ExItUYVj6FcO+zodglV/KDKfhsP06WDj91jBdetiXpwVvmd42HPGhvn/XCD66ZTirsC9MI9Xsq+EqxL4qrYSra8OZXYKt4uyz4cimR/SNanRpmHLs6zEATy8Ml7bMopeI5Yfh1I518BpvejYsbZtlzoTlu6E//E+12zD/zTC1bx49U6Unw8LWW9jexOJkaONKcYZ3hosI+zIMEi1aw9rGtfCMqFtDmx/S7jElWYx9EUaJM9IE2BdhlKAhub1rRQfLidUTTTfVkAT7GgyTkOFs3f8Ztvs5HA6Hw+FwOBwOR09g3oNELUHAxn3damCr0dODHBfNdJX7LzvO46h/sWbehOqjzI6HWvBojG11iTdSX/gPSY/FnPdni9OAYcd69dqX8CVDhi2b537E2JkzbB9XP+zBfTRp2D6sW/xjI7OGlC487Nto2pCWv5CnVeOGlO5xg30ADGmBesIJYUh9zEgDEEO6RVwZYQwpniCUYYYXtgVkSAu0NQPKkNpvOMOaT8EMKdZ0Cmd4QHpO4QxTpEBmOEP6G+dXBqDhFOcxVRhmExmbdSn978+scX4NKwyfQ9lmcMx5OK8PT3cq4vzEUBj66q1Pwbywvktyi/IiPm7YIeLXO95nnChKPYYt4bPSECcSVpshCXYqwxHKh5s+Q8ISheEaZarRaEiiXG6Ik0Ko05BUa7kiynebVkOhmG2Gb0gq+TeOBYbR0XZDJp9rLDAUL7Ybkp1sMAtWixbZYDgZWpoNhWywp6F/tXXMZYPh/MjXPNP8kg22R4mz0WxYywYzpKBA83p4kIyFVLtDr6En281ocPb19RqGsrFwtmk0/7aQvYY93fP+mWH4TV3AEwekoxmdhkw6k2LFnGg0FNIPGqyjJ42GIpLtYWC9hRoNo92Xko6XIB08EW2GLJSt9ZSu8CK/dBiOvTiXb9Bg1lpTGO55ICWK4pD48t0ZtHO1uwyPq6mU5ilTHyGuUYMTAc6AkYuvmDc8IpdaM25YYNeSM2y43qGnlpg1zCvsOHazho1Av4HEpGG5/KcPgkbv4fpAYruf0pbRFj0xyPhqkW1tXw8pncxR30eQyL0DZvlRmNjEDWJ6MFD0ZblEyykBiy/d9nQnSqdiP/dLdYJUcxzQsMRJ0wc0REp+gjTE2fdWxXn/G6pgu5e8UYTsncGo8qhjv1SwiAf+PQU2Rgjbitp29cfxvFErIpyS6jxd8143KsMM/iZqjr5URAljnNBojhjy5KF7lB7B9791x7VFqqQE8AVDtyHhM+mAtID+stFu2HUzkDGBPsXQbxgoZpvhG5JYbvgCPJsaMJSGflG6Ap5rDBiOfemQE+D1woChPIwWPO7EhKE0fg88OMqEYSwLb6N0qV1CiglDxVQD3K7ChGF0q6vvg2P+OSYMA/mHG3A6MIIhcKCpkadUbgi85BsxlEeBWWCoqPpqgWEojTS14T0MpENCNzM0YKjKd34e/IrvKcJNk8EbMrkgdEks/YaeYisKuvGtdkOxU9zCDfBGjXZDxVJB6WzguxiV8ggKeCrVnUMaK89mwDe9tRryrTpwHzyuXZ/hmL/eUw8LvFiUHsNxEMf7+7osgAdkPFSv7b1mG9/tp+r3742nvp2uyWvudWQ/qrvXvxNS3Wx6d8qtG+CvbnjDI0IKFKwhRngiqOHedkOcLDZAw35W/tDJ3PYI2gSpzxVcJLvtFct/W15Xv9zhtfAAMZxEiAlsEIY5ZtoTgOHmFTeV1LRhubc8W/2A3z/PaO+8vA+NHs0Zjmr8+9dhyHBSMPSmee8YMFzP6jjuT7NVrb1kabY4bGMe9OTuvaGhH3DXEHi2Kp6TIOxjP+DHezqfujoHARP9c3M4HA6Hw+FwOByOvwqMahqQzEmCfQmGSQhwshs0oiY4nSHBYDnB6QwJRtAQ5FLLpokzQjHLgZuHUwKdVwuLqFvDBVbneQiiRWto9WPKaWcInO4GCStOhilqJIBRqvRkSH1bbyLrioh0htDpYGCE5bshnaJ2kDCGN6VnQ6zaoGYRS/phiBSdahaeXhii9qoxRPUeYnDubTqzbbYJz9m2/3dvXdmlGK7otSGd2fSgVh/50hcdeEfclhlV8Iswn8sew+nSjnXRW16mS3/uojztRyzZQ7Bw+snpqk906VfDdmSVf5XQ+KUTdlpwzLDqhxARL77k89/q9b2oeRz0MP5KhmBBzOtbVcK+6WaeNXmdDGfDf57UefNNIbv/AE0FcWJQqoe2AAAAAElFTkSuQmCC" alt="" width="72"
+             height="72">
+            <legend><h1 class="h3 mb-3 font-weight-normal">Please sign in</h1> </legend>
+
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+        </fieldset>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
