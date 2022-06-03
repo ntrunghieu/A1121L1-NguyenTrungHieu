@@ -11,12 +11,13 @@
 <html>
 <head>
     <title>Title</title>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
           crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
             crossorigin="anonymous"></script>
@@ -35,12 +36,26 @@
         .link1{
             text-decoration: none;
         }
+        .list{
+            width: 90%;
+            left: 50%;
+            transform: translateX(5%);
+        }
     </style>
 </head>
 <body>
+
+<form action="/products" method="get">
+    <h1>Product search</h1>
+    <input type="text" name="name" placeholder="input name">
+    <br>
+    <input type="submit" name="action" value="search">
+</form>
+
+
 <h1>Danh sách sinh viên</h1>
 <button type="button"><span><a href="/products?action=create" class="link1">Create a new product</a></span></button>
-<form >
+<form class="list">
 <table border="1" style="border-collapse:  collapse" class="table">
     <tr>
         <th scope="col">STT</th>
@@ -62,19 +77,19 @@
             <td>${products.manufacturer}</td>
             <td><button type="button"><a href="/products?action=edit&id=${products.getId()}">Edit</a> </button></td>
             <td><button type="button"><span><a href="/products?action=delete&id=${products.getId()}">delete</a></span></button></td>
-
-
-
-                <%--Lấy thông tin tên lớp--%>
-                <%--            <c:forEach items="${classCGList}" var="cls">--%>
-                <%--                <c:if test="${cls.id==student.classId}">--%>
-                <%--                    <td>${cls.name}</td>--%>
-                <%--                </c:if>--%>
-                <%--            </c:forEach>--%>
-                <%--            <td><c:out value="${student.email}"></c:out></td>--%>
         </tr>
     </c:forEach>
+
 </table>
 </form>
+<br> <br>
+<br>
+
+<div class="list1">
+    <c:if test="${product!=null}">
+        <%@include file="viewProduct.jsp"%>
+    </c:if>
+</div>
 </body>
 </html>
+

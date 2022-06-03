@@ -45,5 +45,6 @@ public class CustomerRepository implements ICustomerRepository {
     @Override
     public void remove(int id) {
         customers.remove(id);
+
     }
 }

@@ -15,6 +15,9 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
     implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.27'
+
 }
 compileJava.options.encoding = 'UTF-8'
 tasks.withType(JavaCompile) {

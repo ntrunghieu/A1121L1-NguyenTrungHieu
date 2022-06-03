@@ -42,4 +42,9 @@ public class ProductServiceImpl implements IProductService {
     public void searchByName(String name) {
 
     }
+
+    @Override
+    public Product findByName(String name) {
+        return productRepository.findByName(name);
+    }
 }

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "ServletProducts", urlPatterns = "/products")
@@ -122,6 +123,9 @@ public class ServletProducts extends HttpServlet {
                     // xóa
                 showFormDelete(request,response);
                     break;
+                case "search":
+                    showFormSearch(request,response);
+                    break;
                 default:
                     // trả về trang list
                     showListProducts(request, response);
@@ -129,6 +133,28 @@ public class ServletProducts extends HttpServlet {
 
             }
         }
+
+    private void showFormSearch(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("name");
+        Product product = this.productService.findByName(name);
+        List<Product> productList = new ArrayList<>();
+        productList.add(product);
+        RequestDispatcher dispatcher;
+        if(product == null){
+            dispatcher = request.getRequestDispatcher("error-404.jsp");
+        } else {
+            request.setAttribute("productList", productList);
+            request.setAttribute("product", product);
+            dispatcher = request.getRequestDispatcher("view/product/productList.jsp");
+        }
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void showFormDelete(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));

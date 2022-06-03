@@ -39,17 +39,21 @@ public class ProductRepositoryImpl implements IProductRepository {
 
     @Override
     public void update(int id, Product product) {
-        products.set(id,product);
+        for (int i = 0; i < products.size(); i++) {
+            if (id == products.get(i).getId()){
+                products.set(id,product);
+            }
+        }
     }
 
     @Override
     public void remove( int id) {
-        products.remove(id);
-//        for (int i = 0; i < products.size(); i++) {
-//            if (id == product.getId()){
-//                products.remove(i);
-//            }
-//        }
+
+        for (int i = 0; i < products.size(); i++) {
+            if (id == products.get(i).getId()){
+                products.remove(i);
+            }
+        }
     }
 
    
@@ -57,5 +61,15 @@ public class ProductRepositoryImpl implements IProductRepository {
     @Override
     public void searchByName(String name) {
 
+    }
+
+    @Override
+    public Product findByName(String name) {
+        for(int i = 0;i<products.size();i++) {
+            if(name.equalsIgnoreCase(products.get(i).getName())) {
+                return products.get(i);
+            }
+        }
+        return null;
     }
 }
