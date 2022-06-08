@@ -57,12 +57,55 @@ public class ServletUsers extends HttpServlet {
                     throwables.printStackTrace();
                 }
                 break;
+            case "search":
+                searchCountry(request,response);
+                break;
+            case "sortList":
+                sort(request,response);
+                break;
             default:
                 // trả về trang list
 
 
         }
     }
+
+    private void sort(HttpServletRequest request, HttpServletResponse response) {
+        String sortType = request.getParameter("sortAttribute").toLowerCase();
+        if (sortType==null){
+            sortType="";
+        }
+        System.out.println(sortType);
+        List<User> users=userDAO.sortListUser(sortType);
+        request.setAttribute("listUser",users);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/listUsers.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void searchCountry(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("nameCountry").toLowerCase();
+        if (name==null){
+            name="";
+        }
+        System.out.println(name);
+        List<User> users=userDAO.searByCountry(name);
+        request.setAttribute("listUser",users);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/listUsers.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, SQLException {
         int id = Integer.parseInt(request.getParameter("id"));
 //        User user=userDAO.getById(id);
@@ -93,15 +136,19 @@ public class ServletUsers extends HttpServlet {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String country = request.getParameter("country");
+        User user=userDAO.setIdUser(name,email,country);
 
-        if (userDAO.accountUser(name,email,country)==null){
-            User user = new User(name,email,country);
-            try {
+        if (userDAO.accountUser(name,email,country)==null && user==null){
+
+                User user1 = new User(name,email,country);
+                try {
 //            userDAO.insertUser(user);
-                userDAO.insertUser(user);
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
+                    userDAO.insertUser(user1);
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+
         }
 
 
@@ -120,11 +167,27 @@ public class ServletUsers extends HttpServlet {
         String email = request.getParameter("email");
         String country = request.getParameter("country");
 
-        User user = new User(id,name,email,country);
 
-        userDAO.updateUser(user);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/edit.jsp");
-        dispatcher.forward(request, response);
+
+            User user1 = new User(id,name,email,country);
+            try {
+                userDAO.updateUser(user1);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+
+
+
+
+
+
+        response.sendRedirect("/users");
+
+//        User user = new User(id,name,email,country);
+//
+//        userDAO.updateUser(user);
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/edit.jsp");
+//        dispatcher.forward(request, response);
 
 
 //        try {
@@ -155,11 +218,41 @@ public class ServletUsers extends HttpServlet {
                     break;
                 case "view":
                     viewUser(request,response);
+                    break;
+                case "search":
+                    searchCountry(request,response);
+                    break;
+                case "permission":
+                    addUserPermission(request, response);
+                    break;
+                case "test-without-tran":
+
+                    testWithoutTran(request, response);
+                    break;
+                case "test-use-tran":
+
+                    testUseTran(request, response);
+                    break;
                 default:
                     listUser(request, response);
                     break;
             }
 
+    }
+
+    private void testUseTran(HttpServletRequest request, HttpServletResponse response) {
+        userDAO.insertUpdateUseTransaction();
+    }
+
+    private void testWithoutTran(HttpServletRequest request, HttpServletResponse response) {
+        userDAO.insertUpdateWithoutTransaction();
+    }
+
+    private void addUserPermission(HttpServletRequest request, HttpServletResponse response) {
+        User user = new User("an","quan.nguyen@codegym.vn","VN");
+        int[] permissions = {1,2,4};
+
+        userDAO.addUserTransaction(user,permissions);
     }
 
     private void viewUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
