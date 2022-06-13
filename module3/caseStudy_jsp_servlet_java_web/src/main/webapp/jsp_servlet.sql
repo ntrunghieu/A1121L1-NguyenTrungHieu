@@ -171,8 +171,8 @@ username varchar(45),
 
 foreign key(position_id) references `position`(position_id),
 foreign key(education_degree_id) references education_degree(education_degree_id),
-foreign key(division_id) references division(division_id),
-foreign key(username) references `user`(username)
+foreign key(division_id) references division(division_id)
+-- foreign key(username) references `user`(username)
 );
 insert into employee1(employee_name,employee_birhday,employee_id_card,employee_salary,
 employee_phone,employee_email,position_id,education_degree_id,division_id,username)
@@ -187,6 +187,8 @@ values
 ("Nguyễn Hà Đông","1989-09-03","234414123","9000000","0642123111","donghanguyen@gmail.com","111 Hùng Vương, Hà Nội",2,4,4),
 ("Tòng Hoang","1982-09-03","256781231","6000000","0245144444","hoangtong@gmail.com","	213 Hàm Nghi, Đà Nẵng",2,4,4),
 ("Nguyễn Công Đạo","	1994-01-08","755434343","8000000","	0988767111","nguyencongdao12@gmail.com","6 Hoà Khánh, Đồng Nai",2,3,2);
+
+
 select * from employee1;
 
 
@@ -198,7 +200,7 @@ insert into `position`(position_name)
 values
 ("Quan ly"),
 ("Nhan vien");
-
+select * from  `position`;
 
 create table education_degree(
 education_degree_id int auto_increment primary key,
@@ -229,11 +231,20 @@ create table `user`(
 username varchar(45),
 `password` varchar(45)
 );
-
+insert into `user`
+values
+("hieu","123");
+select * from `user`;
 create table `role`(
 role_id int auto_increment primary key,
-prole_name varchar(45)
+role_name varchar(45)
 );
+select * from `role`;
+insert into `role`(role_name) 
+values
+("ADMIN"),
+("USER");
+
 
 create table user_role(
 role_id int ,
@@ -242,5 +253,9 @@ primary key (role_id, username),
 foreign key(role_id) references `role`(role_id),
 foreign key(username) references `user`(username)
 );
+insert into user_role
+values
+(1,"hieu");
 
-
+select * from user_role;
+ 

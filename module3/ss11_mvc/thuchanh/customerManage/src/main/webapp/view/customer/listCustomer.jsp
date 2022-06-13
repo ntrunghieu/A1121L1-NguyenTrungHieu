@@ -14,6 +14,30 @@
     <title>Title</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<%--    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css" />--%>
+<%--    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css" />--%>
+
+
+<%--    <link rel="stylesheet" href="../bootstrap-4.6.1-dist/bootstrap-4.6.1-dist/css/bootstrap-grid.min.css">--%>
+<%--    <link rel="stylesheet" href="../bootstrap-4.6.1-dist/bootstrap-4.6.1-dist/css/bootstrap.min.css">--%>
+
+
+<%--    <link rel="stylesheet" href="../bootstrap4.6.0/css/bootstrap-grid.min.css">--%>
+<%--    <link rel="stylesheet" href="../bootstrap4.6.0/css/bootstrap.min.css">--%>
+
+
+<%--    <script src="../bootstrap-4.6.1-dist/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>--%>
+<%--    <script src="../jquery/jquery-3.5.1.min.js"></script>--%>
+<%--    <link rel="stylesheet" href="../bootstrap-4.6.1-dist/bootstrap-4.6.1-dist/css/bootstrap.min.css">--%>
+<%--    <link rel="stylesheet" href="../bootstrap-4.6.1-dist/bootstrap-4.6.1-dist/css/bootstrap-grid.min.css">--%>
+<%--    <script src="../bootstrap-4.6.1-dist/bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>--%>
+
+<%--    <script src="bootstrap4.6.0/js/bootstrap.min.js"></script>--%>
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script>
@@ -56,7 +80,7 @@
 <body>
 
 <%--  phan header cua trang--%>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
     <a class="navbar-brand" href="/customers">CodeGym</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,7 +125,7 @@
 
 
 <%--<button type="button"><span><a href="/customers?action=create" class="link1">Create a new customer</a></span></button>--%>
-<table border="1" style="border-collapse:  collapse" class="table table-area">
+<table id="tableStudent" border="1" style="border-collapse:  collapse" class="table table-area">
     <tr>
         <th scope="col">STT</th>
         <th scope="col">Id</th>
@@ -184,7 +208,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="idCus2"></label>
-                        <input type="text" class="form-control" id="idCus2" placeholder="Your ID" name="id">
+                        <input  type="text" class="form-control" id="idCus2" placeholder="Your ID" name="id">
                     </div>
 
                     <div class="form-group">
@@ -257,7 +281,22 @@
 </div>
 </body>
 </html>
+
+<%--<script src="../jquery/jquery-3.5.1.min.js"></script>--%>
+<%--<script src="../datatables/js/jquery.dataTables.min.js"></script>--%>
+<%--<script src="../datatables/js/dataTables.bootstrap4.min.js"></script>--%>
 <script>
+
+    $(document).ready(function() {
+        $('#tableStudent').dataTable( {
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        } );
+    } );
+
+
+
     function showDelete(id, name) {
         document.getElementById("idCus1").value = id;
         document.getElementById("nameCus1").innerText = name;

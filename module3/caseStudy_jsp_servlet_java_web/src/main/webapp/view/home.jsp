@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css" />
 </head>
 <body>
-
+<%@include file="header.jsp"%>
 
 
 
