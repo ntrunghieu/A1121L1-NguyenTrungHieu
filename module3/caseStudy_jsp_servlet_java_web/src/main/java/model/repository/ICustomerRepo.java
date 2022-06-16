@@ -35,7 +35,7 @@ public interface ICustomerRepo {
 
     public Customer getById(int id);
 
-    public List<Customer> searByCountry(String name);
+    public List<Customer> searByName(String name);
 
     public List<Customer> sortListCustomer(String name);
 }

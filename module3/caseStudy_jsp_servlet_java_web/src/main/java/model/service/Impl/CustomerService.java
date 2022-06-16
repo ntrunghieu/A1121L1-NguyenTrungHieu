@@ -64,8 +64,8 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public List<Customer> searByCountry(String name) {
-        return customerRepo.searByCountry(name);
+    public List<Customer> searByName(String name) {
+        return customerRepo.searByName(name);
     }
 
     @Override

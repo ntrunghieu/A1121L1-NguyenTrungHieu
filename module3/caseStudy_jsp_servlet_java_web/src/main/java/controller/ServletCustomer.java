@@ -45,10 +45,31 @@ public class ServletCustomer extends HttpServlet {
                     throwables.printStackTrace();
                 }
                 break;
+            case "search":
+                searchName(request,response);
             default:
                 // trả về trang list
                 break;
 
+        }
+    }
+
+    private void searchName(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("nameSearch").toLowerCase();
+        if (name==null){
+            name="";
+        }
+        System.out.println(name);
+        List<Customer> customers=customerService.searByName(name);
+        request.setAttribute("nameSearch",name);
+        request.setAttribute("listCustomer",customers);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/listCustomer.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -128,6 +149,7 @@ public class ServletCustomer extends HttpServlet {
             }
         }
         String customer_name = request.getParameter("name");
+//        while ()
         String customer_birthday = request.getParameter("birthday");
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         Date bod = null;
@@ -225,8 +247,10 @@ public class ServletCustomer extends HttpServlet {
 
     private void showListCustomer(HttpServletRequest request, HttpServletResponse response) {
         List<Customer> customers = customerService.selectAllCustomers();
+        List<CustomerType> customerTypeList = customerService.selectAllTypeCustomers();
 
         request.setAttribute("listCustomer", customers);
+        request.setAttribute("customerTypeList", customerTypeList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/listCustomer.jsp");
         try {
             dispatcher.forward(request, response);

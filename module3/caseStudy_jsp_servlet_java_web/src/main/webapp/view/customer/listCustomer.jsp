@@ -28,7 +28,7 @@
 
         .table-area {
             width: 50%;
-            margin-top: 60px;
+            margin-top: 10px;
             left: 50%;
             transform: translateX(7%);
         }
@@ -58,30 +58,37 @@
         <tr>
             <th scope="row">${status.count}</th>
             <td>${cus.customerId}</td>
-            <c:if test="${cus.customerTypeId==1}">
-                <td>Diamond</td>
-            </c:if>
-            <c:if test="${cus.customerTypeId==2}">
-                <td>Platinium</td>
-            </c:if>
-            <c:if test="${cus.customerTypeId==3}">
-                <td>Gold</td>
-            </c:if>
-            <c:if test="${cus.customerTypeId==4}">
-                <td>Silver</td>
-            </c:if>
-            <c:if test="${cus.customerTypeId==5}">
-                <td>Member</td>
-            </c:if>
+            <td>
+                <c:forEach items="${customerTypeList}" var="typeCus">
+                    <c:if test="${cus.customerTypeId==typeCus.customerTypeId}">${typeCus.customerTypeName}</c:if>
+                </c:forEach>
+            </td>
+
+
+<%--            <c:if test="${cus.customerTypeId==1}">--%>
+<%--                <td>Diamond</td>--%>
+<%--            </c:if>--%>
+<%--            <c:if test="${cus.customerTypeId==2}">--%>
+<%--                <td>Platinium</td>--%>
+<%--            </c:if>--%>
+<%--            <c:if test="${cus.customerTypeId==3}">--%>
+<%--                <td>Gold</td>--%>
+<%--            </c:if>--%>
+<%--            <c:if test="${cus.customerTypeId==4}">--%>
+<%--                <td>Silver</td>--%>
+<%--            </c:if>--%>
+<%--            <c:if test="${cus.customerTypeId==5}">--%>
+<%--                <td>Member</td>--%>
+<%--            </c:if>--%>
             <td>${cus.customerName}</td>
             <td>${cus.customerBirthday}</td>
-            <td>${cus.customerGender}</td>
-<%--            <c:if test="${cus.gender==0}">--%>
-<%--                <td>Male</td>--%>
-<%--            </c:if>--%>
-<%--            <c:if test="${cus.gender==1}">--%>
-<%--                <td>Female</td>--%>
-<%--            </c:if>--%>
+<%--            <td>${cus.customerGender}</td>--%>
+            <c:if test="${cus.customerGender==1}">
+                <td>Male</td>
+            </c:if>
+            <c:if test="${cus.customerGender==0}">
+                <td>Female</td>
+            </c:if>
             <td>${cus.customerIdCard}</td>
             <td>${cus.customerPhone}</td>
             <td>${cus.customerEmail}</td>
@@ -89,7 +96,9 @@
             <td>
 <%--                onclick="showEdit('${cus.id}',${cus.typeId},'${cus.name}','${cus.birthday}','${cus.gender}',--%>
 <%--                '${cus.idCard}','${cus.phone}','${cus.email}','${cus.address}')"--%>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editForm"><a href="/admin?action=edit&id=${cus.getCustomerId()}">Edit</a></button>
+                <button id="edit"  type="button" class="btn btn-primary" data-toggle="modal" data-target="#editForm">
+                    <a style="color: white;text-decoration: none" href="/admin?action=edit&id=${cus.getCustomerId()}">Edit</a>
+                </button>
             </td>
             <td>
 <%--                onclick="showDelete('${cus.customerId}','${cus.customerName}')"--%>
@@ -297,6 +306,8 @@
 
 
 </body>
+<%@include file="../footer.jsp" %>
+
 </html>
 <script src="jquery/jquery-3.5.1.min.js"></script>
 <script src="datatables/js/jquery.dataTables.min.js"></script>

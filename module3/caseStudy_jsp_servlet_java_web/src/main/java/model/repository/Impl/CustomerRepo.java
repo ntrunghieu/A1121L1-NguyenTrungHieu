@@ -32,7 +32,7 @@ public class CustomerRepo implements ICustomerRepo {
     private static final String DELETE_CUSTOMER_SQL = "delete from customer where customer_id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
     private static final String DELETE_TRUNCATE_TABLE = "truncate table users";
-    private static final String SEARCH_BY_COUNTRY = "select * from users where country like ? ;";
+    private static final String SEARCH_BY_NAME = "select * from customer where customer_name like ? ;";
     private static final String SORT_USERS_SQL_NAME = "select * from users order by name ASC;";
     private static final String SORT_USERS_SQL_EMAIL = "select * from users order by email ASC;";
     private static final String SORT_USERS_SQL_COUNTRY = "select * from users order by country ASC;";
@@ -261,8 +261,30 @@ public class CustomerRepo implements ICustomerRepo {
     }
 
     @Override
-    public List<Customer> searByCountry(String name) {
-        return null;
+    public List<Customer> searByName(String name){
+        List<Customer> customerList = new ArrayList<>();
+        //cach 1
+        try (Connection connection = baseRepo.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_BY_NAME)) {
+            preparedStatement.setString(1, "%" + name + "%");
+            System.out.println(SEARCH_BY_NAME);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int idCus = rs.getInt("customer_id");
+                int typeId = rs.getInt("customer_type_id");
+                String name1 = rs.getString("customer_name");
+                java.util.Date birthday = rs.getDate("customer_birhday");
+                int gender = rs.getInt("customer_gender");
+                String idCard = rs.getString("customer_id_card");
+                String phone = rs.getString("customer_phone");
+                String email = rs.getString("customer_email");
+                String address = rs.getString("customer_address");
+                customerList.add(new Customer(idCus, typeId, name1, birthday,gender,idCard,phone,email,address));
+            }
+            connection.close();
+        } catch (SQLException x) {
+            x.printStackTrace();
+        }
+        return customerList;
     }
 
     @Override

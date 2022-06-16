@@ -24,7 +24,7 @@ values
 (	3,"	Nguyễn Thị Hào	","1999-04-08",	0,965656433,	0763212345	,"haohao99@gmail.com","	55 Nguyễn Văn Linh, Kon Tum"),
 (	1,"	Trần Đại Danh	","1994-07-01",1,432341235,	0643343433	,"danhhai99@gmail.com","24 Lý Thường Kiệt, Quảng Ngãi"),
 (	2,"	Nguyễn Tâm Đắc	","1989-07-01",1,344343432,	0987654321,"dactam@gmail.com","	22 Ngô Quyền, Đà Nẵng");
-select * from customer;
+select  substr(customer_name,3,5) as name from customer;
 
 
 
