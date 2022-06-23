@@ -6,6 +6,8 @@ import model.bean.Sach;
 import model.bean.TheMuonSach;
 import model.repository.Impl.SachRepositoryImpl;
 import model.repository.SachRepository;
+import model.service.Impl.SachServiceImpl;
+import model.service.SachService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,10 +21,12 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "controller.ServletBook", urlPatterns = "/book")
 public class ServletBook extends HttpServlet {
     private SachRepository sachRepository = new SachRepositoryImpl();
+    private SachService sachService = new SachServiceImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -68,7 +72,7 @@ public class ServletBook extends HttpServlet {
     }
 
     private void muon(HttpServletRequest request, HttpServletResponse response) throws ParseException, SQLException, IOException, ServletException {
-        String idSach = request.getParameter("id");
+        String idSach = request.getParameter("idSachMuon");
         String id = request.getParameter("idBook");
         String idSachMuon = request.getParameter("idSachMuon");
         String tenSach = request.getParameter("nameBook");
@@ -82,23 +86,29 @@ public class ServletBook extends HttpServlet {
         Date bod2;
         bod1 = formatter.parse(dayIn);
         bod2 = formatter.parse(dayOut);
-//        TheMuonSach theMuonSach = new TheMuonSach(id, idSachMuon, tenHocSinh, trangThai, bod1, bod2);
+
+        TheMuonSach theMuonSach = new TheMuonSach(id, idSachMuon, tenHocSinh, trangThai, bod1, bod2);
+        Map<String, String> errorMap = sachService.regexMaMuonSach(theMuonSach);
+
 //        boolean checkTheMuonSach = sachRepository.muonSach(theMuonSach);
-        if (bod2.after(bod1)) {
+        if (bod2.after(bod1) && !errorMap.isEmpty() ) {
             SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd");
             Date bod3;
             Date bod4;
             bod3 = formatter1.parse(dayIn);
             bod4 = formatter1.parse(dayOut);
-            TheMuonSach theMuonSach = new TheMuonSach(id, idSachMuon, tenHocSinh, trangThai, bod3, bod4);
-            boolean checkTheMuonSach = sachRepository.muonSach(theMuonSach);
-            if (checkTheMuonSach)
-            response.sendRedirect("/book");
+            TheMuonSach theMuonSach1 = new TheMuonSach(id, idSachMuon, tenHocSinh, trangThai, bod3, bod4);
+            boolean checkTheMuonSach = sachRepository.muonSach(theMuonSach1);
+            if (checkTheMuonSach ){
+                response.sendRedirect("/book");
+            }
+
 
         } else {
-
+//            Map<String, String> errorMap = sachService.regexMaMuonSach(theMuonSach);
             List<HocSinh> hocSinhList = sachRepository.selectAllStudents();
-
+//            List<TheMuonSach> theMuonSachList =
+            request.setAttribute("errorMap",errorMap);
 //            Sach sach = sachRepository.getById(idSach);
             request.setAttribute("idBook", id);
             request.setAttribute("sach", sach);

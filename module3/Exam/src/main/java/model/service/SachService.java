@@ -7,12 +7,16 @@ import model.bean.TheMuonSach;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 public interface SachService {
 
     public List<Sach> selectAllBooks();
     public List<HocSinh> selectAllStudents();
-
+    public List<TheMuonSach> selectAllTagBorrowBook();
+    public Map<String, String> regexMaSach(Sach sach);
+    public Map<String, String> regexMaHS(HocSinh hocSinh);
+    public Map<String, String> regexMaMuonSach(TheMuonSach theMuonSach);
     Sach sach();
 
     boolean insertBook(Sach sach) throws SQLException;

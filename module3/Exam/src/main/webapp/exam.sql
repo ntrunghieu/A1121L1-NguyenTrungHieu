@@ -79,16 +79,20 @@ insert into sach value
 ('S-003','Dế mèn','Tô Hoài', 'dế mèn', 15);
 select * from sach;
 insert into the_muon_sach value
-('MS-001','S-001','HS-001','2020/01/11','2020/08/08' );
+('MS-001','S-001','HS-001',1,'2020/01/11','2020/08/08' );
 -- insert into hoc_sinh value;
+select * from the_muon_sach;
 
 create procedure xoa_sach (
 id_sach varchar(25)
+)
 begin
 update sach
-set so_luong = so_luong - 1,
+set so_luong = so_luong - 1
 where sach.ma_sach = id_sach
 end //
 // DELIMITER ;
-
+update sach
+set so_luong = so_luong + 1
+where sach.ma_sach = 'S-001';
 call xoa_sach('S-001');

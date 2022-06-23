@@ -164,6 +164,9 @@
             top: 0;
             z-index: 100;
         }
+        nav div#navbarSupportedContent{
+            margin-right: 100px;
+        }
     </style>
 </head>
 <body>
@@ -187,43 +190,43 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto margin-navbar ">
+    <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul style="margin-left: 200px" class="navbar-nav mr-auto margin-navbar ">
             <li class="nav-item active">
-                <a class="nav-link" href="/book">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/product">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/muon">Danh sách mượn</a>
+                <a class="nav-link" href="/product">Danh sách sản phẩm</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/hocsinh">Quản lý học sinh</a>
+                <a class="nav-link" href="/product">Quản lý sản phẩm</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/sach">Quản lý sách</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contract</a>
-            </li>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link" href="/book">Quản lý sách</a>--%>
+<%--            </li>--%>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link" href="#">Contract</a>--%>
+<%--            </li>--%>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-expanded="false">
-                    Sort
+                    Sắp xếp
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Name</a>
-                    <a class="dropdown-item" href="#">Email</a>
+                    <a class="dropdown-item" href="#">Tên</a>
+                    <a class="dropdown-item" href="#">Số lượng</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Address</a>
+                    <a class="dropdown-item" href="#">Màu</a>
                 </div>
             </li>
         </ul>
-        <form action="/admin?action=search" class="form-inline my-2 my-lg-0" method="post">
+        <form action="/product?action=search" class="form-inline my-2 my-lg-0" method="post">
             <input value="${nameSearch}" name="nameSearch" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button name="action" value="search" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
         <%--            onclick="showCreate('${cus.id}','${cus.typeId}','${cus.name}','${cus.birthday}','${cus.gender}','${!cus.gender}',--%>
         <%--            '${cus.idCard}','${cus.phone}','${cus.email}','${cus.address}')"--%>
-        <form action="/admin?action=create" class="form-inline my-2 my-lg-0" method="get">
+        <form action="/product?action=create" class="form-inline my-2 my-lg-0" method="get">
             <input hidden name="action" value="create">
             <button type="submit" class="btn btn-outline-success my-2 my-sm-0 btn-create"
                     data-toggle="modal" data-target="#createForm">Create</button>

@@ -7,7 +7,10 @@ import java.util.regex.Pattern;
 public class Validate {
     private static Pattern pattern;
     private static Matcher matcher;
-    private static final String REGEX_PATIENT_ID = "^(BN-)\\d{3}$";
+    private static final String REGEX_PATIENT_ID = " ^(BN-)\\d{3}$ " ;
+    private static final String REGEX_BOOK_ID = " ^(S-)\\d{3}$ ";
+    private static final String REGEX_STUDENT_ID = " ^(HS-)\\d{3}$ ";
+    private static final String REGEX_BORROW_BOOK_ID = " ^(MS-)\\d{3}$ ";
     private static final String REGEX_PHONE = "^(09|\\(84\\)\\+9)[01]\\d{7}$";
     private static final String REGEX_DATE = "^\\d{4}(\\/|-)\\d{2}(\\/|-)\\d{2}$";
     private static final String REGEX_ID_CARD = "^\\d{9}|\\d{12}$";
@@ -15,14 +18,34 @@ public class Validate {
     private static final String REGEX_DATE1 =" ^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$ ";
 
     private static final String REGEX_PHONE1 = " ^(((\\+|)84)|0)(3|5|7|8|9)+([0-9]{8})$ ";
-    public static boolean regexId(String phone)  {
-        pattern = Pattern.compile(REGEX_PHONE1);
-        matcher = pattern.matcher(phone);
+    public static boolean regexIdBook(String id)  {
+        pattern = Pattern.compile(REGEX_BOOK_ID);
+        matcher = pattern.matcher(id);
         if (!matcher.find()) {
             return true;
         }
         return false;
     }
+
+    public static boolean regexIdStudent(String id)  {
+        pattern = Pattern.compile(REGEX_STUDENT_ID);
+        matcher = pattern.matcher(id);
+        if (!matcher.find()) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean regexIdBorrowBook(String id)  {
+        pattern = Pattern.compile(REGEX_BORROW_BOOK_ID);
+        matcher = pattern.matcher(id);
+        if (!matcher.find()) {
+            return true;
+        }
+        return false;
+    }
+
+
 
     public static boolean regexEmail(String idCard)  {
         pattern = Pattern.compile(REGEX_EMAIL);

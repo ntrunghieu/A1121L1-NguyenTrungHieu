@@ -48,7 +48,7 @@ public class ServletLogin extends HttpServlet {
                 response.addCookie(cookiePassword);
             }
             // đăng nhập thành công
-            response.sendRedirect("/book");
+            response.sendRedirect("/product");
         } else {
             // đăng nhập thấ bại
             messLogin = "Đăng nhập thất bại";

@@ -10,12 +10,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class SachRepositoryImpl implements SachRepository {
     private static final String SELECT_ALL_BOOK =" select * from sach ; ";
     private static final String SELECT_ALL_STUDENT =" select * from hoc_sinh ; ";
+    private static final String SELECT_ALL_TAG_BORROW_BOOK =" select * from the_muon_sach ; ";
     private static final String DELETE_QUANTITY_BOOK = " update sach\n" +
             "  set so_luong = so_luong - 1\n " +
             " where sach.ma_sach = 'S-001' ; ";
@@ -25,6 +27,7 @@ public class SachRepositoryImpl implements SachRepository {
 //            " WHERE " +
 //            "patient_id=? ";
     private final static String INSERT_THE_MUON_SACH = " INSERT INTO the_muon_sach VALUE(?,?,?,?,?,?) ";
+    private final static String INSERT_HOC_SINH = " INSERT INTO hoc_sinh VALUE(?,?,?) ";
 
     public BaseRepository baseRepository=new BaseRepository();
     @Override
@@ -76,6 +79,46 @@ public class SachRepositoryImpl implements SachRepository {
     }
 
     @Override
+    public List<TheMuonSach> selectAllTagBorrowBook() {
+        List<TheMuonSach> theMuonSachList=new ArrayList<>();
+        try (Connection connection = baseRepository.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_TAG_BORROW_BOOK);) {
+//            statement.execute(DELETE_TRUNCATE_TABLE);
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+
+                String maMuonSach = rs.getString("ma_muon_sach");
+                String maSach = rs.getString("ma_sach");
+                String maHs = rs.getString("ma_hs");
+                int trangThai = rs.getInt("trang_thai");
+
+//                String ngayMuon = rs.getString("ngay_muon");
+//                String ngayTra = rs.getString("ngay_tra");
+
+                java.sql.Date ngayMuon = rs.getDate("ngay_muon");
+                java.sql.Date ngayTra = rs.getDate("ngay_tra");
+
+//                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+//                Date bod = null;
+//                Date bod1 = null;
+//                try {
+//                    bod = formatter.parse(ngayMuon);
+//                    bod1 = formatter.parse(ngayTra);
+//                } catch (ParseException e) {
+//                    e.printStackTrace();
+//                }
+
+                theMuonSachList.add(new TheMuonSach(maMuonSach,maSach,maHs,trangThai,ngayMuon,ngayTra));
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return theMuonSachList;
+    }
+
+    @Override
     public Sach sach() {
         return null;
     }
@@ -87,7 +130,16 @@ public class SachRepositoryImpl implements SachRepository {
 
     @Override
     public boolean insertStudent(HocSinh hocSinh) throws SQLException {
-        return false;
+        Connection connection = baseRepository.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(INSERT_HOC_SINH);
+
+        preparedStatement.setString(1,hocSinh.getMaHS());
+        preparedStatement.setString(2,hocSinh.getHoTen());
+        preparedStatement.setString(3, hocSinh.getLop());
+        boolean check = preparedStatement.executeUpdate()>0;
+        connection.close();
+
+        return check;
     }
 
     @Override
@@ -120,6 +172,8 @@ public class SachRepositoryImpl implements SachRepository {
 
         return check;
     }
+
+
 
     @Override
     public boolean updateBook(Sach sach) throws SQLException {

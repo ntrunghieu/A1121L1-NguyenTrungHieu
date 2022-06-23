@@ -7,9 +7,12 @@ import model.bean.TheMuonSach;
 import model.repository.Impl.SachRepositoryImpl;
 import model.repository.SachRepository;
 import model.service.SachService;
+import utils.Validate;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SachServiceImpl implements SachService {
     private SachRepository sachRepository=new SachRepositoryImpl();
@@ -24,6 +27,51 @@ public class SachServiceImpl implements SachService {
     }
 
     @Override
+    public List<TheMuonSach> selectAllTagBorrowBook() {
+        return sachRepository.selectAllTagBorrowBook();
+    }
+
+
+    @Override
+    public Map<String, String> regexMaHS(HocSinh hocSinh) {
+        Map<String, String> errorMap = new HashMap<>();
+        if (Validate.regexIdStudent(hocSinh.getMaHS())){
+            errorMap.put("maHS", "Mã không đúng (HS-XXX. X là số).");
+        }
+        return errorMap;
+    }
+
+    @Override
+    public Map<String, String> regexMaMuonSach(TheMuonSach theMuonSach) {
+        Map<String, String> errorMap = new HashMap<>();
+        if (Validate.regexIdBook(theMuonSach.getMaMuon())){
+            errorMap.put("maMuonSach", "Mã không đúng (MS-XXX. X là số).");
+        }else {
+            errorMap.put("maMuonSach", " ");
+        }
+
+
+//        if (errorMap.isEmpty()){
+//            try {
+//                sachRepository.muonSach(theMuonSach);
+//            } catch (SQLException throwables) {
+//                throwables.printStackTrace();
+//            }
+//        }
+        return errorMap;
+    }
+
+    @Override
+    public Map<String, String> regexMaSach(Sach sach) {
+            Map<String, String> errorMap = new HashMap<>();
+            if (Validate.regexIdBook(sach.getMaSach())){
+                errorMap.put("maSach", "Mã không đúng (S-XXX. X là số).");
+            }
+
+            return errorMap;
+    }
+
+    @Override
     public Sach sach() {
         return null;
     }
@@ -35,7 +83,7 @@ public class SachServiceImpl implements SachService {
 
     @Override
     public boolean insertStudent(HocSinh hocSinh) throws SQLException {
-        return false;
+        return sachRepository.insertStudent(hocSinh);
     }
 
     @Override

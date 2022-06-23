@@ -4,11 +4,12 @@ import model.bean.*;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 public interface SachRepository {
     public List<Sach> selectAllBooks();
     public List<HocSinh> selectAllStudents();
-
+    public List<TheMuonSach> selectAllTagBorrowBook();
     Sach sach();
 
     boolean insertBook(Sach sach) throws SQLException;

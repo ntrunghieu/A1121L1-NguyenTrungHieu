@@ -1,4 +1,7 @@
-package baikiemtra.Java_NguyenThaiDuong.controller;
+package baikiemtra.controller;
+
+import Baikiemtra_NguyenThaiDuong.model.service.Impl.BankAccountService;
+import Java_NguyenTrungHieu.nganhang.BankAccount;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +9,34 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner scanner = new Scanner(System.in);
-    private static ListBankAccount listBankAccount = new Java_NguyenTrungHieu.nganhang.ListBankAccount();
+    private static BankAccountService bankAccountService = new BankAccountService();
+    private static  List<BankAccount> bankAccountList=new ArrayList<>();
+    static {
+
+        Double soDu1=(Math.random()) * ((2000-1000) + 1);
+        Double nap;
+        Double rut=(Math.random()) * ((2000-1000) + 1) ;
+        BankAccount bankAccount1=new BankAccount("khai", "3234235423",22.0);
+        bankAccountList.add(bankAccount1);
+        BankAccount bankAccount2=new BankAccount("hieu", "2533123423",1.0);
+        bankAccountList.add(bankAccount2);
+        BankAccount bankAccount3=new BankAccount("quynh", "1114123423",1.0);
+        bankAccountList.add(bankAccount3);
+        BankAccount bankAccount4=new BankAccount("hung", "2456123423",1.0);
+        bankAccountList.add(bankAccount4);
+        Double sum = bankAccount1.getSoDu();
+        if (sum == null) {
+            System.out.println("so tien hien tai la 0");
+        } else {
+            System.out.println("So tien trong TK: " + bankAccount1.getSoDu());
+            System.out.println("So tien nap: ");
+            nap=(Math.random()) * ((200-100) + 1) + 500;
+
+            sum += nap;
+            bankAccount1.setSoDu(sum);
+            System.out.println("nap thanh cong");
+        }
+    }
 
     public static void main(String[] args) {
 //        List<BankAccount> bankAccountList=new ArrayList<>();
@@ -22,8 +52,8 @@ public class Main {
 //        BankAccount bankAccount4=new BankAccount("hung", "2456123423",1.0);
 //        bankAccountList.add(bankAccount4);
 //        Double sum = bankAccount1.getSoDu();
-
-
+//
+//
 //        if (sum == null) {
 //            System.out.println("so tien hien tai la 0");
 //        } else {
@@ -64,19 +94,19 @@ public class Main {
             }
             switch (choice) {
                 case 1:
-                    listBankAccount.nhap();
+                    bankAccountService.nhap();
                     break;
                 case 2:
-                    listBankAccount.xuat();
+                    bankAccountService.xuat();
                     break;
                 case 3:
-                    listBankAccount.nap();
+                    bankAccountService.nap();
                     break;
                 case 4:
-                    listBankAccount.rut();
+                    bankAccountService.rut();
                     break;
                 case 5:
-                    listBankAccount.tinhTong();
+                    bankAccountService.tinhTong();
                     break;
                 case 6:
                     System.exit(5);

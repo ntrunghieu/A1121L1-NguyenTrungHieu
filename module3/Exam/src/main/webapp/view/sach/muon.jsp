@@ -54,13 +54,19 @@
 </head>
 <body>
 <%@include file="../header.jsp" %>
-<form id="createForm1" action="/book?action=muon&id=${id}" method="post">
+<form id="createForm1" action="/book?action=muon" method="post">
     <table>
         <tr>
             <th style="text-align: center" colspan="2">Mượn sách</th>
         </tr>
-        <tr><td>Mã mượn sách</td>
-            <td><input type="text"  name="idBook" value="${idBook}"></td>
+
+        <tr>
+            <td>Mã mượn sách</td>
+            <td>
+                <input type="text"  name="idBook" value="${idBook}">
+                <p class="text-danger">${errorMap.maMuonSach}</p>
+            </td>
+
         </tr>
         <tr>
             <td>Tên sách</td>

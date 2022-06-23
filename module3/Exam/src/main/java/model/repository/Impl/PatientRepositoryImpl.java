@@ -185,7 +185,7 @@ public class PatientRepositoryImpl implements PatientRepository {
                 String name = rs.getString("name");
 //                Date dateIn = rs.getString("day_in");
                 java.sql.Date dateIn = rs.getDate("day_in");
-                java.util.Date dateOut = rs.getDate("date_out");
+                java.sql.Date dateOut = rs.getDate("date_out");
                 String reason = rs.getString("reason");
                 return new Patient(idPatient,name,dateIn,dateOut,reason);
             }

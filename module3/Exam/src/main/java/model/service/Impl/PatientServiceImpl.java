@@ -39,7 +39,7 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public Map<String, String> creatNewPatient(Patient patient) {
         Map<String, String> errorMap = new HashMap<>();
-        if (Validate.regexId(patient.getPatient_id())){
+        if (Validate.regexIdStudent(patient.getPatient_id())){
             errorMap.put("idPatient", "ID Patient invalid ( BN-XXX. X is number ).");
         }
 

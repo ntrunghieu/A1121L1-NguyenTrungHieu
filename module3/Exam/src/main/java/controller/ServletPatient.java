@@ -139,6 +139,8 @@ public class ServletPatient extends HttpServlet {
         String patientName = request.getParameter("name");
         String dayIn = request.getParameter("dayIn");
         String dayOut = request.getParameter("dayOut");
+
+
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         Date bod = null;
         Date bod1 = null;
