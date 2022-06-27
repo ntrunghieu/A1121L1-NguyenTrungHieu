@@ -1,13 +1,17 @@
 package service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import service.IDictionaryService;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@Service
+
 public class DictionaryServiceImpl implements IDictionaryService {
+
     @Override
     public String translate(String search) {
         Map<String, String> dic = new HashMap<>();
