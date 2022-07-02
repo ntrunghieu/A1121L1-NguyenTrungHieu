@@ -1,0 +1,31 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="customerManagementThymeleaf.main:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/customerManagementThymeleaf_main_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="customerManagementThymeleaf.main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-webmvc:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-web:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-beans:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-core:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.thymeleaf:thymeleaf-spring4:3.0.15.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.thymeleaf:thymeleaf:3.0.15.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-aop:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-expression:4.3.17.RELEASE" />
+          <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.25" />
+          <element id="library" level="project" name="Gradle: ognl:ognl:3.1.26" />
+          <element id="library" level="project" name="Gradle: org.attoparser:attoparser:2.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.unbescape:unbescape:1.1.6.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.javassist:javassist:3.20.0-GA" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="customerManagementThymeleaf.main/web/Web Gradle : customerManagementThymeleaf-1.0-SNAPSHOT.war" />
+    </root>
+  </artifact>
+</component>

@@ -20,4 +20,7 @@ dependencies {
     implementation group: 'org.springframework', name: 'spring-beans', version: '4.3.17.RELEASE'
     implementation group: 'org.springframework', name: 'spring-web', version: '4.3.17.RELEASE'
     implementation group: 'org.springframework', name: 'spring-webmvc', version: '4.3.17.RELEASE'
+    implementation group: 'org.thymeleaf', name: 'thymeleaf-spring4', version: '3.0.15.RELEASE'
+    implementation group: 'org.thymeleaf', name: 'thymeleaf', version: '3.0.15.RELEASE'
+
 }

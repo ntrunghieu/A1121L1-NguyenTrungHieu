@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="detail">
+    <div class="cusdetail">
+        <label>Language:</label>
+        <label th:text="${email.language}"></label>
+    </div>
+    <div class="cusdetail">
+        <label>Page size:</label>
+        <label th:text="${email.pageSize}"></label>
+    </div>
+    <div class="cusdetail">
+        <label>Signature:</label>
+        <label th:text="${email.signature}"></label>
+    </div>
+</div>
+
+</body>
+</html>
