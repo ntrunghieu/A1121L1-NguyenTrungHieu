@@ -80,11 +80,11 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 //    }
 
 //     Khai báo bean trong file config
-    @Bean
-    @Qualifier("studentService1")
-    public CustomerService getStudentService() {
-        return new CustomerServiceImpl();
-    }
+//    @Bean
+//    @Qualifier("studentService1")
+//    public CustomerService getStudentService() {
+//        return new CustomerServiceImpl();
+//    }
 
 //    @Bean
 //    public StudentService getStudentService2() {

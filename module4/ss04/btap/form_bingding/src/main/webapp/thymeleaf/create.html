@@ -6,17 +6,17 @@
 <form th:action="@{/email/save}" method="post" th:object="email">
     <div>
         Language:
-        <select name="" id=""  th:field="*{email.language}">
+        <select name="language" id=""  th:field="${email.language}">
             <option th:value="English" >English</option>
             <option th:value="VietNamese" >VietNamese</option>
             <option th:value="Japanese" >Japanese</option>
-            <option th:value="Chinese">Chinese</option>
+            <option th: th:value="Chinese">Chinese</option>
         </select>
     </div>
     <div>
         Page Sizes:
-        <select name="" id="size" th:field="*{email.pageSize}" >
-            <option th:value="5" >5</option>
+        <select name="size" id="size" th:field="${email.pageSize}" >
+            <option  th:value="5" >5</option>
             <option th:value="10" >10</option>
             <option th:value="15">15</option>
             <option th:value="20">20</option>
@@ -26,7 +26,7 @@
     </div>
     <div>
         Signature:
-        <textarea th:field="*{email.pageSize}" rows="5" cols="70" />
+        <textarea name="signature" th:field="${email.signature}" rows="5" cols="70" />
     </div>
     <div>
         <input type="submit" value="Register">

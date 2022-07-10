@@ -25,6 +25,7 @@
         <th>Edit</th>
         <th>Delete</th>
         <th>View</th>
+        <th>Audio</th>
     </tr>
     </thead>
     <tbody>
@@ -37,6 +38,11 @@
         <td><a th:href="@{/product/{id}/edit(id=${row.getId()})}">edit</a></td>
         <td><a th:href="@{/product/{id}/delete(id=${row.getId()})}">delete</a></td>
         <td><a th:href="@{/product/{id}/view(id=${row.getId()})}">view</a></td>
+        <td>
+            <audio controls>
+                <source th:src="https://tainhacmienphi.biz/get/song/api/316304">
+            </audio>
+        </td>
     </tr>
     </tbody>
 </table>
