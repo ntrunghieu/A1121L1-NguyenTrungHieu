@@ -15,14 +15,17 @@
         <div>
             <label>Name</label>
             <input type="text" th:field="*{name}"/>
+            <span style="color: red" type="text" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"/>
         </div>
         <div>
             <label>Price</label>
             <input type="text" th:field="*{price}"/>
+            <span style="color: red" type="text" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"/>
         </div>
         <div>
             <label>Description</label>
             <input type="text" th:field="*{description}"/>
+            <span style="color: red" type="text" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"/>
         </div>
         <input type="submit" value="Save"/>
     </form>

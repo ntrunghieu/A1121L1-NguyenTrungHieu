@@ -1,16 +1,20 @@
 package codegym.entity;
 
+import org.springframework.web.multipart.MultipartFile;
+
+
+
 public class MusicForm {
     private Integer id;
     private String name;
     private String artist;
     private String type;
-    private String link;
+    private MultipartFile link;
 
     public MusicForm() {
     }
 
-    public MusicForm(Integer id, String name, String artist, String type, String link) {
+    public MusicForm(Integer id, String name, String artist, String type, MultipartFile link) {
         this.id = id;
         this.name = name;
         this.artist = artist;
@@ -50,11 +54,11 @@ public class MusicForm {
         this.type = type;
     }
 
-    public String getLink() {
+    public MultipartFile getLink() {
         return link;
     }
 
-    public void setLink(String link) {
+    public void setLink(MultipartFile link) {
         this.link = link;
     }
 }

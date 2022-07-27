@@ -14,9 +14,10 @@
 </p>
 <h1>Create New Song</h1>
 <!--<a href="/list"><button class="btn btn-primary">Back to List Song</button></a>-->
-<form action="/music/save" th:object="${music}" method="post">
+<form action="/music/save" th:object="${music}" method="post" novalidate="novalidate" enctype="multipart/form-data">
     <table class="table table-striped table-bordered">
         <tr>
+            <input hidden type="text" th:field="*{id}">
             <th>
                 Name of song:
             </th>
@@ -45,7 +46,7 @@
                 Link:
             </th>
             <td>
-                <input type="text" th:field="*{link}">
+                <input type="file" th:field="*{link}">
             </td>
         </tr>
     </table>

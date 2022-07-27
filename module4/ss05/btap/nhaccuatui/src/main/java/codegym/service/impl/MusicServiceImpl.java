@@ -31,6 +31,8 @@ public class MusicServiceImpl implements MusicService {
 
     @Override
     public void remove(Integer id) {
+        getMusicRepository.remove(id);
+
 
     }
 

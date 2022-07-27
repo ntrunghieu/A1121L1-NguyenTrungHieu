@@ -4,12 +4,12 @@
 <body>
 <h3>Remove Customer</h3>
 <p>
-    <a th:href="@{/musuc}">
+    <a th:href="@{/music}">
         Back to customer list
     </a>
 </p>
 <div id="form">
-    <form action="#" th:action="@{/customer/delete}" th:object="${customer}"
+    <form action="#" th:action="@{/music/delete}" th:object="${music}"
           method="POST" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
         <div>

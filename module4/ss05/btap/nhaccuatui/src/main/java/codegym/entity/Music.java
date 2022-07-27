@@ -1,5 +1,7 @@
 package codegym.entity;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.*;
 
 @Entity

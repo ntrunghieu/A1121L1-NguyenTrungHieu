@@ -13,12 +13,17 @@ import java.util.List;
 @Transactional
 public class MusicRepositoryImpl implements MusicRepository {
     @PersistenceContext
-    private static EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Override
     public void save(Music music) {
         // khi list chua co gia tri nao
-        entityManager.persist(music);
+        if (music==null){
+            entityManager.persist(music);
+        }else {
+            entityManager.merge(music);
+        }
+
     }
 
     @Override

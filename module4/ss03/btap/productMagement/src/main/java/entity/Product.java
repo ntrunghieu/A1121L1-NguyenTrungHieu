@@ -1,26 +1,40 @@
 package entity;
 
+import org.hibernate.validator.constraints.Length;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
+@Entity
+@Table(name = "product")
 public class Product {
-    private int id;
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
+    @NotBlank
     private String name;
+    @Pattern(regexp = "^[0-9]*$",message = "Price must be number only")
+    @NotBlank
     private double price;
+    @Length(max = 300)
     private String description;
 
     public Product() {
     }
 
-    public Product(int id, String name, double price, String description) {
+    public Product(Long id, String name, double price, String description) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
