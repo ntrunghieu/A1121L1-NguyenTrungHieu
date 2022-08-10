@@ -1,0 +1,1 @@
+create database smart_phone;

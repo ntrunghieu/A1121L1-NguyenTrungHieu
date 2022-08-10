@@ -1,11 +1,12 @@
 package entity;
 
 import org.hibernate.validator.constraints.Length;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
-
+@Component
 @Entity
 @Table(name = "product")
 public class Product {
@@ -15,7 +16,7 @@ public class Product {
     @NotBlank
     private String name;
     @Pattern(regexp = "^[0-9]*$",message = "Price must be number only")
-    @NotBlank
+//    @NotBlank
     private double price;
     @Length(max = 300)
     private String description;

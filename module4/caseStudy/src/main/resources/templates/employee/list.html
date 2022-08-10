@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+
+
+    <link rel="stylesheet" href="/bootstrap4.6.0/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/bootstrap4.6.0/css/bootstrap.min.css">
+    <script src="/bootstrap4.6.0/js/bootstrap.min.js"></script>
+    <script src="/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/header.css">
+    <style>
+
+        table {
+            margin-top: 30px;
+
+        }
+
+        .table-area {
+            width: 30%;
+            margin-top: 60px;
+            left: 50%;
+            transform: translateX(1%);
+        }
+
+        /*css cho nut phan trang*/
+        .container {
+            width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .pagination {
+            width: 400px;
+            margin-left: 50px;
+        }
+
+        .pagination a {
+            display: block;
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+        }
+
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        //Phuong thuc delete dung ajax
+        $(document).ready(function () {
+            //sư kiện nào thực hiện Ajax
+            $(document).on("click", ".delete-employee", function (event) {
+                //lay du lieu
+                let a = $(this);
+                let employeeId = a.attr("href");
+                // goi ajax
+                $.ajax({
+                    type: "DELETE",
+                    //tên API
+                    url: `/delete/${employeeId}`,
+                    //xử lý khi thành công
+                    success: function (data) {
+                        a.parent().parent().remove();
+                    }
+
+                });
+                //chặn sự kiện mặc định của thẻ
+                event.preventDefault();
+            })
+
+        })
+    </script>
+
+
+    <!--    <link rel="stylesheet" href="/header.css">-->
+    <!--    <link rel="stylesheet" href="/bootstrap4.6.0/css/bootstrap.min.css">-->
+    <!--    <link rel="stylesheet" href="/datatables/css/dataTables.bootstrap4.min.css"/>-->
+</head>
+<!--<div th:replace="~{header::#allDiv}"></div>-->
+<div id="nav" class="header col-12 ">
+    <div class=" nav-logo">
+        <img src="/codegym.jpg" style="width: 40px;height: 40px">
+    </div>
+    <div class=" nav-name">
+        <a><span class="text-white"></span></a>
+        <a href="#">Nguyen Trung Hieu</a>
+        <!--        <ul class="subnav">-->
+        <!--            <li><a href="">Dashboard</a></li>-->
+        <!--            <li><a href="">Profile</a></li>-->
+        <!--            <li><a href="">Log out</a></li>-->
+        <!--        </ul>-->
+    </div>
+
+
+</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto margin-navbar ">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/employee">Employee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/customer">Customer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/service">Service</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contract">Contract</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-expanded="false">
+                    Sort
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Name</a>
+                    <a class="dropdown-item" href="#">Email</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Address</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input name="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <!--        </form>-->
+            <!--        &lt;!&ndash;        <%&#45;&#45;            onclick="showCreate('${cus.id}','${cus.typeId}','${cus.name}','${cus.birthday}','${cus.gender}','${!cus.gender}',&#45;&#45;%>&ndash;&gt;-->
+            <!--        &lt;!&ndash;        <%&#45;&#45;            '${cus.idCard}','${cus.phone}','${cus.email}','${cus.address}')"&#45;&#45;%>&ndash;&gt;-->
+            <!--        <form action="/employee/create" class="form-inline my-2 my-lg-0" method="get">-->
+            <!--            <input hidden name="action" value="create">-->
+            <!--            <button type="submit" class="btn btn-outline-success my-2 my-sm-0 btn-create"-->
+            <!--                    data-toggle="modal" data-target="#createForm">Create-->
+            <!--            </button>-->
+            <a href="/employee/create">
+                <button type="button" class="btn btn-outline-success my-2 my-sm-0 btn-create">Create</button>
+            </a>
+        </form>
+    </div>
+</nav>
+
+<!--<div id="mySidebar" class="sidebar">-->
+<!--    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>-->
+<!--    <a href="#">About</a>-->
+<!--    <a href="#">Services</a>-->
+<!--    <a href="#">Clients</a>-->
+<!--    <a href="#">Contact</a>-->
+<!--</div>-->
+
+<!--<div id="main">-->
+<!--    <button class="openbtn" onclick="openNav()">☰</button>-->
+<!--    &lt;!&ndash;    <h2>Collapsed Sidebar</h2>&ndash;&gt;-->
+<!--    &lt;!&ndash;    <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>&ndash;&gt;-->
+<!--</div>-->
+
+<table id="tableStudent" class="table table-area" style="width: 30%;">
+    <thead>
+    <tr>
+        <th scope="col">STT</th>
+        <th scope="col">Id</th>
+        <th>Username</th>
+        <th>ID Card</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Birthday</th>
+        <th>Education</th>
+        <th>Position</th>
+        <th>Division</th>
+        <th>Salary</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="c, stt : ${employees}">
+        <th scope="row" th:text="${stt.count}"></th>
+        <td th:text="${c.IDEmployee}"></td>
+        <td th:text="${c.name}"></td>
+        <td th:text="${c.IDCard}"></td>
+        <td th:text="${c.phoneNumber}"></td>
+        <td th:text="${c.email}"></td>
+        <td th:text="${c.gender}"></td>
+        <td th:text="${c.date}"></td>
+        <td th:text="${c.educationDegree.educationName}"></td>
+        <td th:text="${c.position.positionName}"></td>
+        <td th:text="${c.division.divisionName}"></td>
+        <td th:text="${c.salary}"></td>
+        <td><a th:href="${c.IDEmployee}" class="delete-employee">Delete</a></td>
+        <td><a th:href="@{/employee/update/{id}(id=${c.IDEmployee})}">Update</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<!--    nut phan trang-->
+<!--<div>-->
+<!--    <a th:href="@{'/employee'(page=${employees.number - 1})}" th:if="${employees.hasPrevious()}">Previous</a>-->
+<!--    <span th:text="${employees.number + 1}"></span>/<span th:text="${employees.totalPages}"></span>-->
+<!--    <a th:href="@{'/employee'(page=${employees.number + 1})}" th:if="${employees.hasNext()}">Next</a>-->
+<!--</div>-->
+
+<!--<div class="container">-->
+<!--    <div class="pagination" th:each="stt, s: ${employees.totalPages}">-->
+
+<!--        <a th:href="@{'/employee'(page=${employees.number - 1})}" th:if="${employees.hasPrevious()}">&laquo;</a>-->
+
+<!--        <a class="active" th:text="${employees.number + 1}"></a>-->
+<!--        <a th:href="@{'/employee'(page=${employees.number + 1})}" th:if="${employees.hasNext()}">&raquo;</a>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<div class="container">
+    <div class="pagination" th:each="i:${#numbers.sequence(0,employees.totalPages - 1)}">
+        <!--        <th:block >-->
+            <a th:href="@{'/employee'(page=${employees.number - 1})}" th:if="${employees.hasPrevious()}">&laquo;</a>
+
+<!--        <li th:if="${employees.number == i}">-->
+            <a th:if="${employees.number == i}" class=" active" th:href="@{'/employee'(page=${i})} " th:text="${i+1}"></a>
+<!--        </li>-->
+<!--        <li th:unless="${employees.number == i}">-->
+            <a th:unless="${employees.number == i}"  th:href="@{'/employee'(page=${i})} " th:text="${i+1}"></a>
+<!--        </li>-->
+        <!--        </th:block>-->
+
+            <a th:href="@{'/employee'(page=${employees.number + 1})}" th:if="${employees.hasNext()}">&raquo;</a>
+
+    </div>
+</div>
+
+
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+</script>
+
+<!--<script src="/jquery/jquery-3.6.0.min.js"></script>-->
+<!--<script src="/datatables/js/jquery.dataTables.min.js"></script>-->
+</body>
+</html>

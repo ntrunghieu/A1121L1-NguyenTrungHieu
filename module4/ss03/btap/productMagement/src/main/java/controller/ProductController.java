@@ -56,12 +56,12 @@ public class ProductController {
     @PostMapping("/save")
     public String save(@Valid @ModelAttribute("product") Product product, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if(bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("mess","Invalid input");
+//            redirectAttributes.addFlashAttribute("mess","Invalid input");
             return "/create";
         }else {
             productService1.save(product);
 
-            redirectAttributes.addFlashAttribute("mess","Created new product successfully!");
+//            redirectAttributes.addFlashAttribute("mess","Created new product successfully!");
             return "redirect:/product";
         }
 
@@ -69,7 +69,7 @@ public class ProductController {
     @GetMapping("/{id}/edit")
     public String edit(@PathVariable Long id, Model model) {
         model.addAttribute("product", productService1.findById(id));
-        
+
         return "/edit";
     }
     @PostMapping("/update")

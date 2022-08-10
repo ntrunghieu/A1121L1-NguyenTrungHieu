@@ -1,0 +1,31 @@
+package casestudy.service.customer.impl;
+
+import casestudy.entity.customer.Customer;
+import casestudy.entity.customer.CustomerType;
+import casestudy.entity.employee.Division;
+import casestudy.entity.employee.EducationDegree;
+import casestudy.entity.employee.Employee;
+import casestudy.entity.employee.Position;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+import java.util.Optional;
+
+public interface ICustomerService {
+
+    Iterable<Customer> findAll();
+
+    Optional<Customer> findById(Long id);
+
+    Customer save(Customer customer);
+
+    Customer findById1(Long id);
+
+    void remove(Long id);
+
+    Iterable<Customer> findAllByCustomerType(CustomerType customerType);
+
+
+    Page<Customer> findAll(Pageable pageable);
+    Page<Customer> findAllByCustomerNameContaining(String name, Pageable pageable);
+}
