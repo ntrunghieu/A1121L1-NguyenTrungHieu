@@ -79,6 +79,57 @@
             })
 
         })
+
+        function searchEmployee() {
+            let input = $("#input-search").val();
+            $.ajax({
+                type: "GET",
+                url: `/employee/search/${input}`,
+                success: function (data) {
+                    let content = "<tr>\n" +
+                        "                            <th>ID</th>\n" +
+                        "                            <th>Username</th>\n" +
+                        "                            <th>ID Card</th>\n" +
+                        "                            <th>Phone</th>\n" +
+                        "                            <th>Email</th>\n" +
+                        "                            <th hidden>Gender</th>\n" +
+                        "                            <th>Birthday</th>\n" +
+                        "                            <th>Education</th>\n" +
+                        "                            <th>Position</th>\n" +
+                        "                            <th>Division</th>\n" +
+                        "                            <th>Salary</th>\n" +
+                        "                            <th>Delete</th>\n" +
+                        "                            <th>Update</th>\n" +
+                        "                        </tr>";
+                    for (let i = 0; i < data.length; i++) {
+                        content += getData(data[i]);
+                    }
+                    document.getElementById("tableEmployee").innerHTML = content;
+                }
+            });
+            event.preventDefault();
+        }
+
+        function getData(e) {
+            return `<tr>` +
+                `<td>${e.IDEmployee}</td>` +
+                `<td>${e.name}</td>` +
+                `<td>${e.IDCard}</td>` +
+                `<td>${e.phoneNumber}</td>` +
+                `<td>${e.email}</td>` +
+                `<div hidden th:switch="${e.gender}">
+                    <td th:case="true">Nam</td>
+                    <td th:case="false">Nu</td>
+                </div>` +
+                `<td th:text="${e.date}"></td>` +
+                `<td>${e.educationDegree.educationDegreeName}</td>` +
+                `<td>${e.position.positionName}</td>` +
+                `<td>${e.division.divisionName}</td>` +
+                `<td>${e.salary}</td>` +
+                `<td><a th:href="${e.IDEmployee}" class="delete-customer">Delete</a></td>` +
+                `<td><a th:href="@{/employee/update/{id}(id=${e.IDEmployee})}" >Update</a></td>` +
+                `</tr>`;
+        }
     </script>
 
 
@@ -137,8 +188,10 @@
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <input name="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <input onkeyup="searchEmployee()" id="input-search" name="search" class="form-control mr-sm-2" type="text" placeholder="Search"
+                   aria-label="Search">
+            <button onclick="searchEmployee()" class="btn btn-outline-success my-2 my-sm-0" type="button">Search
+            </button>
             <!--        </form>-->
             <!--        &lt;!&ndash;        <%&#45;&#45;            onclick="showCreate('${cus.id}','${cus.typeId}','${cus.name}','${cus.birthday}','${cus.gender}','${!cus.gender}',&#45;&#45;%>&ndash;&gt;-->
             <!--        &lt;!&ndash;        <%&#45;&#45;            '${cus.idCard}','${cus.phone}','${cus.email}','${cus.address}')"&#45;&#45;%>&ndash;&gt;-->
@@ -168,7 +221,7 @@
 <!--    &lt;!&ndash;    <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>&ndash;&gt;-->
 <!--</div>-->
 
-<table id="tableStudent" class="table table-area" style="width: 30%;">
+<table id="tableEmployee" class="table table-area" style="width: 30%;">
     <thead>
     <tr>
         <th scope="col">STT</th>
@@ -177,7 +230,7 @@
         <th>ID Card</th>
         <th>Phone</th>
         <th>Email</th>
-        <th>Gender</th>
+        <th hidden>Gender</th>
         <th>Birthday</th>
         <th>Education</th>
         <th>Position</th>
@@ -214,34 +267,34 @@
 <!--    <a th:href="@{'/employee'(page=${employees.number + 1})}" th:if="${employees.hasNext()}">Next</a>-->
 <!--</div>-->
 
-<!--<div class="container">-->
-<!--    <div class="pagination" th:each="stt, s: ${employees.totalPages}">-->
-
-<!--        <a th:href="@{'/employee'(page=${employees.number - 1})}" th:if="${employees.hasPrevious()}">&laquo;</a>-->
-
-<!--        <a class="active" th:text="${employees.number + 1}"></a>-->
-<!--        <a th:href="@{'/employee'(page=${employees.number + 1})}" th:if="${employees.hasNext()}">&raquo;</a>-->
-<!--    </div>-->
-<!--</div>-->
-
-
 <div class="container">
-    <div class="pagination" th:each="i:${#numbers.sequence(0,employees.totalPages - 1)}">
-        <!--        <th:block >-->
-            <a th:href="@{'/employee'(page=${employees.number - 1})}" th:if="${employees.hasPrevious()}">&laquo;</a>
+    <div class="pagination" th:each="stt, s: ${employees.totalPages}">
 
-<!--        <li th:if="${employees.number == i}">-->
-            <a th:if="${employees.number == i}" class=" active" th:href="@{'/employee'(page=${i})} " th:text="${i+1}"></a>
-<!--        </li>-->
-<!--        <li th:unless="${employees.number == i}">-->
-            <a th:unless="${employees.number == i}"  th:href="@{'/employee'(page=${i})} " th:text="${i+1}"></a>
-<!--        </li>-->
-        <!--        </th:block>-->
+        <a th:href="@{'/employee'(page=${employees.number - 1})}" th:if="${employees.hasPrevious()}">&laquo;</a>
 
-            <a th:href="@{'/employee'(page=${employees.number + 1})}" th:if="${employees.hasNext()}">&raquo;</a>
-
+        <a class="active" th:text="${employees.number + 1}"></a>
+        <a th:href="@{'/employee'(page=${employees.number + 1})}" th:if="${employees.hasNext()}">&raquo;</a>
     </div>
 </div>
+
+
+<!--<div class="container">-->
+<!--    <div class="pagination" th:each="i:${#numbers.sequence(0,employees.totalPages - 1)}">-->
+<!--        &lt;!&ndash;        <th:block >&ndash;&gt;-->
+<!--            <a th:href="@{'/employee'(page=${employees.number - 1})}" th:if="${employees.hasPrevious()}">&laquo;</a>-->
+
+<!--&lt;!&ndash;        <li th:if="${employees.number == i}">&ndash;&gt;-->
+<!--            <a th:if="${employees.number == i}" class=" active" th:href="@{'/employee'(page=${i})} " th:text="${i+1}"></a>-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li th:unless="${employees.number == i}">&ndash;&gt;-->
+<!--            <a th:unless="${employees.number == i}"  th:href="@{'/employee'(page=${i})} " th:text="${i+1}"></a>-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--        &lt;!&ndash;        </th:block>&ndash;&gt;-->
+
+<!--            <a th:href="@{'/employee'(page=${employees.number + 1})}" th:if="${employees.hasNext()}">&raquo;</a>-->
+
+<!--    </div>-->
+<!--</div>-->
 
 
 <script>

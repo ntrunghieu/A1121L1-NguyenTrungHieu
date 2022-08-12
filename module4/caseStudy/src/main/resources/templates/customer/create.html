@@ -69,6 +69,7 @@
             <td><label for="name">Name</label></td>
             <td>
                 <input th:field="*{customerName}" th:value="*{customerName}" id="name" name="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                <p th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></p>
             </td>
         </tr>
         <tr>

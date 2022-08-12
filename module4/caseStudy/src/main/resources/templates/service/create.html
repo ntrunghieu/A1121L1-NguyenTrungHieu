@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+
+
+    <style>
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        /*th {*/
+        /*    padding-top: 12px;*/
+        /*    padding-bottom: 12px;*/
+        /*    text-align: left;*/
+        /*    background-color: #04AA6D;*/
+        /*    color: white;*/
+        /*}*/
+
+        #createForm1 .submit {
+
+            margin-left: 30%;
+            align-items: center;
+        }
+
+        #createForm1 {
+
+            margin-top: 35px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+
+
+<h2 style="margin-top: 35px; margin-bottom: 10px; font-weight: 400;">Create Service</h2>
+<a th:href="@{/service}">Display List Service</a>
+<p th:text="${message}"></p>
+<form id="createForm1" action="/service/save" th:object="${service}" method="post">
+    <table>
+        <tr>
+            <th colspan="2">Create a new service</th>
+        </tr>
+
+        <tr hidden>
+            <td><label for="id">ID</label></td>
+            <td>
+                <input th:field="*{serviceId}" th:value="*{serviceId}" id="id" name="id" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                <p th:if="${#fields.hasErrors('serviceId')}" th:errors="*{serviceId}"></p>
+
+            </td>
+        </tr>
+        <tr>
+            <td><label for="name">Name</label></td>
+            <td>
+                <input th:field="*{serviceName}" th:value="*{serviceName}" id="name" name="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                <p th:if="${#fields.hasErrors('serviceName')}" th:errors="*{serviceName}"></p>
+
+            </td>
+        </tr>
+        <tr>
+            <td><label for="serviceArea">Area</label></td>
+            <td>
+                <input th:field="*{serviceArea}" th:value="*{serviceArea}" type="text" id="serviceArea" name="serviceArea">
+                <p th:if="${#fields.hasErrors('serviceArea')}" th:errors="*{serviceArea}"></p>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="serviceCost">Cost</label></td>
+            <td>
+                <input th:field="*{serviceCost}" th:value="*{serviceCost}" type="text" id="serviceCost" name="serviceCost">
+                <p th:if="${#fields.hasErrors('serviceCost')}" th:errors="*{serviceCost}"></p>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="serviceMaxPeople">Max people</label></td>
+            <td>
+                <input th:field="*{serviceMaxPeople}" th:value="*{serviceMaxPeople}" type="text" id="serviceMaxPeople" name="serviceMaxPeople">
+                <p th:if="${#fields.hasErrors('serviceMaxPeople')}" th:errors="*{serviceMaxPeople}"></p>
+
+            </td>
+        </tr>
+        <tr>
+            <td><label for="standardRoom">Standard Room</label></td>
+            <td>
+                <input th:field="*{standardRoom}" th:value="*{standardRoom}" type="text" id="standardRoom" name="standardRoom">
+                <p th:if="${#fields.hasErrors('standardRoom')}" th:errors="*{standardRoom}"></p>
+
+            </td>
+        </tr>
+        <tr>
+            <td><label for="description">Description</label></td>
+            <td>
+                <input th:field="*{descriptionOtherConvenience}" th:value="*{descriptionOtherConvenience}" type="text" id="description" name="description">
+                <p th:if="${#fields.hasErrors('descriptionOtherConvenience')}" th:errors="*{descriptionOtherConvenience}"></p>
+
+            </td>
+        </tr>
+        <tr>
+            <td><label for="poolArea">Pool Area</label></td>
+            <td>
+                <input th:field="*{poolArea}" th:value="*{poolArea}" type="text" id="poolArea" name="poolArea">
+                <p th:if="${#fields.hasErrors('poolArea')}" th:errors="*{poolArea}"></p>
+
+            </td>
+        </tr>
+        <tr>
+            <td><label for="numberOfFloors">number Of Floors</label></td>
+            <td>
+                <input th:field="*{numberOfFloors}" th:value="*{numberOfFloors}" type="text" id="numberOfFloors" name="numberOfFloors">
+                <p th:if="${#fields.hasErrors('numberOfFloors')}" th:errors="*{numberOfFloors}"></p>
+
+            </td>
+        </tr>
+        <tr>
+            <td><label for="rentType">Rent Type</label></td>
+            <td>
+                <select id="rentType" name="rentType" th:field="*{rentType}">
+                    <option th:each="r : ${rentTypes}" th:value="${r.rentTypeId}"  th:checked="${r.rentTypeName}" th:text="${r.rentTypeName}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="serviceType">Service Type</label></td>
+            <td>
+                <select id="serviceType" name="serviceType" th:field="*{serviceType}">
+                    <option th:each="r : ${serviceTypes}" th:value="${r.serviceTypeId}"  th:checked="${r.serviceTypeName}" th:text="${r.serviceTypeName}"></option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <div class="submit">
+        <button type="submit">Save</button>
+        <button type="button"><a href="/service">Back to list</a></button>
+    </div>
+</form>
+</body>
+</html>

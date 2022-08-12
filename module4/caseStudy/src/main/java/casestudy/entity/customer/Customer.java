@@ -2,9 +2,11 @@ package casestudy.entity.customer;
 
 import casestudy.entity.contract.Contract;
 import casestudy.entity.employee.Position;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 import java.util.List;
 @Entity
@@ -13,13 +15,19 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long customerId;
-    @NotEmpty(message = "Ten khong duoc de trong")
+//    @NotEmpty(message = "Ten khong duoc de trong")
+//    @Pattern(regexp = "(CS)-[//d]{4}", message = "ten khong dung dinh dang")
     private String customerName;
     private String customerBirthday;
     private boolean customerGender;
+//    @Pattern(regexp = "^[0-9]{9}|[0-9]{12}$", message = "CMND khong dung dinh dang")
     private String customerIdCard;
+//    @Length(max = 45)
+//    @Pattern(regexp = "^(090|091|\\(84\\)\\+90|\\(84\\)\\+91)[0-9]{7}$",message = "Invalid phone number")
     private String customerPhone;
+//    @Pattern(regexp = "^[\\w-\\.]+@(gmail.)+[com]{3,4}$", message = "email khong dung dinh dang")
     private String customerEmail;
+    @NotEmpty(message = "Dia chi khong duoc de trong")
     private String customerAddress;
 
 

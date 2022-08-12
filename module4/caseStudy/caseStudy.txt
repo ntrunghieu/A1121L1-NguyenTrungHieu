@@ -1,0 +1,68 @@
+
+/// lam modal
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title pull-right" id="myModalLabel">Xoa Khach hang nay!</h3>
+
+            </div>
+            <div class="modal-body">
+                <p class="alert alert-danger pull-right" >Ban co muon xoa? </p>
+<!--                <span  th:text="${customer.customerName}"> </span>-->
+
+            </div>
+
+            <div class="modal-footer">
+                <a href="" type="button" class="btn btn-danger" id="btnDelteYes">Delete</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Return</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+    $('.btn-delete').on('click', function (e) {
+        e.preventDefault();
+        var href =$(this).attr('href');
+        $('#myModal #btnDelteYes').attr('href',href);
+        $('#myModal').modal();
+    });
+</script>
+
+
+
+/////phan trang
+
+@GetMapping("/list")
+public ModelAndView listCustomer(@PageableDefault(value = 5) Pageable pageable,
+                                 @RequestParam("customerName") Optional<String> customerName,
+                                 @RequestParam("customerAddress") Optional<String> customerAddress,
+                                 @RequestParam("customerEmail") Optional<String> customerEmail) {
+    Page<Customer> customerList;
+    String condition = "";
+    ModelAndView modelAndView = new ModelAndView("views/customer/list");
+    if(customerName.isPresent() || customerAddress.isPresent() || customerEmail.isPresent()) {
+        customerList = customerService.search(customerName.get(),customerAddress.get(),customerEmail.get(),pageable);
+        if (customerName.isPresent()) {
+            condition += "&customerName=" + customerName.get();
+        }
+        if (customerName.isPresent()) {
+            condition += "&customerAddress=" + customerAddress.get();
+        }
+        if (customerName.isPresent()) {
+            condition += "&customerEmail=" + customerEmail.get();
+        }
+
+
+    }else {
+        customerList = customerService.findAll(pageable);
+    }
+    modelAndView.addObject("condition",condition);
+    modelAndView.addObject("customerList",customerList);
+    return modelAndView;
+}
+

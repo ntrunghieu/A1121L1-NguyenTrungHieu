@@ -74,7 +74,7 @@ public class EmployeeController {
     public ModelAndView listCustomers(@RequestParam("search") Optional<String> search, @PageableDefault(value = 3) Pageable pageable){
         Page<Employee> employees;
         if(search.isPresent()){
-            employees = employeeService.findAllByNameContaining(search.get(), pageable);
+            employees = (Page<Employee>) employeeService.findAllByNameContaining(search.get(), pageable);
         } else {
             employees = employeeService.findAll(pageable);
         }

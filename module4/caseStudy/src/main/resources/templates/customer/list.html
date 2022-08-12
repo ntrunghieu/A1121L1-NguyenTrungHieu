@@ -20,7 +20,7 @@
             width: 30%;
             margin-top: 60px;
             left: 50%;
-            transform: translateX(1%);
+            transform: translateX(7%);
         }
 
         /*css cho nut phan trang*/
@@ -67,7 +67,7 @@
                 $.ajax({
                     type: "DELETE",
                     //tên API
-                    url: `/delete/${customerId}`,
+                    url: `/api/delete/${customerId}`,
                     //xử lý khi thành công
                     success: function (data) {
                         a.parent().parent().remove();
@@ -79,6 +79,51 @@
             })
 
         })
+
+        function searchCustomer() {
+            let input = $("#input-search").val();
+            $.ajax({
+                type: "GET",
+                url: `/customer/search/${input}`,
+                success: function (data) {
+                    let content = "<tr>\n" +
+                        "                            <th>ID</th>\n" +
+                        "                            <th>Username</th>\n" +
+                        "                            <th>ID Card</th>\n" +
+                        "                            <th>Phone</th>\n" +
+                        "                            <th>Email</th>\n" +
+                        "                            <th>Gender</th>\n" +
+                        "                            <th>Address</th>\n" +
+                        "                            <th>Type</th>\n" +
+                        "                            <th>Delete</th>\n" +
+                        "                            <th>Update</th>\n" +
+                        "                        </tr>";
+                    for (let i = 0; i < data.length; i++) {
+                        content += getData(data[i]);
+                    }
+                    document.getElementById("tableCus").innerHTML = content;
+                }
+            });
+            event.preventDefault();
+        }
+
+        function getData(c) {
+            return `<tr>` +
+                `<td>${c.customerId}</td>` +
+                `<td>${c.customerName}</td>` +
+                `<td>${c.customerIdCard}</td>` +
+                `<td>${c.customerPhone}</td>` +
+                `<td>${c.customerEmail}</td>` +
+                `<div th:switch="${c.customerGender}">
+                    <td th:case="true">Nam</td>
+                    <td th:case="false">Nu</td>
+                </div>` +
+                `<td>${c.customerAddress}</td>` +
+                `<td>${c.customerType.customerTypeName}</td>` +
+                `<td><a th:href="${c.customerId}" class="delete-customer">Delete</a></td>` +
+                `<td><a th:href="@{/customer/update/{id}(id=${c.customerId})}" >Update</a></td>` +
+                `</tr>`;
+        }
     </script>
 
 
@@ -137,8 +182,8 @@
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <input name="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <input  id="input-search" name="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button onclick="searchCustomer()" class="btn btn-outline-success my-2 my-sm-0" type="button" >Search</button>
             <!--        </form>-->
             <!--        &lt;!&ndash;        <%&#45;&#45;            onclick="showCreate('${cus.id}','${cus.typeId}','${cus.name}','${cus.birthday}','${cus.gender}','${!cus.gender}',&#45;&#45;%>&ndash;&gt;-->
             <!--        &lt;!&ndash;        <%&#45;&#45;            '${cus.idCard}','${cus.phone}','${cus.email}','${cus.address}')"&#45;&#45;%>&ndash;&gt;-->
@@ -147,7 +192,7 @@
             <!--            <button type="submit" class="btn btn-outline-success my-2 my-sm-0 btn-create"-->
             <!--                    data-toggle="modal" data-target="#createForm">Create-->
             <!--            </button>-->
-            <a href="/employee/create">
+            <a href="/customer/create">
                 <button type="button" class="btn btn-outline-success my-2 my-sm-0 btn-create">Create</button>
             </a>
         </form>
@@ -168,7 +213,7 @@
 <!--    &lt;!&ndash;    <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>&ndash;&gt;-->
 <!--</div>-->
 
-<table id="tableStudent" class="table table-area" style="width: 30%;">
+<table id="tableCus" class="table table-area" style="width: 30%;">
     <thead>
     <tr>
         <th scope="col">STT</th>
@@ -193,12 +238,10 @@
         <td th:text="${c.customerPhone}"></td>
         <td th:text="${c.customerEmail}"></td>
         <div th:switch="${c.customerGender}">
-            <td th:case="false">Nam</td>
-            <td th:case="true">Nu</td>
+            <td th:case="true">Nam</td>
+            <td th:case="false">Nu</td>
         </div>
-        <td th:if="!${c.customerGender}">Nam</td>
-        <td th:if="${c.customerGender}">Nu</td>
-        <td th:text="${c.customerGender}"></td>
+
         <td th:text="${c.customerAddress}"></td>
         <td th:text="${c.customerType.customerTypeName}"></td>
         <td><a th:href="${c.customerId}" class="delete-customer">Delete</a></td>
@@ -234,7 +277,7 @@
         <a th:if="${customers.number == i}" class=" active" th:href="@{'/customer'(page=${i})} " th:text="${i+1}"></a>
         <!--        </li>-->
         <!--        <li th:unless="${employees.number == i}">-->
-        <a th:unless="${customers.number == i}"  th:href="@{'/customer'(page=${i})} " th:text="${i+1}"></a>
+        <a th:unless="${customers.number == i}" th:href="@{'/customer'(page=${i})} " th:text="${i+1}"></a>
         <!--        </li>-->
         <!--        </th:block>-->
 

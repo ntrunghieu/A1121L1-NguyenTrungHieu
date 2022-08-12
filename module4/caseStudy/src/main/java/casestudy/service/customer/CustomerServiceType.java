@@ -6,6 +6,8 @@ import casestudy.repository.customer.ICustomerRepository;
 import casestudy.repository.customer.ICustomerTypeRepository;
 import casestudy.service.customer.impl.ICustomerServiceType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -31,5 +33,10 @@ public class CustomerServiceType implements ICustomerServiceType {
     @Override
     public Optional<CustomerType> findById(Long id) {
         return iCustomerTypeRepository.findById(id);
+    }
+
+    @Override
+    public Page<CustomerType> findAllByCustomerTypeNameContaining(String name, Pageable pageable) {
+        return iCustomerTypeRepository.findAllByCustomerTypeNameContaining(name,pageable);
     }
 }

@@ -9,6 +9,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface IEmployeeRepository extends JpaRepository<Employee, Long> {
 
@@ -19,7 +21,8 @@ public interface IEmployeeRepository extends JpaRepository<Employee, Long> {
     
 
 
-    Page<Employee> findAllByNameContaining(String name, Pageable pageable);
+//    Page<Employee> findAllByNameContaining(String name, Pageable pageable);
+    List<Employee> findAllByNameContaining(String name, Pageable pageable);
 
 //    @Query(value = "select * from employee where id = ?1", nativeQuery = true)
 //    Employee findById1(Long id);

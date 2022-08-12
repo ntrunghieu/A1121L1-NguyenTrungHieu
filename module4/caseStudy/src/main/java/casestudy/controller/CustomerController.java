@@ -9,15 +9,18 @@ import casestudy.entity.employee.Position;
 import casestudy.service.customer.CustomerServiceType;
 import casestudy.service.customer.impl.ICustomerService;
 import casestudy.service.customer.impl.ICustomerServiceType;
+import casestudy.valid.CustomerValidate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
@@ -47,9 +50,17 @@ public class CustomerController {
     }
 
     @PostMapping("/save")
-    public ModelAndView saveCustomer(@ModelAttribute("customer") Customer customer) {
-        iCustomerService.save(customer);
+    public ModelAndView saveCustomer(@Valid @ModelAttribute("customer") Customer customer, BindingResult bindingResult) {
+        CustomerValidate validate = new CustomerValidate();
+        validate.validate(customer, bindingResult);
         ModelAndView modelAndView = new ModelAndView("customer/create");
+        if (bindingResult.hasErrors()){
+
+            return modelAndView;
+
+       }
+
+        iCustomerService.save(customer);
         modelAndView.addObject("customer", new Customer());
         modelAndView.addObject("message", "New customer created successfully");
         return modelAndView;
@@ -59,7 +70,7 @@ public class CustomerController {
     public ModelAndView listCustomers(@RequestParam("search") Optional<String> search, @PageableDefault(value = 3) Pageable pageable) {
         Page<Customer> customers;
         if (search.isPresent()) {
-            customers = iCustomerService.findAllByCustomerNameContaining(search.get(), pageable);
+            customers = (Page<Customer>) iCustomerService.findAllByCustomerNameContaining(search.get(), pageable);
         } else {
             customers = iCustomerService.findAll(pageable);
         }
