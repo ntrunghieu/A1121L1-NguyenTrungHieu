@@ -1,0 +1,27 @@
+{
+  "name": "typescript-shape",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "tsc",
+    "build": "tsc",
+    "start": "ts-node src/shape.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^14.18.24",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  }
+}
