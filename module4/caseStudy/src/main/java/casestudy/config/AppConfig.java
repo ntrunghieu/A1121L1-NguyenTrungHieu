@@ -1,10 +1,7 @@
 package casestudy.config;
 
 import casestudy.entity.customer.CustomerType;
-import casestudy.formatter.CustomerTypeFormatter;
-import casestudy.formatter.DivisionFormatter;
-import casestudy.formatter.EducationFormatter;
-import casestudy.formatter.PositionFormatter;
+import casestudy.formatter.*;
 import casestudy.service.customer.CustomerServiceType;
 import casestudy.service.employee.DivisionService;
 import casestudy.service.employee.EducationService;
@@ -35,5 +32,10 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
         registry.addFormatter(new EducationFormatter(applicationContext.getBean(EducationService.class)));
         registry.addFormatter(new PositionFormatter(applicationContext.getBean(PositionService.class)));
         registry.addFormatter(new CustomerTypeFormatter(applicationContext.getBean(CustomerServiceType.class)));
+
+            registry.addFormatter(new DateFormatter());
+        registry.addConverter(new DateConverter());
+
     }
+
 }

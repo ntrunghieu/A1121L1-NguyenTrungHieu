@@ -2,9 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        .container {
+            width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .pagination {
+            width: 400px;
+            margin-left: 50px;
+        }
+
+        .pagination a {
+            display: block;
+            color: #000000;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+        }
+        div.container div.pagination {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #dddddd;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="container">
+    <div class="pagination" >
+            <a>&laquo;</a>
+            <a class=" active" ></a>
+            <a ></a>
+            <a ></a>
+            <a ></a>
+            <a >&raquo;</a>
+    </div>
+</div>
 </body>
 </html>

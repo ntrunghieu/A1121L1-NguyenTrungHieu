@@ -9,6 +9,7 @@ public class Account {
     private int isAdmin;
 
     public Account() {
+
     }
 
     public Account(int id, String username, String password) {

@@ -2,7 +2,7 @@ package caseStudy.models;
 
 import java.util.Date;
 
-public class Customer extends Person{
+public class Customer extends caseStudy.models.Person {
     private int IDCustomer;
     private String typeCustomer;
     private String address;

@@ -114,6 +114,7 @@
                 `<td>${c.customerIdCard}</td>` +
                 `<td>${c.customerPhone}</td>` +
                 `<td>${c.customerEmail}</td>` +
+                // `<td>${c.customerGender}</td>` +
                 `<div th:switch="${c.customerGender}">
                     <td th:case="true">Nam</td>
                     <td th:case="false">Nu</td>

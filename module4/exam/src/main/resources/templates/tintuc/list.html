@@ -3,117 +3,469 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous">
+
+    <style>
+
+        table {
+            margin-top: 30px;
+
+        }
+
+        .table-area {
+            width: 30%;
+            margin-top: 60px;
+            left: 50%;
+            transform: translateX(13%);
+
+        }
+
+        html {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .header {
+            height: 68px;
+            background-color: #272882;
+        }
+
+        #nav .nav-logo img {
+            margin: 13px;
+        }
+
+        #nav .nav-name {
+
+            line-height: 68px;
+
+        }
+
+        div#nav:hover {
+            background-color: #343590;
+
+        }
+
+        #nav .nav-name a {
+            right: 50%;
+            color: white;
+        }
+
+        #nav .nav-name li {
+            /*display: inline-block;*/
+        }
+
+        #nav li a {
+            /*color: #cbbfbf;*/
+            /*text-decoration: none;*/
+            /*line-height: 68px;*/
+            /*left: 80%;*/
+        }
+
+        .nav-name li :hover a {
+            /*color: #272882;*/
+            /*background-color: #ccc;*/
+
+        }
+
+        #nav .nav-name .subnav {
+            /*display: none;*/
+        }
+
+
+        #header img {
+            margin: 13px;
+        }
+
+        div#nav {
+            display: flex;
+        }
+
+        #nav .nav-name {
+            margin-left: 70%;
+        }
+
+        /*css cho nut phan trang*/
+        .container {
+            width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .pagination {
+            width: 400px;
+            margin-left: 50px;
+        }
+
+        .pagination a {
+            display: block;
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+        }
+
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        //Phuong thuc delete dung ajax
+        $(document).ready(function () {
+            //sư kiện nào thực hiện Ajax
+            $(document).on("click", ".delete-customer", function (event) {
+                //lay du lieu
+                // let a = $(this);
+                // let customerId = a.attr("href");
+                let input = $("#idMove").val();
+                // goi ajax
+                $.ajax({
+                    type: "DELETE",
+                    //tên API
+                    url: `/api/delete/${input}`,
+                    //xử lý khi thành công
+                    success: function (data) {
+                        a.parent().parent().remove();
+                    }
+
+                });
+                //chặn sự kiện mặc định của thẻ
+                event.preventDefault();
+            })
+
+        })
+
+        function searchCustomer() {
+            let input = $("#input-search").val();
+            $.ajax({
+                type: "GET",
+                url: `/tintuc/search/${input}`,
+                success: function (data) {
+                    let content = "<tr>\n" +
+                        "                            <th>Ma tin tuc</th>\n" +
+                        "                            <th>Tieu de</th>\n" +
+                        "                            <th>Danh muc</th>\n" +
+                        "                            <th>Ngay dang tin</th>\n" +
+                        "                            <th>Noi dung</th>\n" +
+                        "                            <th>Phong vien</th>\n" +
+                        "                            <th>Xoa</th>\n" +
+                        "                            <th>Chinh sua</th>\n" +
+                        "                            <th>Xem</th>\n" +
+                        "                        </tr>";
+                    for (let i = 0; i < data.length; i++) {
+                        content += getData(data[i]);
+                    }
+                    document.getElementById("tableCus").innerHTML = content;
+                }
+            });
+            event.preventDefault();
+        }
+
+        function getData(c) {
+            return `<tr>` +
+                `<td>${c.idTintuc}</td>` +
+                `<td>${c.tieuDe}</td>` +
+                `<td>${c.danhMuc.tenDanhMuc}</td>` +
+                // `<td>${dates.format(c.ngayDangtin, 'dd-MM-yyyy')}</td>` +
+                `<td>${c.ngayDangtin}</td>` +
+                `<td>${c.noiDung}</td>` +
+                // `<td>${c.customerGender}</td>` +
+
+                `<td>${c.tenPhongVien}</td>` +
+
+                `<td>
+                     <button  type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"
+                        th:attr="onclick=|deleteModal('${c.idTintuc}', '${c.tieuDe}')|">
+                        Xoa
+                    </button>
+                </td>` +
+                `<td>
+                    <button type="button" class="btn btn-danger">
+                        <a th:href="@{/tintuc/update/{id}(id=${c.idTintuc})}">Chinh sua</a>
+                    </button>
+
+                </td>` +
+                `<td hidden>
+                     <button  type="button" class="btn btn-danger"  data-toggle="modal" data-target="#exampleModal1"
+                     th:attr="onclick=|viewModal( '${t.tieuDe}','${t.danhMuc.tenDanhMuc}',
+                     '${t.ngayDangtin}','${t.noiDung}', '${t.tenPhongVien}')|">
+                Xem
+            </button>
+                </td>`+
+                    `</tr>`;
+        }
+
+
+    </script>
+
 </head>
 <body>
+<div id="nav" class="header col-12 ">
+    <div class=" nav-logo">
+        <img src="/codegym.jpg" style="width: 40px;height: 40px">
+    </div>
+    <div class=" nav-name">
+        <a><span class="text-white"></span></a>
+        <a href="#">Nguyen Trung Hieu</a>
+        <!--        <ul class="subnav">-->
+        <!--            <li><a href="">Dashboard</a></li>-->
+        <!--            <li><a href="">Profile</a></li>-->
+        <!--            <li><a href="">Log out</a></li>-->
+        <!--        </ul>-->
+    </div>
+
+
+</div>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto margin-navbar ">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/employee">Employee</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/customer">Customer</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/service">Service</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/contract">Contract</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-expanded="false">
-                    Sort
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Name</a>
-                    <a class="dropdown-item" href="#">Email</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Address</a>
-                </div>
-            </li>
-        </ul>
+
         <form class="form-inline my-2 my-lg-0">
-            <input  id="input-search" name="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button onclick="searchCustomer()" class="btn btn-outline-success my-2 my-sm-0" type="button" >Search</button>
-            <!--        </form>-->
-            <!--        &lt;!&ndash;        <%&#45;&#45;            onclick="showCreate('${cus.id}','${cus.typeId}','${cus.name}','${cus.birthday}','${cus.gender}','${!cus.gender}',&#45;&#45;%>&ndash;&gt;-->
-            <!--        &lt;!&ndash;        <%&#45;&#45;            '${cus.idCard}','${cus.phone}','${cus.email}','${cus.address}')"&#45;&#45;%>&ndash;&gt;-->
-            <!--        <form action="/employee/create" class="form-inline my-2 my-lg-0" method="get">-->
-            <!--            <input hidden name="action" value="create">-->
-            <!--            <button type="submit" class="btn btn-outline-success my-2 my-sm-0 btn-create"-->
-            <!--                    data-toggle="modal" data-target="#createForm">Create-->
-            <!--            </button>-->
-            <a href="/customer/create">
+            <input id="input-search" name="search" class="form-control mr-sm-2" type="text" placeholder="Search"
+                   aria-label="Search">
+            <button onclick="searchCustomer()" class="btn btn-outline-success my-2 my-sm-0" type="button">Search
+            </button>
+
+            <a th:href="@{/tintuc/create}">
                 <button type="button" class="btn btn-outline-success my-2 my-sm-0 btn-create">Create</button>
             </a>
         </form>
     </div>
 </nav>
 
-
-
-
-
-
-
-
-
-
-
-<td>
-    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
-            th:attr="onclick=|deleteModal('${employeeObj.employeeId}', '${employeeObj.employeeName}')|">
-        Delete
+<div class="dropdown" >
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+        Danh muc
     </button>
-</td>
+    <div class="dropdown-menu" th:each="d : ${danhMucs}" >
+        <div th:each="d : ${danhMucs}">
+            <a class="dropdown-item" th:href="@{/tintuc/timkiem/{tenDanhMuc}(tenDanhMuc=${d.idDanhMuc})}"><span th:text="${d.tenDanhMuc}"></span></a>
+
+        </div>
+<!--        <a class="dropdown-item" href="#">Another action</a>-->
+<!--        <a class="dropdown-item" href="#">Something else here</a>-->
+    </div>
+</div>
+
+
+<form th:action="@{/tintuc/search}" method="get" class="form-inline my-2 my-lg-0">
+    <input  name="timkiemtieude" class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button  class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search
+    </button>
+</form>
+
+<!--    search nhieu truong-->
+<form  class="form-inline my-2 my-lg-0">
+    <input id="input-search1" name="tieuDe" class="form-control mr-sm-2" type="text" placeholder="Search"
+           aria-label="Search">
+    <input id="input-search2" name="noiDung" class="form-control mr-sm-2" type="text" placeholder="Search"
+           aria-label="Search" >
+    <input id="input-search3" name="danhMuc" class="form-control mr-sm-2" type="text" placeholder="Search"
+           aria-label="Search">
+    <button  class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search
+    </button>
+</form>
+<!--    ket thuc-->
+
+
+<table id="tableCus" class="table table-area" style="width: 80%;">
+    <thead>
+    <tr>
+        <th  scope="col">STT</th>
+        <th scope="col">Ma tin tuc</th>
+        <th>Tieu de</th>
+        <th>Danh muc</th>
+        <th>Ngay dang tin</th>
+        <th>Noi dung</th>
+        <th>Phong vien</th>
+        <th>Xoa</th>
+        <th>Chinh sua</th>
+        <th>Xem</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="t, stt : ${tinTucs}">
+        <th scope="row" th:text="${stt.count}"></th>
+        <td th:text="${t.idTintuc}"></td>
+        <td th:text="${t.tieuDe}"></td>
+        <td th:text="${t.danhMuc.tenDanhMuc}"></td>
+        <td th:text="${#dates.format(t.ngayDangtin, 'dd-MM-yyyy')}" ></td>
+        <td th:text="${t.noiDung}"></td>
+        <td th:text="${t.tenPhongVien}"></td>
+        <td>
+            <button hidden type="button" class="btn btn-danger ">
+                <a th:href="${t.idTintuc}">Xoa</a>
+            </button>
+
+            <button  type="button" class="btn btn-danger" delete data-toggle="modal" data-target="#exampleModal"
+                    th:attr="onclick=|deleteModal('${t.idTintuc}', '${t.tieuDe}')|">
+                Xoa
+            </button>
+        </td>
+        <!--        <td><a th:href="${t.idTintuc}" class="delete-customer">Xoa</a></td>-->
+        <td>
+            <button type="button" class="btn btn-danger">
+                <a style="text-decoration: none" th:href="@{/tintuc/update/{id}(id=${t.idTintuc})}">Chinh sua</a>
+            </button>
+            <!--            <a th:href="@{/tintuc/update/{id}(id=${t.idTintuc})}">Chinh sua</a></td>-->
+        </td>
+        <td>
+            <button  type="button" class="btn btn-danger"  data-toggle="modal" data-target="#exampleModal1"
+                     th:attr="onclick=|viewModal( '${t.tieuDe}','${t.danhMuc.tenDanhMuc}',
+                     '${#dates.format(t.ngayDangtin, 'dd-MM-yyyy')}','${t.noiDung}', '${t.tenPhongVien}')|">
+                Xem
+            </button>
+        </td>
+
+
+    </tr>
+
+    </tbody>
+</table>
+
+
+<!--<td>-->
+<!--    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"-->
+<!--            th:attr="onclick=|deleteModal('${employeeObj.employeeId}', '${employeeObj.employeeName}')|">-->
+<!--        Delete-->
+<!--    </button>-->
+<!--</td>-->
 
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button hidden type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Launch demo modal
 </button>
 
-<!-- Modal -->
+<!-- Modal delete -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
+<!--        <form th:action="@{/tintuc/xoa}" method="get">-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="idMove" name="idMove">
+                    Ban co muon xoa tin tuc: <p id="tenTinTuc"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    <button type="button" class="btn btn-primary delete-customer" data-dismiss="modal">Delete</button>
+                </div>
+            </div>
+<!--        </form>-->
+    </div>
+</div>
+
+
+
+
+<!-- Modal view -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <!--        <form th:action="@{/tintuc/xoa}" method="get">-->
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 style="text-align: center" class="modal-title" id="exampleModalLabel1">View</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <input type="hidden" id="employeeIdMove" name="employeeId">
-                Do you want to delete this employee: <br>
-                Employee Name:  <p id="employeeName"></p>
+                Tieu de:        <span id="tieude"></span><br>
+                Danh muc:       <span id="danhmuc"></span><br>
+                Noi dung:       <span id="noidung">  </span><br>
+                Ngay:           <span id="ngay"></span><br>
+                Phong vien:     <span id="phongvien"></span><br>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
+        <!--        </form>-->
     </div>
 </div>
 
 
+
+
+<div class="container">
+    <div class="pagination" th:each="stt, s: ${tinTucs.totalPages}">
+
+        <a th:href="@{'/tintuc'(page=${tinTucs.number - 1})}" th:if="${tinTucs.hasPrevious()}">&laquo;</a>
+
+        <a class="active" th:text="${tinTucs.number + 1}"></a>
+        <a th:href="@{'/tintuc'(page=${tinTucs.number + 1})}" th:if="${tinTucs.hasNext()}">&raquo;</a>
+    </div>
+</div>
+
+<!--<nav aria-label="...">-->
+<!--    <ul class="pagination">-->
+<!--        <li class="page-item disabled">-->
+<!--            <a th:href="@{'/tintuc'(page=${tinTucs.number - 1})}" th:if="${tinTucs.hasPrevious()}" class="page-link">Previous</a>-->
+<!--        </li>-->
+<!--        <li class="page-item">-->
+<!--            <a class="active" th:text="${tinTucs.number + 1}" class="page-link" href="#"></a>-->
+<!--        </li>-->
+<!--        <li class="page-item active" aria-current="page">-->
+<!--            <a class="page-link" href="#">2</a>-->
+<!--        </li>-->
+<!--        <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--        <li class="page-item">-->
+<!--            <a th:href="@{'/tintuc'(page=${tinTucs.number + 1})}" th:if="${tinTucs.hasNext()}">Next</a>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</nav>-->
+
+
+
+
+<!--<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"-->
+<!--        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"-->
+<!--        crossorigin="anonymous"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"-->
+<!--        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"-->
+<!--        crossorigin="anonymous"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
 <script>
-    function deleteModal(employeeId,employeeName){
-        document.getElementById("employeeIdMove").value=employeeId;
-        document.getElementById("employeeName").innerText=employeeName;
+    function deleteModal(id, name) {
+        document.getElementById("idMove").value = id;
+        document.getElementById("tenTinTuc").innerText = name;
+    }
+
+    function viewModal(tieude,danhmuc,ngay,noidung,phongvien) {
+
+
+        // document.getElementById("idMove").value = id;
+        document.getElementById("tieude").innerText = tieude;
+        document.getElementById("danhmuc").innerText = danhmuc;
+        document.getElementById("ngay").innerText = ngay;
+        document.getElementById("noidung").innerText = noidung;
+        document.getElementById("phongvien").innerText = phongvien;
     }
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </body>
 </html>

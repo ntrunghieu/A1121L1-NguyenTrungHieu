@@ -7,6 +7,7 @@ import org.springframework.format.Formatter;
 
 import java.text.ParseException;
 import java.util.Locale;
+import java.util.Optional;
 
 public class DanhMucFormatter implements Formatter<DanhMuc> {
     private IDanhMucService iDanhMucService;
@@ -18,11 +19,12 @@ public class DanhMucFormatter implements Formatter<DanhMuc> {
 
     @Override
     public DanhMuc parse(String text, Locale locale) throws ParseException {
-        return null;
+        Optional<DanhMuc> danhMucOptional = iDanhMucService.findById(Long.parseLong(text));
+        return danhMucOptional.orElse(null);
     }
 
     @Override
     public String print(DanhMuc object, Locale locale) {
-        return null;
+        return "[" + object.getIdDanhMuc() + ", " +object.getTenDanhMuc() + "]";
     }
 }

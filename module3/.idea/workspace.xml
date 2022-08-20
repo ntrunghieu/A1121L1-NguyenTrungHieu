@@ -23,83 +23,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0c68399-0e84-42db-851f-c638574cb499" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Exam/src/main/java/controller/ServletHocSinh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exam/src/main/java/model/repository/HocSinhRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exam/src/main/java/model/repository/Impl/HocSinhRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exam/src/main/java/model/service/HocSinhService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exam/src/main/java/model/service/Impl/HocSinhServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exam/src/main/webapp/view/danhSachMuon/header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exam/src/main/webapp/view/danhSachMuon/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exam/src/main/webapp/view/hocsinh/create.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exam/src/main/webapp/view/hocsinh/header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exam/src/main/webapp/view/hocsinh/listStudent.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rules.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module 1/ss09_cautruc-dk2/Bai-tap/duongqua.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module 1/ss09_cautruc-dk2/Bai-tap/duongqua.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/Graphics/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/Graphics/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/Graphics/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/Graphics/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/Graphics/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/Graphics/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/Graphics/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/Graphics/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/Graphics/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/Graphics/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/Graphics/draw.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/Graphics/draw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/controller/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/model/bean/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/model/bean/BankAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/model/service/IBankAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/model/service/IBankAccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/model/service/Impl/BankAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/model/service/Impl/BankAccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/utils/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/Baikiemtra_NguyenThaiDuong/utils/Regex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/baikiemtra/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/baikiemtra/controller/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/baitapngoai/Calculable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/baitapngoai/Calculable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/baitapngoai/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/baitapngoai/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/baitapngoai/MainStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/baitapngoai/MainStudent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/baitapngoai/MathCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/baitapngoai/MathCalc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/baitapngoai/MyCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/baitapngoai/MyCalc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/baitapngoai/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/baitapngoai/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/baitapngoai/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/baitapngoai/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/baitapngoai/TestShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/baitapngoai/TestShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/caseStudy/utils/RegexData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/caseStudy/utils/RegexData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/module2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/module2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/out/production/module2/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/out/production/module2/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/out/production/module2/Exam/utils/WriteReadCSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/out/production/module2/Exam/utils/WriteReadCSV.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/out/production/module2/baitapngoai/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/out/production/module2/baitapngoai/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/out/production/module2/caseStudy/utils/RegexData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/out/production/module2/caseStudy/utils/RegexData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/out/production/module2/module2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/out/production/module2/module2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/ss11_DSA_Stack_Queue/btap/DoiThapPhan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/ss11_DSA_Stack_Queue/btap/DoiThapPhan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/ss19_String_Regex/btap/demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/ss19_String_Regex/btap/demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss07_thiet_ke_bo_cuc_web/thuchanh/ajax.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/caseStudy/src/main/java/casestudy/formatter/DateConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/caseStudy/src/main/java/casestudy/formatter/DateFormatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/controller/TinTucController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/controller/TinTucControllerRest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/entity/DanhMuc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/entity/TinTuc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/formatter/DanhMucFormatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/formatter/DateConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/formatter/DateFormatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/repository/IDanhMucRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/repository/ITinTucRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/service/danhmuc/DanhMucService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/service/tintuc/TinTucService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/service/tintuc/impl/ITinTucService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/validate/TinTucValidate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/resources/message.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/resources/templates/tintuc/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/resources/templates/tintuc/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/resources/templates/tintuc/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/controller/KhuyenMaiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/entity/KhuyenMai.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/formatter/DateConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/formatter/DateFormatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/repository/IKhuyenMaiRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/service/IKhuyenMaiService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/service/KhuyenMaiService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/validate/KhuyenMaiValidate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/resources/message.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/resources/templates/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/resources/templates/update.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module5/caseStudy/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module2/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module2/src/caseStudy/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/caseStudy/models/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Exam/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Exam/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/.gradle/6.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Exam/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/build/classes/java/main/controller/ServletBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/build/classes/java/main/controller/ServletBook.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/build/classes/java/main/controller/ServletMuon.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/build/classes/java/main/controller/ServletPatient.class" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/build/classes/java/main/controller/ServletPatient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/build/classes/java/main/model/repository/Impl/PatientRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/build/classes/java/main/model/repository/Impl/PatientRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/build/classes/java/main/model/repository/Impl/SachRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/build/classes/java/main/model/repository/Impl/SachRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/build/classes/java/main/model/repository/SachRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/build/classes/java/main/model/repository/SachRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/build/classes/java/main/model/service/Impl/PatientServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/build/classes/java/main/model/service/Impl/PatientServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/build/classes/java/main/model/service/Impl/SachServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/build/classes/java/main/model/service/Impl/SachServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/build/classes/java/main/model/service/SachService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/build/classes/java/main/model/service/SachService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/build/classes/java/main/utils/Validate.class" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/build/classes/java/main/utils/Validate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/build/libs/Exam-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/build/libs/Exam-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/java/ServletHocSinh.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/java/controller/ServletDanhSachMuon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/java/controller/ServletBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/java/controller/ServletBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/java/controller/ServletMuon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/java/controller/ServletPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/java/controller/ServletPatient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/java/model/repository/Impl/PatientRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/java/model/repository/Impl/PatientRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/java/model/repository/Impl/SachRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/java/model/repository/Impl/SachRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/java/model/repository/SachRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/java/model/repository/SachRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/java/model/service/Impl/PatientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/java/model/service/Impl/PatientServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/java/model/service/Impl/SachServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/java/model/service/Impl/SachServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/java/model/service/SachService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/java/model/service/SachService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/java/utils/Validate.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/java/utils/Validate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/webapp/view/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/webapp/view/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/webapp/view/sach/muon.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/webapp/view/sach/muon.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exam/src/main/java/model/bean/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/java/model/bean/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exam/src/main/webapp/bootstrap-4.6.1-dist/bootstrap-4.6.1-dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/webapp/bootstrap-4.6.1-dist/bootstrap-4.6.1-dist/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exam/src/main/webapp/bootstrap413/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/webapp/bootstrap413/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exam/src/main/webapp/exam2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/webapp/exam2.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/build/libs/caseStudy_jsp_servlet_java_web-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/build/libs/caseStudy_jsp_servlet_java_web-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/src/main/webapp/bootstrap4.6.0/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/src/main/webapp/bootstrap4.6.0/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/src/main/webapp/codegym.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/src/main/webapp/view/employee/listEmployee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/src/main/webapp/view/employee/listEmployee.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss07_thiet_ke_bo_cuc_web/btap/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ss07_thiet_ke_bo_cuc_web/btap/demo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss07_thiet_ke_bo_cuc_web/thuchanh/nutphantrang.html" beforeDir="false" afterPath="$PROJECT_DIR$/ss07_thiet_ke_bo_cuc_web/thuchanh/nutphantrang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss10_jstl/btap/list_customer/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ss10_jstl/btap/list_customer/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss10_jstl/thuchanh/jsp/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ss10_jstl/thuchanh/jsp/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss11_mvc/thuchanh/customerManage/src/main/webapp/view/customer/listCustomer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc/thuchanh/customerManage/src/main/webapp/view/customer/listCustomer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/load.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/load.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module4/caseStudy/src/main/java/casestudy/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/caseStudy/src/main/java/casestudy/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module4/caseStudy/src/main/java/casestudy/repository/customer/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/caseStudy/src/main/java/casestudy/repository/customer/ICustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module4/caseStudy/src/main/resources/static/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/caseStudy/src/main/resources/static/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module4/caseStudy/src/main/resources/templates/customer/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/caseStudy/src/main/resources/templates/customer/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module4/ss02/btap/Calculator/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/ss02/btap/Calculator/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module4/ss02/btap/Calculator/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/ss02/btap/Calculator/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module4/ss02/btap/Calculator/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/ss02/btap/Calculator/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module4/ss02/thuchanh/email_Validate_Gradle/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/ss02/thuchanh/email_Validate_Gradle/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module4/ss02/thuchanh/email_Validate_Gradle/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/ss02/thuchanh/email_Validate_Gradle/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module4/ss05/thuchanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/ss05/thuchanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module4/ss09/thuchanh/customer/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/ss09/thuchanh/customer/customer-management" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,8 +105,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -149,10 +145,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../module5" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -297,7 +295,7 @@
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -342,11 +340,26 @@
       <workItem from="1655116864877" duration="3089000" />
       <workItem from="1655192631401" duration="1061000" />
       <workItem from="1655462936590" duration="19000" />
+      <workItem from="1657782226988" duration="21000" />
+      <workItem from="1657782308062" duration="11000" />
+      <workItem from="1657782351813" duration="775000" />
+      <workItem from="1657889434794" duration="169000" />
+      <workItem from="1657898965155" duration="99000" />
+      <workItem from="1657899196219" duration="62000" />
+      <workItem from="1658039138494" duration="10000" />
+      <workItem from="1658039179958" duration="5682000" />
+      <workItem from="1658141488313" duration="4153000" />
+      <workItem from="1658289881574" duration="8349000" />
+      <workItem from="1659358902494" duration="242000" />
+      <workItem from="1659963777510" duration="1971000" />
+      <workItem from="1660315648442" duration="3784000" />
+      <workItem from="1660525895790" duration="3486000" />
+      <workItem from="1660739265955" duration="642000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -358,5 +371,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="452" y="119" key="FileChooserDialogImpl" timestamp="1660739313139">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="452" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1660739313139" />
   </component>
 </project>

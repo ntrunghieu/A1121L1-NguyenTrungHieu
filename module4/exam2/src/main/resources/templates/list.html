@@ -1,10 +1,322 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous">
+
+    <style>
+
+        table {
+            margin-top: 30px;
+
+        }
+
+        .table-area {
+            width: 30%;
+            margin-top: 60px;
+            left: 50%;
+            transform: translateX(13%);
+
+        }
+
+        html {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .header {
+            height: 68px;
+            background-color: #272882;
+        }
+
+        #nav .nav-logo img {
+            margin: 13px;
+        }
+
+        #nav .nav-name {
+
+            line-height: 68px;
+
+        }
+
+        div#nav:hover {
+            background-color: #343590;
+
+        }
+
+        #nav .nav-name a {
+            right: 50%;
+            color: white;
+        }
+
+        #nav .nav-name li {
+            /*display: inline-block;*/
+        }
+
+        #nav li a {
+            /*color: #cbbfbf;*/
+            /*text-decoration: none;*/
+            /*line-height: 68px;*/
+            /*left: 80%;*/
+        }
+
+        .nav-name li :hover a {
+            /*color: #272882;*/
+            /*background-color: #ccc;*/
+
+        }
+
+        #nav .nav-name .subnav {
+            /*display: none;*/
+        }
+
+
+        #header img {
+            margin: 13px;
+        }
+
+        div#nav {
+            display: flex;
+        }
+
+        #nav .nav-name {
+            margin-left: 70%;
+        }
+
+        /*css cho nut phan trang*/
+        .container {
+            width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .pagination {
+            width: 400px;
+            margin-left: 50px;
+        }
+
+        .pagination a {
+            display: block;
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+        }
+
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div id="nav" class="header col-12 ">
+    <div class=" nav-logo">
+        <img src="/codegym.jpg" style="width: 40px;height: 40px">
+    </div>
+    <div class=" nav-name">
+        <a><span class="text-white"></span></a>
+        <a href="#">Nguyen Trung Hieu</a>
+
+    </div>
+
+
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <form th:action="@{khuyenmai/timkiem}" method="get" class="form-inline my-2 my-lg-0">
+            <input id="input-search1" name="mucGiam" class="form-control mr-sm-2" type="text" placeholder="Search"
+                   aria-label="Search">
+<!--            <input id="input-search2" name="batDau" class="form-control mr-sm-2" type="date" placeholder="Search"-->
+<!--                   aria-label="Search">-->
+<!--            <input id="input-search3" name="ketThuc" class="form-control mr-sm-2" type="date" placeholder="Search"-->
+<!--                   aria-label="Search">-->
+            <button  class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+            <a th:href="@{/khuyenmai/create}">
+                <button type="button" class="btn btn-outline-success my-2 my-sm-0 btn-create">Create</button>
+            </a>
+        </form>
+    </div>
+</nav>
+
+<table id="tableCus" class="table table-area" style="width: 80%;">
+    <thead>
+    <tr>
+        <th  scope="col">STT</th>
+        <th>Tieu de</th>
+        <th>Thoi gian bat dau</th>
+        <th>Thoi gian ket thuc</th>
+        <th>Muc giam</th>
+        <th>Chi tiet</th>
+        <th>Xoa</th>
+        <th>Chinh sua</th>
+        <th>Xem</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="t, stt : ${khuyenMais}">
+        <th scope="row" th:text="${stt.count}"></th>
+        <td th:text="${t.tieuDe}"></td>
+        <td th:text="${#dates.format(t.batDau, 'dd-MM-yyyy')}"></td>
+        <td th:text="${#dates.format(t.ketThuc, 'dd-MM-yyyy')}" ></td>
+        <td th:text="${t.mucGiamGia}"></td>
+        <td th:text="${t.chiTiet}"></td>
+        <td>
+            <button hidden type="button" class="btn btn-danger ">
+                <a th:href="${t.id}">Xoa</a>
+            </button>
+
+            <button  type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"
+                     th:attr="onclick=|deleteModal('${t.id}', '${t.tieuDe}')|">
+                Xoa
+            </button>
+        </td>
+        <!--        <td><a th:href="${t.idTintuc}" class="delete-customer">Xoa</a></td>-->
+        <td>
+            <button type="button" class="btn btn-danger">
+                <a style="text-decoration: none" th:href="@{/khuyenmai/update/{id}(id=${t.id})}">Chinh sua</a>
+            </button>
+            <!--            <a th:href="@{/tintuc/update/{id}(id=${t.idTintuc})}">Chinh sua</a></td>-->
+        </td>
+        <td>
+            <button  type="button" class="btn btn-danger"  data-toggle="modal" data-target="#exampleModal1"
+                     th:attr="onclick=|viewModal( '${t.tieuDe}','${#dates.format(t.batDau, 'dd-MM-yyyy')}',
+                     '${#dates.format(t.ketThuc, 'dd-MM-yyyy')}','${t.mucGiamGia}', '${t.chiTiet}')|">
+                Xem
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<!--    phan trang-->
+<div class="container">
+    <div class="pagination" th:each="stt, s: ${khuyenMais.totalPages}">
+
+        <a th:href="@{'/khuyenmai'(page=${khuyenMais.number - 1})}" th:if="${khuyenMais.hasPrevious()}">&laquo;</a>
+
+        <a class="active" th:text="${khuyenMais.number + 1}"></a>
+        <a th:href="@{'/khuyenmai'(page=${khuyenMais.number + 1})}" th:if="${khuyenMais.hasNext()}">&raquo;</a>
+    </div>
+</div>
+
+<!-- Modal delete -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+                <form th:action="@{/khuyenmai/xoa}" method="get">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="idMove" name="idMove">
+                Ban co muon xoa khuyen mai: <span id="tenTinTuc"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                <button type="submit" class="btn btn-primary delete-customer">Delete</button>
+            </div>
+        </div>
+                </form>
+    </div>
+</div>
+
+<!-- Modal view -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <!--        <form th:action="@{/tintuc/xoa}" method="get">-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 style="text-align: center" class="modal-title" id="exampleModalLabel1">View</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Tieu de:            <span id="tieude"></span><br>
+                Ngay bat dau:       <span id="bd"></span><br>
+                Ngay ket thuc:      <span id="kt">  </span><br>
+                Muc giam:           <span id="mg"></span><br>
+                Chi tiet:           <span id="ct"></span><br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!--        </form>-->
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+<script>
+function deleteModal(id, name) {
+document.getElementById("idMove").value = id;
+document.getElementById("tenTinTuc").innerText = name;
+}
+
+function viewModal(tieude,bd,kt,mucgiam,chitiet) {
+
+
+document.getElementById("tieude").innerText = tieude;
+document.getElementById("bd").innerText = bd;
+document.getElementById("kt").innerText = kt;
+document.getElementById("mg").innerText = mucgiam;
+document.getElementById("ct").innerText = chitiet;
+}
+</script>
+
 </body>
 </html>

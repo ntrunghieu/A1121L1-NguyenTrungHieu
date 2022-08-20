@@ -2,9 +2,143 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous">
+
+    <style>
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        /*th {*/
+        /*    padding-top: 12px;*/
+        /*    padding-bottom: 12px;*/
+        /*    text-align: left;*/
+        /*    background-color: #04AA6D;*/
+        /*    color: white;*/
+        /*}*/
+
+        #createForm1 .submit {
+
+            margin-left: 30%;
+            align-items: center;
+        }
+
+        #createForm1 {
+
+            margin-top: 35px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+
+
+<h2 style="margin-top: 35px; margin-bottom: 10px; margin-left: 50%; font-weight: 400;">Tao khuyen mai</h2>
+<a th:href="@{/khuyenmai}">Hien thi danh sach khuyen mai</a>
+<p th:text="${message}"></p>
+<form id="createForm1" th:action="@{/khuyenmai/save}" th:object="${khuyenMai}" method="post">
+    <table>
+        <tr>
+            <th style="text-align: center; size: 60px" colspan="2">Them khuyen mai</th>
+        </tr>
+
+        <!--        <tr hidden>-->
+        <!--            <td><label for="id">ID</label></td>-->
+        <!--            <td>-->
+        <!--                <input th:field="*{idTintuc}"  id="id" name="id" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">-->
+        <!--                <p style="color: red" th:if="${#fields.hasErrors('idTintuc')}" th:errors="*{idTintuc}"></p>-->
+        <!--            </td>-->
+        <!--        </tr>-->
+        <tr>
+            <td><label for="name">Tieu de</label></td>
+            <td>
+                <input th:field="*{tieuDe}" th:value="*{tieuDe}" id="name" name="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                <p style="color: red" th:if="${#fields.hasErrors('tieuDe')}" th:errors="*{tieuDe}"></p>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label for="batDau">Ngay bat dau</label></td>
+            <td>
+                <input th:field="*{batDau}" th:value="*{batDau}" type="date" id="batDau" name="batDau">
+                <p style="color: red" th:if="${#fields.hasErrors('batDau')}" th:errors="*{batDau}"></p>
+
+            </td>
+        </tr>
+        <tr>
+            <td><label for="ketThuc">Ngay ket thuc</label></td>
+            <td>
+                <input th:field="*{ketThuc}" th:value="*{ketThuc}" type="date" id="ketThuc" name="ketThuc">
+                <p style="color: red" th:if="${#fields.hasErrors('ketThuc')}" th:errors="*{ketThuc}"></p>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td><label for="mucGiamGia">Muc giam</label></td>
+            <td>
+                <!--                <input th:field="*{noiDung}" th:value="*{noiDung}" type="text" id="noidung" name="noidung">-->
+                <input th:field="*{mucGiamGia}" th:value="*{mucGiamGia}" type="text" id="mucGiamGia" name="mucGiamGia">
+                <p style="color: red" th:if="${#fields.hasErrors('mucGiamGia')}" th:errors="*{mucGiamGia}"></p>
+
+            </td>
+        </tr>
+
+
+        <tr>
+            <td><label for="chiTiet">Chi tiet</label></td>
+            <td>
+                <!--                <input th:field="*{noiDung}" th:value="*{noiDung}" type="text" id="noidung" name="noidung">-->
+                <textarea cols="43" ; rows="8" th:field="*{chiTiet}" th:value="*{chiTiet}" type="text" id="chiTiet" name="chiTiet"></textarea>
+                <p style="color: red" th:if="${#fields.hasErrors('chiTiet')}" th:errors="*{chiTiet}"></p>
+
+            </td>
+        </tr>
+
+    </table>
+    <div class="submit">
+        <button type="submit">Luu</button>
+        <button type="button"><a href="/khuyenmai">Quay lai</a></button>
+    </div>
+</form>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
 </body>
 </html>

@@ -35,7 +35,7 @@
 </head>
 <body>
 <%@include file="../header.jsp"%>
-table id="tableStudent" class="table table-area" style="width: 80%">
+<table id="tableStudent" class="table table-area" style="width: 80%">
 <thead>
 <tr>
     <th scope="col">STT</th>
