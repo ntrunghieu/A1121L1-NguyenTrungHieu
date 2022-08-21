@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous">
+    <!--    <link rel="stylesheet" type="text/css" href="icon/css/fontawesome-all.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .d-flex input{
+            margin-right: 20px;
+        }
+
+        .content-right
+        {
+            border: 1px solid black;
+            width: 50%;
+            margin-left: 15%;
+        }
+
+        .content-left ul{
+            list-style-type: none;
+            width: 100%;
+        }
+        .list-item ul li{
+            padding: 20px 10px;
+        }
+
+        .list-item ul li a{
+            color: black;
+            font-weight: 500;
+        }
+        .list-item ul li:hover{
+            background-color: aqua;
+            cursor: pointer;
+        }
+
+        .icon span{
+            margin-right: 10px;
+            margin-left: 10px;
+            padding: 10px 10px;
+        }
+        .icon span:hover{
+            background-color: #fffdfd;
+            color: black;
+            cursor: pointer;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;;
+        }
+        #header-table h2{
+            display: inline-block;
+        }
+        #header-table{
+            position: static;
+        }
+        #header-table a{
+            display: inline-block;
+            position: absolute;
+            right: 20px;
+            top: 40px;
+            font-size: 25px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="col-md-9 col-xs-12 content-right">
+    <div id="header-table">
+        <h2 style="margin-top: 35px; margin-bottom: 10px; font-weight: 400;">Create New Service</h2>
+        <a>Display List Service</a>
+    </div>
+    <div id="input-form" style="width: 85%;margin: 10px">
+        <form method="post">
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text">Name: </span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text">Cost: </span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text">Num Of Floors: </span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text">Pool Area: </span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text">Area</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text">Standard Room: </span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text">Max People: </span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text">Description: </span>
+                <textarea cols="20" rows="5" type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-sm">
+                </textarea>
+            </div>
+            <div>
+                            <span class="input-group input-group-sm mb-3">
+                                <span class="input-group-text">Service Type</span>
+                                 <select class="form-select" aria-label="Default select example">
+                                    <option>villa</option>
+                                     <option>house</option>
+                                     <option>room</option>
+                                 </select>
+                            </span>
+                <span class="input-group input-group-sm mb-3">
+                                <span class="input-group-text">Customer Type</span>
+                            <select class="form-select" aria-label="Default select example">
+                                <option>GoLD</option>
+                                 <option>Silver</option>
+                                 <option>Member</option>
+                            </select>
+                </span>
+            </div>
+            <div style="width: 100%; margin-bottom: 10px" class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit">Create</button>
+                <button class="btn btn-primary" type="button">Back</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+</body>
+</html>

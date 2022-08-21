@@ -1,0 +1,19 @@
+div.header, div#body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px;
+
+}
+
+div.header div {
+    margin-left: 10px;
+}
+
+div#carouselExampleControls div.carousel-inner div.carousel-item img {
+
+}
+
+footer.text-center section.d-flex div.icon a.me-4 i{
+    margin: 13px;
+    color: black;
+}
