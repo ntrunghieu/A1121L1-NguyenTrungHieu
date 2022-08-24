@@ -1,0 +1,8 @@
+<h1>Color</h1>
+<h3>Nhập mã màu: <input type="text" [(ngModel)]="color"></h3>
+<h3>Chọn màu: <button style="background-color: red" (click)="red()">Red </button>
+  <button style="background-color: yellow" (click)="yellow()">Yellow </button>
+  <button style="background-color: blue" (click)="blue()">Blue</button>
+</h3>
+<h3>Hiển thị màu</h3>
+<p [style.background-color]="color"></p>

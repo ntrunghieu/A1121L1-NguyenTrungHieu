@@ -1,0 +1,22 @@
+<h2>Pet profile</h2>
+
+
+
+<!--binding dữ liệu 2 chiều thay đổi thông tin của thú cưng:-->
+<label>
+  Pet name:
+  <input type="text" [(ngModel)]="pet.name">
+</label>
+<br >
+<label>
+  Pet image:
+  <input type="url" [(ngModel)]="pet.image">
+</label>
+<br >
+<h3>Pet name: {{pet.name}}</h3>
+<img [src]="pet.image" style="max-width: 100%">
+<h3>Size img: <input  type="range" min="50" max="100" value="50" [(ngModel)]="width" ></h3>
+
+
+<h3>Pet name: {{pet.name}}</h3>
+<img [src]="pet.image"  [style.width.%]="width" >
