@@ -1,0 +1,10 @@
+div.header, div#body {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px;
+
+}
+
+div.header div {
+  margin-left: 10px;
+}

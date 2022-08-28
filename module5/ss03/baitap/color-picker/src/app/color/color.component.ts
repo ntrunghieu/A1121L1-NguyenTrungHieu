@@ -7,22 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColorComponent implements OnInit {
 
-  color:string=``;
+  color = ``;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   red() {
-    this.color="red";
+    this.color = 'red';
   }
 
   yellow() {
-    this.color="yellow";
+    this.color = 'yellow';
   }
 
   blue() {
-    this.color="blue";
+    this.color = 'blue';
   }
 
 }
