@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+
+
+    <style>
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        /*th {*/
+        /*    padding-top: 12px;*/
+        /*    padding-bottom: 12px;*/
+        /*    text-align: left;*/
+        /*    background-color: #04AA6D;*/
+        /*    color: white;*/
+        /*}*/
+
+        #createForm1 .submit {
+
+            margin-left: 30%;
+            align-items: center;
+        }
+
+        #createForm1 {
+
+            margin-top: 35px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+
+
+<h2 style="margin-top: 35px; margin-bottom: 10px; font-weight: 400;">Create Employee</h2>
+<a >Display List Employee</a>
+<p ></p>
+<form id="createForm1" action="/employee/save"  method="post">
+    <table>
+        <tr>
+            <th colspan="2">Create a new employee</th>
+        </tr>
+
+        <tr hidden>
+            <td><label for="id">ID</label></td>
+            <td>
+                <input  id="id" name="id" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="name">Name</label></td>
+            <td>
+                <input  id="name" name="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="date">Birthday</label></td>
+            <td><input  type="date" id="date" name="date"></td>
+        </tr>
+        <tr>
+            <td><label for="idCard">ID Card</label></td>
+            <td><input  type="text" id="idCard" name="IDCard"></td>
+        </tr>
+        <tr>
+            <td><label for="salary">Salary</label></td>
+            <td><input  type="text" id="salary" name="salary"></td>
+        </tr>
+        <tr>
+            <td><label for="phone">Phone</label></td>
+            <td><input type="text" id="phone" name="phoneNumber"></td>
+        </tr>
+        <tr>
+            <td><label for="email">Email</label></td>
+            <td><input  type="text" id="email" name="email"></td>
+        </tr>
+        <tr>
+            <td><label for="position">Position</label></td>
+            <td>
+                <select id="position" name="position" >
+                    <option value=""></option>
+                    <option aria-checked="true">Le tan</option>
+                    <option aria-checked="false">Phuc vu</option>
+                    <option aria-checked="true">Chuyen vien</option>
+                    <option aria-checked="true">Quan li</option>
+                    <option aria-checked="true">Giam sat</option>
+                    <option aria-checked="true">Giam doc</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="division" >Division</label></td>
+            <td>
+                <select id="division" name="division" >
+                    <option value=""></option>
+                    <option aria-checked="true">Sale-marketing</option>
+                    <option aria-checked="true">Hanh chinh</option>
+                    <option aria-checked="true">Phuc vu</option>
+                    <option aria-checked="true">Quan li</option>
+                </select>
+            </td>
+
+
+        </tr>
+        <tr>
+            <td><label for="education">Education</label></td>
+            <td>
+                <select id="education" name="education" >
+                    <option value=""></option>
+                    <option aria-checked="true">Trung cap</option>
+                    <option aria-checked="true">Dai Hoc</option>
+                    <option aria-checked="true">Cao Dang</option>
+                    <option aria-checked="true">Sau Dai Hoc</option>
+                </select>
+            </td>
+
+
+        </tr>
+    </table>
+    <div class="submit">
+        <button type="submit">Save</button>
+        <button type="button"><a href="/employee">Back to list</a></button>
+    </div>
+</form>
+</body>
+</html>

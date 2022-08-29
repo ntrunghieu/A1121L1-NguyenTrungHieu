@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <style>
+        #backtop{
+            width: 50px;
+            height: 50px;
+            background: tomato;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop()){
+                    $('#backtop').fadeIn();
+                }else {
+                    $('#backtop').fadeOut();
+                }
+            });
+            $("#backtop").click(function () {
+                $('html, body').animate({scrollTop: 0}, 400);
+            })
+        });
+
+    </script>
+</head>
+<body>
+<!--nut back to top-->
+<div id="backtop">
+    <i class="fa-solid fa-angles-up"></i>
+</div>
+
+
+</body>
+
+
+
+</html>
