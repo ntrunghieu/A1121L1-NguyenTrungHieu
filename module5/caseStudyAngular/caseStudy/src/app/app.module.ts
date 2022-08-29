@@ -8,6 +8,9 @@ import { HeaderComponent } from './header/header.component';
 import { HeadComponent } from './head/head.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ServiceListComponent } from './service-list/service-list.component';
+import { ServiceCreateComponent } from './service-create/service-create.component';
+import { ServiceUpdateComponent } from './service-update/service-update.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { NavigationComponent } from './navigation/navigation.component';
     HeaderComponent,
     HeadComponent,
     FooterComponent,
-    NavigationComponent
+    NavigationComponent,
+    ServiceListComponent,
+    ServiceCreateComponent,
+    ServiceUpdateComponent
   ],
   imports: [
     BrowserModule,
