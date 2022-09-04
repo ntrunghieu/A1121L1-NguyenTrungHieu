@@ -30,9 +30,6 @@ public class KhuyenMaiValidate implements Validator {
         }else if (khuyenMai.getKetThuc().before(khuyenMai.getBatDau()) ){
             errors.rejectValue("ketThuc", "ketThuc", "Phai lon hon ngay bat dau");
 
-
-        }else if ( ){
-
         }else if (khuyenMai.getBatDau() == null && khuyenMai.getKetThuc() == null) {
             errors.rejectValue("ketThuc", "ketThuc.rong", "Chua chon ngay");
 

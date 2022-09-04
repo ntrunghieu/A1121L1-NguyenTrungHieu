@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e8cbe2-a15c-446a-83d2-750dec5925f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backToTop.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module2/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module2/src/out/production/module2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/out/production/module2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module2/src/out/production/module2/META-INF/module2.kotlin_module" beforeDir="false" />
@@ -31,6 +30,19 @@
       <change beforePath="$PROJECT_DIR$/../../module4/ss09/thuchanh/customer/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../module4/ss09/thuchanh/customer/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer/customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer/customer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer/customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer/customer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/footer/footer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/footer/footer.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/header/header.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/navigation/navigation.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/navigation/navigation.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/navigation/navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/navigation/navigation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/service-list/service-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/service-list/service-list.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/service-list/service-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/service-list/service-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +70,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../caseStudyAngular/caseStudy" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -77,6 +89,9 @@
       <option name="presentableId" value="Default" />
       <updated>1661744184416</updated>
       <workItem from="1661744185843" duration="7476000" />
+      <workItem from="1661751735905" duration="4476000" />
+      <workItem from="1661775329005" duration="1898000" />
+      <workItem from="1661943730390" duration="2652000" />
     </task>
     <servers />
   </component>
@@ -93,11 +108,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="452" y="119" key="FileChooserDialogImpl" timestamp="1661751733008">
+    <state x="452" y="119" key="FileChooserDialogImpl" timestamp="1661947693250">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="452" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1661751733008" />
+    <state x="452" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1661947693250" />
   </component>
 </project>

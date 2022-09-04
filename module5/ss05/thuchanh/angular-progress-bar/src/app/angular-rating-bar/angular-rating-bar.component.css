@@ -1,0 +1,34 @@
+.backtop{
+  width: 50px;
+  height: 50px;
+  /*background: tomato;*/
+  /*color: #fff;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*border-radius: 50%;*/
+  position: fixed;
+  /*bottom: 40px;*/
+  /*right: 20px;*/
+}
+
+
+.rating-bar {
+  display: flex;
+}
+.rating-unit {
+  width: 50px;
+  height: 50px;
+  background: #9E9E9E;
+  margin-right: 5px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.active {
+  background: deeppink;
+}

@@ -1,0 +1,25 @@
+<!--<h4>{{cus.id}}</h4>-->
+<!--<h4>{{cus.name}}</h4>-->
+<div class="modal fade" id="exam1" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <p  class="">Ban co muon xoa: <span class="text-warning">{{cus.name}}</span> </p>
+        <input type="number" [(ngModel)]="cus.id" #id>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="delete(id.value)">Xoa</button>
+      </div>
+    </div>
+  </div>
+</div>

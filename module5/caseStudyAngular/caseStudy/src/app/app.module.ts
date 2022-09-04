@@ -11,6 +11,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ServiceListComponent } from './service-list/service-list.component';
 import { ServiceCreateComponent } from './service-create/service-create.component';
 import { ServiceUpdateComponent } from './service-update/service-update.component';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { ServiceUpdateComponent } from './service-update/service-update.componen
     NavigationComponent,
     ServiceListComponent,
     ServiceCreateComponent,
-    ServiceUpdateComponent
+    ServiceUpdateComponent,
+    CustomerDetailComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -44,7 +44,7 @@ img{
 .description{
   position: absolute;
   left: 0;
-  bottom: 210px;
+  bottom: 170px;
   width: 100%;
   padding: 15px;
   text-align: center;
@@ -52,6 +52,7 @@ img{
   font-size: 15px;
 }
 .description h4{
+  font-family: Arial;
   font-weight: 700;
   font-size: 25px;
   margin: 0 0 20px;
@@ -86,4 +87,14 @@ img{
 .ui-card:hover .description h4{
   opacity: 1;
   transform: translateY(0);
+}
+
+div#body div.ui-card{
+  margin: 10px;
+}
+div#body div.ui-card div.card-body div.bnt-function button{
+  margin-left: 10px;
+}
+div#body div.ui-card div.card-body div.bnt-function{
+  margin-left: 50px;
 }
