@@ -1,0 +1,100 @@
+<div class="text-center">
+  <h1>Register candidate</h1>
+</div>
+<div class="container">
+  <div class="container col-4">
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="email" class="form-control" formControlName="name">
+<!--        <p style="color: red" *ngIf="registerForm.controls.name.hasError('required')&&-->
+<!--registerForm.controls.name.touched">Not null</p>-->
+      </div>
+      <fieldset formGroupName="passwordGroup">
+        <div class="mb-3">
+          <label class="form-label" >Password</label>
+          <input type="password" class="form-control" aria-describedby="emailHelp" formControlName="password">
+<!--          <p style="color: red" *ngIf="registerForm.controls.passwordGroup['controls'].password.errors?.required&&-->
+<!--registerForm.controls.passwordGroup.touched">Not null</p>-->
+<!--          <p style="color: red" *ngIf="registerForm.controls.passwordGroup['controls'].password.errors?.minlength&&-->
+<!--registerForm.controls.passwordGroup.touched">Number of character is more than 6 characters</p>-->
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" >Password confirmed</label>
+          <input type="password" class="form-control" aria-describedby="emailHelp" formControlName="passwordConfirm">
+          <!--          <p style="color: red" *ngIf="registerForm.controls.passwordGroup.hasError('required', ['passwordGroup'])&&-->
+          <!--registerForm.controls.passwordGroup.touched">Not null</p>-->
+<!--          <p style="color: red" *ngIf="registerForm.controls.passwordGroup.errors?.invalid1&&-->
+<!--registerForm.controls.passwordGroup.touched">Must be the same with password</p>-->
+        </div>
+      </fieldset>
+
+
+      <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <div class="col-sm-6">
+          <div class="form-check form-check-inline">
+            <input formControlName="gender" class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="1">
+            <label class="form-check-label" for="inlineRadio1">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input formControlName="gender" class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="0">
+            <label class="form-check-label" for="inlineRadio2">Female</label>
+          </div>
+        </div>
+        <p style="color: red" *ngIf="registerForm.controls.gender.hasError('required')&&
+registerForm.controls.gender.touched">Not null<p>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Age</label>
+        <input type="number" class="form-control" aria-describedby="emailHelp"  formControlName="age">
+<!--        <p style="color: red" *ngIf="registerForm.controls.age.hasError('required')&&-->
+<!--registerForm.controls.age.touched">Not null<p>-->
+<!--        <p style="color: red" *ngIf="registerForm.controls.age.hasError('min')&&-->
+<!--registerForm.controls.age.touched">age must be a number and over 18<p>-->
+
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Phone</label>
+        <input type="text" class="form-control" aria-describedby="emailHelp" formControlName="phone">
+<!--        <p style="color: red" *ngIf="registerForm.controls.phone.hasError('pattern')&&-->
+<!--registerForm.controls.phone.touched">example: +84xxxxxxxxx or +84xxxxxxxxxx <p>-->
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" aria-describedby="emailHelp" formControlName="email">
+<!--        <p style="color: red" *ngIf="registerForm.controls.email.hasError('email')&&-->
+<!--registerForm.controls.email.touched">email format<p>-->
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Country</label>
+        <div>
+          <select class="form-control" id="employeeName" formControlName="country">
+            <option value="">Country</option>
+            <option value="Viet Nam">Viet Nam</option>
+            <option value="USA">USA</option>
+            <option value="Japan">Japan</option>
+          </select>
+<!--          <p style="color: red" *ngIf="registerForm.controls.country.hasError('required')">Not null<p>-->
+        </div>
+      </div>
+
+
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+
+
+      <div class=" text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+
+  </div>
+</div>
