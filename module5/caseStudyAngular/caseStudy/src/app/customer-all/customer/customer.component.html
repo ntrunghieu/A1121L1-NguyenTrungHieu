@@ -1,4 +1,4 @@
-
+<a class="btn btn-primary m-3" routerLink="create">Create</a>
 <table id="tableCus" class="table table-hover" style="width: 30%;">
   <thead>
   <tr>
@@ -6,20 +6,22 @@
     <th scope="col">Id</th>
     <th>Username</th>
     <th>ID Card</th>
+    <th>Date</th>
     <th>Phone</th>
     <th>Email</th>
     <th>Gender</th>
     <th>Address</th>
     <th>Type</th>
-    <th>Delete</th>
-    <th>Update</th>
+    <th>Action</th>
+
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let cus of customers; let i=index;">
+  <tr *ngFor="let cus of listCustomer; let i=index;">
     <th scope="row">{{i}}</th>
     <td>{{cus.id}}</td>
     <td>{{cus.name}}</td>
+    <td>{{cus.date | date:"dd-MM-yyyy"}}</td>
     <td>{{cus.idCard}}</td>
     <td>{{cus.phone}}</td>
     <td>{{cus.email}}</td>
@@ -27,58 +29,21 @@
     <td *ngIf="!cus.gender">Nu</td>
     <td>{{cus.address}}</td>
     <td>{{cus.type}}</td>
-    <td>
-      <div>
-<!--        [attr.data-target]="'#exam'+ cus.id"-->
-        <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exam1" (click)="sendCustomerToDelete(cus.id, cus.name)" >
+    <td class="d-flex">
+
+        <button type="button" class="btn btn-primary "  data-toggle="modal" data-target="#exam1" (click)="sendCustomerToDelete(cus.id, cus.name)" >
           Xoa
         </button>
 
 <!--        <button hidden type="button" class="btn btn-primary"  (click)="openPopup()" >-->
 <!--          Xoa-->
 <!--        </button>-->
-
-        <button type="button" class="btn btn-primary" (click)="temp= getInfor(cus)" >
+        <a class="btn btn-danger mx-3">Sua</a>
+        <button routerLink="detail" type="button" class="btn btn-primary" (click)="temp= getInfor(cus)" >
           Xem
         </button>
 
-<!--        <button type="button" class="btn btn-primary"   (click)="delete(cus.id)">-->
-<!--          Xoa-->
-<!--        </button>-->
-
-        <!--      '#exam'+ cus.id-->
-
-        <!--      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
-        <!--        Xoa-->
-        <!--      </button>-->
-
-
-        <!--      [id]="'exam'+cus.id"-->
-        <!--      <div class="modal fade" [id]="'exam'+cus.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-        <!--        <div class="modal-dialog">-->
-        <!--          <div class="modal-content">-->
-        <!--            <div class="modal-header">-->
-        <!--              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>-->
-        <!--              <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-        <!--                <span aria-hidden="true">&times;</span>-->
-        <!--              </button>-->
-        <!--            </div>-->
-        <!--            <div class="modal-body">-->
-        <!--              <p class="text-danger">Ban co muon xoa {{cus.name}}</p>-->
-        <!--            </div>-->
-        <!--            <div class="modal-footer">-->
-        <!--              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-        <!--              <button type="button" class="btn btn-primary" (click)="delete(cus.id)" data-bs-dismiss="modal">Delete</button>-->
-        <!--            </div>-->
-        <!--          </div>-->
-        <!--        </div>-->
-        <!--      </div>-->
-
-<!--        [id]="'exam'+cus.id"-->
-
-      </div>
     </td>
-    <td><a class="btn btn-danger">Sua</a></td>
 
   </tr>
   </tbody>

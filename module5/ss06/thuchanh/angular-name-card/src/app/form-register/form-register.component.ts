@@ -15,7 +15,7 @@ export class FormRegisterComponent implements OnInit {
       name: new FormControl('', [Validators.required]),
       passwordGroup: new FormGroup({
         password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-        passwordConfirm: new FormControl()
+        passwordConfirm: new FormControl('', [Validators.required, Validators.minLength(6)])
       }, [ this.comparePassword]) ,
       gender: new FormControl('', [Validators.required]),
       age: new FormControl('', [Validators.required, Validators.min(18)]),

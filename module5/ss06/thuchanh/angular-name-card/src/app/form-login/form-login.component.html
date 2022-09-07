@@ -1,0 +1,22 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="email" class="form-label">Email: </label>
+    <input id="email" type="email" class="form-control" formControlName="email" aria-describedby="emailHelp">
+    <p style="color: red" *ngIf="loginForm.controls.email.hasError('email')&&loginForm.controls.email.touched">Email format</p>
+    <p style="color: red" *ngIf="loginForm.controls.email.hasError('required')&&loginForm.controls.email.touched">Not null</p>
+
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password: </label>
+    <input id="password" type="email" class="form-control" formControlName="password" aria-describedby="emailHelp">
+    <p style="color: red" *ngIf="loginForm.controls.password.hasError('required')&&loginForm.controls.password.dirty">Not null</p>
+    <p style="color: red" *ngIf="loginForm.controls.password.hasError('required')&&loginForm.controls.password.touched">Must be 6 characters</p>
+
+
+  </div>
+  <div>
+    <input id="check" type="checkbox" class="form-check-input" >
+    <label for="check" class="form-label">Check me out </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

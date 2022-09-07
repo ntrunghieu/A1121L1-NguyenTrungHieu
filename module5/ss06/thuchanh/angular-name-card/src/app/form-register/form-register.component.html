@@ -15,8 +15,13 @@
         <div class="mb-3">
           <label class="form-label" >Password</label>
           <input type="password" class="form-control" aria-describedby="emailHelp" formControlName="password">
-<!--          <p style="color: red" *ngIf="registerForm.controls.passwordGroup['controls'].password.errors?.required&&-->
-<!--registerForm.controls.passwordGroup.touched">Not null</p>-->
+          <p style="color: red" *ngIf="registerForm.controls.passwordGroup['controls'].password.errors?.required&&
+registerForm.controls.passwordGroup.touched">Not null</p>
+
+          <p style="color: red" *ngIf="registerForm.controls.passwordGroup['controls'].password.error?.minLength&&
+registerForm.controls.passwordGroup.touched">Number of character is more than 6 characters</p>
+
+
 <!--          <p style="color: red" *ngIf="registerForm.controls.passwordGroup['controls'].password.errors?.minlength&&-->
 <!--registerForm.controls.passwordGroup.touched">Number of character is more than 6 characters</p>-->
         </div>
@@ -24,10 +29,10 @@
         <div class="mb-3">
           <label class="form-label" >Password confirmed</label>
           <input type="password" class="form-control" aria-describedby="emailHelp" formControlName="passwordConfirm">
-          <!--          <p style="color: red" *ngIf="registerForm.controls.passwordGroup.hasError('required', ['passwordGroup'])&&-->
-          <!--registerForm.controls.passwordGroup.touched">Not null</p>-->
-<!--          <p style="color: red" *ngIf="registerForm.controls.passwordGroup.errors?.invalid1&&-->
-<!--registerForm.controls.passwordGroup.touched">Must be the same with password</p>-->
+                    <p style="color: red" *ngIf="registerForm.controls.passwordGroup.hasError('required', ['passwordGroup'])&&
+          registerForm.controls.passwordGroup.touched">Not null</p>
+          <p style="color: red" *ngIf="registerForm.controls.passwordGroup.errors?.invalid1&&
+registerForm.controls.passwordGroup.touched">Must be the same with password</p>
         </div>
       </fieldset>
 

@@ -1,0 +1,85 @@
+<div class="col-md-9 col-xs-12 content-right">
+  <div id="header-table">
+    <h2 style="margin-top: 35px; margin-bottom: 10px; font-weight: 400;">Create New Contract</h2>
+    <a>Display List Contract</a>
+  </div>
+  <div id="input-form" style="width: 85%;margin: 10px">
+    <form method="post">
+      <div class="input-group input-group-sm mb-3">
+        <label for="idContract" class="input-group-text">ID Contract: </label>
+        <input id="idContract" type="text" class="form-control" aria-label="Sizing example input"
+               aria-describedby="inputGroup-sizing-sm">
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <label for="idEmployee" class="input-group-text">Employee: </label>
+        <select id="idEmployee" class="form-select" aria-label="Default select example">
+          <option value="hieu">hieu</option>
+          <option value="khai">khai</option>
+          <option value="hung">hung</option>
+        </select>
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <label for="idCustomer" class="input-group-text">Customer Type: </label>
+        <select id="idCustomer" class="form-select" aria-label="Default select example">
+          <option>GoLD</option>
+          <option>Silver</option>
+          <option>Member</option>
+        </select>
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <label for="idService" class="input-group-text">Service: </label>
+        <select id="idService" class="form-select" aria-label="Default select example">
+          <option value="villa">villa</option>
+          <option value="house">house</option>
+          <option value="room">room</option>
+        </select>
+      </div>
+
+
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text">Start Date: </span>
+        <input type="date" class="form-control" aria-label="Sizing example input"
+               aria-describedby="inputGroup-sizing-sm">
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text">End Date: </span>
+        <input type="date" class="form-control" aria-label="Sizing example input"
+               aria-describedby="inputGroup-sizing-sm">
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text">Deposit</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+               aria-describedby="inputGroup-sizing-sm">
+      </div>
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text">Total money: </span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+               aria-describedby="inputGroup-sizing-sm">
+      </div>
+
+      <div>
+                            <span class="input-group input-group-sm mb-3">
+                                <span class="input-group-text">Service Type</span>
+                                 <select class="form-select" aria-label="Default select example">
+                                    <option>villa</option>
+                                     <option>house</option>
+                                     <option>room</option>
+                                 </select>
+                            </span>
+        <span class="input-group input-group-sm mb-3">
+                                <span class="input-group-text">Customer Type</span>
+                            <select class="form-select" aria-label="Default select example">
+                                <option>GoLD</option>
+                                 <option>Silver</option>
+                                 <option>Member</option>
+                            </select>
+                </span>
+      </div>
+      <div style="width: 100%; margin-bottom: 10px" class="d-grid gap-2">
+        <button class="btn btn-primary" type="submit">Create</button>
+        <button class="btn btn-primary" type="button">Back</button>
+      </div>
+    </form>
+  </div>
+</div>

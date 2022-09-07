@@ -23,21 +23,22 @@ body{
 }
 img{
   max-width: 100%;
-  max-height: 90%;
+  max-height: 100%;
+  display: block;
 }
-.ui-card{
+div#body .ui-card{
   width: 350px;
   background: radial-gradient(#c5c9c9 50%, #c5c9c9 100%);
   overflow: hidden;
   position: relative;
 
 }
-.ui-card img{
+div#body .ui-card img{
   transform: scale(1.0);
   transition: all 0.3s ease-out;
 
 }
-.ui-card:hover img{
+div#body .ui-card:hover img{
   transform: scale(1.1) translateY(-20px);
   opacity: 0.3;
 }
@@ -45,6 +46,7 @@ img{
   position: absolute;
   left: 0;
   bottom: 170px;
+  /*bottom: 0;*/
   width: 100%;
   padding: 15px;
   text-align: center;
