@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <style>
+        body{
+            background: #088b6d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        #search-box{
+            background-color: #fff;
+            border-radius: 30px;
+        }
+        #search-box #search-text{
+            border: none;
+            outline: none;
+            background: none;
+            font-size: 18px;
+            width: 0;
+            padding: 0;
+            transition: all 0.25s ease-in-out;
+        }
+        #search-box:hover #search-text, #search-box #search-text:valid{
+            width: 300px;
+            padding: 10px 0px 10px 15px;
+
+        }
+        #search-box #search-btn{
+            background: #fff;
+            cursor: pointer;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <form style="" action="" id="search-box">
+        <input type="text" id="search-text" required>
+        <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+
+
+</body>
+</html>

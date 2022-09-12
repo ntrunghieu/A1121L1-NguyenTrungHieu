@@ -1,0 +1,76 @@
+{
+  "product": [
+    {
+      "id": 4,
+      "name": "IPhone 844",
+      "price": 754,
+      "description": "98%",
+      "category": "Samsung"
+    },
+    {
+      "id": 7,
+      "name": "hgfhg",
+      "price": 2,
+      "description": "33",
+      "category": "Xiaomi"
+    },
+    {
+      "id": 9,
+      "name": "dadfad`",
+      "price": 22,
+      "description": "rada222",
+      "category": "Other"
+    },
+    {
+      "id": 67,
+      "name": "sdfgdsf",
+      "price": 4444,
+      "description": "sdfgdfs"
+    },
+    {
+      "id": 5,
+      "name": "Note4",
+      "price": 2000,
+      "description": "100%"
+    },
+    {
+      "id": 8,
+      "name": "Galaxy y",
+      "price": 1111,
+      "description": "new",
+      "category": 2
+    },
+    {
+      "id": 15,
+      "name": "XIaomi11",
+      "price": 12345,
+      "description": "New",
+      "category": 3
+    },
+    {
+      "id": 90,
+      "name": "Quanggg",
+      "price": 1200,
+      "description": "New",
+      "category": "Samsung"
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "nameCategory": "Iphone"
+    },
+    {
+      "id": 2,
+      "nameCategory": "Samsung"
+    },
+    {
+      "id": 3,
+      "nameCategory": "Xiaomi"
+    },
+    {
+      "id": 4,
+      "nameCategory": "Other"
+    }
+  ]
+}

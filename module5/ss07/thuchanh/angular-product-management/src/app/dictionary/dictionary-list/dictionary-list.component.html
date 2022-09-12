@@ -1,0 +1,17 @@
+<div class="container">
+  <h3>List Dictionary</h3>
+  <table class="table table-success table-striped">
+    <tr>
+      <th>#</th>
+      <th>Eng</th>
+      <th>Detail</th>
+    </tr>
+    <tr *ngFor="let item of dictionary; index as i">
+      <td>{{i + 1}}</td>
+      <td>{{item.word}}</td>
+      <td>
+        <button [routerLink]="['detail', item.word]" type="button" class="btn btn-primary">Detail</button>
+      </td>
+    </tr>
+  </table>
+</div>

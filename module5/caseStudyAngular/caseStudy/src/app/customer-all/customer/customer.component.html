@@ -1,4 +1,54 @@
+<div class="sticky-wrapper" style="margin-bottom: 60px">
+  <div class="header-nav js-header-nav sticky">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <div class="navbar-collapse">
+          <ul id="menu-furama-vi" class="menu navbar-nav w-100 js-main-menu">
+            <li id="nav-menu-item-5006"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="https://furamavietnam.com/vi/the-resort/" class="nav-link main-menu-link">INTRODUCE</a></li>
+            <li id="nav-menu-item-5007"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/customer" class="nav-link main-menu-link">CUSTOMER</a></li>
+            <li id="nav-menu-item-5008"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/employee" class="nav-link main-menu-link">EMPLOYEE</a>
+            </li>
+            <li id="nav-menu-item-5009"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/contract" class="nav-link main-menu-link">CONTRACT</a></li>
+            <li id="nav-menu-item-5010"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/"
+                 class="nav-link main-menu-link">SERVICE</a></li>
+            <li id="nav-menu-item-5011"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="facility" class="nav-link main-menu-link">SALE</a></li>
+            <li id="nav-menu-item-5012"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="https://furamavietnam.com/vi/destination/" class="nav-link main-menu-link">DESTINATION</a></li>
+            <li id="nav-menu-item-5013"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="https://furamavietnam.com/vi/furama-special-offers/"
+                 class="nav-link main-menu-link">ENDOW</a></li>
+            <!--            <li style="min-height: 10px" id="nav-menu-item-5014"-->
+            <!--                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">-->
+            <form  style="" action="" id="search-box">
+              <input placeholder="Ban muon tim gi?" type="text" id="search-text" required>
+              <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <!--            </li>-->
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+
 <a class="btn btn-primary m-3" routerLink="create">Create</a>
+<div style="margin-left: 3px" class="container-fluid">
 <table id="tableCus" class="table table-hover" style="width: 30%;">
   <thead>
   <tr>
@@ -17,7 +67,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let cus of listCustomer; let i=index;">
+  <tr *ngFor="let cus of listCustomer ; let i=index;">
     <th scope="row">{{i}}</th>
     <td>{{cus.id}}</td>
     <td>{{cus.name}}</td>
@@ -25,10 +75,15 @@
     <td>{{cus.idCard}}</td>
     <td>{{cus.phone}}</td>
     <td>{{cus.email}}</td>
-    <td *ngIf="cus.gender">Nam</td>
-    <td *ngIf="!cus.gender">Nu</td>
+
+      <td *ngIf="cus.gender">Nam</td>
+      <td *ngIf="!cus.gender" >Nu</td>
+<!--      <td  *ngIf="cus.gender==null">Gioi tinh khac</td>-->
+
+
+
     <td>{{cus.address}}</td>
-    <td>{{cus.type}}</td>
+    <td>{{cus.type.name}}</td>
     <td class="d-flex">
 
         <button type="button" class="btn btn-primary "  data-toggle="modal" data-target="#exam1" (click)="sendCustomerToDelete(cus.id, cus.name)" >
@@ -38,10 +93,10 @@
 <!--        <button hidden type="button" class="btn btn-primary"  (click)="openPopup()" >-->
 <!--          Xoa-->
 <!--        </button>-->
-        <a class="btn btn-danger mx-3">Sua</a>
-        <button routerLink="detail" type="button" class="btn btn-primary" (click)="temp= getInfor(cus)" >
+        <a [routerLink]="['update', cus.id]" class="btn btn-danger mx-3">Sua</a>
+        <a  [routerLink]="['detail', cus.id]" type="button" class="btn btn-primary" >
           Xem
-        </button>
+        </a>
 
     </td>
 
@@ -49,6 +104,8 @@
   </tbody>
 
 </table>
+</div>
+
 
 <div class="modal fade" id="exam1" tabindex="-1" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
@@ -103,7 +160,6 @@
 <!--    </div>-->
 <!--  </div>-->
 <!--</div>-->
-
 
 
 

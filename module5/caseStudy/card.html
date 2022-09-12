@@ -7,6 +7,73 @@
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
           crossorigin="anonymous">
     <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+    <style>
+        .badge-overlay {
+            position: absolute;
+            left: 0%;
+            top: 0px;
+            width: 80%;
+            height: 80%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 14;
+            -webkit-transition: width 1s ease, height 1s ease;
+            -moz-transition: width 1s ease, height 1s ease;
+            -o-transition: width 1s ease, height 1s ease;
+            transition: width 0.4s ease, height 0.4s ease
+        }
+
+        /* ================== Badge CSS ========================*/
+        .badge {
+            margin: 0;
+            padding: 0;
+            color: white;
+            padding: 10px 10px;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            line-height: normal;
+            text-transform: uppercase;
+            background: #ed1b24;
+        }
+
+        .badge::before, .badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            margin: 0 -1px;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            min-width: 55px
+        }
+
+        .badge::before {
+            right: 100%
+        }
+
+        .badge::after {
+            left: 100%
+        }
+
+        /* ================== Badge Position CSS ========================*/
+        .bottom-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            -ms-transform: translateX(30%) translateY(0%) rotate(-45deg);
+            -webkit-transform: translateX(30%) translateY(0%) rotate(-45deg);
+            transform: translateX(30%) translateY(0%) rotate(-45deg);
+            -ms-transform-origin: bottom left;
+            -webkit-transform-origin: bottom left;
+            transform-origin: bottom left;
+        }
+        .badge.pink {
+            background: #ee2b8b;
+        }
+    </style>
 
 </head>
 <body>
@@ -31,6 +98,9 @@
             Sua
         </button>
     </div>
+    <div class="badge-overlay">
+        <span class="bottom-right badge pink">75% OFF</span>
+    </div>
 </div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -52,6 +122,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 

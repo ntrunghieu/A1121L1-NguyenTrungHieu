@@ -20,24 +20,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e8cbe2-a15c-446a-83d2-750dec5925f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../caseStudy/myjs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer/myjs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/data/EmployeeDAO.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/src/PT/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/PT/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/src/out/production/module2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/out/production/module2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module4/ss05/thuchanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../module4/ss05/thuchanh/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module4/ss09/thuchanh/customer/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../module4/ss09/thuchanh/customer/customer-management" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudy/contract/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudy/contract/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-detail/customer-detail.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-detail/customer-detail.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-detail/customer-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-detail/customer-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-detail/customer-detail.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-detail/customer-detail.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-detail/customer-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-detail/customer-detail.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer/customer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer/customer.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer/customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer/customer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer/customer.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer/customer.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer/customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer/customer.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/service-list/service-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/service-list/service-list.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/service-list/service-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/service-list/service-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-create/customer-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-create/customer-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-detail/customer-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-detail/customer-detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-detail/customer-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-detail/customer-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-update/customer-update.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-update/customer-update.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-update/customer-update.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-update/customer-update.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer/customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer/customer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer/customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer/customer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/navigation/navigation.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/navigation/navigation.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/navigation/navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/navigation/navigation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/service/customer-service.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/service/customer-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/service/customer-service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card.css" beforeDir="false" afterPath="$PROJECT_DIR$/card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card.html" beforeDir="false" afterPath="$PROJECT_DIR$/card.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backToTop.html" beforeDir="false" afterPath="$PROJECT_DIR$/backToTop.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +99,7 @@
       <workItem from="1661775329005" duration="1898000" />
       <workItem from="1661943730390" duration="2652000" />
       <workItem from="1662279919243" duration="2598000" />
+      <workItem from="1662696223886" duration="4781000" />
     </task>
     <servers />
   </component>

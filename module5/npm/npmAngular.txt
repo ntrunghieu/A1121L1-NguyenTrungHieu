@@ -1,0 +1,17 @@
+//search
+npm i ng2-search-filter --save
+
+
+//pagination
+npm i ngx-pagination@5.0.0
+
+// back to top
+ng add ngx-scrolltop@2
+
+
+//order
+npm i ngx-order-pipe
+
+//primeNg Toast
+npm install primeng --save
+npm install primeicons --save

@@ -18,11 +18,13 @@ export class CustomerDetailComponent implements OnInit {
   // @Output('cus-delete')
   // deleteCus: EventEmitter<number> = new EventEmitter();
   constructor(private customerService: CustomerServiceService,
-              private activedRouter: ActivatedRoute) { }
+              private activedRouter: ActivatedRoute,
+              private route: Router) { }
   ngOnInit(): void {
     this.activedRouter.paramMap.subscribe((param) => {
-      const id = parseInt(<string> param.get('id'));
-      this.cus = this.customerService.findByID(id);
+      // tslint:disable-next-line:radix
+      const id = parseInt(param.get('id'));
+      // this.cus = this.customerService.findByID(id);
     });
 
   }
@@ -33,4 +35,10 @@ export class CustomerDetailComponent implements OnInit {
   //   this.cus.id = Number(id);
   //   this.deleteCus.emit(this.cus.id);
   // }
+  onSubmit() {
+  }
+
+  back() {
+    this.route.navigateByUrl("customer");
+  }
 }

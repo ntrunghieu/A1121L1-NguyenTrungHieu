@@ -13,10 +13,28 @@ import { ServiceCreateComponent } from './service-create/service-create.componen
 import { ServiceUpdateComponent } from './service-update/service-update.component';
 import { CustomerDetailComponent } from './customer-all/customer-detail/customer-detail.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+
 import { CustomerCreateComponent } from './customer-all/customer-create/customer-create.component';
 import { CustomerUpdateComponent } from './customer-all/customer-update/customer-update.component';
 import { ContractListComponent } from './contract-all/contract-list/contract-list.component';
 import { ContractCreateComponent } from './contract-all/contract-create/contract-create.component';
+import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+
+
+import { EmployeeCreateComponent } from './employee/employee-create/employee-create.component';
+import { EmployeeUpdateComponent } from './employee/employee-update/employee-update.component';
+import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
+import {HttpClientModule} from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
+import {OrderModule} from 'ngx-order-pipe';
+import { ContractDetailComponent } from './contract-all/contract-detail/contract-detail.component';
+import { CarouselsComponent } from './carousels/carousels.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -29,17 +47,29 @@ import { ContractCreateComponent } from './contract-all/contract-create/contract
     ServiceListComponent,
     ServiceCreateComponent,
     ServiceUpdateComponent,
+    CustomerComponent,
     CustomerDetailComponent,
     CustomerCreateComponent,
     CustomerUpdateComponent,
     ContractListComponent,
-    ContractCreateComponent
+    ContractCreateComponent,
+    EmployeeListComponent,
+    EmployeeCreateComponent,
+    EmployeeUpdateComponent,
+    EmployeeDetailComponent,
+    ContractDetailComponent,
+    CarouselsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgxPaginationModule, Ng2SearchPipeModule, NgxScrollTopModule, OrderModule
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

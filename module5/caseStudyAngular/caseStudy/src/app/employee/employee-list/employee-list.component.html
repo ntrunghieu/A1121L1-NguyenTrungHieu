@@ -1,0 +1,141 @@
+<div class="sticky-wrapper" style="margin-bottom: 60px">
+  <div class="header-nav js-header-nav sticky">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <div class="navbar-collapse">
+          <ul id="menu-furama-vi" class="menu navbar-nav w-100 js-main-menu">
+            <li id="nav-menu-item-5006"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="https://furamavietnam.com/vi/the-resort/" class="nav-link main-menu-link">INTRODUCE</a></li>
+            <li id="nav-menu-item-5007"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/customer" class="nav-link main-menu-link">CUSTOMER</a></li>
+            <li id="nav-menu-item-5008"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/employee" class="nav-link main-menu-link">EMPLOYEE</a>
+            </li>
+            <li id="nav-menu-item-5009"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/contract" class="nav-link main-menu-link">CONTRACT</a></li>
+            <li id="nav-menu-item-5010"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/"
+                 class="nav-link main-menu-link">SERVICE</a></li>
+            <li id="nav-menu-item-5011"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="facility" class="nav-link main-menu-link">SALE</a></li>
+            <li id="nav-menu-item-5012"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="https://furamavietnam.com/vi/destination/" class="nav-link main-menu-link">DESTINATION</a></li>
+            <li id="nav-menu-item-5013"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="https://furamavietnam.com/vi/furama-special-offers/"
+                 class="nav-link main-menu-link">ENDOW</a></li>
+            <!--            <li style="min-height: 10px" id="nav-menu-item-5014"-->
+            <!--                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">-->
+            <form style="" action="" id="search-box">
+              <input placeholder="Ban muon tim gi?" [(ngModel)]="name" name="name" (ngModelChange)="search()"
+                     type="text" id="search-text" required>
+              <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <!--            </li>-->
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<a class="btn btn-primary m-3" routerLink="create">Create employee</a>
+<div style="margin-left: 3px" class="container-fluid">
+  <table style="margin-left: 40px" id="tableEmploy" class="table table-hover mt-4">
+    <thead>
+    <tr>
+      <th>STT</th>
+      <th (click)="sort('id')"> Id &nbsp;<i class="fa-solid fa-sort"></i></th>
+      <th (click)="sort('name')">Name &nbsp; <i class="fa-solid fa-sort"></i></th>
+      <th (click)="sort('idCard')">ID Card &nbsp;<i class="fa-solid fa-sort"></i></th>
+      <th (click)="sort('phone')">Phone &nbsp;<i class="fa-solid fa-sort"></i></th>
+      <th (click)="sort('email')">Email &nbsp;<i class="fa-solid fa-sort"></i></th>
+      <th (click)="sort('birthday')">Birthday &nbsp;<i class="fa-solid fa-sort"></i></th>
+      <th (click)="sort('level')">Education &nbsp;<i class="fa-solid fa-sort"></i></th>
+      <th (click)="sort('position')">Position &nbsp;<i class="fa-solid fa-sort"></i></th>
+      <th (click)="sort('division')">Division &nbsp;<i class="fa-solid fa-sort"></i></th>
+      <th (click)="sort('salary')">Salary &nbsp;<i class="fa-solid fa-sort"></i></th>
+      <th  style="text-align: center">Action</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr
+      *ngFor="let employ of employee | paginate: {itemsPerPage: 4, currentPage: page, totalItems: totalLength} | orderBy: key: reverse; let i=index;">
+      <th scope="row">{{i}}</th>
+      <td>{{employ.id}}</td>
+      <td>{{employ.name}}</td>
+      <td>{{employ.idCard}}</td>
+      <td>{{employ.phone}}</td>
+      <td>{{employ.email}}</td>
+      <td>{{employ.birthday | date:"dd-MM-yyyy"}}</td>
+      <td>{{employ.level.name}}</td>
+      <td>{{employ.position.name}}</td>
+      <td>{{employ.division.name}}</td>
+      <td>{{employ.salary}}</td>
+
+      <td class="d-flex">
+
+        <!--      <button type="button" class="btn btn-primary "  data-toggle="modal" data-target="#exam1" (click)="sendEmployeeToDelete(employ.id, employ.name)" >-->
+        <!--        Xoa-->
+        <!--      </button>-->
+
+        <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exam1"
+                (click)="sendToDelete(employ)">
+          Xoa
+        </button>
+
+        <!--        <button hidden type="button" class="btn btn-primary"  (click)="openPopup()" >-->
+        <!--          Xoa-->
+        <!--        </button>-->
+        <a [routerLink]="['update', employ.id]" class="btn btn-danger mx-3">Sua</a>
+        <a [routerLink]="['detail', employ.id]" type="button" class="btn btn-primary">
+          Xem
+        </a>
+
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+  <div style="justify-content: space-around;display: flex;">
+    <pagination-controls (pageChange)="page = $event" class=" page-item"></pagination-controls>
+  </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="exam1" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <p class="">Ban co muon xoa: <span class="text-warning">{{deleteEmp.name}}</span></p>
+        <!--        <input type="number" [(ngModel)]="cus.id" #id>-->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete(deleteEmp.id)">Xoa</button>
+      </div>
+    </div>
+  </div>
+</div>
+

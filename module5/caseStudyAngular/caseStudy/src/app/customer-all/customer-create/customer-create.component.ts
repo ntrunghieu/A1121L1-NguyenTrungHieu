@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerServiceService} from '../../service/customer-service.service';
 import {Route, Router} from '@angular/router';
+import {TypeCustomer} from '../../type-customer';
+import {TypeCustomerService} from '../../service/type-customer.service';
 
 @Component({
   selector: 'app-customer-create',
@@ -10,8 +12,9 @@ import {Route, Router} from '@angular/router';
 })
 export class CustomerCreateComponent implements OnInit {
   createForm: FormGroup;
-
+  typeCustomer: TypeCustomer[] = [];
   constructor(private customerService: CustomerServiceService,
+              private typeCustomerService: TypeCustomerService,
               private route: Router) {
   }
 
@@ -27,11 +30,28 @@ export class CustomerCreateComponent implements OnInit {
       email: new FormControl('', [Validators.email]),
       address: new FormControl('', [Validators.required])
     });
+    this.getTypeCustomer();
   }
 
   onSubmit() {
-    this.customerService.createCustomer(this.createForm.value);
-    this.route.navigateByUrl('');
+    this.customerService.createCustomer(this.createForm.value).subscribe(data => {
+      console.log(data);
+      alert('Ban da them moi khach hang ' + this.createForm.value.name);
+      this.route.navigateByUrl('/customer');
+    }, () => {
+      console.log('error');
+    });
+    // this.customerService.createCustomer(this.createForm.value);
+    // this.route.navigateByUrl("customer");
+  }
+
+  back() {
+    this.route.navigateByUrl("customer");
+  }
+  getTypeCustomer() {
+    this.typeCustomerService.findAll().subscribe((data) => {
+      this.typeCustomer = data;
+    });
   }
 }
 

@@ -1,0 +1,14 @@
+
+<div style="text-align: center">
+  <h3>Detail Dictionary</h3>
+  <div *ngIf="dictionary; then display else hide"></div>
+  <ng-template #display>
+    <h4>WORD:{{dictionary.word}}</h4>
+    <h4>MEAN:{{dictionary.mean}}</h4>
+  </ng-template>
+  <ng-template #hide></ng-template>
+  <button (click)="return()" type="button" class="btn btn-primary">Return</button>
+</div>
+
+
+

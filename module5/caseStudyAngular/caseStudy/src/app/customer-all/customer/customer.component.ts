@@ -1,7 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Customer} from '../../customer';
 import {CustomerServiceService} from '../../service/customer-service.service';
-import {CustomerDAO} from '../../data/CustomerDAO';
+
+import {Customer} from '../../customer';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-customer',
@@ -10,39 +11,22 @@ import {CustomerDAO} from '../../data/CustomerDAO';
 })
 export class CustomerComponent implements OnInit {
   listCustomer: Customer[] = [];
-  // @Input()
-  // public customers: Customer[] = [
-  //   {
-  //     id: 1,
-  //     name: 'hieu',
-  //     idCard: '2134',
-  //     phone: '1234',
-  //     email: 'hieu@gmail.com',
-  //     gender: true,
-  //     address: 'aasd',
-  //     type: 'asd'
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'hung',
-  //     idCard: '2134',
-  //     phone: '1234',
-  //     email: 'hung@gmail.com',
-  //     gender: false,
-  //     address: 'son tra',
-  //     type: 'vjp pro'
-  //   }
-  // ];
+
   // temp: Customer = {};
   // customerIdToDelete: number;
   // customerNameToDelete: string;
-  temp = CustomerDAO.temp;
-  customerIdToDelete = CustomerDAO.customerIdToDelete;
-  customerNameToDelete = CustomerDAO.customerNameToDelete;
-  constructor(private customerService: CustomerServiceService) { }
+  // temp = CustomerDAO.temp;
+  // customerIdToDelete = CustomerDAO.customerIdToDelete;
+  // customerNameToDelete = CustomerDAO.customerNameToDelete;
+  customerIdToDelete: number;
+  customerNameToDelete: string;
+
+  constructor(private customerService: CustomerServiceService,
+              private route: Router) { }
   displayStyle = 'none';
   ngOnInit(): void {
-    this.listCustomer = this.customerService.getAllCustomer();
+    this.getAll();
+    console.log(this.listCustomer.values());
   }
 
    delete(id: number) {
@@ -58,12 +42,12 @@ export class CustomerComponent implements OnInit {
 
   }
 
-  getInfor(cus: Customer) {
-    return CustomerDAO.getInfor(cus);
+  getAll() {
+    this.customerService.findAll().subscribe((data) => {
+      this.listCustomer = data;
+      // this.totalLength = data.length;
+    });
   }
-  // getList() {
-  //   return this.customers;
-  // }
 
   markHandler(event: number) {
     console.log(event);
@@ -84,8 +68,21 @@ export class CustomerComponent implements OnInit {
   sendCustomerToDelete(id: number, name: string) {
     this.customerIdToDelete = id;
     this.customerNameToDelete = name;
-    // return  CustomerDAO.sendCustomerToDelete(id, name);
-    // this.customerIdToDelete = id;
-    // this.customerNameToDelete = name;
   }
+
+  // backCustomer() {
+  //   this.route.navigateByUrl("customer")
+  // }
+  //
+  // backEmploy() {
+  //   this.route.navigateByUrl("employee")
+  // }
+  //
+  // backContract() {
+  //   this.route.navigateByUrl("contract")
+  // }
+  //
+  // backService() {
+  //   this.route.navigateByUrl("")
+  // }
 }

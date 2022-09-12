@@ -1,0 +1,26 @@
+<div class="container mt-4" >
+  <h3>Create</h3>
+  <form [formGroup]="product1" (ngSubmit)="save()">
+    <div hidden class="input-group input-group-sm mb-3">
+      <span class="input-group-text">Id</span>
+      <input hidden [value]="product.id" [(ngModel)]="product.id" type="text" class="form-control" aria-label="Sizing example input" formControlName="id" >
+    </div>
+    <p *ngIf="!product1.get('id')?.valid && product1.get('id').touched" class="text-danger">Nhap id</p>
+    <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text" >Name</span>
+      <input [value]="product.name" [(ngModel)]="product.name" type="text" class="form-control" aria-label="Sizing example input" formControlName="name" >
+    </div>
+    <p *ngIf="!product1.get('name')?.valid && product1.get('name').touched" class="text-danger">Nhap name</p>
+    <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text" >Price</span>
+      <input [(ngModel)]="product.price" type="text" class="form-control" aria-label="Sizing example input" formControlName="price">
+    </div>
+    <p *ngIf="!product1.get('price')?.valid && product1.get('price').touched" class="text-danger">Name price</p>
+    <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text" >Description</span>
+      <input [(ngModel)]="product.description" type="text" class="form-control" aria-label="Sizing example input" formControlName="description">
+    </div>
+    <p *ngIf="!product1.get('description')?.valid && product1.get('description').touched" class="text-danger">Description sai</p>
+    <button type="submit" [disabled]="!product1.valid">Update</button>
+  </form>
+</div>

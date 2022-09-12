@@ -1,25 +1,64 @@
-<!--<h4>{{cus.id}}</h4>-->
-<!--<h4>{{cus.name}}</h4>-->
-<div class="modal fade" id="exam1" tabindex="-1" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
 
-        <p  class="">Ban co muon xoa: <span class="text-warning">{{cus.name}}</span> </p>
-        <input type="number" [(ngModel)]="cus.id" #id>
+  <table>
+    <tr>
+      <th colspan="2">Detail customer</th>
+    </tr>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="delete(id.value)">Xoa</button>
-      </div>
-    </div>
+    <tr >
+      <td><label hidden for="id">ID</label></td>
+      <td>
+        <h4 id="id">{{cus.id}}</h4>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="name">Name</label></td>
+      <td>
+        <h4 id="name">{{cus.name}}</h4>
+
+      </td>
+    </tr>
+    <tr>
+      <td><label for="date">Birthday</label></td>
+      <td><h4 id="date">{{cus.date}}</h4>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="idCard">ID Card</label></td>
+      <td><h4 id="idCard">{{cus.idCard}}</h4>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="gender">Gender</label></td>
+      <td>
+        <h4 id="gender">{{cus.gender}}</h4>
+
+      </td>
+    </tr>
+    <tr>
+      <td><label for="type">Type</label></td>
+      <td>
+        <h4 id="type">{{cus.type}}</h4>
+
+      </td>
+    </tr>
+    <tr>
+      <td><label for="phone">Phone</label></td>
+      <td>        <h4 id="phone">{{cus.phone}}</h4>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="email">Email</label></td>
+      <td>        <h4 id="email">{{cus.email}}</h4>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="address">Address</label></td>
+      <td>        <h4 id="address">{{cus.address}}</h4>
+      </td>
+    </tr>
+
+  </table>
+  <div class="submit">
+    <a class="btn btn-info" (click)="back()">Back to list</a>
   </div>
-</div>
+

@@ -1,85 +1,106 @@
-<div class="col-md-9 col-xs-12 content-right">
-  <div id="header-table">
-    <h2 style="margin-top: 35px; margin-bottom: 10px; font-weight: 400;">Create New Contract</h2>
-    <a>Display List Contract</a>
+<div class="height-100 px-5 py-3">
+  <div class="container-fluid">
+    <div class="text-center">
+      <h2>Create New Contract</h2>
+    </div>
   </div>
-  <div id="input-form" style="width: 85%;margin: 10px">
-    <form method="post">
-      <div class="input-group input-group-sm mb-3">
-        <label for="idContract" class="input-group-text">ID Contract: </label>
-        <input id="idContract" type="text" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-sm">
+  <form [formGroup]="createContractForm" (ngSubmit)="onSubmit()">
+    <div hidden class="row mb-3 form-group row">
+      <label class="col-sm-4 col-form-label text-end" >ID: </label>
+      <div class="col-sm-4">
+        <input type="text"  class="form-control" name="id" formControlName="id">
+<!--        <p style="color: red" *ngIf="createContractForm.controls.id.hasError('required')&&-->
+<!--createContractForm.controls.id.touched">Not null</p>-->
+<!--        <p style="color: red" *ngIf="createContractForm.controls.id.hasError('pattern')&&-->
+<!--createContractForm.controls.id.touched">HD-XXXX (X is 0-9)</p>-->
       </div>
-      <div class="input-group input-group-sm mb-3">
-        <label for="idEmployee" class="input-group-text">Employee: </label>
-        <select id="idEmployee" class="form-select" aria-label="Default select example">
-          <option value="hieu">hieu</option>
-          <option value="khai">khai</option>
-          <option value="hung">hung</option>
+    </div>
+    <div class="row mb-3 form-group row">
+      <label class="col-sm-4 col-form-label text-end" for="customerName">Customer</label>
+      <div class="col-sm-4" >
+        <select class="form-control" formControlName="customer" name="customer" id="customerName" >
+          <option value="">Choose Customer</option>
+          <option *ngFor="let c of customers" [ngValue]="c">{{c.name}}</option>
         </select>
+<!--        <p style="color: red" *ngIf="createContractForm.controls.customer.hasError('required')&&-->
+<!--createContractForm.controls.customer.touched">Not null</p>-->
       </div>
-      <div class="input-group input-group-sm mb-3">
-        <label for="idCustomer" class="input-group-text">Customer Type: </label>
-        <select id="idCustomer" class="form-select" aria-label="Default select example">
-          <option>GoLD</option>
-          <option>Silver</option>
-          <option>Member</option>
+    </div>
+
+    <div class="row mb-3 form-group row">
+      <label class="col-sm-4 col-form-label text-end" for="employeeName">Employee</label>
+      <div class="col-sm-4">
+        <select class="form-control" id="employeeName" name="employee" formControlName="employee">
+          <option value="">Choose Customer</option>
+          <option *ngFor="let c of customers" [ngValue]="c">{{c.name}}</option>
         </select>
+        <!--        <p style="color: red" *ngIf="createContractForm.controls.customer.hasError('required')&&-->
+        <!--createContractForm.controls.customer.touched">Not null</p>-->
       </div>
+    </div>
 
-      <div class="input-group input-group-sm mb-3">
-        <label for="idService" class="input-group-text">Service: </label>
-        <select id="idService" class="form-select" aria-label="Default select example">
-          <option value="villa">villa</option>
-          <option value="house">house</option>
-          <option value="room">room</option>
+    <div class="row mb-3 form-group row">
+      <label class="col-sm-4 col-form-label text-end" for="serviceName">Service</label>
+      <div class="col-sm-4">
+        <select class="form-control" id="serviceName" name="facility" formControlName="facility">
+          <option value="">Choose Service</option>
+          <option *ngFor="let facility of facilities" [ngValue]="facility">{{facility.name}}</option>
         </select>
+<!--        <p style="color: red" *ngIf="createContractForm.controls.facility.hasError('required')&&-->
+<!--createContractForm.controls.facility.touched">Not null</p>-->
       </div>
+    </div>
 
+    <div class="row mb-3 form-group row">
 
-      <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text">Start Date: </span>
-        <input type="date" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-sm">
+      <label class="col-sm-4 col-form-label text-end" for="startDay">Start Day</label>
+      <div class="col-sm-4">
+        <input type="date" id="startDay" class="form-control" formControlName="startDay" name="startDay"
+               placeholder="Format: 26/01/2022">
+<!--        <p style="color: red" *ngIf="createContractForm.controls.startDay.hasError('required')&&-->
+<!--createContractForm.controls.startDay.touched">Not null</p>-->
       </div>
-      <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text">End Date: </span>
-        <input type="date" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="row mb-3 form-group row">
+      <label class="col-sm-4 col-form-label text-end" for="endDay">End Day</label>
+      <div class="col-sm-4">
+        <input type="date" id="endDay" class="form-control" name="endDay" formControlName="endDay"
+               placeholder="Format: 26/02/2022">
+<!--        <p style="color: red" *ngIf="createContractForm.controls.endDay.hasError('required')&&-->
+<!--createContractForm.controls.endDay.touched">Not null</p>-->
       </div>
-      <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text">Deposit</span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="row mb-3 form-group row">
+      <label class="col-sm-4 col-form-label text-end" for="deposit">Deposit</label>
+      <div class="col-sm-4">
+        <input type="text" id="deposit" class="form-control" name="deposit" formControlName="deposit"
+               placeholder="Ex: 1000000">
+<!--        <p style="color: red" *ngIf="createContractForm.controls.deposit.hasError('required')&&-->
+<!--createContractForm.controls.deposit.touched">Not null</p>-->
+<!--        <p style="color: red" *ngIf="createContractForm.controls.deposit.hasError('pattern')&&-->
+<!--createContractForm.controls.deposit.touched">Deposit is a number and positive</p>-->
       </div>
-      <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text">Total money: </span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="row mb-3 form-group row">
+      <label class="col-sm-4 col-form-label text-end" for="total">Total Money</label>
+      <div class="col-sm-4">
+        <input type="text" id="total" class="form-control" name="total" formControlName="total"
+               placeholder="Ex: 5000000">
+<!--        <p style="color: red" *ngIf="createContractForm.controls.total.hasError('required')&&-->
+<!--createContractForm.controls.total.touched">Not null</p>-->
+<!--        <p style="color: red" *ngIf="createContractForm.controls.total.hasError('pattern')&&-->
+<!--createContractForm.controls.total.touched">Total is a number and positive</p>-->
       </div>
+    </div>
 
-      <div>
-                            <span class="input-group input-group-sm mb-3">
-                                <span class="input-group-text">Service Type</span>
-                                 <select class="form-select" aria-label="Default select example">
-                                    <option>villa</option>
-                                     <option>house</option>
-                                     <option>room</option>
-                                 </select>
-                            </span>
-        <span class="input-group input-group-sm mb-3">
-                                <span class="input-group-text">Customer Type</span>
-                            <select class="form-select" aria-label="Default select example">
-                                <option>GoLD</option>
-                                 <option>Silver</option>
-                                 <option>Member</option>
-                            </select>
-                </span>
+    <div class="row mb-3 form-group row">
+      <label class="col-sm-5 col-form-label text-right"></label>
+      <div class="text-center">
+        <button style="margin: 5px" type="submit" class="btn btn-primary">Submit</button>
+        <a routerLink="/contract" class="btn btn-primary">Back</a>
       </div>
-      <div style="width: 100%; margin-bottom: 10px" class="d-grid gap-2">
-        <button class="btn btn-primary" type="submit">Create</button>
-        <button class="btn btn-primary" type="button">Back</button>
-      </div>
-    </form>
-  </div>
+    </div>
+  </form>
 </div>
+
+<div class="text-center p-5"></div>

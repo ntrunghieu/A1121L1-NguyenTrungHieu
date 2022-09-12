@@ -1,0 +1,128 @@
+<h2 style="margin-top: 35px; margin-bottom: 10px; font-weight: 400;">Create Employee</h2>
+<p ></p>
+<form [formGroup]="employeeForm" id="createForm1"  (ngSubmit)="onSubmit()" >
+  <table>
+    <tr>
+      <th colspan="2">Create a new employee</th>
+    </tr>
+
+    <tr hidden>
+      <td><label for="id">ID</label></td>
+      <td>
+        <input formControlName="id" id="id" name="id" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+
+      </td>
+    </tr>
+    <tr>
+      <td><label for="name">Name</label></td>
+      <td>
+        <input formControlName="name" id="name" name="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        <div *ngIf="!employeeForm.get('name')?.valid && employeeForm.get('name').touched">
+          <p *ngIf="employeeForm.get('name').errors.required" class="text-danger">Nhap ten</p>
+          <p *ngIf="employeeForm.get('name').errors.minlength" class="text-danger">Vui long nhap lon hon 6 ky tu</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="birthday">Birthday</label></td>
+      <td>
+        <input formControlName="birthday" type="date" id="birthday" name="birthday">
+        <div>
+          <p *ngIf=" employeeForm.get('birthday').untouched" class="text-danger">Vui long chon ngay sinh</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="idCard">ID Card</label></td>
+      <td>
+        <input formControlName="idCard" type="text" id="idCard" name="IDCard">
+        <div *ngIf="!employeeForm.get('idCard').valid && employeeForm.get('idCard').touched">
+          <p *ngIf="employeeForm.get('idCard').errors.required" class="text-danger">Vui long nhap CCCD</p>
+          <p *ngIf="employeeForm.get('idCard').errors.minlength || employeeForm.get('idCard').errors.maxlength" class="text-danger">Do
+            dai phai tu 10-12 so</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="salary">Salary</label></td>
+      <td>
+        <input formControlName="salary" type="text" id="salary" name="salary">
+        <div *ngIf="!employeeForm.get('salary').valid && employeeForm.get('salary').touched">
+          <p *ngIf="employeeForm.get('salary').errors.required" class="text-danger">Vui long nhap muc luong</p>
+<!--          <p *ngIf="employeeForm.get('idCard').errors.minlength || employeeForm.get('idCard').errors.maxlength" class="text-danger">Do-->
+<!--            dai phai tu 10-12 so</p>-->
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="phone">Phone</label></td>
+      <td>
+        <input formControlName="phone" type="text" id="phone" name="phoneNumber">
+        <div *ngIf="!employeeForm.get('phone').valid && employeeForm.get('phone').touched">
+          <p *ngIf="employeeForm.get('phone').errors.required" class="text-danger">Vui long nhap so dien thoai</p>
+          <p *ngIf="employeeForm.get('phone').errors.pattern" class="text-danger">SDT sai dinh dang</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="email">Email</label></td>
+      <td>
+        <input formControlName="email" type="text" id="email" name="email">
+        <div *ngIf="!employeeForm.get('email').valid && employeeForm.get('email').touched">
+          <p *ngIf="employeeForm.get('email').errors.required" class="text-danger">Vui long nhap email</p>
+          <p *ngIf="employeeForm.get('email').errors.pattern" class="text-danger">Email sai ding dang</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="position">Position</label></td>
+      <td>
+        <select formControlName="position" id="position" name="position" >
+
+          <option *ngFor="let p of positionList" [ngValue]="p" aria-checked="true" selected>{{p.name}}</option>
+
+        </select>
+<!--        <p style="color: red" *ngIf="employeeForm.get('position').errors.required&&-->
+<!--        employeeForm.get('position').untouched">Chua dien thong tin</p>-->
+      </td>
+    </tr>
+    <tr>
+      <td><label for="division" >Division</label></td>
+      <td>
+        <select formControlName="division" id="division" name="division" >
+          <option  *ngFor="let d of divisionList" [ngValue]="d" aria-checked="true" selected>{{d.name}}</option>
+<!--          <option aria-checked="true">Sale-marketing</option>-->
+<!--          <option aria-checked="true">Hanh chinh</option>-->
+<!--          <option aria-checked="true">Phuc vu</option>-->
+<!--          <option aria-checked="true">Quan li</option>-->
+        </select>
+<!--        <p style="color: red" *ngIf="employeeForm.get('division').errors.required&&-->
+<!--        employeeForm.get('division').untouched">Chua dien thong tin</p>-->
+      </td>
+
+
+    </tr>
+    <tr>
+      <td><label for="level">Education</label></td>
+      <td>
+        <select formControlName="level" id="level" name="level" >
+          <option  *ngFor="let l of levelList" [ngValue]="l" aria-checked="true" selected>{{l.name}}</option>
+<!--          <option aria-checked="true">Trung cap</option>-->
+<!--          <option aria-checked="true">Dai Hoc</option>-->
+<!--          <option aria-checked="true">Cao Dang</option>-->
+<!--          <option aria-checked="true">Sau Dai Hoc</option>-->
+        </select>
+<!--        <p style="color: red" *ngIf="employeeForm.get('level').errors.required&&-->
+<!--        employeeForm.get('level').untouched">Chua dien thong tin</p>-->
+      </td>
+
+
+    </tr>
+  </table>
+  <div class="submit mx-md-4" >
+    <button class="btn btn-primary mx-3" type="submit" [disabled]="!employeeForm.valid">Save</button>
+    <a class="btn btn-primary" routerLink="employee" (click)="back()">Back to list</a>
+  </div>
+</form>
+
+

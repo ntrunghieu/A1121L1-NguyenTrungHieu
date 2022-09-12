@@ -1,1 +1,164 @@
-<p>contract-list works!</p>
+<div class="sticky-wrapper" style="margin-bottom: 60px">
+  <div class="header-nav js-header-nav sticky">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <div class="navbar-collapse">
+          <ul id="menu-furama-vi" class="menu navbar-nav w-100 js-main-menu">
+            <li id="nav-menu-item-5006"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="https://furamavietnam.com/vi/the-resort/" class="nav-link main-menu-link">INTRODUCE</a></li>
+            <li id="nav-menu-item-5007"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/customer" class="nav-link main-menu-link">CUSTOMER</a></li>
+            <li id="nav-menu-item-5008"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/employee" class="nav-link main-menu-link">EMPLOYEE</a>
+            </li>
+            <li id="nav-menu-item-5009"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/contract" class="nav-link main-menu-link">CONTRACT</a></li>
+            <li id="nav-menu-item-5010"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/"
+                 class="nav-link main-menu-link">SERVICE</a></li>
+            <li id="nav-menu-item-5011"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="facility" class="nav-link main-menu-link">SALE</a></li>
+            <li id="nav-menu-item-5012"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="https://furamavietnam.com/vi/destination/" class="nav-link main-menu-link">DESTINATION</a></li>
+            <li id="nav-menu-item-5013"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="https://furamavietnam.com/vi/furama-special-offers/"
+                 class="nav-link main-menu-link">ENDOW</a></li>
+            <!--            <li style="min-height: 10px" id="nav-menu-item-5014"-->
+            <!--                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">-->
+            <form  style="" action="" id="search-box">
+              <input placeholder="Ban muon tim gi?" type="text" id="search-text" required>
+              <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <!--            </li>-->
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+   <!--==================================================================================-->
+
+<a routerLink="/contract/create" class="btn btn-primary badge-pill"> Create</a>
+<h1 class="text-center">Contract List</h1>
+<div class="height-100 px-5 py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <input type="text" class="form-control" placeholder="Search by service name" #searchByServiceName>
+      </div>
+<!--      <div class="col-3">-->
+<!--        <select class="form-control" #searchByCustomer>-->
+<!--          <option value="">Select Customer</option>-->
+<!--          <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.customerName}}</option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--      <div class="col-5 text-end">-->
+<!--        <button type="submit" class="btn btn-primary" (click)="search()">Search</button>-->
+<!--      </div>-->
+    </div>
+    <div style="height: 10px"></div>
+    <table class="table table-light table-bordered small">
+      <thead class="thead thead-dark text-center">
+      <tr>
+        <th scope="col">STT</th>
+        <th scope="col">Id</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Service Name</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Deposit</th>
+        <th scope="col">Total Money</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let contract of contracts|paginate : { itemsPerPage: 3, currentPage: p, totalItems: totalLength }, index as index">
+        <td>{{index+1}}</td>
+        <td>{{contract.id}}</td>
+        <td>{{contract.customer.name}}</td>
+        <td>{{contract.employee.name}}</td>
+        <td>{{contract.facility.name}}</td>
+        <td>{{contract.startDay|date:'dd/MM/yyyy'}}</td>
+        <td>{{contract.endDay|date:'dd/MM/yyyy'}}</td>
+        <td>{{contract.deposit|currency:'VND'}}</td>
+        <td>{{contract.total|currency:'VND'}}</td>
+        <td>
+          <a class="editSpan text-black" [routerLink]="['/contract/update',contract.id]">
+            <i class="fa-regular fa-pen-to-square"></i>
+          </a>
+          <button type="button" class="border-0 bg-transparent deleteSpan"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal" (click)="sendContractToDelete(contract.id)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+          <a class="border-0 bg-transparent deleteSpan" [routerLink]="['/contract/update',contract.id]">
+            <i class="fa-sharp fa-solid fa-circle-info"></i>
+          </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <h3 *ngIf="contracts.length === 0" class="text-center">Not found</h3>
+    <!--    <div class="pagination-control">-->
+    <!--      <div class="row d-flex justify-content-center">-->
+    <!--        <nav aria-label="Page navigation example"-->
+    <!--             style="width: initial">-->
+    <!--          <ul class="pagination">-->
+    <!--            <li class="page-item">-->
+    <!--              <a class="btn btn-primary">-->
+    <!--                Previous-->
+    <!--              </a>-->
+    <!--            </li>-->
+    <!--            <li class="page-item btn btn-light ">1</li>-->
+    <!--            <li class="page-item btn btn-light disabled">/</li>-->
+    <!--            <li class="page-item btn btn-light ">3</li>-->
+    <!--            <span>&nbsp;</span>-->
+    <!--            <li class="page-item">-->
+    <!--              <a class="btn btn-primary">-->
+    <!--                Next-->
+    <!--              </a>-->
+    <!--            </li>-->
+    <!--          </ul>-->
+    <!--        </nav>-->
+    <!--      </div>-->
+    <!--    </div>-->
+  </div>
+
+</div>
+<div style="justify-content: space-around;display: flex;">
+  <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>Do you want to delete this contract: <BR>
+          {{contractIdToDelete}}</div>
+        <div class="text-danger">
+          <hr>
+          WARNING: YOU CAN NOT ROLLBACK AFTER DELETE!!!</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete(contractIdToDelete)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center p-5"></div>

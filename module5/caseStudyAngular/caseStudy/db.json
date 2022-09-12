@@ -1,0 +1,608 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "hieu",
+      "idCard": "2134",
+      "date": "2002-03-13",
+      "phone": "1234",
+      "email": "hieu123@gmail.com",
+      "gender": true,
+      "address": "aasd",
+      "type": {
+        "id": 1,
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 2,
+      "name": "hieudb",
+      "date": "2002-03-13",
+      "idCard": "2134",
+      "gender": true,
+      "type": {
+        "id": 4,
+        "name": "Silver"
+      },
+      "phone": "1234",
+      "email": "hieu123@gmail.com",
+      "address": "aasd"
+    },
+    {
+      "id": 3,
+      "name": "Hong Van",
+      "date": "2022-09-19",
+      "idCard": "2323211342",
+      "gender": false,
+      "type": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "phone": "0905965965",
+      "email": "hieu213@gmail.com",
+      "address": "Hanoi"
+    },
+    {
+      "id": 4,
+      "name": "Huynh Thi Thu Huong",
+      "date": "2002-02-06",
+      "idCard": "2323211342",
+      "gender": "true",
+      "type": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "phone": "09983822312",
+      "email": "huongmauhuong8555@gmail.com",
+      "address": "New York"
+    }
+  ],
+  "typeCustomer": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinum"
+    },
+    {
+      "id": 3,
+      "name": "Golden"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "employee": [
+    {
+      "id": 2,
+      "name": "hieu",
+      "idCard": "9999999999",
+      "phone": "0397961099",
+      "email": "hieu@gmail.com",
+      "birthday": "2022-05-20",
+      "level": {
+        "id": 1,
+        "name": "Trung Cap"
+      },
+      "position": {
+        "id": 1,
+        "name": "Le tan"
+      },
+      "division": {
+        "id": 2,
+        "name": "hành chính"
+      },
+      "salary": "11111"
+    },
+    {
+      "id": 3,
+      "name": "Nguyễn Trung Hiếu",
+      "idCard": "4234",
+      "phone": "0905965965",
+      "email": "hieu@gmail.com",
+      "birthday": "2022-09-07",
+      "level": {
+        "id": 2,
+        "name": "Cao Dang"
+      },
+      "position": {
+        "id": 1,
+        "name": "Le tan"
+      },
+      "division": {
+        "id": 1,
+        "name": "Sale- marketing"
+      },
+      "salary": "23435"
+    },
+    {
+      "id": 4,
+      "name": "lkkkokl",
+      "idCard": "44",
+      "phone": "0923023",
+      "email": "hoa1@gmail.com",
+      "birthday": "2022-09-04",
+      "level": {
+        "id": 2,
+        "name": "Cao Dang"
+      },
+      "position": {
+        "id": 2,
+        "name": "Phuc vu"
+      },
+      "division": {
+        "id": 2,
+        "name": "hành chính"
+      },
+      "salary": "44"
+    },
+    {
+      "id": 5,
+      "name": "Nguyễn Trung Hiếu",
+      "idCard": "4409878664",
+      "phone": "0905965965",
+      "email": "hieu5345@gmail.com",
+      "birthday": "2022-08-31",
+      "level": {
+        "id": 2,
+        "name": "Cao Dang"
+      },
+      "position": {
+        "id": 2,
+        "name": "Phuc vu"
+      },
+      "division": {
+        "id": 2,
+        "name": "hành chính"
+      },
+      "salary": "11"
+    },
+    {
+      "id": 6,
+      "name": "Back Khi",
+      "idCard": "4409878664",
+      "phone": "0905965965",
+      "email": "hieu213@gmail.com",
+      "birthday": "2022-09-14",
+      "level": {
+        "id": 1,
+        "name": "Trung Cap"
+      },
+      "position": {
+        "id": 3,
+        "name": "Chuyen vien"
+      },
+      "division": {
+        "id": 2,
+        "name": "hành chính"
+      },
+      "salary": "44"
+    },
+    {
+      "id": 7,
+      "name": "GGFFFF",
+      "idCard": "4409878664",
+      "phone": "0923023232",
+      "email": "hoa122@gmail.com",
+      "birthday": "2022-09-21",
+      "level": {
+        "id": 2,
+        "name": "Cao Dang"
+      },
+      "position": {
+        "id": 2,
+        "name": "Phuc vu"
+      },
+      "division": {
+        "id": 1,
+        "name": "Sale- marketing"
+      },
+      "salary": "111"
+    }
+  ],
+  "level": [
+    {
+      "id": 1,
+      "name": "Trung Cap"
+    },
+    {
+      "id": 2,
+      "name": "Cao Dang"
+    },
+    {
+      "id": 3,
+      "name": "Dai hoc"
+    },
+    {
+      "id": 4,
+      "name": "Sau Dai Hoc"
+    }
+  ],
+  "position": [
+    {
+      "id": 1,
+      "name": "Le tan"
+    },
+    {
+      "id": 2,
+      "name": "Phuc vu"
+    },
+    {
+      "id": 3,
+      "name": "Chuyen vien"
+    },
+    {
+      "id": 4,
+      "name": "Giam sat"
+    },
+    {
+      "id": 5,
+      "name": "Quan ly"
+    },
+    {
+      "id": 6,
+      "name": "Giam doc"
+    }
+  ],
+  "division": [
+    {
+      "id": 1,
+      "name": "Sale- marketing"
+    },
+    {
+      "id": 2,
+      "name": "hành chính"
+    },
+    {
+      "id": 3,
+      "name": "phục vụ"
+    },
+    {
+      "id": 4,
+      "name": "quản lý"
+    }
+  ],
+  "villa": [
+    {
+      "id": 1,
+      "name": "villa",
+      "area": 1000,
+      "cost": 1200,
+      "numPeople": 10,
+      "type": "year",
+      "style": "Phong don",
+      "facility": "Phong co may lanh",
+      "aeraPool": 500,
+      "numFloor": 10
+    }
+  ],
+  "house": [
+    {
+      "id": 2,
+      "name": "house",
+      "area": 1000,
+      "cost": 1200,
+      "numPeople": 10,
+      "type": "year",
+      "style": "Phong don",
+      "facility": "Phong co may lanh",
+      "numFloor": 10
+    },
+    {
+      "id": 3,
+      "name": "house",
+      "area": 1000,
+      "cost": 1200,
+      "numPeople": 10,
+      "type": "year",
+      "style": "Phong don",
+      "facility": "Phong co may lanh",
+      "numFloor": 10
+    }
+  ],
+  "room": [
+    {
+      "id": 1,
+      "name": "room",
+      "area": 1000,
+      "cost": 1200,
+      "numPeople": 10,
+      "type": "year",
+      "serviceFree": "Do an sang"
+    },
+    {
+      "id": 2,
+      "name": "room",
+      "area": 1000,
+      "cost": 1200,
+      "numPeople": 10,
+      "type": "year",
+      "serviceFree": "Do an sang"
+    }
+  ],
+  "attachService": [
+    {
+      "id": 1,
+      "name": "Karaoke",
+      "price": 10000,
+      "unit": "giờ",
+      "state": "tốt"
+    },
+    {
+      "id": 2,
+      "name": "Thuê xe máy",
+      "price": 10000,
+      "unit": "chiếc",
+      "state": "hỏng 1 xe"
+    }
+  ],
+  "facility": [
+    {
+      "id": 1,
+      "name": "Villa Beach Front",
+      "area": 2500,
+      "cost": 1000000,
+      "maxPeople": 10,
+      "standard": "vip",
+      "description": "có hồ bơi",
+      "poolArea": 500,
+      "floor": 3,
+      "rentType": {
+        "id": 1,
+        "name": "Year"
+      },
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      },
+      "url": "https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Villa No Beach Front",
+      "area": 433,
+      "cost": 8000,
+      "maxPeople": 5,
+      "standard": "normal",
+      "description": "có hồ bơi",
+      "poolArea": 322,
+      "floor": 5,
+      "rentType": {
+        "id": 1,
+        "name": "Year"
+      },
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      },
+      "url": "https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "name": "Year"
+    },
+    {
+      "id": 2,
+      "name": "Month"
+    },
+    {
+      "id": 3,
+      "name": "Day"
+    },
+    {
+      "id": 4,
+      "name": "Hour"
+    }
+  ],
+  "facilityType": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "startDay": "2020-12-08",
+      "endDay": "2020-12-08",
+      "deposit": "0",
+      "total": "2000",
+      "employee": {
+        "id": 3,
+        "name": "Nguyễn Trung Hiếu",
+        "idCard": "4234",
+        "phone": "0905965965",
+        "email": "hieu@gmail.com",
+        "birthday": "2022-09-07",
+        "level": {
+          "id": 2,
+          "name": "Cao Dang"
+        },
+        "position": {
+          "id": 1,
+          "name": "Le tan"
+        },
+        "division": {
+          "id": 1,
+          "name": "Sale- marketing"
+        },
+        "salary": "23435"
+      },
+      "customer": {
+        "id": 2,
+        "name": "hieu",
+        "idCard": "2134",
+        "date": "2002-03-13",
+        "phone": "1234",
+        "email": "hieu123@gmail.com",
+        "gender": true,
+        "address": "aasd",
+        "type": {
+          "id": 4,
+          "name": "Silver"
+        }
+      },
+      "facility": {
+        "id": 2,
+        "name": "Villa No Beach Front",
+        "area": 433,
+        "cost": 8000,
+        "maxPeople": 5,
+        "standard": "normal",
+        "description": "có hồ bơi",
+        "poolArea": 322,
+        "floor": 5,
+        "rentType": {
+          "id": 1,
+          "name": "Year"
+        },
+        "facilityType": {
+          "id": 1,
+          "name": "Villa"
+        },
+        "url": "https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
+      }
+    },
+    {
+      "id": 2,
+      "startDay": "2020-12-08",
+      "endDay": "2020-12-08",
+      "deposit": "0",
+      "total": "2000",
+      "employee": {
+        "id": 3,
+        "name": "Nguyễn Trung Hiếu",
+        "idCard": "4234",
+        "phone": "0905965965",
+        "email": "hieu@gmail.com",
+        "birthday": "2022-09-07",
+        "level": {
+          "id": 2,
+          "name": "Cao Dang"
+        },
+        "position": {
+          "id": 1,
+          "name": "Le tan"
+        },
+        "division": {
+          "id": 1,
+          "name": "Sale- marketing"
+        },
+        "salary": "23435"
+      },
+      "customer": {
+        "id": 2,
+        "name": "hieu",
+        "idCard": "2134",
+        "date": "2002-03-13",
+        "phone": "1234",
+        "email": "hieu123@gmail.com",
+        "gender": true,
+        "address": "aasd",
+        "type": {
+          "id": 4,
+          "name": "Silver"
+        }
+      },
+      "facility": {
+        "id": 2,
+        "name": "Villa No Beach Front",
+        "area": 433,
+        "cost": 8000,
+        "maxPeople": 5,
+        "standard": "normal",
+        "description": "có hồ bơi",
+        "poolArea": 322,
+        "floor": 5,
+        "rentType": {
+          "id": 1,
+          "name": "Year"
+        },
+        "facilityType": {
+          "id": 1,
+          "name": "Villa"
+        },
+        "url": "https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
+      }
+    },
+    {
+      "id": 3,
+      "startDay": "2020-12-08",
+      "endDay": "2020-12-08",
+      "deposit": "0",
+      "total": "2000",
+      "employee": {
+        "id": 2,
+        "name": "hieu",
+        "idCard": "9999999999",
+        "phone": "0397961099",
+        "email": "hieu@gmail.com",
+        "birthday": "2022-05-20",
+        "level": {
+          "id": 1,
+          "name": "Trung Cap"
+        },
+        "position": {
+          "id": 1,
+          "name": "Le tan"
+        },
+        "division": {
+          "id": 2,
+          "name": "hành chính"
+        },
+        "salary": "11111"
+      },
+      "customer": {
+        "id": 1,
+        "name": "hieu",
+        "idCard": "2134",
+        "date": "2002-03-13",
+        "phone": "1234",
+        "email": "hieu123@gmail.com",
+        "gender": true,
+        "address": "aasd",
+        "type": {
+          "id": 1,
+          "name": "Diamond"
+        }
+      },
+      "facility": {
+        "id": 2,
+        "name": "Villa No Beach Front",
+        "area": 433,
+        "cost": 8000,
+        "maxPeople": 5,
+        "standard": "normal",
+        "description": "có hồ bơi",
+        "poolArea": 322,
+        "floor": 5,
+        "rentType": {
+          "id": 1,
+          "name": "Year"
+        },
+        "facilityType": {
+          "id": 1,
+          "name": "Villa"
+        },
+        "url": "https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
+      }
+    }
+  ]
+}
