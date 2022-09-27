@@ -9,7 +9,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import java.util.Date;
 import java.util.List;
-@Entity
+@Entity(name = "customers")
 @Table(name = "customer")
 public class Customer {
     @Id
@@ -57,6 +57,11 @@ public class Customer {
         this.customerAddress = customerAddress;
         this.customerType = customerType;
 //        this.contracts = contracts;
+    }
+
+    public Customer(String name, String s) {
+        this.customerName = name;
+        this.customerName = s;
     }
 
     public Long getCustomerId() {

@@ -7,6 +7,7 @@ import casestudy.entity.employee.EducationDegree;
 import casestudy.entity.employee.Employee;
 import casestudy.entity.employee.Position;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
@@ -20,9 +21,13 @@ public interface ICustomerService {
 
     Customer save(Customer customer);
 
+    void update(Customer customer);
+
     Customer findById1(Long id);
 
     void remove(Long id);
+
+    boolean isCustomerExist(Long id) ;
 
     Iterable<Customer> findAllByCustomerType(CustomerType customerType);
 
@@ -31,4 +36,13 @@ public interface ICustomerService {
     List<Customer> findAllAPI(Pageable pageable);
 //    Page<Customer> findAllByCustomerNameContaining(String name, Pageable pageable);
     List<Customer> findAllByCustomerNameContaining(String name, Pageable pageable);
+
+
+//    getListCustomer co phan trang
+    Page<Customer> getAllCustomerDTO(Pageable pageable);
+    List<Customer> getAllCustomerDTONotPagination();
+
+
+//    search name
+    List<Customer> searchName(String name);
 }

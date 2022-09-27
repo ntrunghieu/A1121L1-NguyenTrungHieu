@@ -33,7 +33,7 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
         registry.addFormatter(new PositionFormatter(applicationContext.getBean(PositionService.class)));
         registry.addFormatter(new CustomerTypeFormatter(applicationContext.getBean(CustomerServiceType.class)));
 
-            registry.addFormatter(new DateFormatter());
+        registry.addFormatter(new DateFormatter());
         registry.addConverter(new DateConverter());
 
     }

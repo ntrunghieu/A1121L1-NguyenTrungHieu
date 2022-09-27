@@ -29,12 +29,10 @@
             margin: auto;
             text-align: center;
         }
-
         .pagination {
             width: 400px;
             margin-left: 50px;
         }
-
         .pagination a {
             display: block;
             color: black;
@@ -43,7 +41,6 @@
             text-decoration: none;
             transition: background-color .3s;
         }
-
 
         .pagination a.active {
             background-color: #4CAF50;
@@ -268,24 +265,55 @@
 <!--    </div>-->
 <!--</div>-->
 
-
 <div class="container">
-    <div class="pagination" th:each="i:${#numbers.sequence(0,customers.totalPages - 1)}">
+
+
+    <div class="pagination" >
         <!--        <th:block >-->
         <a th:href="@{'/customer'(page=${customers.number - 1})}" th:if="${customers.hasPrevious()}">&laquo;</a>
-
-        <!--        <li th:if="${employees.number == i}">-->
-        <a th:if="${customers.number == i}" class=" active" th:href="@{'/customer'(page=${i})} " th:text="${i+1}"></a>
-        <!--        </li>-->
-        <!--        <li th:unless="${employees.number == i}">-->
-        <a th:unless="${customers.number == i}" th:href="@{'/customer'(page=${i})} " th:text="${i+1}"></a>
-        <!--        </li>-->
-        <!--        </th:block>-->
+            <div class="pagination" th:each="i:${#numbers.sequence(0,customers.totalPages - 1)}">
+                <!--        <li th:if="${employees.number == i}">-->
+                <a th:if="${customers.number == i}" class=" active" th:href="@{'/customer'(page=${i})} " th:text="${i+1}"></a>
+                <!--        </li>-->
+                <!--        <li th:unless="${employees.number == i}">-->
+                <a th:unless="${customers.number == i}" th:href="@{'/customer'(page=${i})} " th:text="${i+1}"></a>
+                <!--        </li>-->
+                <!--        </th:block>-->
+            </div>
 
         <a th:href="@{'/customer'(page=${customers.number + 1})}" th:if="${customers.hasNext()}">&raquo;</a>
-
     </div>
+
 </div>
+
+
+
+
+<!--<div th:if="${customers.getTotalElements() != 0}">-->
+<!--    <ul class="pagination">-->
+<!--        <li class="page-item">-->
+<!--            <a class="page-link" th:if="${customerList.hasPrevious()}"-->
+<!--               th:href="@{'/customers/list'(page=${customerList.number -1})}">-->
+<!--                <span>&laquo;</span>-->
+<!--            </a>-->
+<!--        </li>-->
+<!--        <th:block th:each="i:${#numbers.sequence(0,customerList.totalPages - 1)}">-->
+<!--            <li th:if="${customerList.number == i}" class="page-item active">-->
+<!--                <a class="page-link" th:href="@{'/customers/list'(page=${i})} + ${condition}" th:text="${i+1}"></a>-->
+<!--            </li>-->
+<!--            <li th:unless="${customerList.number == i}" class="page-item">-->
+<!--                <a class="page-link" th:href="@{'/customers/list'(page=${i})} + ${condition}" th:text="${i+1}"></a>-->
+<!--            </li>-->
+<!--        </th:block>-->
+
+<!--        <li class="page-item">-->
+<!--            <a class="page-link" th:if="${customerList.hasNext()}"-->
+<!--               th:href="@{'/customers/list'(page=${customerList.number +1})}">-->
+<!--                <span>&raquo;</span>-->
+<!--            </a>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</div>-->
 
 
 <script>

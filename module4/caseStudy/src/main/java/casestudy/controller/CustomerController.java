@@ -66,18 +66,18 @@ public class CustomerController {
         return modelAndView;
     }
 
-    @GetMapping("")
-    public ModelAndView listCustomers(@RequestParam("search") Optional<String> search, @PageableDefault(value = 3) Pageable pageable) {
-        Page<Customer> customers;
-        if (search.isPresent()) {
-            customers = (Page<Customer>) iCustomerService.findAllByCustomerNameContaining(search.get(), pageable);
-        } else {
-            customers = iCustomerService.findAll(pageable);
-        }
-        ModelAndView modelAndView = new ModelAndView("customer/list");
-        modelAndView.addObject("customers", customers);
-        return modelAndView;
-    }
+//    @GetMapping("")
+//    public ModelAndView listCustomers(@RequestParam("search") Optional<String> search, @PageableDefault(value = 3) Pageable pageable) {
+//        Page<Customer> customers;
+//        if (search.isPresent()) {
+//            customers = (Page<Customer>) iCustomerService.findAllByCustomerNameContaining(search.get(), pageable);
+//        } else {
+//            customers = iCustomerService.findAll(pageable);
+//        }
+//        ModelAndView modelAndView = new ModelAndView("customer/list");
+//        modelAndView.addObject("customers", customers);
+//        return modelAndView;
+//    }
 
     @GetMapping("/update/{id}")
     public String update(@PathVariable("id") Customer customer, Model model) {

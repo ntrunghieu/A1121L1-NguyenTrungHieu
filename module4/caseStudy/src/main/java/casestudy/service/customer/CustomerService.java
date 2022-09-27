@@ -7,6 +7,7 @@ import casestudy.repository.employee.IEmployeeRepository;
 import casestudy.service.customer.impl.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -40,13 +41,25 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
+    public void update(Customer customer) {
+        iCustomerRepository.save(customer);
+    }
+
+    @Override
     public Customer findById1(Long id) {
-        return null;
+        Optional<Customer> optional = iCustomerRepository.findById(id);
+        Customer customer = optional.get();
+        return customer;
     }
 
     @Override
     public void remove(Long id) {
         iCustomerRepository.deleteById(id);
+    }
+
+    @Override
+    public boolean isCustomerExist(Long id) {
+        return iCustomerRepository.existsById(id);
     }
 
     @Override
@@ -67,5 +80,20 @@ public class CustomerService implements ICustomerService {
     @Override
     public List<Customer> findAllByCustomerNameContaining(String name, Pageable pageable) {
         return iCustomerRepository.findAllByCustomerNameContaining(name,pageable);
+    }
+
+    @Override
+    public Page<Customer> getAllCustomerDTO(Pageable pageable) {
+        return iCustomerRepository.findAll(pageable);
+
+    }
+    @Override
+    public List<Customer> getAllCustomerDTONotPagination() {
+        return iCustomerRepository.findAll();
+    }
+
+    @Override
+    public List<Customer> searchName(String name) {
+        return iCustomerRepository.searchName(name);
     }
 }

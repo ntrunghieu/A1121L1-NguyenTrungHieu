@@ -1,22 +1,24 @@
 package casestudy.entity.customer;
 
-import casestudy.entity.employee.Employee;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
-import java.util.List;
-@Entity
+import java.util.Set;
+
+@Entity(name = "customerType")
 @Table(name = "customer_type" )
 public class CustomerType {
     @Column(name = "customer_type_id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long customerTypeId;
+
     @Column(name = "customer_type_name")
     private String customerTypeName;
 
     @OneToMany(targetEntity = Customer.class)
-    private List<Customer> employees;
+    @JsonBackReference
+    private Set<Customer> customers;
 
 
 //    @OneToMany(targetEntity = Customer.class)
@@ -26,10 +28,10 @@ public class CustomerType {
     public CustomerType() {
     }
 
-    public CustomerType(Long customerTypeId, String customerTypeName, List<Customer> employees) {
+    public CustomerType(Long customerTypeId, String customerTypeName, Set<Customer> customers) {
         this.customerTypeId = customerTypeId;
         this.customerTypeName = customerTypeName;
-        this.employees = employees;
+        this.customers = customers;
     }
 
     public Long getCustomerTypeId() {
@@ -48,11 +50,11 @@ public class CustomerType {
         this.customerTypeName = customerTypeName;
     }
 
-    public List<Customer> getEmployees() {
-        return employees;
+    public Set<Customer> getCustomers() {
+        return customers;
     }
 
-    public void setEmployees(List<Customer> employees) {
-        this.employees = employees;
+    public void setCustomers(Set<Customer> employees) {
+        this.customers = employees;
     }
 }
