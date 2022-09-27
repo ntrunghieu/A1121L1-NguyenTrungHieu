@@ -15,12 +15,15 @@ import {Employee} from '../../employee';
   styleUrls: ['./employee-update.component.css']
 })
 export class EmployeeUpdateComponent implements OnInit {
-  employee: Employee;
+  employee: Employee = {
+
+  };
   employeeForm: FormGroup;
   positionList: Position[];
   levelList: Level[]=[];
   divisionList: Division[]=[];
   id: number;
+
   constructor(private service: EmployeeServiceService,
               private route: Router,
               private levelService: LevelServiceService,
@@ -82,5 +85,11 @@ export class EmployeeUpdateComponent implements OnInit {
 
   back() {
     this.route.navigateByUrl('/employee');
+  }
+
+  compareObjects(o1: any, o2: any) {
+    if(o1.name == o2.name && o1.id == o2.id )
+      return true;
+    else return false
   }
 }

@@ -20,15 +20,16 @@ export class CustomerCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm = new FormGroup({
-      id: new FormControl('', [Validators.required]),
-      name: new FormControl('', [Validators.required]),
-      date: new FormControl('', [Validators.required]),
-      idCard: new FormControl('', [Validators.required]),
-      gender: new FormControl('', [Validators.required]),
-      type: new FormControl('', [Validators.required]),
-      phone: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.email]),
-      address: new FormControl('', [Validators.required])
+      // id: new FormControl('', [Validators.required, Validators.pattern(/^[K]{1}[H]{1}[-]{1}[0-9]{4}$/)]),
+      customerId: new FormControl(''),
+      customerName: new FormControl('', [Validators.required]),
+      customerBirthday: new FormControl('', [Validators.required]),
+      customerIdCard: new FormControl('',[Validators.required, Validators.pattern(/^([0-9]{9})|([0-9]{12})$/)]),
+      customerGender: new FormControl('', [Validators.required]),
+      customerType: new FormControl('', [Validators.required]),
+      customerPhone: new FormControl('', [Validators.required, Validators.pattern(/^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/)]),
+      customerEmail: new FormControl('', [Validators.required, Validators.pattern(/^[a-z][a-z0-9_.]{0,32}@[a-z0-9]{2,}(.[a-z0-9]{2,4}){1,2}$/)]),
+      customerAddress: new FormControl('', [Validators.required])
     });
     this.getTypeCustomer();
   }
@@ -36,7 +37,7 @@ export class CustomerCreateComponent implements OnInit {
   onSubmit() {
     this.customerService.createCustomer(this.createForm.value).subscribe(data => {
       console.log(data);
-      alert('Ban da them moi khach hang ' + this.createForm.value.name);
+      alert('Ban da them moi khach hang ' + this.createForm.value.customerName);
       this.route.navigateByUrl('/customer');
     }, () => {
       console.log('error');

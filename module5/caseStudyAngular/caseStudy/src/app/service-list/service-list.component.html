@@ -1,30 +1,88 @@
 <app-navigation></app-navigation>
 <app-carousels></app-carousels>
-<div id="body">
 
-  <div class=" ui-card" style="width: 18rem;">
-    <img src="https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
-         alt="...">
-    <div class="description">
-      <h4>Villa</h4>
-      <p>Dien tich 56m <sup>2</sup></p>
-      <a href="#">Booking</a>
-    </div>
-    <div class="card-body" hidden>
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-        content.</p>
-      <div hidden class="bnt-function" style="margin-left: 50px">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-          Xoa
+
+<div style="margin-top: 900px" class=" middle">
+  <a href="" class="btnHover btnHover1" routerLink="create">Create a new service</a>
+  <!--        <a href="" class="btnHover btnHover2">Hover Me</a>-->
+</div>
+
+<div id="body">
+  <div class="wrap" *ngFor="let facility of facilities | slice: 0 :page*3">
+    <div class="ui-card " >
+      <img  src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg"
+            alt="...">
+      <div style="margin-bottom: 250px" class="description middle">
+        <a href="" class="btnHover btnHover1">Booking</a>
+<!--        <a href="" class="btnHover btnHover2">Hover Me</a>-->
+      </div>
+<!--      <div class="description">-->
+<!--        <a href="#">Booking</a>-->
+<!--      </div>-->
+      <div class="card-body" >
+        <h5 class="card-title">{{facility.name}}</h5>
+        <p>Dien tich {{facility.area}}m<sup>2</sup></p>
+      </div>
+      <div  class="bnt-function" style="margin-left: 120px">
+        <!--        <a [routerLink]="['update', cus.id]" class="btn btn-danger mx-3">Sua</a>-->
+        <!--        <a  [routerLink]="['detail', cus.id]" type="button" class="btn btn-primary" >-->
+        <!--          Xem-->
+        <!--        </a>-->
+
+        <button style="border: none; color: rgba(255,9,0,0.81)" type="button" data-toggle="modal" data-target="#exampleModal">
+          <i class="fa-solid fa-trash-can"></i>
         </button>
-        <button type="button" class="btn btn-primary">
-          Sua
-        </button>
+
+        <a  [routerLink]="['update', facility.id]"  class=" mx-md-4">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </a>
       </div>
     </div>
+    <div  style="margin-left: 270px; z-index: -1000; ">
+      <ul>
+        <li> <i style="margin-bottom: 4px; " class="fa-solid fa-circle-info" ></i>
+          <div class="content" style="z-index: 1; color: #fff ">
 
+            <h5 style="text-align: center;font-size: 13px;font-weight: bolder">Thang máy riêng</h5>
+            <h5 style="text-align: center;font-size: 13px;font-weight: bolder">Truy cập internet miễn phí</h5>
+            <h5 style="text-align: center;font-size: 13px;font-weight: bolder">Toàn cảnh hướng biển</h5>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
+
+
+
+
+<!--  <div class=" ui-card" style="width: 18rem;" *ngFor="let facility of facilities | slice: 0 :page*4">-->
+<!--    <img [src]="facility.url"-->
+<!--         alt="...">-->
+<!--    <div class="description">-->
+<!--&lt;!&ndash;      <h4>{{facility.name}}</h4>&ndash;&gt;-->
+<!--      <a href="#">Booking</a>-->
+<!--      <p>Dien tich {{facility.area}}m<sup>2</sup></p>-->
+<!--    </div>-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">{{facility.name}}</h5>-->
+<!--      <p class="card-text">{{facility.description}}</p>-->
+<!--      <div  class="bnt-function" style="margin-left: 50px">-->
+<!--&lt;!&ndash;        <a [routerLink]="['update', cus.id]" class="btn btn-danger mx-3">Sua</a>&ndash;&gt;-->
+<!--&lt;!&ndash;        <a  [routerLink]="['detail', cus.id]" type="button" class="btn btn-primary" >&ndash;&gt;-->
+<!--&lt;!&ndash;          Xem&ndash;&gt;-->
+<!--&lt;!&ndash;        </a>&ndash;&gt;-->
+
+<!--        <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
+<!--          Xoa-->
+<!--        </button>-->
+<!--        <a [routerLink]="['update', facility.id]"  class="btn btn-primary mx-md-4">-->
+<!--          Sua-->
+<!--        </a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+
 <!--  <div class="ui-card" style="width: 18rem;">-->
 <!--    <img src="https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg" class="card-img-top" alt="...">-->
 <!--    <div class="description">-->
@@ -47,121 +105,121 @@
 <!--    </div>-->
 <!--  </div>-->
 
-<!--  <div class="ui-card" style="width: 18rem;">-->
-<!--    <img src="https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg" class="card-img-top" alt="...">-->
-<!--    <div class="description">-->
-<!--      <h4>Dich vu cho thue</h4>-->
-<!--      <p>Dien tich 75m <sup>2</sup></p>-->
-<!--      <a href="#">Booking</a>-->
-<!--    </div>-->
-<!--    <div class="card-body">-->
-<!--      <h5 class="card-title">Card title</h5>-->
-<!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's-->
-<!--        content.</p>-->
-<!--      <div hidden class="bnt-function" style="margin-left: 50px">-->
-<!--        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
-<!--          Xoa-->
-<!--        </button>-->
-<!--        <button type="button" class="btn btn-primary">-->
-<!--          Sua-->
-<!--        </button>-->
-<!--      </div>-->
+  <!--  <div class="ui-card" style="width: 18rem;">-->
+  <!--    <img src="https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg" class="card-img-top" alt="...">-->
+  <!--    <div class="description">-->
+  <!--      <h4>Dich vu cho thue</h4>-->
+  <!--      <p>Dien tich 75m <sup>2</sup></p>-->
+  <!--      <a href="#">Booking</a>-->
+  <!--    </div>-->
+  <!--    <div class="card-body">-->
+  <!--      <h5 class="card-title">Card title</h5>-->
+  <!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's-->
+  <!--        content.</p>-->
+  <!--      <div hidden class="bnt-function" style="margin-left: 50px">-->
+  <!--        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
+  <!--          Xoa-->
+  <!--        </button>-->
+  <!--        <button type="button" class="btn btn-primary">-->
+  <!--          Sua-->
+  <!--        </button>-->
+  <!--      </div>-->
 
-<!--    </div>-->
-<!--  </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
 
-<!--  <div class="ui-card" style="width: 18rem;">-->
-<!--    <img src="https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"-->
-<!--         class="card-img-top" alt="...">-->
-<!--    <div class="description">-->
-<!--      <h4>Dich vu cho thue</h4>-->
-<!--      <p>Dien tich 49m <sup>2</sup></p>-->
-<!--      <a href="#">Booking</a>-->
-<!--    </div>-->
-<!--    <div class="card-body">-->
-<!--      <h5 class="card-title">Card title</h5>-->
-<!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's-->
-<!--        content.</p>-->
-<!--      <div hidden class="bnt-function" style="margin-left: 50px">-->
-<!--        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
-<!--          Xoa-->
-<!--        </button>-->
-<!--        <button type="button" class="btn btn-primary">-->
-<!--          Sua-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+  <!--  <div class="ui-card" style="width: 18rem;">-->
+  <!--    <img src="https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"-->
+  <!--         class="card-img-top" alt="...">-->
+  <!--    <div class="description">-->
+  <!--      <h4>Dich vu cho thue</h4>-->
+  <!--      <p>Dien tich 49m <sup>2</sup></p>-->
+  <!--      <a href="#">Booking</a>-->
+  <!--    </div>-->
+  <!--    <div class="card-body">-->
+  <!--      <h5 class="card-title">Card title</h5>-->
+  <!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's-->
+  <!--        content.</p>-->
+  <!--      <div hidden class="bnt-function" style="margin-left: 50px">-->
+  <!--        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
+  <!--          Xoa-->
+  <!--        </button>-->
+  <!--        <button type="button" class="btn btn-primary">-->
+  <!--          Sua-->
+  <!--        </button>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
 
 
-<!--  <div class="ui-card" style="width: 18rem;">-->
-<!--    <img src="https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"-->
-<!--         class="card-img-top" alt="...">-->
-<!--    <div class="description">-->
-<!--      <h4>Dich vu cho thue</h4>-->
-<!--      <p>Dien tich 78m <sup>2</sup></p>-->
-<!--      <a href="#">Booking</a>-->
-<!--    </div>-->
-<!--    <div class="card-body">-->
-<!--      <h5 class="card-title">Card title</h5>-->
-<!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's-->
-<!--        content.</p>-->
-<!--      <div hidden class="bnt-function" style="margin-left: 50px">-->
-<!--        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
-<!--          Xoa-->
-<!--        </button>-->
-<!--        <button type="button" class="btn btn-primary">-->
-<!--          Sua-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+  <!--  <div class="ui-card" style="width: 18rem;">-->
+  <!--    <img src="https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"-->
+  <!--         class="card-img-top" alt="...">-->
+  <!--    <div class="description">-->
+  <!--      <h4>Dich vu cho thue</h4>-->
+  <!--      <p>Dien tich 78m <sup>2</sup></p>-->
+  <!--      <a href="#">Booking</a>-->
+  <!--    </div>-->
+  <!--    <div class="card-body">-->
+  <!--      <h5 class="card-title">Card title</h5>-->
+  <!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's-->
+  <!--        content.</p>-->
+  <!--      <div hidden class="bnt-function" style="margin-left: 50px">-->
+  <!--        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
+  <!--          Xoa-->
+  <!--        </button>-->
+  <!--        <button type="button" class="btn btn-primary">-->
+  <!--          Sua-->
+  <!--        </button>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
 
-<!--  <div class="ui-card" style="width: 18rem;">-->
-<!--    <img src="https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"-->
-<!--         class="card-img-top" alt="...">-->
-<!--    <div class="description">-->
-<!--      <h4>Dich vu cho thue</h4>-->
-<!--      <p>Dien tich 55m <sup>2</sup></p>-->
-<!--      <a href="#">Booking</a>-->
-<!--    </div>-->
-<!--    <div class="card-body">-->
-<!--      <h5 class="card-title">Card title</h5>-->
-<!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's-->
-<!--        content.</p>-->
-<!--      <div hidden class="bnt-function" style="margin-left: 50px">-->
-<!--        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
-<!--          Xoa-->
-<!--        </button>-->
-<!--        <button type="button" class="btn btn-primary">-->
-<!--          Sua-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+  <!--  <div class="ui-card" style="width: 18rem;">-->
+  <!--    <img src="https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"-->
+  <!--         class="card-img-top" alt="...">-->
+  <!--    <div class="description">-->
+  <!--      <h4>Dich vu cho thue</h4>-->
+  <!--      <p>Dien tich 55m <sup>2</sup></p>-->
+  <!--      <a href="#">Booking</a>-->
+  <!--    </div>-->
+  <!--    <div class="card-body">-->
+  <!--      <h5 class="card-title">Card title</h5>-->
+  <!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's-->
+  <!--        content.</p>-->
+  <!--      <div hidden class="bnt-function" style="margin-left: 50px">-->
+  <!--        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
+  <!--          Xoa-->
+  <!--        </button>-->
+  <!--        <button type="button" class="btn btn-primary">-->
+  <!--          Sua-->
+  <!--        </button>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
 
-<!--  <div class="ui-card" style="width: 18rem;">-->
-<!--    <img src="https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"-->
-<!--         class="card-img-top" alt="...">-->
-<!--    <div class="description">-->
-<!--      <h4>Dich vu cho thue</h4>-->
-<!--      <p>Dien tich 69m <sup>2</sup></p>-->
-<!--      <a href="#">Booking</a>-->
-<!--    </div>-->
-<!--    <div class="card-body">-->
-<!--      <h5 class="card-title">Card title</h5>-->
-<!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's-->
-<!--        content.</p>-->
-<!--      <div hidden class="bnt-function" style="margin-left: 50px">-->
-<!--        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
-<!--          Xoa-->
-<!--        </button>-->
-<!--        <button type="button" class="btn btn-primary">-->
-<!--          Sua-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+  <!--  <div class="ui-card" style="width: 18rem;">-->
+  <!--    <img src="https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"-->
+  <!--         class="card-img-top" alt="...">-->
+  <!--    <div class="description">-->
+  <!--      <h4>Dich vu cho thue</h4>-->
+  <!--      <p>Dien tich 69m <sup>2</sup></p>-->
+  <!--      <a href="#">Booking</a>-->
+  <!--    </div>-->
+  <!--    <div class="card-body">-->
+  <!--      <h5 class="card-title">Card title</h5>-->
+  <!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's-->
+  <!--        content.</p>-->
+  <!--      <div hidden class="bnt-function" style="margin-left: 50px">-->
+  <!--        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
+  <!--          Xoa-->
+  <!--        </button>-->
+  <!--        <button type="button" class="btn btn-primary">-->
+  <!--          Sua-->
+  <!--        </button>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
 </div>
 
 
@@ -186,3 +244,7 @@
 <!--</div>-->
 
 <!--</div>-->
+
+<div class="w-100 d-flex justify-content-center" *ngIf="page*3 < facilities.length">
+  <button class="btn btn-primary btnHover btnHover1 " (click)="page=page+1">Load more</button>
+</div>

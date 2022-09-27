@@ -46,7 +46,45 @@
   </div>
 </div>
 
-<a class="btn btn-primary m-3" routerLink="create">Create employee</a>
+<!--<div class="col-md-3 mb-3">-->
+<!--  <label for="validationDefault04">State</label>-->
+<!--  <select  formControlName="id" id="id" name="id" >-->
+<!--    <option  *ngFor="let l of level" [value]="l.id" aria-checked="true" selected>{{l.name}}</option>-->
+<!--  </select>-->
+<!--</div>-->
+
+
+<div style="margin-top: 260px" class=" middle">
+  <a href="" class="btnHover btnHover1" routerLink="create">Create a new employee</a>
+  <!--        <a href="" class="btnHover btnHover2">Hover Me</a>-->
+</div>
+
+<!--//search level-->
+<div  style="background: #088b6d; max-width: 570px; margin-left: 27%; margin-top: 170px">
+<form style="margin: 30px" [formGroup]="searchLevelForm" (ngSubmit)="send()">
+  <div class="row mb-3 form-group row">
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="name">Name: </label>
+        <input type="text" class="mx-md-4" id="name" formControlName="name" name="name">
+      </div>
+      <!--  <input type="text" class="mx-md-4"  formControlName="name" name="name">-->
+      <div class="col-md-3 mb-3">
+        <label for="id">Type: </label>
+        <select formControlName="id" id="id" name="id">
+          <option *ngFor="let l of level" [value]="l.id" aria-checked="true" selected>{{l.name}}</option>
+        </select>
+      </div>
+      <div  class="col-md-3 mb-3">
+        <button style="margin: 18px" class="btn btn-primary" type="submit"> Search</button>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+
+
+
 <div style="margin-left: 3px" class="container-fluid">
   <table style="margin-left: 40px" id="tableEmploy" class="table table-hover mt-4">
     <thead>
@@ -58,11 +96,11 @@
       <th (click)="sort('phone')">Phone &nbsp;<i class="fa-solid fa-sort"></i></th>
       <th (click)="sort('email')">Email &nbsp;<i class="fa-solid fa-sort"></i></th>
       <th (click)="sort('birthday')">Birthday &nbsp;<i class="fa-solid fa-sort"></i></th>
-      <th (click)="sort('level')">Education &nbsp;<i class="fa-solid fa-sort"></i></th>
-      <th (click)="sort('position')">Position &nbsp;<i class="fa-solid fa-sort"></i></th>
-      <th (click)="sort('division')">Division &nbsp;<i class="fa-solid fa-sort"></i></th>
-      <th (click)="sort('salary')">Salary &nbsp;<i class="fa-solid fa-sort"></i></th>
-      <th  style="text-align: center">Action</th>
+      <th hidden (click)="sort('level')">Education &nbsp;<i class="fa-solid fa-sort"></i></th>
+      <th hidden (click)="sort('position')">Position &nbsp;<i class="fa-solid fa-sort"></i></th>
+      <th hidden (click)="sort('division')">Division &nbsp;<i class="fa-solid fa-sort"></i></th>
+      <th hidden (click)="sort('salary')">Salary &nbsp;<i class="fa-solid fa-sort"></i></th>
+      <th style="text-align: center">Action</th>
 
     </tr>
     </thead>
@@ -77,31 +115,28 @@
       <td>{{employ.phone}}</td>
       <td>{{employ.email}}</td>
       <td>{{employ.birthday | date:"dd-MM-yyyy"}}</td>
-      <td>{{employ.level.name}}</td>
-      <td>{{employ.position.name}}</td>
-      <td>{{employ.division.name}}</td>
-      <td>{{employ.salary}}</td>
+      <td hidden>{{employ.level.name}}</td>
+      <td hidden>{{employ.position.name}}</td>
+      <td hidden>{{employ.division.name}}</td>
+      <td hidden>{{employ.salary}}</td>
 
-      <td class="d-flex">
+      <td class="d-flex" style="margin-left: 90px">
 
-        <!--      <button type="button" class="btn btn-primary "  data-toggle="modal" data-target="#exam1" (click)="sendEmployeeToDelete(employ.id, employ.name)" >-->
-        <!--        Xoa-->
-        <!--      </button>-->
-
-        <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exam1"
-                (click)="sendToDelete(employ)">
-          Xoa
+        <button style="color: red; border: none " type="button" data-toggle="modal" data-target="#exam1" (click)="sendToDelete(employ)" >
+          <i class="fa-solid fa-trash-can"></i>
         </button>
 
         <!--        <button hidden type="button" class="btn btn-primary"  (click)="openPopup()" >-->
         <!--          Xoa-->
         <!--        </button>-->
-        <a [routerLink]="['update', employ.id]" class="btn btn-danger mx-3">Sua</a>
-        <a [routerLink]="['detail', employ.id]" type="button" class="btn btn-primary">
-          Xem
-        </a>
+        <a style=" text-decoration: none; color: #0e0d0d" [routerLink]="['update', employ.id]" ><i class="fa-regular fa-pen-to-square"></i></a>
+        <a style="border: none; color: #0e6290" type="button"  [routerLink]="['detail', employ.id]" ><i class="fa-sharp fa-solid fa-circle-info"></i></a>
 
       </td>
+
+
+
+
 
     </tr>
     </tbody>
@@ -112,15 +147,12 @@
 </div>
 
 
-
-
-
 <div class="modal fade" id="exam1" tabindex="-1" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><i style="color: red" class="fa-solid fa-triangle-exclamation"></i> Delete Employee</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -133,9 +165,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete(deleteEmp.id)">Xoa</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete(deleteEmp.id)">Delete</button>
       </div>
     </div>
   </div>
 </div>
-

@@ -1,73 +1,212 @@
-<div class="col-md-9 col-xs-12 content-right">
-  <div id="header-table">
-    <h2 style="margin-top: 35px; margin-bottom: 10px; font-weight: 400;">Create New Service</h2>
-    <a>Display List Service</a>
+<app-navigation></app-navigation>
+<!--<div class="col-md-9 col-xs-12 content-right">-->
+<!--  <div id="header-table">-->
+<!--    <h2 style="margin-top: 35px; margin-bottom: 10px; font-weight: 400;">Create New Service</h2>-->
+<!--    <a>Display List Service</a>-->
+<!--  </div>-->
+<!--  <div id="input-form" style="width: 85%;margin: 10px">-->
+<!--    <form method="post">-->
+<!--      <div class="input-group input-group-sm mb-3">-->
+<!--        <span class="input-group-text">Name: </span>-->
+<!--        <input type="text" class="form-control" aria-label="Sizing example input"-->
+<!--               aria-describedby="inputGroup-sizing-sm">-->
+<!--      </div>-->
+<!--      <div class="input-group input-group-sm mb-3">-->
+<!--        <span class="input-group-text">Cost: </span>-->
+<!--        <input type="text" class="form-control" aria-label="Sizing example input"-->
+<!--               aria-describedby="inputGroup-sizing-sm">-->
+<!--      </div>-->
+<!--      <div class="input-group input-group-sm mb-3">-->
+<!--        <span class="input-group-text">Num Of Floors: </span>-->
+<!--        <input type="text" class="form-control" aria-label="Sizing example input"-->
+<!--               aria-describedby="inputGroup-sizing-sm">-->
+<!--      </div>-->
+<!--      <div class="input-group input-group-sm mb-3">-->
+<!--        <span class="input-group-text">Pool Area: </span>-->
+<!--        <input type="text" class="form-control" aria-label="Sizing example input"-->
+<!--               aria-describedby="inputGroup-sizing-sm">-->
+<!--      </div>-->
+<!--      <div class="input-group input-group-sm mb-3">-->
+<!--        <span class="input-group-text">Area</span>-->
+<!--        <input type="text" class="form-control" aria-label="Sizing example input"-->
+<!--               aria-describedby="inputGroup-sizing-sm">-->
+<!--      </div>-->
+<!--      <div class="input-group input-group-sm mb-3">-->
+<!--        <span class="input-group-text">Standard Room: </span>-->
+<!--        <input type="text" class="form-control" aria-label="Sizing example input"-->
+<!--               aria-describedby="inputGroup-sizing-sm">-->
+<!--      </div>-->
+<!--      <div class="input-group input-group-sm mb-3">-->
+<!--        <span class="input-group-text">Max People: </span>-->
+<!--        <input type="text" class="form-control" aria-label="Sizing example input"-->
+<!--               aria-describedby="inputGroup-sizing-sm">-->
+<!--      </div>-->
+<!--      <div class="input-group input-group-sm mb-3">-->
+<!--        <span class="input-group-text">Description: </span>-->
+<!--        <textarea cols="20" rows="5" type="text" class="form-control" aria-label="Sizing example input"-->
+<!--                  aria-describedby="inputGroup-sizing-sm">-->
+<!--                </textarea>-->
+<!--      </div>-->
+<!--      <div>-->
+<!--                            <span class="input-group input-group-sm mb-3">-->
+<!--                                <span class="input-group-text">Service Type</span>-->
+<!--                                 <select class="form-select" aria-label="Default select example">-->
+<!--                                    <option>villa</option>-->
+<!--                                     <option>house</option>-->
+<!--                                     <option>room</option>-->
+<!--                                 </select>-->
+<!--                            </span>-->
+<!--        <span class="input-group input-group-sm mb-3">-->
+<!--                                <span class="input-group-text">Customer Type</span>-->
+<!--                            <select class="form-select" aria-label="Default select example">-->
+<!--                                <option>GoLD</option>-->
+<!--                                 <option>Silver</option>-->
+<!--                                 <option>Member</option>-->
+<!--                            </select>-->
+<!--                </span>-->
+<!--      </div>-->
+<!--      <div style="width: 100%; margin-bottom: 10px" class="d-grid gap-2">-->
+<!--        <button class="btn btn-primary" type="submit">Create</button>-->
+<!--        <button class="btn btn-primary" type="button">Back</button>-->
+<!--      </div>-->
+<!--    </form>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<form [formGroup]="serviceForm"  id="createForm1" (ngSubmit)="onSubmit()" >
+  <table>
+    <tr>
+      <th colspan="2"><h2 style="margin: auto; font-weight: 400; text-align: center">Create Service</h2></th>
+    </tr>
+
+    <tr hidden>
+      <td><label for="id">ID</label></td>
+      <td>
+        <input formControlName="id"  id="id" name="id" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </td>
+    </tr>
+    <tr>
+      <td><label for="name">Name: </label></td>
+      <td>
+        <input formControlName="name" id="name" name="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+<!--        <div *ngIf="!createForm.get('name')?.valid && createForm.get('name').touched">-->
+<!--          <p *ngIf="createForm.get('name').errors.required" class="text-danger">Nhap ten</p>-->
+<!--          <p *ngIf="createForm.get('name').errors.minlength" class="text-danger">Vui long nhap ten lon hon 6 ky tu</p>-->
+<!--        </div>-->
+      </td>
+    </tr>
+    <tr>
+      <td><label for="cost">Cost: </label></td>
+      <td>
+        <input formControlName="cost" id="cost" name="cost" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+<!--        <div *ngIf="!createForm.get('name')?.valid && createForm.get('name').touched">-->
+<!--          <p *ngIf="createForm.get('name').errors.required" class="text-danger">Nhap ten</p>-->
+<!--          <p *ngIf="createForm.get('name').errors.minlength" class="text-danger">Vui long nhap ten lon hon 6 ky tu</p>-->
+<!--        </div>-->
+      </td>
+    </tr>
+    <tr>
+      <td><label for="floor">Number of floors</label></td>
+      <td>
+        <input formControlName="floor" id="floor" name="floor" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+<!--        <div *ngIf="!createForm.get('name')?.valid && createForm.get('name').touched">-->
+<!--          <p *ngIf="createForm.get('name').errors.required" class="text-danger">Nhap ten</p>-->
+<!--          <p *ngIf="createForm.get('name').errors.minlength" class="text-danger">Vui long nhap ten lon hon 6 ky tu</p>-->
+<!--        </div>-->
+      </td>
+    </tr>
+    <tr>
+      <td><label for="poolArea">Pool area</label></td>
+      <td>
+        <input formControlName="poolArea"  type="text" id="poolArea" name="poolArea">
+<!--        <div>-->
+<!--          <p *ngIf=" createForm.get('date').untouched" class="text-danger">Vui long chon ngay sinh</p>-->
+<!--        </div>-->
+      </td>
+    </tr>
+    <tr>
+      <td><label for="area">Area</label></td>
+      <td>
+        <input formControlName="area"  type="text" id="area" name="area">
+<!--        <div>-->
+<!--          <p *ngIf=" createForm.get('date').untouched" class="text-danger">Vui long chon ngay sinh</p>-->
+<!--        </div>-->
+      </td>
+    </tr>
+    <tr>
+      <td><label for="standard">Standard room</label></td>
+      <td>
+        <input formControlName="standard"  type="text" id="standard" name="standard">
+<!--        <div>-->
+<!--          <p *ngIf=" createForm.get('date').untouched" class="text-danger">Vui long chon ngay sinh</p>-->
+<!--        </div>-->
+      </td>
+    </tr>
+    <tr>
+      <td><label for="maxPeople">Max people</label></td>
+      <td>
+        <input formControlName="maxPeople"  type="text" id="maxPeople" name="maxPeople">
+<!--        <div>-->
+<!--          <p *ngIf=" createForm.get('date').untouched" class="text-danger">Vui long chon ngay sinh</p>-->
+<!--        </div>-->
+      </td>
+    </tr>
+    <tr>
+      <td><label for="description">Description</label></td>
+      <td>
+        <textarea cols="30" rows="5" formControlName="description"  type="text" id="description" name="description"></textarea>
+<!--        <div>-->
+<!--          <p *ngIf=" createForm.get('date').untouched" class="text-danger">Vui long chon ngay sinh</p>-->
+<!--        </div>-->
+      </td>
+    </tr>
+
+    <tr>
+      <td><label for="facilityType">Service type</label></td>
+      <td>
+        <select formControlName="facilityType" name="facilityType" id="facilityType"  class="form-select" aria-label="Default select example">
+          <option  *ngFor="let type of facilityType" [ngValue]="type" selected>{{type.name}}</option>
+<!--                    <option value="Diamond" selected>Diamond</option>-->
+<!--                    <option value="Platinium">Platinium</option>-->
+<!--                    <option value="Gold">Gold</option>-->
+<!--                    <option value="Silver">Silver</option>-->
+<!--                    <option value="Member">Member</option>-->
+        </select>
+<!--        <p style="color: red" *ngIf="createForm.get('type').errors.required&&-->
+<!--                createForm.get('type').untouched">Chua dien thong tin</p>-->
+      </td>
+    </tr>
+
+    <tr>
+      <td><label for="rentType">Rent type</label></td>
+      <td>
+        <select formControlName="rentType" name="rentType" id="rentType"  class="form-select" aria-label="Default select example">
+          <option  *ngFor="let rent of rentType" [ngValue]="rent" selected>{{rent.name}}</option>
+<!--                    <option value="Diamond" selected>Diamond</option>-->
+<!--                    <option value="Platinium">Platinium</option>-->
+<!--                    <option value="Gold">Gold</option>-->
+<!--                    <option value="Silver">Silver</option>-->
+<!--                    <option value="Member">Member</option>-->
+        </select>
+<!--        <p style="color: red" *ngIf="createForm.get('type').errors.required&&-->
+<!--                createForm.get('type').untouched">Chua dien thong tin</p>-->
+      </td>
+    </tr>
+    <tr>
+      <td><label for="url">Tai anh: </label></td>
+      <td>
+        <input formControlName="url"  type="text" id="url" name="url">
+        <!--        <div>-->
+        <!--          <p *ngIf=" createForm.get('date').untouched" class="text-danger">Vui long chon ngay sinh</p>-->
+        <!--        </div>-->
+      </td>
+    </tr>
+
+  </table>
+  <div class="submit">
+    <button class="btn btn-info m-3" type="submit" [disabled]="!serviceForm.valid">Save</button>
+    <a class="btn btn-info" (click)="back()">Back</a>
+    <!--    <a  routerLink="customer">Back to list</a>-->
   </div>
-  <div id="input-form" style="width: 85%;margin: 10px">
-    <form method="post">
-      <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text">Name: </span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-sm">
-      </div>
-      <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text">Cost: </span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-sm">
-      </div>
-      <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text">Num Of Floors: </span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-sm">
-      </div>
-      <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text">Pool Area: </span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-sm">
-      </div>
-      <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text">Area</span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-sm">
-      </div>
-      <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text">Standard Room: </span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-sm">
-      </div>
-      <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text">Max People: </span>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-sm">
-      </div>
-      <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text">Description: </span>
-        <textarea cols="20" rows="5" type="text" class="form-control" aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-sm">
-                </textarea>
-      </div>
-      <div>
-                            <span class="input-group input-group-sm mb-3">
-                                <span class="input-group-text">Service Type</span>
-                                 <select class="form-select" aria-label="Default select example">
-                                    <option>villa</option>
-                                     <option>house</option>
-                                     <option>room</option>
-                                 </select>
-                            </span>
-        <span class="input-group input-group-sm mb-3">
-                                <span class="input-group-text">Customer Type</span>
-                            <select class="form-select" aria-label="Default select example">
-                                <option>GoLD</option>
-                                 <option>Silver</option>
-                                 <option>Member</option>
-                            </select>
-                </span>
-      </div>
-      <div style="width: 100%; margin-bottom: 10px" class="d-grid gap-2">
-        <button class="btn btn-primary" type="submit">Create</button>
-        <button class="btn btn-primary" type="button">Back</button>
-      </div>
-    </form>
-  </div>
-</div>
+</form>

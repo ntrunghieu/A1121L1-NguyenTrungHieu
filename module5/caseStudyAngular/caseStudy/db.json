@@ -3,16 +3,16 @@
     {
       "id": 1,
       "name": "hieu",
-      "idCard": "2134",
       "date": "2002-03-13",
-      "phone": "1234",
-      "email": "hieu123@gmail.com",
+      "idCard": "2134",
       "gender": true,
-      "address": "aasd",
       "type": {
         "id": 1,
         "name": "Diamond"
-      }
+      },
+      "phone": "1234",
+      "email": "hieu123@gmail.com",
+      "address": "Quang Nam"
     },
     {
       "id": 2,
@@ -41,20 +41,6 @@
       "phone": "0905965965",
       "email": "hieu213@gmail.com",
       "address": "Hanoi"
-    },
-    {
-      "id": 4,
-      "name": "Huynh Thi Thu Huong",
-      "date": "2002-02-06",
-      "idCard": "2323211342",
-      "gender": "true",
-      "type": {
-        "id": 1,
-        "name": "Diamond"
-      },
-      "phone": "09983822312",
-      "email": "huongmauhuong8555@gmail.com",
-      "address": "New York"
     }
   ],
   "typeCustomer": [
@@ -109,8 +95,8 @@
       "email": "hieu@gmail.com",
       "birthday": "2022-09-07",
       "level": {
-        "id": 2,
-        "name": "Cao Dang"
+        "id": 4,
+        "name": "Sau Dai Hoc"
       },
       "position": {
         "id": 1,
@@ -367,6 +353,22 @@
     {
       "id": 2,
       "name": "Villa No Beach Front",
+      "cost": 8000,
+      "floor": 5,
+      "poolArea": 322,
+      "area": 433,
+      "standardRoom": "normal",
+      "maxPeople": 5,
+      "description": "có hồ bơi",
+      "typeService": {
+        "id": 1,
+        "name": "Villa"
+      },
+      "url": "https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Villa No Beach Front",
       "area": 433,
       "cost": 8000,
       "maxPeople": 5,
@@ -383,38 +385,126 @@
         "name": "Villa"
       },
       "url": "https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
-    }
-  ],
-  "rentType": [
-    {
-      "id": 1,
-      "name": "Year"
-    },
-    {
-      "id": 2,
-      "name": "Month"
-    },
-    {
-      "id": 3,
-      "name": "Day"
     },
     {
       "id": 4,
-      "name": "Hour"
-    }
-  ],
-  "facilityType": [
-    {
-      "id": 1,
-      "name": "Villa"
+      "name": "Villa No Beach Front",
+      "area": 433,
+      "cost": 8000,
+      "maxPeople": 5,
+      "standard": "normal",
+      "description": "có hồ bơi",
+      "poolArea": 322,
+      "floor": 5,
+      "rentType": {
+        "id": 1,
+        "name": "Year"
+      },
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      },
+      "url": "https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
     },
     {
-      "id": 2,
-      "name": "House"
+      "id": 5,
+      "name": "Villa No Beach Front",
+      "area": 433,
+      "cost": 8000,
+      "maxPeople": 5,
+      "standard": "normal",
+      "description": "có hồ bơi",
+      "poolArea": 322,
+      "floor": 5,
+      "rentType": {
+        "id": 1,
+        "name": "Year"
+      },
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      },
+      "url": "https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
     },
     {
-      "id": 3,
-      "name": "Room"
+      "id": 6,
+      "name": "Villa No Beach Front",
+      "area": 433,
+      "cost": 8000,
+      "maxPeople": 5,
+      "standard": "normal",
+      "description": "có hồ bơi",
+      "poolArea": 322,
+      "floor": 5,
+      "rentType": {
+        "id": 1,
+        "name": "Year"
+      },
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      },
+      "url": "https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Villa No Beach Front",
+      "area": 433,
+      "cost": 8000,
+      "maxPeople": 5,
+      "standard": "normal",
+      "description": "có hồ bơi",
+      "poolArea": 322,
+      "floor": 5,
+      "rentType": {
+        "id": 1,
+        "name": "Year"
+      },
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      },
+      "url": "https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
+    },
+    {
+      "id": 8,
+      "name": "House Princess 01",
+      "cost": "30000",
+      "floor": "4",
+      "poolArea": "20",
+      "area": "300",
+      "standard": "VIP",
+      "maxPeople": "10",
+      "description": "Có tivi",
+      "facilityType": {
+        "id": 2,
+        "name": "House"
+      },
+      "rentType": {
+        "id": 2,
+        "name": "Month"
+      },
+      "url": "https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Vina House",
+      "cost": "30000",
+      "floor": "5",
+      "poolArea": "50",
+      "area": "360",
+      "standard": "Tổng Thống",
+      "maxPeople": "10",
+      "description": "Đầy đủ tiện nghi",
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      },
+      "rentType": {
+        "id": 3,
+        "name": "day"
+      },
+      "url": "https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
     }
   ],
   "contract": [
@@ -603,6 +693,100 @@
         },
         "url": "https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
       }
+    },
+    {
+      "id": 4,
+      "customer": {
+        "id": 1,
+        "name": "hieu",
+        "date": "2002-03-13",
+        "idCard": "2134",
+        "gender": true,
+        "type": {
+          "id": 1,
+          "name": "Diamond"
+        },
+        "phone": "1234",
+        "email": "hieu123@gmail.com",
+        "address": "aasd"
+      },
+      "employee": {
+        "id": 3,
+        "name": "Nguyễn Trung Hiếu",
+        "idCard": "4234",
+        "phone": "0905965965",
+        "email": "hieu@gmail.com",
+        "birthday": "2022-09-07",
+        "level": {
+          "id": 2,
+          "name": "Cao Dang"
+        },
+        "position": {
+          "id": 1,
+          "name": "Le tan"
+        },
+        "division": {
+          "id": 1,
+          "name": "Sale- marketing"
+        },
+        "salary": "23435"
+      },
+      "facility": {
+        "id": 2,
+        "name": "Villa No Beach Front",
+        "area": 433,
+        "cost": 8000,
+        "maxPeople": 5,
+        "standard": "normal",
+        "description": "có hồ bơi",
+        "poolArea": 322,
+        "floor": 5,
+        "rentType": {
+          "id": 1,
+          "name": "Year"
+        },
+        "facilityType": {
+          "id": 1,
+          "name": "Villa"
+        },
+        "url": "https://cdn1.ivivu.com/iVivu/2019/11/28/13/128146699-cr-800x450.jpg"
+      },
+      "startDay": "2022-09-11",
+      "endDay": "2022-09-13",
+      "deposit": "23",
+      "total": "123"
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "name": "year"
+    },
+    {
+      "id": 2,
+      "name": "month"
+    },
+    {
+      "id": 3,
+      "name": "day"
+    },
+    {
+      "id": 4,
+      "name": "hour"
+    }
+  ],
+  "facilityType": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
     }
   ]
 }

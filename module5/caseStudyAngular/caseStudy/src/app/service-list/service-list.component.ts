@@ -11,12 +11,13 @@ import {Facility} from '../facility';
 })
 export class ServiceListComponent implements OnInit {
   facilities: Facility[] = [];
+  page: number = 1;
   constructor(private facilityService: FacilityServiceService,
               private router: Router,) { }
 
   ngOnInit(): void {
     this.getFacilityList();
-    console.log(this.facilities.values().next());
+    console.log(this.facilities);
   }
 
   getFacilityList() {

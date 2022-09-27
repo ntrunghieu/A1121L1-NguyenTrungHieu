@@ -6,40 +6,40 @@
     </tr>
 
     <tr hidden>
-      <td><label for="id">ID</label></td>
+      <td><label for="customerId">ID</label></td>
       <td>
-        <input [(ngModel)]="cus.id"  [value]="cus.id" formControlName="id"  id="id" name="id" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        <input  formControlName="customerId"  id="customerId" name="customerId" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
       </td>
     </tr>
     <tr>
-      <td><label  for="name">Name</label></td>
+      <td><label  for="customerName">Name</label></td>
       <td>
-        <input [(ngModel)]="cus.name" formControlName="name" id="name" name="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        <input  formControlName="customerName" id="customerName" name="customerName" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
         <!--        <p th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></p>-->
       </td>
     </tr>
     <tr>
-      <td><label for="date">Birthday</label></td>
-      <td><input  [(ngModel)]="cus.date" formControlName="date"  type="date" id="date" name="date"></td>
+      <td><label for="customerBirthday">Birthday</label></td>
+      <td><input   formControlName="customerBirthday"  type="date" id="customerBirthday" name="customerBirthday"></td>
     </tr>
     <tr>
-      <td><label for="idCard">ID Card</label></td>
-      <td><input [(ngModel)]="cus.idCard" formControlName="idCard"  type="text" id="idCard" name="idCard"></td>
+      <td><label for="customerIdCard">ID Card</label></td>
+      <td><input  formControlName="customerIdCard"  type="text" id="customerIdCard" name="customerIdCard"></td>
     </tr>
     <tr>
-      <td><label for="gender">Gender</label></td>
+      <td><label for="customerGender">Gender</label></td>
       <td>
-        <select [(ngModel)]="cus.gender" formControlName="gender" id="gender" name="gender"  class="form-select" aria-label="Default select example">
+        <select  formControlName="customerGender" id="customerGender" name="customerGender"  class="form-select" aria-label="Default select example">
           <option value="true">Nam</option>
           <option value="false">Nu</option>
         </select>
       </td>
     </tr>
     <tr>
-      <td><label for="type">Type</label></td>
+      <td><label for="customerType">Type</label></td>
       <td>
-        <select [(ngModel)]="cus.type" formControlName="type" name="type" id="type"  class="form-select" aria-label="Default select example">
-          <option  *ngFor="let type of typeCustomer" [ngValue]="type" selected>{{type.name}}</option>
+        <select [compareWith]="compareObjects"  formControlName="customerType" name="customerType" id="customerType"  class="form-select" aria-label="Default select example">
+          <option  *ngFor="let type of typeCustomer" [ngValue]="type" selected>{{type.customerTypeName}}</option>
           <!--          <option value="Diamond" selected>Diamond</option>-->
           <!--          <option value="Platinium">Platinium</option>-->
           <!--          <option value="Gold">Gold</option>-->
@@ -49,21 +49,21 @@
       </td>
     </tr>
     <tr>
-      <td><label  for="phone">Phone</label></td>
-      <td><input [(ngModel)]="cus.phone" formControlName="phone"  type="text" id="phone" name="phone"></td>
+      <td><label  for="customerPhone">Phone</label></td>
+      <td><input  formControlName="customerPhone"  type="text" id="customerPhone" name="customerPhone"></td>
     </tr>
     <tr>
-      <td><label for="email">Email</label></td>
-      <td><input [(ngModel)]="cus.email" formControlName="email"  type="text" id="email" name="email"></td>
+      <td><label for="customerEmail">Email</label></td>
+      <td><input  formControlName="customerEmail"  type="text" id="customerEmail" name="customerEmail"></td>
     </tr>
     <tr>
-      <td><label for="address">Address</label></td>
-      <td><input [(ngModel)]="cus.address" formControlName="address" type="text" id="address" name="address"></td>
+      <td><label for="customerAddress">Address</label></td>
+      <td><input  formControlName="customerAddress" type="text" id="customerAddress" name="customerAddress"></td>
     </tr>
 
   </table>
   <div class="submit">
-    <button class="btn btn-info m-3" type="submit">Save</button>
+    <button class="btn btn-info m-3" type="submit" [disabled]="!updateForm.valid">Save</button>
     <a class="btn btn-info" (click)="back()">Back</a>
     <!--    <a  routerLink="customer">Back to list</a>-->
   </div>

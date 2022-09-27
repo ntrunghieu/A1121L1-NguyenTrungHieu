@@ -1,4 +1,4 @@
-
+<app-navigation></app-navigation>
 <form [formGroup]="createForm"  id="createForm1" (ngSubmit)="onSubmit()" >
   <table>
     <tr>
@@ -6,64 +6,109 @@
     </tr>
 
     <tr hidden>
-      <td><label for="id">ID</label></td>
+      <td><label for="customerId">ID</label></td>
       <td>
-        <input formControlName="id"  id="id" name="id" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        <input formControlName="customerId"  id="customerId" name="customerId" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
       </td>
     </tr>
     <tr>
-      <td><label for="name">Name</label></td>
+      <td><label for="customerName">Name</label></td>
       <td>
-        <input formControlName="name" id="name" name="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-<!--        <p th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></p>-->
+        <input formControlName="customerName" id="customerName" name="customerName" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        <div *ngIf="!createForm.get('customerName')?.valid && createForm.get('customerName').touched">
+          <p *ngIf="createForm.get('customerName').errors.required" class="text-danger">Nhap ten</p>
+<!--          <p *ngIf="createForm.get('customerName').errors.minlength" class="text-danger">Vui long nhap ten lon hon 6 ky tu</p>-->
+        </div>
       </td>
     </tr>
     <tr>
-      <td><label for="date">Birthday</label></td>
-      <td><input formControlName="date"  type="date" id="date" name="date"></td>
-    </tr>
-    <tr>
-      <td><label for="idCard">ID Card</label></td>
-      <td><input formControlName="idCard"  type="text" id="idCard" name="idCard"></td>
-    </tr>
-    <tr>
-      <td><label for="gender">Gender</label></td>
+      <td><label for="customerBirthday">Birthday</label></td>
       <td>
-        <select formControlName="gender" id="gender" name="gender"  class="form-select" aria-label="Default select example">
-          <option value="true">Nam</option>
+        <input formControlName="customerBirthday"  type="date" id="customerBirthday" name="customerBirthday">
+        <div>
+          <p *ngIf=" createForm.get('customerBirthday').untouched" class="text-danger">Vui long chon ngay sinh</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="customerIdCard">ID Card</label></td>
+      <td>
+        <input formControlName="customerIdCard"  type="text" id="customerIdCard" name="customerIdCard">
+        <div *ngIf="!createForm.get('customerIdCard').valid && createForm.get('customerIdCard').touched">
+          <p *ngIf="createForm.get('customerIdCard').errors.required" class="text-danger">Vui long nhap CCCD</p>
+          <p *ngIf="createForm.get('customerIdCard').errors.pattern" class="text-danger">Do
+            dai phai tu 10-12 so</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="customerGender">Gender</label></td>
+      <td>
+        <select formControlName="customerGender" id="customerGender" name="customerGender"  class="form-select" aria-label="Default select example">
+          <option value="true" selected>Nam</option>
           <option value="false">Nu</option>
         </select>
+        <div>
+          <p *ngIf=" createForm.get('customerGender').untouched" class="text-danger">Vui long chon gioi tinh</p>
+        </div>
+
       </td>
     </tr>
     <tr>
-      <td><label for="type">Type</label></td>
+      <td><label for="customerType">Type</label></td>
       <td>
-        <select formControlName="type" name="type" id="type"  class="form-select" aria-label="Default select example">
-          <option  *ngFor="let type of typeCustomer" [ngValue]="type" selected>{{type.name}}</option>
+        <select formControlName="customerType" name="customerType" id="customerType"  class="form-select" aria-label="Default select example">
+          <option  *ngFor="let type of typeCustomer" [ngValue]="type" selected>{{type.customerTypeName}}</option>
 <!--          <option value="Diamond" selected>Diamond</option>-->
 <!--          <option value="Platinium">Platinium</option>-->
 <!--          <option value="Gold">Gold</option>-->
 <!--          <option value="Silver">Silver</option>-->
 <!--          <option value="Member">Member</option>-->
         </select>
+
+        <div *ngIf="!createForm.get('customerType').valid && createForm.get('customerType').touched">
+          <p *ngIf="createForm.get('customerType').errors.required" class="text-danger">Chua dien thong tin</p>
+<!--          <p *ngIf="createForm.get('customerType').errors.pattern" class="text-danger">Do-->
+<!--            dai phai tu 10-12 so</p>-->
+        </div>
+<!--        <p style="color: red" *ngIf="createForm.get('customerType').errors.required&&-->
+<!--                createForm.get('customerType').touched">Chua dien thong tin</p>-->
       </td>
     </tr>
     <tr>
-      <td><label  for="phone">Phone</label></td>
-      <td><input formControlName="phone"  type="text" id="phone" name="phone"></td>
+      <td><label  for="customerPhone">Phone</label></td>
+      <td>
+        <input formControlName="customerPhone"  type="text" id="customerPhone" name="customerPhone">
+        <div *ngIf="!createForm.get('customerPhone').valid && createForm.get('customerPhone').touched">
+          <p *ngIf="createForm.get('customerPhone').errors.required" class="text-danger">Vui long nhap so dien thoai</p>
+          <p *ngIf="createForm.get('customerPhone').errors.pattern" class="text-danger">SDT sai dinh dang</p>
+        </div>
+      </td>
     </tr>
     <tr>
-      <td><label for="email">Email</label></td>
-      <td><input formControlName="email"  type="text" id="email" name="email"></td>
+      <td><label for="customerEmail">Email</label></td>
+      <td>
+        <input formControlName="customerEmail"  type="text" id="customerEmail" name="customerEmail">
+        <div *ngIf="!createForm.get('customerEmail').valid && createForm.get('customerEmail').touched">
+          <p *ngIf="createForm.get('customerEmail').errors.required" class="text-danger">Vui long nhap email</p>
+          <p *ngIf="createForm.get('customerEmail').errors.pattern" class="text-danger">Email sai ding dang</p>
+        </div>
+      </td>
     </tr>
     <tr>
-      <td><label for="address">Address</label></td>
-      <td><input formControlName="address" type="text" id="address" name="address"></td>
+      <td><label for="customerAddress">Address</label></td>
+      <td>
+        <input formControlName="customerAddress" type="text" id="customerAddress" name="customerAddress">
+
+        <div *ngIf="!createForm.get('customerAddress').valid && createForm.get('customerAddress').touched">
+          <p *ngIf="createForm.get('customerAddress').errors.required" class="text-danger">Chua dien thong tin</p>
+        </div>
+      </td>
     </tr>
 
   </table>
   <div class="submit">
-    <button class="btn btn-info m-3" type="submit">Save</button>
+    <button class="btn btn-info m-3" type="submit" [disabled]="!createForm.valid" >Save</button>
     <a class="btn btn-info" (click)="back()">Back</a>
 <!--    <a  routerLink="customer">Back to list</a>-->
   </div>

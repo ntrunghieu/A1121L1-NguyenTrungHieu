@@ -80,7 +80,7 @@ div#carouselExampleControls div.carousel-inner div.carousel-item img {
 
 
 /*nut search*/
-div.sticky-wrapper div.header-nav div.container nav.navbar div.navbar-collapse ul#menu-furama-vi li:hover{
+div.sticky-wrapper div.header-nav div.container nav.navbar div.navbar-collapse ul#menu-furama-vi li:hover {
   background: #064e41;
 }
 
@@ -95,12 +95,12 @@ div.sticky-wrapper div.header-nav div.container{
 *{
   box-sizing: border-box;
 }
-#search-box{
+ #search-box{
   margin: 10px;
   background-color: #fff;
   border-radius: 30px;
 }
-#search-box #search-text{
+ #search-box #search-text{
   border: none;
   outline: none;
   background: none;
@@ -109,12 +109,12 @@ div.sticky-wrapper div.header-nav div.container{
   padding: 0;
   transition: all 0.25s ease-in-out;
 }
-#search-box:hover #search-text, #search-box #search-text:valid{
+ #search-box:hover #search-text, #search-box #search-text:valid{
   width: 200px;
   padding: 10px 0px 10px 15px;
 
 }
-#search-box #search-btn{
+ #search-box #search-btn{
   background: #fff;
   cursor: pointer;
   border: none;
@@ -122,4 +122,82 @@ div.sticky-wrapper div.header-nav div.container{
   border-radius: 50%;
   font-size: 15px;
 }
+#search-box{
+  margin: auto;
+  width: 90%;
+  height: 80%;
+  line-height: 30px;
+}
 
+
+
+/*menu hover */
+body{
+  padding: 0;
+  margin: 0;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  background-color: #088b6d;
+
+}
+ .menu-area ul{
+  list-style: none;
+}
+div.menu-area ul {
+  width: 100%;
+}
+.menu-area{
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  top: 10%;
+  left: 50%;
+
+  transform: translate(-50%,-50%);
+  margin-bottom: 100px;
+  z-index: 100;
+}
+.menu-area li:hover {
+  background: #029bd5;
+}
+.menu-area > ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  background: #313131;
+  color: #fff;
+}
+.menu-area > ul > li {
+  position: relative;
+  cursor: pointer;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  float: left;
+  width: 230px;
+  height: 78px;
+  line-height: 78px;
+}
+.dropdown{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 0;
+}
+.dropdown li{
+  background-color: #313131;
+  display: none;
+}
+.dropdown li:hover {
+  background: #029bd5;
+}
+.menu-area li:hover > .dropdown li{
+  display: block;
+}
+.menu-area li:hover > .dropdown{
+  perspective: 1000px;
+}

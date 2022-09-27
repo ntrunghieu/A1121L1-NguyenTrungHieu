@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -32,6 +33,8 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
 import {OrderModule} from 'ngx-order-pipe';
 import { ContractDetailComponent } from './contract-all/contract-detail/contract-detail.component';
 import { CarouselsComponent } from './carousels/carousels.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 
@@ -61,6 +64,7 @@ import { CarouselsComponent } from './carousels/carousels.component';
     CarouselsComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -68,7 +72,7 @@ import { CarouselsComponent } from './carousels/carousels.component';
     HttpClientModule,
     NgxPaginationModule, Ng2SearchPipeModule, NgxScrollTopModule, OrderModule
 
-
+    // BrowserAnimationsModule
 
   ],
   providers: [],

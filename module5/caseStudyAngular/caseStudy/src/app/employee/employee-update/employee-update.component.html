@@ -41,9 +41,7 @@
     <tr>
       <td><label for="position">Position</label></td>
       <td>
-        <select [(ngModel)]="employee.position" formControlName="position" id="position" name="position" >
-
-
+        <select [compareWith]="compareObjects" [(ngModel)]="employee.position" formControlName="position" id="position" name="position" >
           <option   *ngFor="let p of positionList" [ngValue]="p"  aria-checked="true" selected>{{p.name}}</option>
         </select>
       </td>
@@ -51,7 +49,7 @@
     <tr>
       <td><label  for="division" >Division</label></td>
       <td>
-        <select [compareWith]="" [(ngModel)]="employee.division"   formControlName="division" id="division" name="division" >
+        <select [compareWith]="compareObjects" [(ngModel)]="employee.division"   formControlName="division" id="division" name="division" >
 
 
           <option   *ngFor="let d of divisionList" [ngValue]="d" aria-checked="true" selected>{{d.name}}</option>
@@ -67,7 +65,7 @@
     <tr>
       <td><label for="level">Education</label></td>
       <td>
-        <select [(ngModel)]="employee.level" formControlName="level" id="level" name="level" >
+        <select [compareWith]="compareObjects" [(ngModel)]="employee.level" formControlName="level" id="level" name="level" >
           <option    *ngFor="let l of levelList" [ngValue]="l" aria-checked="true" selected>{{l.name}}</option>
           <!--          <option aria-checked="true">Trung cap</option>-->
           <!--          <option aria-checked="true">Dai Hoc</option>-->
@@ -80,7 +78,7 @@
     </tr>
   </table>
   <div class="submit mx-md-4" >
-    <button class="btn btn-primary mx-3" type="submit">Save</button>
+    <button class="btn btn-primary mx-3" type="submit" [disabled]="!employeeForm.valid">Save</button>
     <a class="btn btn-primary" routerLink="employee" (click)="back()">Back to list</a>
   </div>
 </form>

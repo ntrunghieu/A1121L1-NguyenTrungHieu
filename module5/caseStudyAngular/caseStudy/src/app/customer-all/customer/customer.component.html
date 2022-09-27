@@ -33,8 +33,9 @@
                  class="nav-link main-menu-link">ENDOW</a></li>
             <!--            <li style="min-height: 10px" id="nav-menu-item-5014"-->
             <!--                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">-->
-            <form  style="" action="" id="search-box">
-              <input placeholder="Ban muon tim gi?" type="text" id="search-text" required>
+            <form style="" action="" id="search-box">
+              <input placeholder="Ban muon tim gi?" [(ngModel)]="name" name="name" (ngModelChange)="search()"
+                     type="text" id="search-text" required>
               <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
             <!--            </li>-->
@@ -48,71 +49,109 @@
 
 
 <a class="btn btn-primary m-3" routerLink="create">Create</a>
-<div style="margin-left: 3px" class="container-fluid">
-<table id="tableCus" class="table table-hover" style="width: 30%;">
-  <thead>
+<div  class="table-responsive-md col-12">
+<table id="tableCus" class="table table-hover " style="width: 30%;">
+  <thead >
   <tr>
     <th scope="col">STT</th>
-    <th scope="col">Id</th>
-    <th>Username</th>
-    <th>ID Card</th>
-    <th>Date</th>
-    <th>Phone</th>
-    <th>Email</th>
-    <th>Gender</th>
-    <th>Address</th>
-    <th>Type</th>
-    <th>Action</th>
+    <th hidden scope="col">Id</th>
+    <th scope="col">Username</th>
+    <th scope="col">ID Card</th>
+    <th scope="col">Date</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Email</th>
+    <th scope="col">Gender</th>
+    <th scope="col">Address</th>
+    <th scope="col">Type</th>
+    <th style="text-align: center" scope="col">Action</th>
 
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let cus of listCustomer ; let i=index;">
+  <tr *ngFor="let cus of listCustomer  ; let i=index;">
     <th scope="row">{{i}}</th>
-    <td>{{cus.id}}</td>
-    <td>{{cus.name}}</td>
-    <td>{{cus.date | date:"dd-MM-yyyy"}}</td>
-    <td>{{cus.idCard}}</td>
-    <td>{{cus.phone}}</td>
-    <td>{{cus.email}}</td>
-
-      <td *ngIf="cus.gender">Nam</td>
-      <td *ngIf="!cus.gender" >Nu</td>
+    <td hidden>{{cus.customerId}}</td>
+    <td>{{cus.customerName}}</td>
+    <td>{{cus.customerIdCard}}</td>
+    <td>{{cus.customerBirthday | date:"dd-MM-yyyy"}}</td>
+    <td>{{cus.customerPhone}}</td>
+    <td>{{cus.customerPhone}}</td>
+    <td *ngIf="cus.customerGender">Nu</td>
+    <td *ngIf="!cus.customerGender" >Nam</td>
 <!--      <td  *ngIf="cus.gender==null">Gioi tinh khac</td>-->
 
 
 
-    <td>{{cus.address}}</td>
-    <td>{{cus.type.name}}</td>
+    <td>{{cus.customerAddress}}</td>
+    <td>{{cus.customerType.customerTypeName}}</td>
     <td class="d-flex">
 
-        <button type="button" class="btn btn-primary "  data-toggle="modal" data-target="#exam1" (click)="sendCustomerToDelete(cus.id, cus.name)" >
-          Xoa
+        <button style="width: 55%;color: red; border: none " type="button" data-toggle="modal" data-target="#exam1" (click)="sendCustomerToDelete(cus.customerId, cus.customerName)" >
+          <i class="fa-solid fa-trash-can"></i>
         </button>
 
 <!--        <button hidden type="button" class="btn btn-primary"  (click)="openPopup()" >-->
 <!--          Xoa-->
 <!--        </button>-->
-        <a [routerLink]="['update', cus.id]" class="btn btn-danger mx-3">Sua</a>
-        <a  [routerLink]="['detail', cus.id]" type="button" class="btn btn-primary" >
-          Xem
-        </a>
+      <a style="margin:3px; text-decoration: none; color: #0e0d0d" [routerLink]="['/customer/update', cus.customerId]" ><i class="fa-regular fa-pen-to-square"></i></a>
+        <button style="border: none; color: #0e6290" type="button"  data-toggle="modal" data-target="#detail" (click)="sendCustomerToDetail(cus)" >
+          <i class="fa-sharp fa-solid fa-circle-info"></i>
+        </button>
 
     </td>
 
   </tr>
   </tbody>
-
 </table>
+
+  <ul class="nav nav-pills  ">
+    <li class="nav-item" *ngFor="let p of totalPagination; let i = index">
+      <a class="nav-link" href="" (click)="setPage(i,$event)" [ngClass]="{'active':i == page}"> {{i+1}}</a>
+    </li>
+  </ul>
+
 </div>
 
 
-<div class="modal fade" id="exam1" tabindex="-1" aria-labelledby="exampleModalLabel"
+<!--phan trang-->
+<!--<div class="mt-3">-->
+<!--  <nav aria-label="Page navigation example">-->
+<!--    <ul style="cursor: pointer" class="pagination d-flex justify-content-md-end justify-content-center">-->
+<!--      <li class="page-item"><a class="page-link" (click)="firtPage()">Đầu</a></li>-->
+<!--      <li class="page-item"><a class="page-link" (click)="previousPage()">Trang trước</a></li>-->
+<!--      &lt;!&ndash;                    <li class="page-item active"><a class="page-link" href="#">1</a></li>&ndash;&gt;-->
+<!--      <li class="page-item col-md-1 col-2  px-0">-->
+<!--        &lt;!&ndash;                        <input class="form-control shadow-none rounded-0" type="text" placeholder="2/5">&ndash;&gt;-->
+<!--        <div class="input-group">-->
+<!--          <input type="text" min="1" [max]="totalPagination" class="form-control text-right rounded-0"-->
+<!--                 placeholder="2" aria-label="Username"-->
+<!--                 aria-describedby="basic-addon1" [value]="indexPagination"-->
+<!--                 (change)="indexPaginationChage($event.target.value)">-->
+<!--          <div class="input-group-prepend">-->
+<!--            <span class="input-group-text" id="basic-addon1">{{totalPagination}}</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </li>-->
+<!--      <li class="page-item">-->
+<!--        <button class="btn btn-primary rounded-0" (click)="findPaginnation()">Đi</button>-->
+<!--      </li>-->
+<!--      <li class="page-item"><a class="page-link" (click)="nextPage()">Trang kế</a></li>-->
+<!--      <li class="page-item"><a class="page-link" (click)="lastPage()">Cuối</a></li>-->
+<!--    </ul>-->
+<!--  </nav>-->
+<!--</div>-->
+
+
+
+
+
+
+  <div class="modal fade" id="exam1" tabindex="-1" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><i style="color: red" class="fa-solid fa-triangle-exclamation"></i> Delete Customer</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -125,11 +164,46 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete(customerIdToDelete)">Xoa</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete(customerIdToDelete)">Delete</button>
       </div>
     </div>
   </div>
 </div>
+
+<!--modal xem chi tiet-->
+<div class="modal fade" id="detail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4>Name: {{customer.customerName}}</h4>
+        <h4>Date: {{customer.customerBirthday | date: "dd/MM/yyy"}}</h4>
+        <h4>ID CARD: {{customer.customerIdCard}}</h4>
+        <td *ngIf="customer.customerGender">
+          <h4>Gender: Nam</h4>
+        </td>
+        <td *ngIf="!customer.customerGender">
+          <h4 >Gender: Nam</h4>
+        </td>
+        <h4>Type: {{customer.customerType.customerTypeName}}</h4>
+        <h4>Phone: {{customer.customerPhone}}</h4>
+        <h4>Email: {{customer.customerEmail}}</h4>
+        <h4>Address: {{customer.customerAddress}}</h4>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 <!--the thong bao khi xoa-->

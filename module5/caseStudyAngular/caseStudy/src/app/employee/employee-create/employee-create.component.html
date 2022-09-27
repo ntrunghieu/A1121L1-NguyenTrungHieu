@@ -1,16 +1,17 @@
+<app-navigation></app-navigation>
 <h2 style="margin-top: 35px; margin-bottom: 10px; font-weight: 400;">Create Employee</h2>
-<p ></p>
+
+
 <form [formGroup]="employeeForm" id="createForm1"  (ngSubmit)="onSubmit()" >
   <table>
     <tr>
-      <th colspan="2">Create a new employee</th>
+      <th colspan="2"><h2 style="margin: auto; font-weight: 400; text-align: center">Create Employee</h2></th>
     </tr>
 
     <tr hidden>
       <td><label for="id">ID</label></td>
       <td>
-        <input formControlName="id" id="id" name="id" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-
+        <input formControlName="id"  id="id" name="id" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
       </td>
     </tr>
     <tr>
@@ -49,8 +50,8 @@
         <input formControlName="salary" type="text" id="salary" name="salary">
         <div *ngIf="!employeeForm.get('salary').valid && employeeForm.get('salary').touched">
           <p *ngIf="employeeForm.get('salary').errors.required" class="text-danger">Vui long nhap muc luong</p>
-<!--          <p *ngIf="employeeForm.get('idCard').errors.minlength || employeeForm.get('idCard').errors.maxlength" class="text-danger">Do-->
-<!--            dai phai tu 10-12 so</p>-->
+          <!--          <p *ngIf="employeeForm.get('idCard').errors.minlength || employeeForm.get('idCard').errors.maxlength" class="text-danger">Do-->
+          <!--            dai phai tu 10-12 so</p>-->
         </div>
       </td>
     </tr>
@@ -77,13 +78,11 @@
     <tr>
       <td><label for="position">Position</label></td>
       <td>
-        <select formControlName="position" id="position" name="position" >
-
-          <option *ngFor="let p of positionList" [ngValue]="p" aria-checked="true" selected>{{p.name}}</option>
-
+        <select   formControlName="position" id="position"  >
+          <option *ngFor="let p of positionList"  [ngValue]="p" aria-checked="true" selected>{{p.name}}</option>
         </select>
-<!--        <p style="color: red" *ngIf="employeeForm.get('position').errors.required&&-->
-<!--        employeeForm.get('position').untouched">Chua dien thong tin</p>-->
+                <p style="color: red" *ngIf="employeeForm.get('position').errors.required&&
+                employeeForm.get('position').touched">Chua dien thong tin</p>
       </td>
     </tr>
     <tr>
@@ -91,13 +90,9 @@
       <td>
         <select formControlName="division" id="division" name="division" >
           <option  *ngFor="let d of divisionList" [ngValue]="d" aria-checked="true" selected>{{d.name}}</option>
-<!--          <option aria-checked="true">Sale-marketing</option>-->
-<!--          <option aria-checked="true">Hanh chinh</option>-->
-<!--          <option aria-checked="true">Phuc vu</option>-->
-<!--          <option aria-checked="true">Quan li</option>-->
         </select>
-<!--        <p style="color: red" *ngIf="employeeForm.get('division').errors.required&&-->
-<!--        employeeForm.get('division').untouched">Chua dien thong tin</p>-->
+        <p style="color: red" *ngIf="employeeForm.get('division').errors.required&&
+                employeeForm.get('division').touched">Chua dien thong tin</p>
       </td>
 
 
@@ -107,22 +102,21 @@
       <td>
         <select formControlName="level" id="level" name="level" >
           <option  *ngFor="let l of levelList" [ngValue]="l" aria-checked="true" selected>{{l.name}}</option>
-<!--          <option aria-checked="true">Trung cap</option>-->
-<!--          <option aria-checked="true">Dai Hoc</option>-->
-<!--          <option aria-checked="true">Cao Dang</option>-->
-<!--          <option aria-checked="true">Sau Dai Hoc</option>-->
+          <!--          <option aria-checked="true">Trung cap</option>-->
+          <!--          <option aria-checked="true">Dai Hoc</option>-->
+          <!--          <option aria-checked="true">Cao Dang</option>-->
+          <!--          <option aria-checked="true">Sau Dai Hoc</option>-->
         </select>
-<!--        <p style="color: red" *ngIf="employeeForm.get('level').errors.required&&-->
-<!--        employeeForm.get('level').untouched">Chua dien thong tin</p>-->
+        <p style="color: red" *ngIf="employeeForm.get('level').errors.required&&
+                employeeForm.get('level').touched">Chua dien thong tin</p>
       </td>
-
-
     </tr>
+
   </table>
-  <div class="submit mx-md-4" >
-    <button class="btn btn-primary mx-3" type="submit" [disabled]="!employeeForm.valid">Save</button>
-    <a class="btn btn-primary" routerLink="employee" (click)="back()">Back to list</a>
+  <div class="submit">
+    <button class="btn btn-info m-3" type="submit" [disabled]="!employeeForm.valid">Save</button>
+    <a class="btn btn-info" (click)="back()">Back</a>
+    <!--    <a  routerLink="customer">Back to list</a>-->
   </div>
 </form>
-
 

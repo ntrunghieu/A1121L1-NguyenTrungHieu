@@ -11,14 +11,14 @@ div.header div {
 
 /*css card*/
 body{
-  font-family: Arial;
-  font-size: 16px;
-  margin: 0;
-  display: flex;
-  align-items: center ;
-  justify-content: space-around;
-  min-height: 100vh;
-  background: #c5c9c9;
+  /*font-family: Arial;*/
+  /*font-size: 16px;*/
+  /*margin: 0;*/
+  /*display: flex;*/
+  /*align-items: center ;*/
+  /*justify-content: space-around;*/
+  /*min-height: 100vh;*/
+  /*background: #c5c9c9;*/
 
 }
 img{
@@ -28,7 +28,7 @@ img{
 }
 div#body .ui-card{
   width: 350px;
-  background: radial-gradient(#c5c9c9 50%, #c5c9c9 100%);
+  /*background: radial-gradient(#c5c9c9 50%, #c5c9c9 100%);*/
   overflow: hidden;
   position: relative;
 
@@ -45,7 +45,7 @@ div#body .ui-card:hover img{
 .description{
   position: absolute;
   left: 0;
-  bottom: 170px;
+  bottom: 250px;
   /*bottom: 0;*/
   width: 100%;
   padding: 15px;
@@ -100,3 +100,137 @@ div#body div.ui-card div.card-body div.bnt-function button{
 div#body div.ui-card div.card-body div.bnt-function{
   margin-left: 50px;
 }
+div#body {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px;
+}
+div#body div.wrap{
+  padding: 15px;
+  box-shadow: 10px 10px 50px grey;
+}
+
+
+/*css information*/
+@import url('https://fonts.googleapis.com/css?family=Tangerine=Poppins: 100,200,300,400,500,600,700');
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /*background: #333;*/
+  font-family: 'Poppins', sans-serif;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+ul li {
+  position: relative;
+  list-style: none;
+  width: 16px;
+  height: 16px;
+  /*background: #777777;*/
+  margin: 0 20px;border-radius: 50%;
+  transition: 0.5s;
+  cursor: pointer;
+
+}
+/*ul li:hover{*/
+/*    background: #86ff3b;*/
+/*    box-shadow: 0 0 0 4px #333,*/
+/*                0 0 0 6px #86ff3b;*/
+/*}*/
+ul li .content{
+  position: absolute;
+  bottom: 55px;
+  width: 210px;
+  background: #2c7f53;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  visibility: hidden;
+  opacity: 1;
+  transition: 0.5s;
+  transform: translateX(-50%) translateY(-50%);
+}
+ul li .content:before{
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #2c7f53;
+  bottom: -15px;
+  left: 100px;
+  transform: rotate(45deg);
+
+}
+ul li:hover .content{
+  visibility: visible;
+  opacity: 344;
+  transform: translateX(-50%) translateY(0%);
+}
+ul li .content h2{
+  margin: 0;
+  padding: 0;
+}
+ul li .content ul{
+  display: block;
+}
+
+/*css buttuon booking*/
+body{
+  margin: 0;
+  padding: 0;
+}
+.middle{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.btnHover{
+  background: none;
+  font-family: "montserrat", sans-serif;
+  text-transform: uppercase;
+  margin: 30px 0;
+  border: 2px; solid-color: #046056;
+  padding: 14px 50px;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  font-size: 14px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 1s all ease;
+  color: white;
+
+}
+.btnHover:hover{
+  color: black;
+}
+.btnHover::before{
+  background: #046056;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s ease;
+}
+.bntHover1::before{
+  width: 0;
+  height: 100%;
+
+}
+.btnHover:hover::before{
+  width: 100%;
+}
+

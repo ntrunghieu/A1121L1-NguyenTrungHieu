@@ -23,7 +23,7 @@
                  class="nav-link main-menu-link">SERVICE</a></li>
             <li id="nav-menu-item-5011"
                 class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
-              <a routerLink="facility" class="nav-link main-menu-link">SALE</a></li>
+              <a routerLink="" class="nav-link main-menu-link">SALE</a></li>
             <li id="nav-menu-item-5012"
                 class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
               <a href="https://furamavietnam.com/vi/destination/" class="nav-link main-menu-link">DESTINATION</a></li>
@@ -47,13 +47,13 @@
 
    <!--==================================================================================-->
 
-<a routerLink="/contract/create" class="btn btn-primary badge-pill"> Create</a>
+<a routerLink="contract/create" class="btn btn-primary badge-pill"> Create</a>
 <h1 class="text-center">Contract List</h1>
 <div class="height-100 px-5 py-3">
   <div class="container">
     <div class="row">
       <div class="col-4">
-        <input type="text" class="form-control" placeholder="Search by service name" #searchByServiceName>
+        <input [(ngModel)]="name" name="name" (ngModelChange)="search()" type="text" class="form-control" placeholder="Search by employee name" #searchByServiceName>
       </div>
 <!--      <div class="col-3">-->
 <!--        <select class="form-control" #searchByCustomer>-->
@@ -90,7 +90,7 @@
         <td>{{contract.facility.name}}</td>
         <td>{{contract.startDay|date:'dd/MM/yyyy'}}</td>
         <td>{{contract.endDay|date:'dd/MM/yyyy'}}</td>
-        <td>{{contract.deposit|currency:'VND'}}</td>
+        <td>{{contract.deposit| currency:'VND'}}</td>
         <td>{{contract.total|currency:'VND'}}</td>
         <td>
           <a class="editSpan text-black" [routerLink]="['/contract/update',contract.id]">
@@ -101,7 +101,7 @@
                   data-bs-target="#exampleModal" (click)="sendContractToDelete(contract.id)">
             <i class="fa-solid fa-trash"></i>
           </button>
-          <a class="border-0 bg-transparent deleteSpan" [routerLink]="['/contract/update',contract.id]">
+          <a  class="border-0 bg-transparent deleteSpan" [routerLink]="['/contract/update',contract.id]">
             <i class="fa-sharp fa-solid fa-circle-info"></i>
           </a>
         </td>

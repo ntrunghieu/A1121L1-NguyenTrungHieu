@@ -7,9 +7,11 @@ import {Employee} from '../../employee';
 import {Facility} from '../../facility';
 import {FacilityServiceService} from '../../service/facility-service.service';
 import {CustomerServiceService} from '../../service/customer-service.service';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {ContractServiceService} from '../../service/contract-service.service';
+import { dateRangeValidator } from '../.././birthday.validator';
+
 
 @Component({
   selector: 'app-contract-create',
@@ -31,9 +33,16 @@ export class ContractCreateComponent implements OnInit {
     this.createContractForm = new FormGroup({
       id: new FormControl('', [Validators.required, Validators.pattern(/^[H]{1}[D]{1}[-]{1}[0-9]{4}$/)]),
       customer: new FormControl('', Validators.required),
+      employee: new FormControl('', Validators.required),
       facility: new FormControl('', Validators.required),
-      startDay: new FormControl('', Validators.required),
-      endDay: new FormControl('', Validators.required),
+
+      dateFromTo: new FormGroup({
+        startDay: new FormControl('',[Validators.required]),
+        endDay:new FormControl('',[Validators.required])
+      }, [this.groupValidator]),
+
+      // startDay: new FormControl('', Validators.required),
+      // endDay: new FormControl('', Validators.required),
       deposit: new FormControl('', [Validators.required, Validators.pattern(/^[1-9]{1}[0-9]{0,}$/)]),
       total: new FormControl('', [Validators.required, Validators.pattern(/^[1-9]{1}[0-9]{0,}$/)]),
     });
@@ -76,5 +85,20 @@ export class ContractCreateComponent implements OnInit {
     this.customerService.findAll().subscribe((data) => {
       this.customers = data;
     });
+  }
+   groupValidator(c: AbstractControl){
+
+     const v1 = c.value
+
+     if (v1.startDay.getTime < v1.endDay.getTime) {
+       return {invalid: true};
+     } else {
+       return null;
+     }
+
+    // const fromCtrl = group.get('startDate');
+    // const toCtrl = group.get('endDay');
+    //
+    // return new Date(fromCtrl.value) > new Date(toCtrl.value) ? { message: 'error message' } : null;
   }
 }

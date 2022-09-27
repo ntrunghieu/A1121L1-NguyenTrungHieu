@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Employee} from '../employee';
+import {Level} from '../level';
 const API_URL = 'http://localhost:3000';
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,8 @@ export class EmployeeServiceService {
   }
   searchName(value: string): Observable<Employee[]> {
     return this.httpClient.get<Employee[]>(API_URL + '/employee?name_like=' + value);
+  }
+  searchLevel(value1: string, value2: number): Observable<Employee[]> {
+    return this.httpClient.get<Employee[]>(API_URL + '/employee?name_like=' +value1+ '&level.id_like=' + value2);
   }
 }

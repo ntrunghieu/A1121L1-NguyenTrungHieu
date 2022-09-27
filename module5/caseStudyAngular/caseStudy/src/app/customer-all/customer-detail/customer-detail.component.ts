@@ -11,6 +11,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class CustomerDetailComponent implements OnInit {
   cus: Customer | undefined;
+  id:number;
   // tslint:disable-next-line:no-input-rename
   // @Input('cus-detail')
   // cus: Customer = {};
@@ -21,11 +22,13 @@ export class CustomerDetailComponent implements OnInit {
               private activedRouter: ActivatedRoute,
               private route: Router) { }
   ngOnInit(): void {
-    this.activedRouter.paramMap.subscribe((param) => {
-      // tslint:disable-next-line:radix
-      const id = parseInt(param.get('id'));
-      // this.cus = this.customerService.findByID(id);
-    });
+    this.id = this.activedRouter.snapshot.params.id;
+    this.customerService.findByIdCustomer(this.id).subscribe(
+      data => {
+        this.cus = data;
+        console.log(this.cus);
+      }
+    );
 
   }
 

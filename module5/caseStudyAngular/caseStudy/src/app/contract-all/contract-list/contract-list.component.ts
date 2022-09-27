@@ -12,6 +12,7 @@ import {ContractServiceService} from '../../service/contract-service.service';
 export class ContractListComponent implements OnInit {
   contracts: Contract [] = [];
   customers: Customer [] = [];
+  name: any;
   contractIdToDelete: number;
   totalLength: number;
   p: string | number = 1;
@@ -41,7 +42,20 @@ export class ContractListComponent implements OnInit {
   //     this.route.navigate(['/contract/list']);
   //   });
   // }
+
   delete(contractIdToDelete: number) {
 
+  }
+
+  search() {
+    if (this.name==""){
+      this.ngOnInit();
+    }else {
+      this.contractService.searchName(this.name).subscribe((data) => {
+        this.contracts = data;
+        console.log(this.contracts);
+      });
+
+    }
   }
 }

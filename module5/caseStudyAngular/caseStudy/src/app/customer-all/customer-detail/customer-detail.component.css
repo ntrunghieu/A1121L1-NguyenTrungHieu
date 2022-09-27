@@ -1,0 +1,50 @@
+body{
+  padding: 0;
+  margin: 0;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: 20%;
+
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+/*th {*/
+/*    padding-top: 12px;*/
+/*    padding-bottom: 12px;*/
+/*    text-align: left;*/
+/*    background-color: #04AA6D;*/
+/*    color: white;*/
+/*}*/
+
+#createForm1 .submit {
+
+  margin-left: 30%;
+  align-items: center;
+}
+
+#createForm1 {
+
+  margin-top: 35px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+}

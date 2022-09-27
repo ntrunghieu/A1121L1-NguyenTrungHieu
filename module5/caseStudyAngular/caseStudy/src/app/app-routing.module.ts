@@ -11,11 +11,16 @@ import {EmployeeUpdateComponent} from './employee/employee-update/employee-updat
 import {ServiceListComponent} from './service-list/service-list.component';
 import {ContractListComponent} from './contract-all/contract-list/contract-list.component';
 import {ContractCreateComponent} from './contract-all/contract-create/contract-create.component';
+import {ServiceCreateComponent} from './service-create/service-create.component';
+import {ServiceUpdateComponent} from './service-update/service-update.component';
 
 
 const routes: Routes = [
   // {path: '', pathMatch: 'full', redirectTo: 'service-list'},
   {path: '', component: ServiceListComponent},
+  {path: 'create', component: ServiceCreateComponent},
+  // {path: 'service/detail/:id', component: ServiceD},
+  {path: 'update/:id', component: ServiceUpdateComponent},
   {path: 'customer/create', component: CustomerCreateComponent},
   {path: 'customer', component: CustomerComponent},
   {path: 'customer/detail/:id', component: CustomerDetailComponent},

@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {Employee} from '../../employee';
 import {Router} from '@angular/router';
 import {EmployeeServiceService} from '../../service/employee-service.service';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Level} from '../../level';
+import {LevelServiceService} from '../../service/level-service.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -10,18 +13,27 @@ import {EmployeeServiceService} from '../../service/employee-service.service';
   styleUrls: ['./employee-list.component.css'],
 })
 export class EmployeeListComponent implements OnInit {
+  searchLevelForm: FormGroup;
   totalLength: number;
   page: number = 1;
   deleteEmp: Employee = {};
   employee: Employee[] = [];
+  level: Level[] = [];
   employeeIdToDelete: number;
   employeeNameToDelete: string;
   name: any;
   constructor( private router: Router,
-               private service: EmployeeServiceService) { }
+               private service: EmployeeServiceService,
+               private levelService: LevelServiceService
+               ) { }
 
   ngOnInit(): void {
     this.getAll();
+    this.getLevel();
+    this.searchLevelForm = new FormGroup({
+      id: new FormControl(''),
+    });
+
   }
 
   sendEmployeeToDelete(id: number, name: string) {
@@ -69,6 +81,11 @@ export class EmployeeListComponent implements OnInit {
     this.key=key;
     this.reverse= !this.reverse;
   }
+  getLevel() {
+    this.levelService.findAll().subscribe((data) => {
+      this.level = data;
+    });
+  }
 
   // backCustomer() {
   //   this.router.navigateByUrl("customer")
@@ -85,4 +102,13 @@ export class EmployeeListComponent implements OnInit {
   // backService() {
   //   this.router.navigateByUrl("")
   // }
+
+
+  send() {
+  this.service.searchLevel(this.searchLevelForm.get('name').value,this.searchLevelForm.get('id').value ).subscribe((data) => {
+    this.employee = data;
+    console.log(this.employee);
+  });
+  }
+
 }
