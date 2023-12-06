@@ -1,0 +1,140 @@
+<!--<select formControlName="">-->
+<!--  <option *ngFor="let data of listDataCus" value="{{data.id}}">-->
+<!--    {{data.nameCus}}-->
+<!--  </option>-->
+<!--</select>-->
+
+<link rel="stylesheet" href="create-material.component.css">
+<div class="container mt-5">
+  <h1 class="font-text-footer" style="text-align: -webkit-center;">Thêm Mới Vật Tư</h1>
+  <form [formGroup]="materialForm" (ngSubmit)="createMaterial()">
+  <div class="content-create">
+    <div class="content-left content-group ">
+<!--      image-->
+      <img [src]="url"   class="content-image"> <br>
+      <input #imgUpload type="file" class="form-control-file" (change)="showPreview($event)" >
+<!--      <a class="btn-image" (click)="imgUpload.click()" style="color: #0A101D">Chọn ảnh</a>-->
+      <button class="btn-image" type="button" (click)="imgUpload.click()"> Chọn ảnh</button>
+    </div>
+    <div class="content-right content-group">
+<!--      <form [formGroup]="materialForm" (ngSubmit)="createMaterial()">-->
+        <div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Mã Vật Tư <span class="cl-red">*</span> </span>
+          <input type="text" class="form-control me-2" placeholder="Mã vật tư" formControlName="materialCode">
+        </div>
+          <span *ngIf="materialForm.controls.materialCode.touched
+&&materialForm.controls.materialCode.errors?.required" class="text-danger">Không được để trống trường này!</span>
+          <span *ngIf="materialForm.controls.materialCode.touched
+&&materialForm.controls.materialCode.errors?.pattern" class="text-danger">Chưa đúng định dạng. Cần nhập đúng định dạng: "MVT-XXX"</span>
+<!--        <span class="text-danger mb-0 pb-0"-->
+          <!--               *ngIf="materialForm.'materialCode').invalid && (materialForm.get('materialCode').touched||materialForm.get('materialCode').dirty)">-->
+<!--           Material code malformed !! Must have format is "MVT-XXX"-->
+<!--        </span>-->
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Tên Sản Phẩm<span class="cl-red">*</span></span>
+          <input type="text" class="form-control me-2" placeholder="Tên vật tư" formControlName="materialName">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+               *ngIf="materialForm.get('materialName').invalid && (materialForm.get('materialName').touched||materialForm.get('materialName').dirty)">
+          Không được để trống trường này và độ dại từ 5 đến 25 ký tự!
+        </span>
+<!--          <span *ngIf="materialForm.controls.materialName.touched-->
+<!--&&materialForm.controls.materialName.errors?.required" class="text-danger">Material Code can't required!</span>-->
+<!--          <span *ngIf="materialForm.controls.materialName.touched-->
+<!--&&materialForm.controls.materialName.errors?.pattern" class="text-danger">ko dc chua so va kis tu dac biet</span>-->
+        <div class="input-group mb-3">
+          <span class="input-group-text">Giá Vật Tư (VND)<span class="cl-red">*</span></span>
+          <input type="number" class="form-control me-2" placeholder="Giá vật tư" formControlName="materialPrice">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="materialForm.get('materialPrice').invalid && (materialForm.get('materialPrice').touched||materialForm.get('materialPrice').dirty)">
+          Không được để trống trường này!
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Số Lượng<span class="cl-red">*</span></span>
+          <input type="number" class="form-control me-2" placeholder="Số lượng" formControlName="materialQuantity">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="materialForm.get('materialQuantity').invalid && (materialForm.get('materialQuantity').touched||materialForm.get('materialQuantity').dirty)">
+          Không được để trống trường này! Và phải có số lượng >= 0.
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Hạn Sử Dụng<span class="cl-red">*</span></span>
+          <input type="date" class="form-control me-2" placeholder="Hạn sử dụng" formControlName="materialExpiridate">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="materialForm.get('materialExpiridate').invalid && (materialForm.get('materialExpiridate').touched||materialForm.get('materialExpiridate').dirty)">
+          Không được để trống trường này!
+        </span>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Đơn  Vị<span class="cl-red">*</span></span>
+          <input type="text" class="form-control me-2" placeholder="Đơn vị" formControlName="materialUnit">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="materialForm.get('materialUnit').invalid && (materialForm.get('materialUnit').touched||materialForm.get('materialUnit').dirty)">
+          Không được để trống trường này!
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Loại Vật Tư<span class="cl-red">*</span></span>
+          <select class="me-2" formControlName="materialTypeId">
+            <option selected disabled value="">Chọn</option>
+            <option *ngFor="let data of listDataType" [ngValue]="data">{{data.materialTypeName}}</option>
+          </select>
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="materialForm.get('materialTypeId').invalid && (materialForm.get('materialTypeId').touched||materialForm.get('materialTypeId').dirty)">
+          Không được để trống trường này!
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Nhà Cung Cấp<span class="cl-red">*</span></span>
+          <select class="me-2" formControlName="materialCustomerId">
+            <option selected disabled value="">Chọn</option>
+            <option *ngFor="let data of listDataCus" [ngValue]="data">{{data.customerName}}</option>
+          </select>
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="materialForm.get('materialCustomerId').invalid && (materialForm.get('materialCustomerId').touched||materialForm.get('materialCustomerId').dirty)">
+          Không được để trống trường này!
+        </span>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Mô Tả<span class="cl-red">*</span></span>
+            <textarea type="text" class="form-control me-2" placeholder="Mô tả" formControlName="materialDescribe">
+          </textarea>
+          </div>
+          <span class="text-danger mb-0 pb-0"
+                *ngIf="materialForm.get('materialDescribe').invalid && (materialForm.get('materialDescribe').touched||materialForm.get('materialDescribe').dirty)">
+          Không được để trống trường này!
+        </span>
+        <br>
+          <span *ngIf="checkCreate" style="color: red">Cần phải nhập thông tin đầy đủ các trường trên!</span>
+        <div class="input-group d-flex align-content-center justify-content-center ">
+          <button type="submit" class="btn__primary"  >Thêm Mới</button>
+          <button type="button" class="bt btn__cancel"><a style="text-decoration: none"
+                                                          class="text-light"
+                                                          routerLink=''>Huỷ</a>
+          </button>
+        </div>
+        </div>
+<!--      </form>-->
+    </div>
+
+  </div>
+  </form>
+
+</div>
+<notifier-container></notifier-container>
+
+<!--      <div class="button__container">-->
+<!--        <button class="btn__primary" type="submit" [disabled]="materialForm.invalid">Create</button>-->
+<!--        <button class="bt btn__cancel" type="button" routerLink=''>Cancle</button>-->
+<!--      </div>-->
+
+
+
+
+
+
+

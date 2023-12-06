@@ -1,0 +1,25 @@
+package springdemo.controller;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+
+@Controller
+public class HomeController {
+	
+	@RequestMapping("/home")
+	private String homePage(Model model) {
+		// TODO Auto-generated method stub
+//		Session session = null;
+//		session = HibernateDatabaseConnection.getSessionFactory().openSession();
+//		List<Fruit> fruits = session.createQuery("FROM Fruit ORDER BY id ASC", Fruit.class)
+//                .getResultList();
+//		
+//		
+//        
+//        model.addAttribute("fruits", fruits);		
+        
+		return "main-list";
+	}
+}

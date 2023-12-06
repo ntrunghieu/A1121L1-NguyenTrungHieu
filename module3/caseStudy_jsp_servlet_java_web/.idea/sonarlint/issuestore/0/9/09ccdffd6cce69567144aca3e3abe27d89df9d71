@@ -1,0 +1,70 @@
+
+h
+java:S1192"QDefine a constant instead of duplicating this literal "customer_id_card" 3 times.(ƒ±Ö·
+g
+java:S1192F"QDefine a constant instead of duplicating this literal "customer_type_id" 4 times.(ÏØ˜œ
+h
+java:S1192 "QDefine a constant instead of duplicating this literal "customer_address" 3 times.(¶ íé
+k
+java:S1192"ODefine a constant instead of duplicating this literal "customer_phone" 3 times.(˜äöÉşÿÿÿÿ
+k
+java:S1192Ÿ"ODefine a constant instead of duplicating this literal "customer_email" 3 times.(éŸó°øÿÿÿÿ
+j
+java:S1192š"NDefine a constant instead of duplicating this literal "customer_name" 3 times.(ª×ƒèøÿÿÿÿ
+c
+java:S1192˜"LDefine a constant instead of duplicating this literal "customer_id" 3 times.(„‹Êš
+g
+java:S1192œ"PDefine a constant instead of duplicating this literal "customer_gender" 3 times.(î±Åº
+h
+java:S1192›"QDefine a constant instead of duplicating this literal "customer_birhday" 3 times.(‡ŸƒÕ
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Å´á
+f
+java:S2095®"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ó³¶ê
+f
+java:S2095Ô"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(»¥¤Ÿ
+
+java:S1186Í"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(øÒÒşÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(€ôäƒüÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(ŒÓÒŞ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ÀâäÃ
+S	java:S106C"9Replace this use of System.out or System.err by a logger.(µâ£äşÿÿÿÿ
+V	java:S125B"<This block of commented-out lines of code should be removed.(ïº¿Åùÿÿÿÿ
+Q	java:S125R"<This block of commented-out lines of code should be removed.(ûÍ¨î
+N	java:S106g"9Replace this use of System.out or System.err by a logger.(Îã­Ã
+S	java:S106h"9Replace this use of System.out or System.err by a logger.(íŠÚçüÿÿÿÿ
+S	java:S106i"9Replace this use of System.out or System.err by a logger.(×ãìüÿÿÿÿ
+S	java:S106j"9Replace this use of System.out or System.err by a logger.(îöÁÑøÿÿÿÿ
+N	java:S106m"9Replace this use of System.out or System.err by a logger.(†ÚÂà
+T	java:S106•"9Replace this use of System.out or System.err by a logger.(µâ£äşÿÿÿÿ
+W	java:S125”"<This block of commented-out lines of code should be removed.(ïº¿Åùÿÿÿÿ
+y
+java:S4087€"bRemove this "close" call; closing the resource is handled automatically by the try-with-resources.(ôêÂœ
+y
+java:S4087›"bRemove this "close" call; closing the resource is handled automatically by the try-with-resources.(ôêÂœ
+O	java:S106"9Replace this use of System.out or System.err by a logger.(‚¸®ò
+B
+java:S1168¤"+Return an empty collection instead of null.(¥¹ï
+M
+java:S1128"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ
+O
+java:S1068!"4Remove this unused "UPDATE_USERS_SQL" private field.(¯ÆğÌùÿÿÿÿ
+T
+java:S1068""9Remove this unused "DELETE_TRUNCATE_TABLE" private field.(êú¦¾øÿÿÿÿ
+M
+java:S1068$"7Remove this unused "SORT_USERS_SQL_NAME" private field.(Ëú¡
+S
+java:S1068%"8Remove this unused "SORT_USERS_SQL_EMAIL" private field.(Ñ°«¨ıÿÿÿÿ
+P
+java:S1068&":Remove this unused "SORT_USERS_SQL_COUNTRY" private field.(í÷Ö·
+D
+java:S1068'".Remove this unused "SQL_INSERT" private field.(îÚ®š
+I
+java:S1068)".Remove this unused "SQL_UPDATE" private field.(Ùá¹İùÿÿÿÿ
+O
+java:S1068+"4Remove this unused "SQL_TABLE_CREATE" private field.(„‰Ë’üÿÿÿÿ
+H
+java:S1068;"2Remove this unused "SQL_TABLE_DROP" private field.(Ó Æı
+Q
+java:S1144d"6Remove this unused private "printSQLException" method.(âşÖïùÿÿÿÿ

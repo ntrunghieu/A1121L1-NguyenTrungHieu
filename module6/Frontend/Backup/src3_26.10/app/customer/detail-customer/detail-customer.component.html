@@ -1,0 +1,48 @@
+<body style="background-color: #f6f6f9; margin-top: 90px">
+<h2 class="text-center mt-3 title" style="color: #270082">Thông tin khách hàng</h2>
+<div class="d-flex justify-content-center">
+  <div class="container ">
+    <nav class="mb-5">
+      <div class="ml-4">
+        <div>
+          <img *ngIf="customerDetail.customerAvatar" class="fa-paper-plane" style="object-fit: cover"
+               src="{{customerDetail.customerAvatar}}"
+               alt="Error">
+          <img *ngIf="customerDetail.customerAvatar == null || customerDetail.customerAvatar == '' " class="fa-paper-plane" width="18%"
+               src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+               alt="Error">
+        </div>
+        <div class="input-group mt-4">
+          <label>Mã khách hàng:</label>
+          <a>{{customerDetail.customerCode}}</a>
+        </div>
+
+        <div class="input-group">
+          <label>Tên khách hàng:</label>
+          <a>{{customerDetail.customerName}}</a>
+        </div>
+
+        <div class="input-group">
+          <label>Địa chỉ:</label>
+          <a>{{customerDetail.customerAddress}}</a>
+        </div>
+
+        <div class="input-group">
+          <label>Số điện thoại:</label>
+          <a>{{customerDetail.customerPhone}}</a>
+        </div>
+
+        <div class="input-group">
+          <label>Email:</label>
+          <a>{{customerDetail.customerEmail}}</a>
+        </div>
+      </div>
+      <div class="row button__container d-flex justify-content-center mt-3">
+        <button class="bt col-md-3 btn__cancel  col-sm-7 mx-4 my-2" routerLink="/customer/list">Quay về</button>
+        <button class="bt btn__primary col-md-3 col-sm-7 mx-4 my-2" [routerLink]="['/customer/edit',customerDetail.customerId]">Cập nhật</button>
+        <button class="bt btn__delete col-md-3 col-sm-7 mx-4 my-2">Đổi mật khẩu</button>
+      </div>
+    </nav>
+  </div>
+</div>
+</body>

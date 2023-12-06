@@ -1,0 +1,72 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '~angular-notifier/styles';
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --app-bg: #fff;
+  --sidebar: #f3f6fd;
+  --sidebar-main-color: #1f1c2e;
+  --table-border: #1a2131;
+  --table-header: #1a2131;
+  --app-content-main-color: #1f1c2e;
+  --sidebar-link: #1f1c2e;
+  --sidebar-active-link: rgb(195, 207, 244);
+  --sidebar-hover-link: rgba(195, 207, 244, 0.5);
+  --action-color: #2869ff;
+  --action-color-hover: #6291fd;
+  --app-content-secondary-color: #f3f6fd;
+  --filter-reset: #2c394f;
+  --filter-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/*body, html {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  height: 100%;*/
+/*  width: 100%;*/
+/*}*/
+
+body {
+  background-color: #f6f6f9;
+  /*overflow: hidden;*/
+  font-family: "Segoe UI", sans-serif;
+  /*background-color: var(--app-bg);*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*.app-container {*/
+/*  border-radius: 4px;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  max-height: 100%;*/
+/*  max-width: 1280px;*/
+/*  display: flex;*/
+/*  !*overflow: hidden;*!*/
+/*  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;*/
+/*  max-width: 2000px;*/
+/*  margin: 0 auto;*/
+/*}*/
+.btn-cart-detail{
+  outline: none;
+  border:none;
+  background-color: transparent;
+}
+
+.custom-tooltip .tooltip-inner {
+  background-color: #0d4287;
+}
+.custom-tooltip .bs-tooltip-end .tooltip-arrow::before {
+  border-right-color: #0d4287;
+}
+.custom-tooltip .bs-tooltip-start .tooltip-arrow::before {
+  border-left-color: #0d4287;
+}
+.custom-tooltip .bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: #0d4287;
+}
+.custom-tooltip .bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: #0d4287;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<body style="margin-top: 20px">
+<h1>Danh sách vật tư</h1>
+<nav>
+  <div class="container">
+    <div class="navbar-left">
+      <input type="text"  #input  name="search" [(ngModel)]="keywordSearch" (keyup)=(search(input.value)) id="searchName" class="search-bar" placeholder="Tìm kiếm...">
+    </div><br><br>
+    <div class="navbar-right">
+      <div></div><a routerLink="/cart/detail" id="cart"><i class="fa fa-shopping-cart"></i> Cart <span class="badge">{{quantityCart}}</span></a></div>
+  </div> <!--end navbar-right --><br>
+</nav>
+
+
+<div class="cards" >
+
+  <div class="card" *ngFor="let material of materialList| paginate: {itemsPerPage: size, currentPage: page, totalItems: totalItems}">
+    <div class="card__img"></div>
+    <div class="card__body">
+      <h3 class="card__title"><img *ngIf="material.materialImage!==null" class="img-thumbnail" src="{{material?.materialImage}}" style="width: 340px; height: 200px;"/></h3>
+      <h3 class="card__title"><img *ngIf="material.materialImage===null" class="img-thumbnail" src="../../../assets/images/340719-200.png" style="width: 340px; height: 200px;"/></h3>
+      <p class="card__title">{{material?.materialName}}</p>
+      <div class="card__price">
+        {{material?.materialPrice | currency : 'VND' : 'symbol'}}
+      </div>
+    </div>
+    <div class="card__footer">
+
+      <div class="card__buy" style="background-color: var(--action-color-hover)">
+        <div [routerLink]="['/detail',material?.materialId]">Chi tiết</div>
+      </div>
+      <div class="card__buy" (click)="addMaterialCart(material)">
+        Thêm vào giỏ hàng <i class="fas fa-shopping-cart"></i>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</div>
+<br>
+<div *ngIf="totalItems > 5" style="display: flex; justify-content: center; align-items: center;">
+    <pagination-controls (pageChange)="getMaterialList($event)"></pagination-controls>
+</div>
+<br>
+<!--<ngb-pagination [(page)] = "thePageNumber"-->
+<!--                [pageSize] = "thePageSize"-->
+<!--                [collectionSize] = "theTotalElements"-->
+<!--                (pageChange) = "getListMaterial2()"-->
+<!--                [boundaryLinks]="true"-->
+<!--                [maxSize]="3"-->
+<!--                [rotate]="true"-->
+<!--                style="margin-left: 10px"-->
+<!--&gt;-->
+<!--</ngb-pagination>-->
+</body>
+
+</body>
+</html>
+<notifier-container></notifier-container>

@@ -1,0 +1,33 @@
+
+T
+java:S18548">Remove this useless assignment to local variable "dispatcher".(µ²Ä²
+R
+java:S11173"<Rename "customer" which hides the field declared at line 20.(ÐÖŒà
+E
+java:S14814"/Remove this unused "dispatcher" local variable.(º³Í
+V	java:S125="<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ
+T
+java:S1854T">Remove this useless assignment to local variable "dispatcher".(µ²Ä²
+R
+java:S1117Q"<Rename "customer" which hides the field declared at line 20.(ÐÖŒà
+E
+java:S1481R"/Remove this unused "dispatcher" local variable.(º³Í
+Q	java:S125Z"<This block of commented-out lines of code should be removed.(ÒùÏÿ
+V	java:S125_"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ
+Q	java:S125s"<This block of commented-out lines of code should be removed.(€ý£
+Q	java:S125~"<This block of commented-out lines of code should be removed.(Íá¹Í
+R	java:S125‚"<This block of commented-out lines of code should be removed.(ù©óó
+S
+java:S1117"<Rename "customer" which hides the field declared at line 20.(ÐÖŒà
+F
+java:S1481Ž"/Remove this unused "dispatcher" local variable.(º³Í
+R	java:S125–"<This block of commented-out lines of code should be removed.(úý£ó
+X
+java:S1172¥"<Remove these unused method parameters "request", "response".(ÅŸµ‡úÿÿÿÿ
+W	java:S125¦"<This block of commented-out lines of code should be removed.(£ì®ñûÿÿÿÿ
+J
+java:S1144‹"3Remove this unused private "showFormDelete" method.(¤…êÎ
+M
+java:S1144¥"1Remove this unused private "showFormEdit" method.(ÅŸµ‡úÿÿÿÿ
+I
+java:S1144Ø"3Remove this unused private "showFormCreate" method.(Ç¸Ít

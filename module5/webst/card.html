@@ -7,31 +7,42 @@
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
           crossorigin="anonymous">
     <link rel="stylesheet" href="card.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
-<body>
-    <div class="ui-card" >
-        <img  src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg"
-              alt="...">
-        <div class="description">
-            <h4>Dich vu cho thue</h4>
-            <p>Dien tich 40m<sup>2</sup></p>
-            <a href="#">Booking</a>
+<div class="body" >
+    <div class="wrap " >
+        <div class="ui-card ">
+            <img  src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg"
+                  alt="...">
+            <div class="description">
+
+                <a href="#">Booking</a>
+            </div>
+            <div class="card-body" >
+                <h4 class="card-title">Dich vu cho thue</h4>
+                <p>Dien tich 40m<sup>2</sup></p>
+            </div>
+            <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Xoa
+            </button>
+            <button  type="button" class="btn btn-primary">
+                Sua
+            </button>
         </div>
+        <div  style="margin-left: 270px; z-index: -1000; ">
+            <ul>
+                <li> <i style="margin-bottom: 4px; " class="fa-solid fa-circle-info" > </i>
+                    <div class="content" style="z-index: 1; color: #fff ">
 
-<!--        <div class="card-body" hidden>-->
-<!--            <h5 class="card-title">Card title</h5>-->
-<!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's-->
-<!--                content.</p>-->
-<!--            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">-->
-<!--                Xoa-->
-<!--            </button>-->
-<!--            <button type="button" class="btn btn-primary">-->
-<!--                Sua-->
-<!--            </button>-->
-<!--        </div>-->
+                        <h5 style="text-align: center;font-size: 12px;font-weight: bold">Thang máy riêng</h5>
+                        <h5 style="text-align: center;font-size: 12px;font-weight: bold">Truy cập internet miễn phí</h5>
+                        <h5 style="text-align: center;font-size: 12px;font-weight: bold">Toàn cảnh hướng biển</h5>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
-
+</div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

@@ -1,0 +1,170 @@
+
+<link rel="stylesheet" href="edit-material.component.css">
+<div class="loading" *ngIf="loading">
+  <div class="loader">
+  </div>
+</div>
+<div class="container" style="margin-top: 100px">
+  <div style="background-color: white;">
+    <form [formGroup]="formEdit" (ngSubmit)="onSubmit()" class="p-3">
+      <h1 class="text-center font-weight-bold" style="color:#270082;">Chỉnh Sửa Vật Tư</h1>
+      <div class="row mt-3">
+        <div class="col-md-4">
+          <div class="image-wh">
+            <img [src]="formEdit.controls.materialImage.value" height="370px"  class="content-image">
+          </div>
+          <input #imgUpload type="file" class="form-control-file" (change)="showPreview($event)" >
+          <button class="btn-image" type="button" (click)="imgUpload.click()"> Chọn ảnh</button>
+        </div>
+        <div class="col-md-8">
+          <div class="row mt-3">
+            <div class="col-md-2 input-group" style="align-content: center">
+              Mã Vật Tư
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <input type="text" formControlName="materialCode" disabled>
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="formEdit.controls.materialCode.touched
+&&formEdit.controls.materialCode.errors?.required">Không được để trống trường này!
+              </small>
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="formEdit.controls.materialCode.touched
+&&formEdit.controls.materialCode.errors?.pattern">Chưa đúng định dạng. Cần nhập đúng định dạng: "MVT-XXX"
+              </small>
+              <small style="color: red" *ngIf="materialErr?.materialCode ">{{materialErr?.materialCode}}</small>
+            </div>
+            <div class="col-md-2 input-group" style="align-content: center">
+              Tên Vật Tư
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <input type="text" formControlName="materialName">
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="formEdit.get('materialName').invalid && (formEdit.get('materialName').touched||formEdit.get('materialName').dirty)">
+                Không được để trống trường này và độ dại từ 5 đến 25 ký tự!
+              </small>
+              <small style="color: red" *ngIf="materialErr?.materialName ">{{materialErr?.materialName}}</small>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-2 input-group" style="align-content: center">
+              Giá Vật Tư(VND)
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <input type="number" formControlName="materialPrice">
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="formEdit.get('materialPrice').invalid && (formEdit.get('materialPrice').touched||formEdit.get('materialPrice').dirty)">
+                Không được để trống trường này! Và Giá phải lớn hơn 0.
+              </small>
+              <small style="color: red" *ngIf="materialErr?.materialPrice ">{{materialErr?.materialPrice}}</small>
+            </div>
+            <div class="col-md-2 input-group" style="align-content: center">
+              Số Lượng
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <input type="number" formControlName="materialQuantity">
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="formEdit.get('materialQuantity').invalid && (formEdit.get('materialQuantity').touched||formEdit.get('materialQuantity').dirty)">
+                Không được để trống trường này! Và phải có số lượng >= 0.
+              </small>
+              <small style="color: red" *ngIf="materialErr?.materialQuantity ">{{materialErr?.materialQuantity}}</small>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-2 input-group" style="align-content: center">
+              Hạn Sử Dụng
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <input type="date" formControlName="materialExpiridate">
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="formEdit.get('materialExpiridate').invalid && (formEdit.get('materialExpiridate').touched||formEdit.get('materialExpiridate').dirty)">
+                Không được để trống trường này!
+              </small>
+              <small style="color: red"
+                     *ngIf="(formEdit.get('materialExpiridate').valid) && formEdit.hasError('dateError')">
+                Hạn sử dụng phải lớn hơn hoặc bằng ngày hiện tại!
+              </small>
+              <small style="color: red" *ngIf="materialErr?.materialExpiridate ">{{materialErr?.materialExpiridate}}</small>
+            </div>
+            <div class="col-md-2 input-group" style="align-content: center">
+              Nhà Cung Cấp:
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <select style="height: 100%;" formControlName="materialCustomerId"[compareWith]="compareFn1">
+                <option selected disabled value='null'>Chọn</option>
+                <option *ngFor="let data of listDataCus"
+                        [ngValue]="data">{{data.customerName}}</option>
+              </select>
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="formEdit.get('materialCustomerId').invalid && (formEdit.get('materialCustomerId').touched||formEdit.get('materialCustomerId').dirty)">
+                Không được để trống trường này!
+              </small>
+              <small style="color: red" *ngIf="materialErr?.materialCustomerId ">{{materialErr?.materialCustomerId}}</small>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-2 input-group" style="align-content: center">
+              Đơn Vị
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <input type="text" formControlName="materialUnit">
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="formEdit.get('materialUnit').invalid && (formEdit.get('materialUnit').touched||formEdit.get('materialUnit').dirty)">
+                Không được để trống trường này!
+              </small>
+              <small style="color: red" *ngIf="materialErr?.materialUnit ">{{materialErr?.materialUnit}}</small>
+            </div>
+            <div class="col-md-2 input-group" style="align-content: center">
+              Loại Vật tư:
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <select style="height: 100%;" formControlName="materialTypeId" [compareWith]="compareFn">
+                <option selected disabled value='null'>Chọn</option>
+                <option *ngFor="let materialType of listDataType"
+                        [ngValue]="materialType">{{materialType.materialTypeName}}</option>
+              </select>
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="formEdit.get('materialTypeId').invalid && (formEdit.get('materialTypeId').touched||formEdit.get('materialTypeId').dirty)">
+                Không được để trống trường này!
+              </small>
+              <small style="color: red" *ngIf="materialErr?.materialTypeId ">{{materialErr?.materialTypeId}}</small>
+            </div>
+          </div>
+          <div class="row mt-3">
+
+            <div class="col-md-2 input-group" style="align-content: center">
+              Mô Tả
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-10 input-group">
+              <textarea type="text" formControlName="materialDescribe"></textarea>
+
+            </div>
+            <small class="text-danger mb-0 pb-0 mrg-30"
+                   *ngIf="formEdit.get('materialDescribe').invalid && (formEdit.get('materialDescribe').touched||formEdit.get('materialDescribe').dirty)">
+              Không được để trống trường này!
+            </small>
+            <small style="color: red" *ngIf="materialErr?.materialDescribe ">{{materialErr?.materialDescribe}}</small>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="input-group d-flex align-content-center justify-content-center ">
+        <button type="submit" class="btn__primary"  >Chỉnh Sửa</button>
+        <button type="button" routerLink='/material/list' class="bt btn__cancel"><a style="text-decoration: none"
+                                                                                    class="text-light"
+        >Huỷ</a>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<notifier-container></notifier-container>

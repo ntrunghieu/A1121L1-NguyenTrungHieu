@@ -1,0 +1,5 @@
+package springdemo.controller;
+
+public class PatientController {
+
+}

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Hoá đơn</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesdesign" name="author" />
+        <!-- App favicon -->
+
+    </head>
+
+    <style>
+        @media (min-width: 768px) {
+            .col-md-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+    </style>
+
+    <body data-sidebar="dark">
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+            <!-- Left Sidebar End -->
+            <div class="main-content bg-light">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <div style="max-width: 700px;margin: 0 auto;">
+                            <div style="border-bottom: 5px solid #333;
+        padding-bottom: 15px; display: -ms-flexbox !important;
+        display: flex !important; -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+        justify-content: space-between !important;" >
+                                <div>
+                                    <h1>Hóa đơn</h1>
+                                </div>
+                                <div style="padding-right: 50px;margin-left: 300px">
+                                    <p style=" line-height: 1;"><b th:text="${'Mã hóa đơn:' + codeBill}"></b></p>
+                                    <p style=" line-height: 1;"><b th:text="${'Ngày:' + date}"></b></p>
+                                </div>
+                            </div>
+                            <div  style="margin-top: 20px; border-bottom: 2px dotted #333;
+        padding-bottom: 15px;
+        margin-bottom: 15px;">
+                                <h2>Thông tin khách hàng</h2>
+                                <div style=" display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;">
+                                    <div class="col-md-6">
+                                        <div class="infomation__billding">
+                                            <div class="info mb-4" style="margin-left: 20px">
+                                                <div class="company_title" style=" font-weight: 700 !important;">Họ và tên</div>
+                                                <div class="company_value" th:text="${customer.customerName}"></div>
+                                                <div class="name_title" style=" font-weight: 700 !important;">Số điện thoại</div>
+                                                <div class="name_value" th:text="${customer.customerPhone}"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="margin-left: 300px">
+                                        <div class="infomation__shipping">
+                                            <div class="info">
+                                                <div class="name_title " style=" font-weight: 700 !important;">Địa chỉ</div>
+                                                <div class="name_value" th:text="${customer.customerAddress}"></div>
+                                                <div class="address_title " style=" font-weight: 700 !important;">Email</div>
+                                                <div class="address_Value" th:text="${customer.customerEmail}"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products" >
+                                <h3>Hóa đơn</h3>
+                                <table style="width: 100%; border-bottom: 2px solid #333;">
+                                    <thead class="thead-dark" >
+                                        <tr style="text-align: left">
+                                            <th scope="col" style="width: 25%">Sản phẩm</th>
+                                            <th scope="col">Đơn giá</th>
+                                            <th scope="col">Số lượng</th>
+                                            <th scope="col">Thành tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="width: 100%;">
+                                        <tr th:each="cart , i : ${cartList}">
+                                            <td th:text="${cart.materialId.materialName}"></td>
+                                            <td th:text="${cart.materialId.materialPrice}"></td>
+                                            <td th:text="${cart.cartId.cartQuantity}"></td>
+                                            <td th:text="${cart.cartId.cartTotalMoney}"></td>
+                                        </tr>
+                                        <!-- total -->
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Tổng tiền</td>
+                                            <td th:text="${totalMoneyBill}"></td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+                            <div class="tearm-condition">
+                                <h3>Tearms And Conditions</h3>
+                                <div style="padding-bottom: 5px;
+        font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                                    corporis cum quod
+                                    vitae a delectus inventore fuga architecto temporibus natus.</div>
+                                <div style="padding-bottom: 5px;
+        font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                                    corporis cum quod
+                                    vitae a delectus inventore fuga architecto temporibus natus.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+
+        </div>
+
+        </div>
+
+    </body>
+</html>

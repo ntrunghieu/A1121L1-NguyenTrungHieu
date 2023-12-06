@@ -1,0 +1,47 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<h1>Edit customer</h1>
+
+<body>
+<p>
+    <a href="/home">Back to customer list</a>
+</p>
+<form action="${pageContext.request.contextPath}/patient/edit_patient_action" method="POST" modelAttribute="patient">
+    <fieldset>
+        <legend>Patient information</legend>
+        <table>
+            <tr>
+              
+                <td>
+                	<input type="hidden" name="id" value="${patient.id}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Name: </td>
+                <td>
+                	<input type="text" name="name" placeholder="Name" value="${patient.name}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Hospital Fee: </td>
+                <td>
+                	<input type="text" name="hospitalFee" placeholder="Hospital Fee" value="${patient.hospitalFee}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                	<input type="reset" value="Clear Form"/>
+                </td>
+                <td>
+                	<input type="submit" name="submit" value="Update patient">
+                </td>
+                
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+</html>

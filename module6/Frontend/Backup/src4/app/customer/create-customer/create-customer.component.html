@@ -1,0 +1,475 @@
+<!--<body style="margin-top: 100px">-->
+<!--<div class="container">-->
+<!--  <h1 class="title" *ngIf="customerId === 0">Thêm Mới Khách Hàng</h1>-->
+<!--  <h1 class="title" *ngIf="customerId > 0">Chỉnh Sửa Khách Hàng</h1>-->
+<!--  &lt;!&ndash;  <div class="title">Chỉnh Sửa Khách Hàng</div>&ndash;&gt;-->
+<!--  <form class="col-md-12" [formGroup]="form" (ngSubmit)="submit()" #f="ngForm">-->
+<!--    <div class="user-details">-->
+
+<!--      <div class="input-box form-field" hidden>-->
+<!--        <input name="id" type="text" class="form-input" placeholder=" " formControlName="customerId">-->
+<!--        &lt;!&ndash;          <input name="id" type="text" class="form-input" placeholder=" " formControlName="customerId" *ngIf="customerId === 0">&ndash;&gt;-->
+<!--        <label class="form-label">id</label>-->
+<!--      </div>-->
+
+<!--      <div style="margin-top: 8px" class="input-box form-field">-->
+<!--        <input name="code" type="text" class="form-input" placeholder=" " formControlName="customerCode"-->
+<!--               *ngIf="customerId > 0" readonly disabled>-->
+<!--        <input name="code" type="text" class="form-input" placeholder=" " formControlName="customerCode"-->
+<!--               *ngIf="customerId === 0" (ngModelChange)="checkCustomerCode()">-->
+<!--        <label class="form-label">Mã khách hàng <span style="color: red">(*)</span></label>-->
+<!--        <div *ngFor="let validation of validationMessages.customerCode">-->
+<!--          <div-->
+<!--            *ngIf="this.form.get('customerCode').hasError(validation.type) && (this.form.get('customerCode').touched || f.submitted)"-->
+<!--            class="text-danger">{{validation.message}}-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="input-box form-field">-->
+<!--        <select formControlName="customerTypeId" [compareWith]="compare" style="z-index: 100" id="type"-->
+<!--                class="form-input">-->
+<!--          <option [selected]="true" value="null" disabled>Chọn Loại Khách Hàng</option>-->
+<!--          <option *ngFor="let customerType of customerTypes"-->
+<!--                  [ngValue]="customerType">{{customerType.customerTypeName}}</option>-->
+<!--        </select>-->
+<!--        <label for="type" class="form-label">Loại khách <span style="color: red">(*)</span></label>-->
+<!--      </div>-->
+
+<!--      <div class="input-box form-field">-->
+<!--        <input name="name" id="name" type="text" class="form-input" placeholder=" " formControlName="customerName">-->
+<!--        <label for="name" class="form-label">Họ và tên <span style="color: red">(*)</span></label>-->
+<!--        <div *ngFor="let validation of validationMessages.customerName">-->
+<!--          <div-->
+<!--            *ngIf="this.form.get('customerName').hasError(validation.type) && (this.form.get('customerName').touched || f.submitted)"-->
+<!--            class="text-danger">{{validation.message}}-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="input-box form-field">-->
+<!--        <input name="phone" id="phone" type="text" class="form-input" placeholder=" " formControlName="customerPhone">-->
+<!--        <label for="phone" class="form-label">Điện thoại <span style="color: red">(*)</span></label>-->
+<!--        <div *ngFor="let validation of validationMessages.customerPhone">-->
+<!--          <div-->
+<!--            *ngIf="this.form.get('customerPhone').hasError(validation.type) && (this.form.get('customerPhone').touched || f.submitted)"-->
+<!--            class="text-danger">{{validation.message}}-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="input-box form-field" style="margin-top: 8px">-->
+<!--        <input name="email" id="email" type="text" class="form-input" placeholder=" " formControlName="customerEmail">-->
+<!--        <label for="email" class="form-label">Email <span style="color: red">(*)</span></label>-->
+<!--        <div *ngFor="let validation of validationMessages.customerEmail">-->
+<!--          <div-->
+<!--            *ngIf="this.form.get('customerEmail').hasError(validation.type) && (this.form.get('customerEmail').touched || f.submitted)"-->
+<!--            class="text-danger">{{validation.message}}-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="input-box form-field" style="margin-top: 8px">-->
+<!--        <input name="address" id="address" type="text" class="form-input" placeholder=" "-->
+<!--               formControlName="customerAddress">-->
+<!--        <label for="address" class="form-label">Địa chỉ <span style="color: red">(*)</span></label>-->
+<!--        <div *ngFor="let validation of validationMessages.customerAddress">-->
+<!--          <div-->
+<!--            *ngIf="this.form.get('customerAddress').hasError(validation.type) && (this.form.get('customerAddress').touched || f.submitted)"-->
+<!--            class="text-danger">{{validation.message}}-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--&lt;!&ndash;      <div class="input-box form-field" style="margin-top: 8px">&ndash;&gt;-->
+<!--&lt;!&ndash;        <input name="avatar" id="avatar" type="text" class="form-input" placeholder=" "&ndash;&gt;-->
+<!--&lt;!&ndash;               formControlName="customerAvatar">&ndash;&gt;-->
+<!--&lt;!&ndash;        <label for="avatar" class="form-label">Avatar <span style="color: red">(*)</span></label>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div *ngFor="let validation of validationMessages.customerAvatar">&ndash;&gt;-->
+<!--&lt;!&ndash;          <div&ndash;&gt;-->
+<!--&lt;!&ndash;            *ngIf="this.form.get('customerAvatar').hasError(validation.type) && (this.form.get('customerAvatar').touched || f.submitted)"&ndash;&gt;-->
+<!--&lt;!&ndash;            class="text-danger">{{validation.message}}&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;      <div class="content-left content-group" *ngIf="customerId > 0">&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash;      image&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <img [src]="form.controls.customerAvatar.value"   class="content-image"> <br>&ndash;&gt;-->
+<!--&lt;!&ndash;        <input id="img-material" type="file" class="form-control-file" (change)="showPreview($event)">&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+
+<!--      <div class="container1" *ngIf="customerId > 0">-->
+<!--        <div class="wrapper">-->
+<!--          <div class="image">-->
+<!--            <img [src]="form.controls.customerAvatar.value"  *ngIf="setAvatar == 0" alt="">-->
+<!--            <img [src]="url"  *ngIf="setAvatar == 1" alt="">-->
+<!--          </div>-->
+<!--          <div class="content">-->
+<!--            <div class="text">No file choosen, yet!</div>-->
+<!--          </div>-->
+<!--          <div class="file-name">File name here</div>-->
+<!--        </div>-->
+<!--        <input  (change)="onSelectFile($event)" type="file" id="default-btn1" style="margin-left: 240px; margin-top: 90px" #fileInput>-->
+<!--        &lt;!&ndash;        <button (click)="fileInput.click()" id="custom-btn">Choose a file</button>&ndash;&gt;-->
+<!--      </div>-->
+
+<!--            <div class="container1" *ngIf="customerId === 0">-->
+<!--              <div class="wrapper">-->
+<!--                <div class="image">-->
+<!--                  <img [src]="url"  alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                  <div class="text">No file choosen, yet!</div>-->
+<!--                </div>-->
+<!--                <div class="file-name">File name here</div>-->
+<!--              </div>-->
+<!--              <input  (change)="onSelectFile($event)" type="file" id="default-btn" style="margin-left: 240px; margin-top: 90px" #fileInput>-->
+<!--              &lt;!&ndash;        <button (click)="fileInput.click()" id="custom-btn">Choose a file</button>&ndash;&gt;-->
+<!--            </div>-->
+
+<!--    </div>-->
+<!--    <div class="button" style="margin-left: 230px; margin-top: 60px">-->
+<!--      <input class="btn__primary" type="submit" value="Lưu">-->
+<!--      <input class="btn__cancel" type="button" value="Hủy" routerLink="/customer/list">-->
+<!--    </div>-->
+<!--  </form>-->
+<!--</div>-->
+<!--</body>-->
+<!--<notifier-container></notifier-container>-->
+
+<!--<h1>Hello</h1>-->
+
+<div class="container" style="margin-top: 100px">
+  <div style="background-color: white;">
+    <form [formGroup]="form" (ngSubmit)="submit()" #f="ngForm" class="p-3">
+      <h4 class="text-center font-weight-bold" style="color:#270082;" *ngIf="customerId === 0">THÊM MỚI KHÁCH HÀNG</h4>
+      <h4 class="text-center font-weight-bold" style="color:#270082;" *ngIf="customerId > 0">CHỈNH SỬA KHÁCH HÀNG</h4>
+      <!--      <div class="row mt-3">-->
+
+      <div class="input-box form-field" hidden>
+        <input name="id" type="text" class="form-input" placeholder=" " formControlName="customerId">
+        <!--          <input name="id" type="text" class="form-input" placeholder=" " formControlName="customerId" *ngIf="customerId === 0">-->
+        <label class="form-label">id</label>
+      </div>
+
+      <!--        <div class="col-md-2 input-group" style="align-content: center">-->
+      <!--          Loại hàng hoá-->
+      <!--          <span style="color: red">(*)</span>-->
+      <!--        </div>-->
+      <!--        <div class="col-md-3 input-group">-->
+      <!--          <div class="form-check p-0 ml-3">-->
+      <!--            <input class="form-check-input mt-1" type="radio" name="flexRadioDefault1" id="flexRadioDefault5"-->
+      <!--                   checked routerLink="/import">-->
+      <!--            <label routerLink="/import" class="form-check-label" for="flexRadioDefault5">-->
+      <!--              Hàng đã nhập-->
+      <!--            </label>-->
+      <!--          </div>-->
+      <!--          <div class="form-check p-0 ml-4">-->
+      <!--            <input routerLink="/import/import-material" class="form-check-input mt-1" type="radio"-->
+      <!--                   name="flexRadioDefault1" id="flexRadioDefault6">-->
+      <!--            <label routerLink="/import/import-material" class="form-check-label" for="flexRadioDefault6">-->
+      <!--              Hàng mới-->
+      <!--            </label>-->
+      <!--          </div>-->
+      <!--        </div>-->
+<!--      <div class="col-md-2"></div>-->
+
+      <!--        <div class="col-md-2 input-group p-0" style="align-content: center">-->
+      <!--          Người thực hiện-->
+      <!--          <span style="color: red">(*)</span>-->
+
+      <!--        </div>-->
+
+      <!--        <div class="col-md-3 input-group">-->
+      <!--          <select style="height: 100%" formControlName="importAccountId">-->
+      <!--            <option selected disabled value="">Chọn</option>-->
+      <!--            <option *ngFor="let employee of employeeList"-->
+      <!--                    [ngValue]="employee">{{employee.employeeName}}</option>-->
+      <!--          </select>-->
+      <!--          <small class="text-danger mb-0 pb-0"-->
+      <!--                 *ngIf="importForm.get('importAccountId').invalid && (importForm.get('importAccountId').touched||importForm.get('importAccountId').dirty)">-->
+      <!--            Người thực hiện không được để trống-->
+      <!--          </small>-->
+      <!--        </div>-->
+      <!--      </div>-->
+
+      <br>
+
+
+      <div class="row mt-3">
+        <!--        <div style="margin-top: 8px" class="input-box form-field">-->
+        <!--          <input name="code" type="text" class="form-input" placeholder=" " formControlName="customerCode"-->
+        <!--                 *ngIf="customerId > 0" readonly disabled>-->
+        <!--          <input name="code" type="text" class="form-input" placeholder=" " formControlName="customerCode"-->
+        <!--                 *ngIf="customerId === 0" (ngModelChange)="checkCustomerCode()">-->
+        <!--          <label class="form-label">Mã khách hàng <span style="color: red">(*)</span></label>-->
+        <!--          <div *ngFor="let validation of validationMessages.customerCode">-->
+        <!--            <div-->
+        <!--              *ngIf="this.form.get('customerCode').hasError(validation.type) && (this.form.get('customerCode').touched || f.submitted)"-->
+        <!--              class="text-danger">{{validation.message}}-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <div class="col-md-2 input-group" style="align-content: center">
+          Mã Khách Hàng
+          <span style="color: red">(*)</span>
+        </div>
+        <div class="col-md-3 input-group">
+          <input type="text" formControlName="customerCode"
+                 *ngIf="customerId > 0" readonly disabled>
+          <input type="text" formControlName="customerCode"
+                 *ngIf="customerId === 0" [(ngModel)]="customerCodeExistCreateSearch"
+                 (ngModelChange)="checkCustomerCode()">
+        </div>
+
+<!--        <div class="col-md-2"></div>-->
+
+        <!--        <div class="input-box form-field">-->
+        <!--          <select formControlName="customerTypeId" [compareWith]="compare" style="z-index: 100" id="type"-->
+        <!--                  class="form-input">-->
+        <!--            <option [selected]="true" value="null" disabled>Chọn Loại Khách Hàng</option>-->
+        <!--            <option *ngFor="let customerType of customerTypes"-->
+        <!--                    [ngValue]="customerType">{{customerType.customerTypeName}}</option>-->
+        <!--          </select>-->
+        <!--          <label for="type" class="form-label">Loại khách <span style="color: red">(*)</span></label>-->
+        <!--        </div>-->
+
+        <div class="col-md-2 input-group p-0" style="align-content: center">
+          Loại Khách
+          <span style="color: red">(*)</span>
+        </div>
+        <div class="col-md-3 input-group">
+          <select style="height: 100%; width: 100%" formControlName="customerTypeId" [compareWith]="compare">
+            <option selected disabled value="">Chọn</option>
+            <option *ngFor="let customerType of customerTypes"
+                    [ngValue]="customerType">{{customerType.customerTypeName}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2 input-group" style="align-content: center">
+        </div>
+        <div class="col-md-3 input-group">
+          <div *ngFor="let validation of validationMessages.customerCode">
+            <div
+              *ngIf="this.form.get('customerCode').hasError(validation.type) && (this.form.get('customerCode').touched || f.submitted)"
+              class="text-danger">{{validation.message}}
+            </div>
+          </div>
+          <!--          <small class="text-danger mb-0 pb-0" *ngFor="let validation of validationMessages.customerCode">-->
+          <!--            Mã hoá đơn không được để trống và theo định dạng HDN-XXX, với X là số, vd: HDN-123-->
+          <!--          </small>-->
+          <small class="text-danger mb-0 pb-0">{{customerExistCreate}}</small>
+        </div>
+
+<!--        <div class="col-md-2"></div>-->
+
+        <div class="col-md-2 input-group p-0" style="align-content: center">
+        </div>
+        <div class="col-md-3 input-group">
+          <!--          <small class="text-danger mb-0 pb-0"-->
+          <!--                 *ngIf="importForm.get('materialCustomerId').invalid && (importForm.get('materialCustomerId').touched||importForm.get('materialCustomerId').dirty)">-->
+          <!--            Nhà cung cấp không được để trống-->
+          <!--          </small>-->
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row mt-3">
+
+        <div class="col-md-2 input-group" style="align-content: center">
+          Họ Và Tên
+          <span style="color: red">(*)</span>
+        </div>
+        <div class="col-md-3 input-group">
+          <input type="text" formControlName="customerName">
+          <!--          <input type="text" formControlName="customerName"-->
+          <!--                 *ngIf="customerId === 0" (ngModelChange)="checkCustomerCode()">-->
+        </div>
+
+<!--        <div class="col-md-2"></div>-->
+
+
+        <div class="col-md-2 input-group p-0" style="align-content: center">
+          Điện Thoại
+          <span style="color: red">(*)</span>
+        </div>
+        <div class="col-md-3 input-group">
+          <input type="text" formControlName="customerPhone">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2 input-group" style="align-content: center">
+        </div>
+        <div class="col-md-3 input-group">
+          <div *ngFor="let validation of validationMessages.customerName">
+            <div
+              *ngIf="this.form.get('customerName').hasError(validation.type) && (this.form.get('customerName').touched || f.submitted)"
+              class="text-danger">{{validation.message}}
+            </div>
+          </div>
+
+        </div>
+
+<!--        <div class="col-md-2"></div>-->
+
+        <div class="col-md-2 input-group p-0" style="align-content: center">
+        </div>
+        <div class="col-md-3 input-group">
+          <div *ngFor="let validation of validationMessages.customerPhone">
+            <div
+              *ngIf="this.form.get('customerPhone').hasError(validation.type) && (this.form.get('customerPhone').touched || f.submitted)"
+              class="text-danger">{{validation.message}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <br>
+
+      <!--      <div class="input-box form-field" style="margin-top: 8px">-->
+      <!--        <input name="email" id="email" type="text" class="form-input" placeholder=" " formControlName="customerEmail">-->
+      <!--        <label for="email" class="form-label">Email <span style="color: red">(*)</span></label>-->
+      <!--        <div *ngFor="let validation of validationMessages.customerEmail">-->
+      <!--          <div-->
+      <!--            *ngIf="this.form.get('customerEmail').hasError(validation.type) && (this.form.get('customerEmail').touched || f.submitted)"-->
+      <!--            class="text-danger">{{validation.message}}-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+
+      <div class="row mt-3">
+
+        <div class="col-md-2 input-group" style="align-content: center">
+          Email
+          <span style="color: red">(*)</span>
+        </div>
+        <div class="col-md-3 input-group">
+          <input type="text" formControlName="customerEmail">
+        </div>
+
+<!--        <div class="col-md-2"></div>-->
+
+        <!--        <div class="input-box form-field" style="margin-top: 8px">-->
+        <!--          <input name="address" id="address" type="text" class="form-input" placeholder=" "-->
+        <!--                 formControlName="customerAddress">-->
+        <!--          <label for="address" class="form-label">Địa chỉ <span style="color: red">(*)</span></label>-->
+        <!--          <div *ngFor="let validation of validationMessages.customerAddress">-->
+        <!--            <div-->
+        <!--              *ngIf="this.form.get('customerAddress').hasError(validation.type) && (this.form.get('customerAddress').touched || f.submitted)"-->
+        <!--              class="text-danger">{{validation.message}}-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+
+        <div class="col-md-2 input-group p-0" style="align-content: center">
+          Địa Chỉ
+          <span style="color: red">(*)</span>
+        </div>
+        <div class="col-md-3 input-group">
+          <input type="text" formControlName="customerAddress">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2 input-group" style="align-content: center">
+        </div>
+        <div class="col-md-3 input-group">
+          <div *ngFor="let validation of validationMessages.customerEmail">
+            <div
+              *ngIf="this.form.get('customerEmail').hasError(validation.type) && (this.form.get('customerEmail').touched || f.submitted)"
+              class="text-danger">{{validation.message}}
+            </div>
+          </div>
+
+        </div>
+
+<!--        <div class="col-md-2"></div>-->
+
+        <div class="col-md-2 input-group p-0" style="align-content: center">
+        </div>
+        <div class="col-md-3 input-group">
+          <div *ngFor="let validation of validationMessages.customerAddress">
+            <div
+              *ngIf="this.form.get('customerAddress').hasError(validation.type) && (this.form.get('customerAddress').touched || f.submitted)"
+              class="text-danger">{{validation.message}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-1 input-group" style="align-content: center">
+          Ảnh đại diện
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center" class="col-md-6 input-group" *ngIf="customerId > 0">
+<!--          <div class="wrapper">-->
+<!--            <div class="image">-->
+              <img style="width: 60%; height: 60%" [src]="form.controls.customerAvatar.value" *ngIf="setAvatar == 0" alt="">
+              <img style="width: 60%; height: 60%" [src]="url" *ngIf="setAvatar == 1" alt="">
+              <br>
+<!--            </div>-->
+<!--          </div>-->
+          <input (change)="onSelectFile($event)" type="file"
+                  #fileInput>
+<!--          id="default-btn1"-->
+        </div>
+
+        <div style="display: flex; justify-content: center; align-items: center" class="col-md-6 input-group" *ngIf="customerId === 0">
+<!--          <div class="wrapper">-->
+<!--            <div class="image">-->
+          <img style="width: 60%; height: 60%" [src]="url" alt="">
+<!--            </div>-->
+<!--          </div>-->
+          <input (change)="onSelectFile($event)" type="file"
+                 #fileInput>
+<!--          id="default-btn1"-->
+        </div>
+      </div>
+
+      <!--      <div class="container1" *ngIf="customerId > 0">-->
+      <!--        <div class="wrapper">-->
+      <!--          <div class="image">-->
+      <!--            <img [src]="form.controls.customerAvatar.value"  *ngIf="setAvatar == 0" alt="">-->
+      <!--            <img [src]="url"  *ngIf="setAvatar == 1" alt="">-->
+      <!--          </div>-->
+      <!--          <div class="content">-->
+      <!--            <div class="text">No file choosen, yet!</div>-->
+      <!--          </div>-->
+      <!--          <div class="file-name">File name here</div>-->
+      <!--        </div>-->
+      <!--        <input  (change)="onSelectFile($event)" type="file" id="default-btn1" style="margin-left: 240px; margin-top: 90px" #fileInput>-->
+      <!--        &lt;!&ndash;        <button (click)="fileInput.click()" id="custom-btn">Choose a file</button>&ndash;&gt;-->
+      <!--      </div>-->
+
+<!--      <div class="container1" *ngIf="customerId === 0">-->
+<!--        <div class="wrapper">-->
+<!--          <div class="image">-->
+<!--            <img [src]="url" alt="">-->
+<!--          </div>-->
+<!--          <div class="content">-->
+<!--            <div class="text">No file choosen, yet!</div>-->
+<!--          </div>-->
+<!--          <div class="file-name">File name here</div>-->
+<!--        </div>-->
+<!--        <input (change)="onSelectFile($event)" type="file" id="default-btn" style="margin-left: 240px; margin-top: 90px"-->
+<!--               #fileInput>-->
+<!--        &lt;!&ndash;        <button (click)="fileInput.click()" id="custom-btn">Choose a file</button>&ndash;&gt;-->
+<!--      </div>-->
+
+      <!--  </div>-->
+      <div class="button" style="margin-left: 450px; margin-top: 60px">
+        <input class="btn__primary" type="submit" value="Lưu">
+        <input class="btn__cancel" type="button" value="Hủy" routerLink="/customer/list">
+      </div>
+
+    </form>
+  </div>
+</div>
+<notifier-container></notifier-container>

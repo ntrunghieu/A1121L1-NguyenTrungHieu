@@ -1,0 +1,9 @@
+package springdemo.model.service;
+
+import java.util.List;
+
+import springdemo.model.bean.Fruit;
+
+public interface FruitService {
+	  List<Fruit> getListFruits();
+}

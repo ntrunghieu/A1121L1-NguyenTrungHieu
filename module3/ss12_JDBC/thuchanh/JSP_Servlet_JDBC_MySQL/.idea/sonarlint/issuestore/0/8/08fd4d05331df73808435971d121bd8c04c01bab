@@ -1,0 +1,61 @@
+
+j
+java:S1192o"HDefine a constant instead of duplicating this literal "country" 8 times.(±”¡òÿÿÿÿÿ8¬ÆëöÊ0
+i
+java:S1192¸"FDefine a constant instead of duplicating this literal "Quynh" 4 times.(ŞÈÁèşÿÿÿÿ8­ÆëöÊ0
+h
+java:S1192n"FDefine a constant instead of duplicating this literal "email" 8 times.(¬äÂøÿÿÿÿ8®ÆëöÊ0
+q
+java:S2095h"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ğ–É˜ıÿÿÿÿ8…ÙëöÊ0
+m
+java:S2095Ö"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(“•¿ì8†ÙëöÊ0
+r
+java:S2095Â"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(’®—†øÿÿÿÿ8‡ÙëöÊ0
+
+java:S11863"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ş¸³•8‹ÙëöÊ0
+a
+java:S2147>"DCombine this catch with the one at line 59, which has the same body.(ıàÑÎ8¸ÙëöÊ0
+O
+java:S49259"-Remove this "Class.forName()", it is useless.(¹µÖÁüÿÿÿÿ8ºÙëöÊ0
+T
+java:S1135<"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8ÀÙëöÊ0
+T
+java:S1135?"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8ÁÙëöÊ0
+Z	java:S106G"9Replace this use of System.out or System.err by a logger.(éÕ–ßûÿÿÿÿ8ÎÙëöÊ0
+]	java:S125I"<This block of commented-out lines of code should be removed.(ïº¿Åùÿÿÿÿ8ïÙëöÊ0
+Z	java:S106M"9Replace this use of System.out or System.err by a logger.(µâ£äşÿÿÿÿ8ˆÚëöÊ0
+U	java:S106W"9Replace this use of System.out or System.err by a logger.(Îã­Ã8ÚëöÊ0
+Z	java:S106X"9Replace this use of System.out or System.err by a logger.(íŠÚçüÿÿÿÿ8ÚëöÊ0
+Z	java:S106Y"9Replace this use of System.out or System.err by a logger.(×ãìüÿÿÿÿ8 ÚëöÊ0
+Z	java:S106Z"9Replace this use of System.out or System.err by a logger.(îöÁÑøÿÿÿÿ8¡ÚëöÊ0
+U	java:S106]"9Replace this use of System.out or System.err by a logger.(†ÚÂà8®ÚëöÊ0
+Z	java:S106j"9Replace this use of System.out or System.err by a logger.(µâ£äşÿÿÿÿ8²ÚëöÊ0
+[	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(µâ£äşÿÿÿÿ8ÙÚëöÊ0
+^	java:S125‚"<This block of commented-out lines of code should be removed.(ïº¿Åùÿÿÿÿ8ÚÚëöÊ0
+I
+java:S2695±"+This "PreparedStatement" has no parameters.(ï¤äß8æÚëöÊ0
+H
+java:S2695²"+This "PreparedStatement" has no parameters.(ÿğ¤P8çÚëöÊ0
+N
+java:S2695³"+This "PreparedStatement" has no parameters.(©ØŒÁüÿÿÿÿ8ˆÛëöÊ0
+€
+java:S4087Ï"bRemove this "close" call; closing the resource is handled automatically by the try-with-resources.(ôêÂœ8ÛëöÊ0
+€
+java:S4087å"bRemove this "close" call; closing the resource is handled automatically by the try-with-resources.(ôêÂœ8¢ÛëöÊ0
+V	java:S106Ü"9Replace this use of System.out or System.err by a logger.(ÆÊí¿8¥ÛëöÊ0
+^	java:S125ê"<This block of commented-out lines of code should be removed.(íîŸçûÿÿÿÿ8©ÛëöÊ0
+?	java:S131ö""Add a default case to this switch.(ĞƒÔ•8­ÛëöÊ0
+^	java:S125ƒ"<This block of commented-out lines of code should be removed.(óÈØûÿÿÿÿ8±ÛëöÊ0
+Y	java:S125“"<This block of commented-out lines of code should be removed.(’Ëƒ°8¶ÛëöÊ0
+^	java:S125§"<This block of commented-out lines of code should be removed.(óÈØûÿÿÿÿ8¼ÛëöÊ0
+[	java:S106ğ"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8ËÛëöÊ0
+V	java:S106ô"9Replace this use of System.out or System.err by a logger.(î©÷8ÌÛëöÊ0
+[	java:S106‹"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8ĞÛëöÊ0
+D
+java:S2111Ô"!Use "BigDecimal.valueOf" instead.(» Ô·ûÿÿÿÿ8æÛëöÊ0
+Y	java:S125Ø"<This block of commented-out lines of code should be removed.(±¦ğ­8èÛëöÊ0
+^	java:S125˜"<This block of commented-out lines of code should be removed.(ø–à§ÿÿÿÿÿ8ôÛëöÊ0
+?
+java:S2111š"!Use "BigDecimal.valueOf" instead.(ÃŞãÄ8õÛëöÊ0
+Y	java:S125"<This block of commented-out lines of code should be removed.(±¦ğ­8÷ÛëöÊ0
+[	java:S106²"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8ûÛëöÊ0

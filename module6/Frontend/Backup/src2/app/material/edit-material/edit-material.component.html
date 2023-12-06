@@ -1,0 +1,108 @@
+
+<link rel="stylesheet" href="edit-material.component.css">
+<div class="container mt-5" style="margin-top: 100px " >
+  <h1 class="font-text-footer" style="text-align: -webkit-center;">Edit Material</h1>
+  <form [formGroup]="formEdit" (ngSubmit)="onSubmit()">
+  <div class="content-create">
+    <div class="content-left content-group">
+      <!--      image-->
+      <img [src]="formEdit.controls.materialImage.value"   class="content-image"> <br>
+      <input id="img-material" type="file" class="form-control-file" (change)="showPreview($event)">
+    </div>
+    <div class="content-right">
+<!--      <form [formGroup]="formEdit" (ngSubmit)="onSubmit()">-->
+        <div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Material Code <span class="cl-red">*</span> </span>
+          <input type="text" class="form-control me-2" placeholder="materialCode" formControlName="materialCode">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialCode').invalid && (formEdit.get('materialCode').touched||formEdit.get('materialCode').dirty)">
+           Material code malformed !! Must have format is "MVT-XXX"
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Material Name<span class="cl-red">*</span></span>
+          <input type="text" class="form-control me-2" placeholder="materialName" formControlName="materialName">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialName').invalid && (formEdit.get('materialName').touched||formEdit.get('materialName').dirty)">
+          Material Name can't required and length from 5 to 25 characters!
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Material Price<span class="cl-red">*</span></span>
+          <input type="number" class="form-control me-2" placeholder="materialPrice" formControlName="materialPrice">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialPrice').invalid && (formEdit.get('materialPrice').touched||formEdit.get('materialPrice').dirty)">
+          Material Price can't required!
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Material Quantity<span class="cl-red">*</span></span>
+          <input type="number" class="form-control me-2" placeholder="materialQuantity" formControlName="materialQuantity">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialQuantity').invalid && (formEdit.get('materialQuantity').touched||formEdit.get('materialQuantity').dirty)">
+          Material Quantity can't required!
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Material Expiridate<span class="cl-red">*</span></span>
+          <input type="date" class="form-control me-2" placeholder="materialExpiridate" formControlName="materialExpiridate">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialExpiridate').invalid && (formEdit.get('materialExpiridate').touched||formEdit.get('materialExpiridate').dirty)">
+          Material Expiridate can't required!
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Material Describe<span class="cl-red">*</span></span>
+          <input type="text" class="form-control me-2" placeholder="materialDescribe" formControlName="materialDescribe">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialDescribe').invalid && (formEdit.get('materialDescribe').touched||formEdit.get('materialDescribe').dirty)">
+          Material Describe can't required!
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Material Unit<span class="cl-red">*</span></span>
+          <input type="text" class="form-control me-2" placeholder="materialUnit" formControlName="materialUnit">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialUnit').invalid && (formEdit.get('materialUnit').touched||formEdit.get('materialUnit').dirty)">
+          Material Unit can't required!
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Material Type<span class="cl-red">*</span></span>
+          <select class="me-2" [compareWith]="compareFn" formControlName="materialTypeId" >
+            <option selected disabled value="">Chọn</option>
+            <option *ngFor="let data of listDataType" [ngValue]="data">{{data?.materialTypeName}}
+            </option>
+          </select>
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialTypeId').invalid && (formEdit.get('materialTypeId').touched||formEdit.get('materialTypeId').dirty)">
+          Material Type can't required!
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Customer Material<span class="cl-red">*</span></span>
+          <select class="me-2" [compareWith]="compareFn1" formControlName="materialCustomerId" >
+            <option selected disabled value="">Chọn</option>
+            <option *ngFor="let data of listDataCus" [ngValue]="data">{{data?.customerName}}</option>
+          </select>
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialCustomerId').invalid && (formEdit.get('materialCustomerId').touched||formEdit.get('materialCustomerId').dirty)">
+          Material Customer can't required!
+        </span>
+        <br>
+        <div class="input-group d-flex align-content-center justify-content-center">
+          <button type="submit" class="btn__primary"  >Edit</button>
+          <button type="button" class="bt btn__cancel"><a style="text-decoration: none"
+                                                          class="text-light"
+                                                          routerLink=''>Cancle</a>
+          </button>
+        </div>
+        </div>
+<!--      </form>-->
+    </div>
+  </div>
+  </form>
+
+</div>

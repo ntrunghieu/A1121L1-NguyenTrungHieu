@@ -1,0 +1,31 @@
+package springdemo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import springdemo.model.bean.Student;
+
+@Controller
+@RequestMapping("/student")
+public class StudentController {
+	
+	@RequestMapping("/showForm")
+	private String showForm(Model model) {
+		// create a student object
+		Student student = new Student();
+		
+		// add student object to the model
+		model.addAttribute("student",student);
+		
+		return "student-form";
+	}
+	
+	@RequestMapping("/processForm")
+	private String processForm(@ModelAttribute("student") Student student) {
+		// log input data
+		System.out.println(student.getFirstName());
+		return "student-information";
+	}
+}

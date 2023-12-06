@@ -1,8 +1,9 @@
 package PT;
 
+import java.util.Random;
 import java.util.Scanner;
 
-public class amain {
+public class main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 //        System.out.println("nhap n: ");
@@ -14,12 +15,13 @@ public class amain {
 //        System.out.println(giaithua(n));
 //        System.out.println(fibonacci(n));
 //        System.out.println("UCLN cua a va b: "+ UCLN(a,b));
-        int[] arr={4,3,1,3,1,3};
-        int R=arr.length;
+        int[] arr={6,2,9,3,1,3};
+        int R=arr.length-1;
+        System.out.println(R);
         int L=0;
          quickSort(arr,L,R);
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(i + ",");
+            System.out.print(arr[i] + ",");
         }
 
 //        if (ktra(arr,n)){
@@ -33,12 +35,9 @@ public class amain {
     }
     public static void quickSort(int[] a, int L, int R){
         int i =L, j=R;
-        int Pivot = a[(L+R)/2];
-        do {
-            if (L<=R){
-                return;
-            }
-            else {
+        int num = (i+j)/2;
+        int Pivot = a[num];
+        while (i<=j){
                 while (a[i] < Pivot){
                     i++;
                 }
@@ -52,8 +51,8 @@ public class amain {
                     i++;
                     j--;
                 }
+
             }
-        }while (i<=j);
          quickSort(a, L, i);
          quickSort(a, j, R);
     }

@@ -1,0 +1,263 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background-color: #f6f6f9;
+}
+
+.create__container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col__container {
+    padding: 20px;
+}
+
+/*::placeholder{*/
+/*  padding-left: 10px;*/
+/*  padding-right: 10px;*/
+/*}*/
+
+input, select {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.icon {
+    margin-left: 50%;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.useful-links {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+
+}
+
+.useful-links a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.create__container form {
+    width: 100%;
+    max-width: 1000px;
+    padding: 50px 30px 20px;
+    background: #fff;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.fa-user-plus {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    font-size: 28px;
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+}
+
+.input-group label {
+    flex-basis: 28%;
+}
+
+.input-group input,
+.form-select,
+.input-group textarea {
+    flex-basis: 68%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #999;
+    color: #333;
+    font-size: 16px;
+}
+
+::placeholder {
+    font-size: 16px;
+}
+
+.btn__primary {
+    width: 140px;
+    height: 45px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: rgb(221, 221, 221);
+    background-color: #0f57b3;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 8px 15px rgba(44, 81, 154, 0.4);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+}
+
+.btn__primary:hover {
+    background-color: #0d4287;
+    box-shadow: 0px 8px 15px rgba(56, 95, 173, 0.57);
+    color: #fff;
+}
+
+.btn__delete {
+    width: 140px;
+    height: 45px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: rgb(29, 25, 145);
+    background-color: #AAC4FF;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 8px 15px rgba(120,
+    158,
+    233,
+    0.4);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+}
+
+.btn__delete:hover {
+    background-color: #85abdc;
+    box-shadow: 0px 8px 15px rgba(88, 129, 211, 0.4);
+    color: rgb(23, 20, 58);
+}
+
+.btn__cancel {
+    margin-left: 25px;
+    width: 140px;
+    height: 45px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: rgb(29, 25, 145);
+    background-color: #e5eaff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 8px 15px rgba(120, 158, 233, 0.4);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+}
+
+.btn__cancel:hover {
+    background-color: #c7defa;
+    box-shadow: 0px 8px 15px rgba(81, 125, 214, 0.4);
+    color: rgb(23, 20, 58);
+}
+
+.button__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mess {
+    margin-left: 130px;
+    margin-top: -8px
+}
+
+small {
+    color: red;
+}
+
+button:disabled,
+button[disabled] {
+    background: #dddddd;
+    color: rgb(29, 25, 145);
+    cursor: pointer;
+    pointer-events: none;
+}
+
+@media (max-width: 1000px) {
+    .form {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .create__container {
+        display: flex;
+        margin-top: 350px;
+    }
+
+    .text__info {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .create__container {
+        display: flex;
+        margin-top: 50px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .create__container {
+        display: flex;
+        margin-top: 50px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .create__container {
+        display: flex;
+        margin-top: 50px;
+    }
+}
+
+@media (min-width: 1201px) {
+    .create__container {
+        display: flex;
+    }
+}
+
+.container__text{
+    height: 60px;
+}
+
+.container__text1{
+    height: 85px;
+}

@@ -1,0 +1,346 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'segoe ui', sans-serif;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+.useful-links {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+
+}
+
+.useful-links a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 5000px) {
+  .fa-paper-plane {
+    width: 125px;
+    height: 125px;
+  }
+
+  .container {
+    margin-top: 6%;
+    width: 100%;
+    background: #f6f6f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .container nav {
+    width: 60%;
+    max-width: 60%;
+    padding: 5% 3% 2%;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+
+}
+
+@media only screen and (max-width: 1200px) {
+  .fa-paper-plane {
+    width: 115px;
+    height: 115px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .container {
+    margin-top: 8%;
+    width: 100%;
+    background: #f6f6f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container nav {
+    width: 70%;
+    max-width: 70%;
+    padding: 5% 3% 2%;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 997px) {
+  .fa-paper-plane {
+    width: 105px;
+    height: 105px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .container {
+    margin-top: 11%;
+    width: 100%;
+    background: #f6f6f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bt {
+    display: block;
+  }
+
+  .container nav {
+    width: 95%;
+    max-width: 95%;
+    padding: 5% 3% 2%;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 578px) {
+  .fa-paper-plane {
+    width: 80px;
+    height: 80px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .input-group label {
+    flex-basis: 50%;
+    font-weight: bold;
+  }
+
+  .container {
+    margin-top: 15%;
+    width: 100%;
+    background: #f6f6f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container nav {
+    max-width: 100%;
+    padding: 5% 3% 2%;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+}
+
+.fa-paper-plane {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  font-size: 16px;
+  padding: 0.9%;
+  border-radius: 50%;
+  /*box-shadow: 0 0 40px red;*/
+  box-shadow: 0 0 30px red;
+}
+
+img:hover {
+  box-shadow: 0 0 30px 3px #0f57b3;
+}
+
+.container nav:hover {
+  background: ghostwhite;
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 2% 1%;
+  position: relative;
+}
+.input-group label {
+  flex-basis: 40%;
+  font-weight: bold;
+}
+
+.input-group span, .input-group textarea {
+  flex-basis: 40%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 10px 0;
+  /*border-bottom: 1px solid #999;*/
+  color: #333;
+  font-size: 16px;
+}
+
+::placeholder {
+  font-size: 14px;
+}
+
+
+.btn__primary {
+  max-width: 41%;
+  height: 45px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: rgb(221, 221, 221);
+  background-color: #0f57b3;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(44, 81, 154, 0.4);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+}
+
+.btn__primary:hover {
+  background-color: #0d4287;
+  box-shadow: 0px 8px 15px rgba(56, 95, 173, 0.57);
+  color: #fff;
+}
+
+.btn__delete {
+  max-width: 41%;
+  height: 45px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: rgb(29, 25, 145);
+  background-color: #AAC4FF;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(120,
+  158,
+  233,
+  0.4);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+}
+
+.btn__delete:hover {
+  background-color: #85abdc;
+  box-shadow: 0 8px 15px rgba(88, 129, 211, 0.4);
+  color: rgb(23, 20, 58);
+}
+
+.btn__cancel {
+  max-width: 41%;
+  height: 45px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: rgb(29, 25, 145);
+  background-color: #e5eaff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 8px 15px rgba(120, 158, 233, 0.4);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+}
+
+.btn__cancel:hover {
+  background-color: #c7defa;
+  box-shadow: 0px 8px 15px rgba(81, 125, 214, 0.4);
+  color: rgb(23, 20, 58);
+}
+
+
+label {
+  background-image: linear-gradient(
+    to right,
+    #54b3d6,
+    #54b3d6 50%,
+    #000 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+label:before {
+  content: '';
+  background: #54b3d6;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+label:hover {
+  box-shadow: 0px 15px 20px rgba(0, 215, 255, 0.4);
+  background-position: 0;
+}
+
+label:hover::before {
+  width: 100%;
+}
+
+a {
+  word-wrap: break-word;
+  width: 60%;
+  background: linear-gradient(
+    to right,
+    rgba(100, 200, 200, 1),
+    rgba(100, 200, 200, 1)
+  ),
+  linear-gradient(
+    to right,
+    #e5eaff,
+    #0f57b3,
+    #AAC4FF
+  );
+  background-size: 100% 0, 0 1px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease 0s;
+}
+
+a:hover {
+  box-shadow: 0 15px 20px rgba(0, 215, 255, 0.4);
+  cursor: default;
+  font-size: 18px;
+  background-size: 0 3px, 100% 3px;
+}
+
+button:disabled,
+button[disabled] {
+  background: #dddddd;
+  color: rgb(29, 25, 145);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/*background-color: #C3F8FF;*/

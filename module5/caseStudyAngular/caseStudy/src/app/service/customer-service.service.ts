@@ -13,7 +13,7 @@ export class CustomerServiceService {
   constructor(private  httpClient: HttpClient) { }
 
   findAll(): Observable<Customer[]> {
-    return this.httpClient.get<Customer[]>(API_URL + '/api/customer');
+    return this.httpClient.get<Customer[]>(API_URL);
   }
   createCustomer(cus: Customer): Observable<Customer> {
     return this.httpClient.post<Customer>(API_URL + '/api/customer/create', cus);

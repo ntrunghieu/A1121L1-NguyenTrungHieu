@@ -1,0 +1,100 @@
+package springdemo.dao;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import springdemo.model.bean.Fruit;
+
+public class FruitDAO implements IFruitDAO{
+	
+    private String jdbcURL = "jdbc:mysql://localhost:3306/fruitDB";
+    private String jdbcUsername = "root";
+    private String jdbcPassword = "Ntrunghieu27";
+    
+    private static final String SELECT_ALL_FRUITS = "select * from fruitTBL";
+    
+    
+   public FruitDAO() {
+	// TODO Auto-generated constructor stub
+   }
+
+    protected Connection getConnect() {
+        Connection connection = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return connection;
+    }
+    
+    private void printSQLException(SQLException ex) {
+        for (Throwable e : ex) {
+            if (e instanceof SQLException) {
+                e.printStackTrace(System.err);
+                System.err.println("SQLState: " + ((SQLException) e).getSQLState());
+                System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
+                System.err.println("Message: " + e.getMessage());
+                Throwable t = ex.getCause();
+                while (t != null) {
+                    System.out.println("Cause: " + t);
+                    t = t.getCause();
+                }
+            }
+        }
+    }
+
+	@Override
+	public void insertFruit(Fruit fruit) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Fruit selectFruit(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Fruit> selectAllFruits() {
+		 List<Fruit> fruits = new ArrayList<>();
+	        try (Connection connection = getConnect();
+	             Statement statement = connection.createStatement();
+	             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_FRUITS);) {
+//	            statement.execute(DELETE_TRUNCATE_TABLE);
+	            System.out.println(preparedStatement);
+	            ResultSet rs = preparedStatement.executeQuery();
+	            while (rs.next()) {
+	                int id = rs.getInt("ID");
+	                String name = rs.getString("Name");
+	             
+	                fruits.add(new Fruit(name));
+	            }
+
+
+	        } catch (SQLException throwables) {
+	            throwables.printStackTrace();
+	        }
+	        return fruits;
+	}
+
+	@Override
+	public boolean deleteFruit(int id) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateUser(Fruit fruit) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

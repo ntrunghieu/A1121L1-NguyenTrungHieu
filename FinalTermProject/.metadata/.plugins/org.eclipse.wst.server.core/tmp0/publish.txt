@@ -1,0 +1,6 @@
+#Tomcat publish data
+#Tue Dec 05 14:49:26 ICT 2023
+org.eclipse.jst.jee.server\:/binary\:D\:\\eclipse-workspace\\spring-day04\\JavaWeb02DemoFormTag\\WebContent\\WEB-INF\\lib\\spring-web-5.2.9.RELEASE.jar=WEB-INF/lib/spring-web-5.2.9.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:D\:\\eclipse-workspace\\gk\\JavaWeb02DemoFormTag\\WebContent\\WEB-INF\\lib\\spring-web-5.2.9.RELEASE.jar=WEB-INF/lib/spring-web-5.2.9.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:D\:\\eclipse-workspace\\gk\\JavaWeb02DemoFormTag\\WebContent\\WEB-INF\\lib\\spring-web-5.2.9.RELEASE-sources.jar=WEB-INF/lib/spring-web-5.2.9.RELEASE-sources.jar
+org.eclipse.jst.jee.server\:/binary\:D\:\\eclipse-workspace\\spring-day04\\JavaWeb02DemoFormTag\\WebContent\\WEB-INF\\lib\\spring-web-5.2.9.RELEASE-sources.jar=WEB-INF/lib/spring-web-5.2.9.RELEASE-sources.jar

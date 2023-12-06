@@ -1,0 +1,38 @@
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+	
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+
+   <p>
+        <a href="/FinalTermProject/home">Back to patient list</a>
+    </p>
+
+    <form action="${pageContext.request.contextPath}/add_patient_action" method="POST" modelAttribute="patient">
+        <fieldset>
+            <legend>Patient information</legend>
+            <table>
+                <tr>
+                    <td>Name: </td>
+                    <td><input type="text" name="name" id="name"></td>
+                </tr>
+                <tr>
+                    <td>Hospital Fee: </td>
+                    <td><input type="text" name="hospitalFee" id="price"></td>
+                </tr>               
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Create patient"></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>

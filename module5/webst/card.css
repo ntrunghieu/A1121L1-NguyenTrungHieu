@@ -6,7 +6,7 @@ body{
     align-items: center ;
     justify-content: space-around;
     min-height: 100vh;
-    background: #34aff3;
+    /*background: #34aff3;*/
 
 }
 img{
@@ -15,8 +15,8 @@ img{
     display: block;
 }
 .ui-card{
-    width: 350px;
-    background: radial-gradient(#c5c9c9 50%, #c5c9c9 100%);
+    width: 300px;
+    /*background: radial-gradient(#c5c9c9 50%, #c5c9c9 100%);*/
     overflow: hidden;
     position: relative;
 
@@ -28,16 +28,16 @@ img{
 }
 .ui-card:hover img{
     transform: scale(1.1) translateY(-20px);
-    opacity: 0.3;
+    /*opacity: 0.3;*/
 }
 .description{
     position: absolute;
     left: 0;
-    bottom: 0px;
+    bottom: 250px;
     width: 100%;
     padding: 15px;
     text-align: center;
-    color: #0e0d0d;
+    color: #ecebeb;
     font-size: 15px;
 }
 .description h4{
@@ -85,4 +85,83 @@ div#body div.ui-card div.card-body div.bnt-function button{
 }
 div#body div.ui-card div.card-body div.bnt-function{
     margin-left: 50px;
+}
+div#body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px;
+}
+div#body div.wrap{
+    padding: 15px;
+    box-shadow: 10px 10px 50px grey;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Tangerine=Poppins: 100,200,300,400,500,600,700');
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /*background: #333;*/
+    font-family: 'Poppins', sans-serif;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+ul li {
+    position: relative;
+    list-style: none;
+    width: 16px;
+    height: 16px;
+    background: #777777;
+    margin: 0 20px;border-radius: 50%;
+    transition: 0.5s;
+    cursor: pointer;
+
+}
+/*ul li:hover{*/
+/*    background: #86ff3b;*/
+/*    box-shadow: 0 0 0 4px #333,*/
+/*                0 0 0 6px #86ff3b;*/
+/*}*/
+ul li .content{
+    position: absolute;
+    bottom: 55px;
+    width: 210px;
+    background: #2c7f53;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    visibility: hidden;
+    opacity: 1;
+    transition: 0.5s;
+    transform: translateX(-50%) translateY(-50%);
+}
+ul li .content:before{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #2c7f53;
+    bottom: -15px;
+    left: 100px;
+    transform: rotate(45deg);
+
+}
+ul li:hover .content{
+    visibility: visible;
+    opacity: 344;
+    transform: translateX(-50%) translateY(0%);
+}
+ul li .content h2{
+    margin: 0;
+    padding: 0;
+}
+ul li .content ul{
+    display: block;
 }

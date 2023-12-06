@@ -1,0 +1,83 @@
+<div class="container">
+  <form [formGroup]="employeeForm" *ngIf="employeeForm" (ngSubmit)="editEmployee()" class="mb-5">
+    <div class="ml-2">
+      <div>
+        <label for="file"><img ngbTooltip="Chọn hình đại diện" placement="right" tooltipClass="custom-tooltip" class="fa-paper-plane" width="20%"
+                               [src]="oldAvatarLink"
+                               alt="employee-avatar">
+        </label>
+        <div class="text-center">
+          <input type="file" name="file" id="file" class="inputFile" (change)="getAvatar($event)"/>
+        </div>
+      </div>
+
+      <div class="h4 d-flex justify-content-center">
+        <h4 style="color: #270082">Cập nhật thông tin nhân viên</h4>
+      </div>
+
+      <div class="input-group">
+        <label for="name">Họ và tên: <span class="text-danger">(*)</span></label>
+        <input id="name" type="text" formControlName="employeeName">
+        <div>
+          <small class="text-danger"
+             *ngIf="employeeForm.get('employeeName').hasError('maxlength') && employeeForm.get('employeeName')?.touched">
+            Họ và tên chỉ chứa tối đa 50 kí tự</small>
+          <small class="text-danger"
+             *ngIf="employeeForm.get('employeeName').hasError('required') && employeeForm.get('employeeName')?.touched">
+            Họ và tên không được để trống</small>
+          <small class="text-danger"
+             *ngIf="employeeForm.get('employeeName').hasError('pattern') && employeeForm.get('employeeName')?.touched">
+            Họ và tên chưa đúng định dạng in hoa kí tự đầu - Ví dụ: Nguyễn Văn A</small>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="address">Địa chỉ: </label>
+        <input id="address" type="text" formControlName="employeeAddress">
+        <div>
+          <small class="text-danger"
+             *ngIf="employeeForm.get('employeeAddress').hasError('maxlength') && employeeForm.get('employeeAddress')?.touched">
+            Địa chỉ chứa tối đa 50 kí tự</small>
+        </div>
+      </div>
+      <div class="input-group">
+        <label class="title" style="">Giới tính: </label>
+        <div class="child">
+          <input type="radio" id="male" formControlName="employeeGender" value="Nam">
+          <label for="male">Nam</label>
+          <input class="ml-4" type="radio" formControlName="employeeGender" id="female" value="Nữ">
+          <label for="female">Nữ</label>
+          <input class="ml-4" type="radio" formControlName="employeeGender" id="others" value="Khác">
+          <label for="others">Khác</label>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="phone">Số điện thoại: </label>
+        <input id="phone" type="text" formControlName="employeePhone">
+        <div>
+          <small class="text-danger"
+             *ngIf="employeeForm.get('employeePhone').hasError('pattern') && employeeForm.get('employeePhone')?.touched">
+            Số điện thoại chưa đúng định dạng 03x hoặc 05x hoặc 07x hoặc 08x hoặc 09x</small>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="birthday">Ngày sinh: </label>
+        <input id="birthday" type="date" formControlName="employeeDateOfBirth">
+        <div>
+          <small class="text-danger"
+             *ngIf="employeeForm.get('employeeDateOfBirth').hasError('pattern') && employeeForm.get('employeeName')?.touched">
+            Ngày sinh phải đúng định dạng năm-tháng-ngày</small>
+          <small class="text-danger"
+             *ngIf="employeeForm.get('employeeDateOfBirth').hasError('invalidAge') && employeeForm.get('employeeDateOfBirth')?.touched">
+            Tuổi phải lớn hơn 18</small>
+        </div>
+      </div>
+
+      <div class=" button__container d-flex justify-content-between mt-5">
+        <button type="button" class="bt btn__cancel" [routerLink]="['/employee/detail/',employee.employeeId]">Quay về</button>
+        <button type="submit" class="bt btn__primary" [disabled]="employeeForm.invalid">Cập nhật</button>
+        <button type="button" class="bt btn__delete" routerLink="">Đổi mật khẩu</button>
+      </div>
+    </div>
+  </form>
+</div>

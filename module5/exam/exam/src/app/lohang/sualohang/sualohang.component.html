@@ -1,0 +1,103 @@
+
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 mr-auto">
+        <h3 style="color: #cbbe73;
+  font-style: normal;font-family: Playfair Display; font-size: 24px; line-height: 36px" class="mb-3">FURAMA TỰ HÀO LÀ KHU NGHĨ DƯỠNG ẨM THỰC VIỆT NAM</h3>
+        <p>Hướng ra bãi biển Đà Nẵng trải dài cát trắng, Furama Resort Đà Nẵng là cửa ngõ đến với 3 di sản văn hoá thế giới: Hội An (20 phút), Mỹ Sơn (90 phút) và Huế (2 tiếng. 196 phòng hạng sang</p>
+        <p> cùng với 70 căn biệt thự từ hai đến bốn phòng ngủ có hồ bơi riêng đều được trang trí trang nhã, theo phong cách thiết kế truyền thống của Việt Nam và kiến trúc thuộc địa của Pháp, </p>
+        <p>biến Furama thành khu nghỉ dưỡng danh giá nhất tại Việt Nam – vinh dự được đón tiếp nhiều người nổi tiếng, giới hoàng gia, chính khách, ngôi sao điện ảnh và các nhà lãnh đạo kinh doanh quốc tế.<a href="#">info@mywebsite.com</a></p>
+
+      </div>
+
+      <!--validate so luong-->
+      <!--      <div *ngIf="!numVal.valid && (numVal.dirty ||numVal.touched)">-->
+      <!--        <div *ngIf="numVal.errors.gte">-->
+      <!--          The number should be greater than-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <!--      myForm = new FormGroup({-->
+      <!--      numVal: new FormControl('', [gte]),-->
+      <!--      })-->
+
+
+      <div class="col-md-6">
+        <div class="box">
+          <h3 class="heading">How Can We Help?</h3>
+          <form [formGroup]="suaForm" (ngSubmit)="submit()" class="mb-5" method="post" id="contactForm" name="contactForm">
+            <div class="row">
+              <div hidden class="col-md-6 form-group">
+                <label for="id" class="col-form-label">ID <span style="color: red">*</span> </label>
+                <input type="text" formControlName="id" class="form-control" name="id" id="id" placeholder="id">
+              </div>
+              <div class="col-md-3 form-group">
+                <label for="maLH" class="col-form-label">Ma LH<span style="color: red">*</span> </label>
+                <input type="text" formControlName="maBA" class="form-control" name="maLH" id="maLH" placeholder="Mã Lô hàng">
+                <div *ngIf="!suaForm.get('maLH')?.valid && suaForm.get('maLH').touched">
+                  <p *ngIf="suaForm.get('maLH').errors.required" class="text-danger">Nhap mã bệnh án</p>
+                  <p *ngIf="suaForm.get('maLH').errors.minLength" class="text-danger">Nhập không đúng định dạng LH-XXXX (X là số)</p>
+                </div>
+              </div>
+              <div class="col-md-3 form-group">
+                <div class="col-md-3 form-group">
+                  <label for="sanpham" class="col-form-label">San pham: </label>
+                  <select [compareWith]="compareObjects" class="custom-select" formControlName="sanpham" id="sanpham" name="sanpham">
+                    <option selected>Choose...</option>
+                    <option  *ngFor="let sp of sanPhamList" [ngValue]="sp" selected>{{sp.ten}}</option>
+                  </select>
+                  <div *ngIf="!suaForm.get('sanpham')?.valid && suaForm.get('sanpham').touched">
+                    <p *ngIf="suaForm.get('sanpham').errors.required" class="text-danger">Chua nhap lo hang</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="ngayNhap" class="col-form-label">Ngày nhập <span style="color: red">*</span> </label>
+                <input type="date" formControlName="ngayNhap" class="form-control" name="ngayNhap" id="ngayNhap" placeholder="10/01/2022" >
+                <div *ngIf="!suaForm.get('ngayNhap')?.valid && suaForm.get('ngayNhap').touched">
+                  <p *ngIf="suaForm.get('ngayNhap').errors.required" class="text-danger">Chua chọn ngày</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="nsx" class="col-form-label">NSX <span style="color: red">*</span> </label>
+                <input type="date" formControlName="nsx" class="form-control" name="nsx" id="nsx" placeholder="10/01/2022" >
+                <div *ngIf="!suaForm.get('nsx')?.valid && suaForm.get('nsx').touched">
+                  <p *ngIf="suaForm.get('nsx').errors.required" class="text-danger">Chua chọn ngày</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="hsd" class="col-form-label">HSD<span style="color: red">*</span> </label>
+                <input type="date" formControlName="hsd" class="form-control" name="hsd" id="hsd" placeholder="10/01/2022" >
+                <div *ngIf="!suaForm.get('hsd')?.valid && suaForm.get('hsd').touched">
+                  <p *ngIf="suaForm.get('hsd').errors.required" class="text-danger">Chua chọn ngày</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row d-flex">
+              <div style="margin-top: 100px; margin-left: 250px; width: 40%; display: flex; " class="col-md-12 middle">
+                <button type="submit" class="rounded-0 py-2 px-4 btnHover btnHover1" >Gui</button>
+                <!--        <a href="" class="btnHover btnHover2">Hover Me</a>-->
+                <a class="rounded-0 py-2 px-4 btnHover btnHover1" routerLink="">Quay lai</a>
+              </div>
+              <!--              <div style="margin-top: 558px; margin-left: 150px; width: 30%; display: flex; " class="col-md-12 middle">-->
+              <!--                <a class="rounded-0 py-2 px-4 btnHover btnHover1" routerLink="">Quay lai</a>-->
+              <!--              </div>-->
+            </div>
+          </form>
+
+          <div id="form-message-warning mt-4"></div>
+          <div id="form-message-success">
+            Your message was sent, thank you!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

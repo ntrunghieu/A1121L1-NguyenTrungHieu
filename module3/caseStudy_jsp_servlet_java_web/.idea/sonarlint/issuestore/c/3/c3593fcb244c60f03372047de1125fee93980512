@@ -1,0 +1,14 @@
+
+P
+java:S1161":Add the "@Override" annotation above this method signature(‹¨¯¿
+S
+java:S2441'"=Make "Account" serializable or don't store it in the session.(¡ÎÉÂ
+i
+java:S19891"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ÉŒåÍ
+|
+java:S19896"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(Ñ“¬ûÿÿÿÿ
+U
+java:S1161;":Add the "@Override" annotation above this method signature(Ïû©Öûÿÿÿÿ
+V	java:S125<"<This block of commented-out lines of code should be removed.(×†õ©ùÿÿÿÿ
+|
+java:S1989F"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ÜÕˆêøÿÿÿÿ

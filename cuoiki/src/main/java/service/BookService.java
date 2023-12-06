@@ -9,7 +9,7 @@ import repository.IBookRepository;
 import java.util.List;
 @Service
 public class BookService implements IBookService{
-    @Autowired private IBookRepository bookRepository;
+    @Autowired private IBookRepository bookRepository;//khoi tao doi tuong khi dung toi
 
     @Override
     public List<Book> selectAllBook() {

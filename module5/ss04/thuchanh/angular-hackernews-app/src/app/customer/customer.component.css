@@ -1,0 +1,89 @@
+body{
+  background: #e5e3e3;
+  font-family: sans-serif Calibri;
+}
+div.all .my-custom-scrollbar {
+  position: relative;
+  height: 300px;
+  overflow: auto;
+  width: 87%;
+
+}
+div.all .table-wrapper-scroll-y {
+  display: block;
+}
+div.all .container{
+
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 50px grey;
+}
+div.all .container .search{
+  display: flex;
+  position: sticky;
+  padding: 16px;
+  top: 0;
+  background: #ffffff;
+  width: 100%;
+}
+div.all table thead tr{
+  position: sticky;
+  top: 66px;
+  padding: 13px;
+}
+div.all .container .search div{
+  margin-left: 19px;
+}
+div.all .container .search div input{
+  border-radius: 8px;
+}
+
+div.all{
+  width: 85%;
+  /*border: 1px solid black;*/
+  float: right;
+  margin-top: 5%;
+  margin-right: 3%;
+}
+div.all .info-search{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*css btn action*/
+div.all div.container table.table tbody tr td button{
+  background: #270082;
+  color: white;
+  font-weight: bold;
+}
+
+/*css btn search*/
+#search-box{
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 30px;
+}
+#search-box #search-text{
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 15px;
+  width: 0;
+  padding: 0;
+  transition: all 0.25s ease-in-out;
+}
+#search-box:hover #search-text, #search-box #search-text:valid{
+  width: 200px;
+  padding: 10px 0 10px 15px;
+
+}
+#search-box #search-btn{
+  background: #fff;
+  cursor: pointer;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 15px;
+}

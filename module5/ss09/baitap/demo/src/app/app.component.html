@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="title">Thêm Mới Khách Hàng</div>
+  <form class="col-md-12" >
+    <div class="user-details">
+      <div hidden class="input-box form-field" >
+        <input name="id" id="id" type="text" class="form-input" placeholder=" ">
+        <label for="id" class="form-label">id</label>
+      </div>
+      <div class="input-box form-field">
+        <input name="code" id="code" type="text" class="form-input" placeholder=" ">
+        <label for="code" class="form-label">Mã khách hàng <span style="color: red">(*)</span></label>
+      </div>
+      <div class="input-box form-field">
+        <input name="name" id="name" type="text" class="form-input" placeholder=" ">
+        <label for="name" class="form-label">Họ và tên <span style="color: red">(*)</span></label>
+      </div>
+      <div class="input-box form-field">
+        <select style="z-index: 100" id="type" class="form-input">
+          <option value="Sỉ">Sỉ</option>
+          <option value="Lẻ"> Lẻ</option>
+          <option value="Nhà cung cấp">Nhà cung cấp</option>
+        </select>
+        <label for="type" class="form-label">Loại khách <span style="color: red">(*)</span></label>
+      </div>
+      <div class="input-box form-field">
+        <input name="phone" id="phone" type="text" class="form-input" placeholder=" ">
+        <label for="phone" class="form-label">Điện thoại <span style="color: red">(*)</span></label>
+      </div>
+      <div class="input-box form-field">
+        <input name="email" id="email" type="text" class="form-input" placeholder=" ">
+        <label for="email" class="form-label">Email <span style="color: red">(*)</span></label>
+      </div>
+      <div class="input-box form-field">
+        <input name="address" id="address" type="text" class="form-input" placeholder=" ">
+        <label for="address" class="form-label">Địa chỉ <span style="color: red">(*)</span></label>
+        <button type="button" (click)="showSuccess()">Button</button>
+      </div>
+      <!--                <div class="input-box">-->
+      <!--                    <span class="details">Hình ảnh <sup style="color: red">(*)</sup></span>-->
+      <!--                    <input type="file" class="form-control">-->
+      <!--                </div>-->
+      <div class="container1" >
+        <div class="wrapper">
+          <div class="image">
+            <img [src]="url"  alt="">
+          </div>
+          <div class="content">
+            <div class="text">No file choosen, yet!</div>
+          </div>
+          <div class="file-name">File name here</div>
+        </div>
+        <input  (change)="onSelectFile($event)" type="file" id="default-btn" style="margin-left: 240px; margin-top: 90px" #fileInput>
+<!--        <button (click)="fileInput.click()" id="custom-btn">Choose a file</button>-->
+      </div>
+    </div>
+    <div class="button" style="margin-left: 230px; margin-top: 60px" >
+      <input class="btn__primary"  type="submit" value="Lưu">
+      <input class="btn__cancel" type="button" value="Hủy">
+    </div>
+  </form>
+</div>
+

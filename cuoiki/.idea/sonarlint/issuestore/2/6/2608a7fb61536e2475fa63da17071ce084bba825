@@ -1,0 +1,45 @@
+
+ejavascript:S3358"DExtract this nested ternary operation into an independent statement.(Ÿ‚êíúÿÿÿÿ
+^javascript:S1121	"BExtract the assignment of "global.bootstrap" from this expression.(¬·°Û
+wjavascript:S3776
+"VRefactor this function to reduce its Cognitive Complexity from 1540 to the 15 allowed.(«¹…øÿÿÿÿ
+hjavascript:S4138"LExpected a `for-of` loop instead of a `for` loop with this simple iteration.(Â¢Ë 
+Pjavascript:S1117„".'Util' is already declared in the upper scope.(Î†¦úÿÿÿÿ
+Qjavascript:S1135²"4Complete the task associated to this "TODO" comment.(¤‰€¹
+Qjavascript:S1117ò"/'Alert' is already declared in the upper scope.(ø…ÓÕÿÿÿÿÿ
+Qjavascript:S1117õ"/'Alert' is already declared in the upper scope.(ìùê£øÿÿÿÿ
+Mjavascript:S1117¤"0'Button' is already declared in the upper scope.(­È¢å
+Mjavascript:S1117§"0'Button' is already declared in the upper scope.(¸×
+Ojavascript:S1117ï"2'Carousel' is already declared in the upper scope.(³ºµÇ
+Tjavascript:S1117ò"2'Carousel' is already declared in the upper scope.(›ğ¹ÿÿÿÿÿ
+Njavascript:S1117Í"2'Collapse' is already declared in the upper scope.(ºûœ<
+Njavascript:S1117Ğ"2'Collapse' is already declared in the upper scope.(£Ä¾Q
+vjavascript:S1172Ÿ
+"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(ÉŠÀ
+Rjavascript:S930"6This function expects 1 argument, but 2 were provided.(Ò©‡Â
+Tjavascript:S1117à"2'Dropdown' is already declared in the upper scope.(ŠÙŒ‹úÿÿÿÿ
+Tjavascript:S1117ã"2'Dropdown' is already declared in the upper scope.(ÕÚœÿÿÿÿÿ
+Ljavascript:S1117±"/'Modal' is already declared in the upper scope.(ùÖ÷Ü
+Kjavascript:S1117´"/'Modal' is already declared in the upper scope.(æŠğ
+Qjavascript:S1117"/'event' is already declared in the upper scope.(˜«¿úÿÿÿÿ
+zjavascript:S4144·"XUpdate this function so that its implementation is not identical to the one on line 736.(Şíİˆÿÿÿÿÿ
+Ujavascript:S1117á"8'callbackRemove' is already declared in the upper scope.(†¾è
+Qjavascript:S1135õ"4Complete the task associated to this "TODO" comment.(°ùÅÅ
+ƒjavascript:S1172™"aRemove the unused function parameter "index" or rename it to "_index" to make intention explicit.(ñû¡æûÿÿÿÿ
+Tjavascript:S1117š"7'actualPadding' is already declared in the upper scope.(¡îĞ±
+Xjavascript:S1117›";'calculatedPadding' is already declared in the upper scope.(Çì‹Ô
+ƒjavascript:S1172Ÿ"aRemove the unused function parameter "index" or rename it to "_index" to make intention explicit.(Òš‘ºıÿÿÿÿ
+ƒjavascript:S1172®"aRemove the unused function parameter "index" or rename it to "_index" to make intention explicit.(ñû¡æûÿÿÿÿ
+Sjavascript:S1117¯"1'padding' is already declared in the upper scope.(–ş·úÿÿÿÿ
+~javascript:S1172µ"aRemove the unused function parameter "index" or rename it to "_index" to make intention explicit.(¢¾·Á
+Rjavascript:S930°"6This function expects 1 argument, but 2 were provided.(‰á®°
+Sjavascript:S1117†"1'Tooltip' is already declared in the upper scope.(ìçÔ•úÿÿÿÿ
+Njavascript:S1117‰"1'Tooltip' is already declared in the upper scope.(ŠáÒ¨
+Ojavascript:S1117³"2'complete' is already declared in the upper scope.(á½œ±
+Sjavascript:S1117‚"1'Popover' is already declared in the upper scope.(›©È¸ùÿÿÿÿ
+Njavascript:S1117‡"1'Popover' is already declared in the upper scope.(’¤°
+Pjavascript:S1117É"3'ScrollSpy' is already declared in the upper scope.(èèÇ
+Ujavascript:S1117Ì"3'ScrollSpy' is already declared in the upper scope.(æ¢ôŸıÿÿÿÿ
+Vjavascript:S1135ù"4Complete the task associated to this "TODO" comment.(¬Šºøÿÿÿÿ
+Ojavascript:S1117ù"-'Tab' is already declared in the upper scope.(ïƒï‚ÿÿÿÿÿ
+Jjavascript:S1117ü"-'Tab' is already declared in the upper scope.(İÑ­ù

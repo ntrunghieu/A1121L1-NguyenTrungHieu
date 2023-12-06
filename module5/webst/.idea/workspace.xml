@@ -20,35 +20,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e8cbe2-a15c-446a-83d2-750dec5925f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../caseStudy/myjs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer/myjs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/data/EmployeeDAO.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module2/src/PT/PT/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profile/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/DemoLogin/Be/src/main/java/com/codegym/demo/config/ApplicationSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/DemoLogin/Be/src/main/java/com/codegym/demo/entity/account/Auditing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/DemoLogin/Be/src/main/java/com/codegym/demo/repository/IAccountRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/DemoLogin/Be/src/main/java/com/codegym/demo/security/jwt/AuthApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/DemoLogin/Be/src/main/java/com/codegym/demo/security/jwt/AuthRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/DemoLogin/Be/src/main/java/com/codegym/demo/security/jwt/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/DemoLogin/Be/src/main/java/com/codegym/demo/security/jwt/JwtResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/DemoLogin/Be/src/main/java/com/codegym/demo/security/utils/JwtServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/DemoLogin/Be/src/main/java/com/codegym/demo/security/utils/JwtTokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/DemoLogin/Be/src/main/java/com/codegym/demo/security/utils/JwtTokenUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/DemoLogin/Be/src/main/java/com/codegym/demo/util/BeanUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/DemoLogin/Be/src/test/java/com/codegym/demo/AccountRepoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/Sprint2/Prototype/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/Sprint2/Prototype/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/Sprint2/bookstore/myjs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/Sprint2/details-product/details-product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/Sprint2/e-shop/e-shop.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/Sprint2/navbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/[A1121I1]_Prototype_HieuNT/inputeffect.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/[A1121I1]_Prototype_HieuNT/mycss.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/[A1121I1]_Prototype_HieuNT/stickytable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module6/[A1121I1]_Prototype_HieuNT/stickytable.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module2/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module2/src/PT/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/PT/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module2/src/PT/main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module2/src/out/production/module2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2/src/out/production/module2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module3/caseStudy_database/case_study.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../module3/caseStudy_database/case_study.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module3/caseStudy_jsp_servlet_java_web/src/main/java/controller/ServletCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module3/caseStudy_jsp_servlet_java_web/src/main/java/controller/ServletCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module4/caseStudy/src/main/java/casestudy/controller/CustomerControllerRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../module4/caseStudy/src/main/java/casestudy/controller/CustomerControllerRest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module4/ss05/thuchanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../module4/ss05/thuchanh/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module4/ss09/thuchanh/customer/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../module4/ss09/thuchanh/customer/customer-management" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-create/customer-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-create/customer-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-detail/customer-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-detail/customer-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-detail/customer-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-detail/customer-detail.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-update/customer-update.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-update/customer-update.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-update/customer-update.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer-update/customer-update.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer/customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer/customer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../caseStudy/dropdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudy/dropdown.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer/customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/customer-all/customer/customer.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/navigation/navigation.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/navigation/navigation.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/navigation/navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/navigation/navigation.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/service/customer-service.service.spec.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/service/customer-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/app/service/customer-service.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../caseStudyAngular/caseStudy/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss04/thuchanh/angular-hackernews-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ss04/thuchanh/angular-hackernews-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss04/thuchanh/angular-hackernews-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ss04/thuchanh/angular-hackernews-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss04/thuchanh/angular-hackernews-app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss04/thuchanh/angular-hackernews-app/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss04/thuchanh/angular-hackernews-app/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ss04/thuchanh/angular-hackernews-app/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss04/thuchanh/angular-hackernews-app/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss04/thuchanh/angular-hackernews-app/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss04/thuchanh/angular-hackernews-app/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ss04/thuchanh/angular-hackernews-app/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss06/thuchanh/angular-name-card/src/app/form-register/form-register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss06/thuchanh/angular-name-card/src/app/form-register/form-register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss09/baitap/product-management/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ss09/baitap/product-management/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss09/baitap/product-management/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss09/baitap/product-management/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss09/baitap/product-management/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ss09/baitap/product-management/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss09/baitap/product-management/src/app/todo-app/todo-app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/profile/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss09/baitap/product-management/src/app/todo-app/todo-app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss09/baitap/product-management/src/app/todo-app/todo-app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss09/baitap/product-management/src/app/todo-app/todo-app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss09/baitap/product-management/src/app/todo-service.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss09/baitap/product-management/src/app/todo.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backToTop.html" beforeDir="false" afterPath="$PROJECT_DIR$/backToTop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buutonHover.html" beforeDir="false" afterPath="$PROJECT_DIR$/buutonHover.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/card.css" beforeDir="false" afterPath="$PROJECT_DIR$/card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/card.html" beforeDir="false" afterPath="$PROJECT_DIR$/card.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dropdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/dropdown.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dropdown.html" beforeDir="false" afterPath="$PROJECT_DIR$/dropdown.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pureCSS.css" beforeDir="false" afterPath="$PROJECT_DIR$/pureCSS.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pureCSSToolTip.html" beforeDir="false" afterPath="$PROJECT_DIR$/pureCSSToolTip.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +90,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -77,6 +109,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -100,6 +133,29 @@
       <workItem from="1661943730390" duration="2652000" />
       <workItem from="1662279919243" duration="2598000" />
       <workItem from="1662696223886" duration="4781000" />
+      <workItem from="1663080660772" duration="2848000" />
+      <workItem from="1663125019917" duration="770000" />
+      <workItem from="1663126303982" duration="553000" />
+      <workItem from="1663129692421" duration="284000" />
+      <workItem from="1663131049457" duration="13292000" />
+      <workItem from="1663152872959" duration="2846000" />
+      <workItem from="1663168374350" duration="677000" />
+      <workItem from="1663218917094" duration="1255000" />
+      <workItem from="1663296709330" duration="19000" />
+      <workItem from="1663923043152" duration="668000" />
+      <workItem from="1663932077927" duration="30000" />
+      <workItem from="1664181576597" duration="1259000" />
+      <workItem from="1664189185499" duration="2326000" />
+      <workItem from="1664253165970" duration="1867000" />
+      <workItem from="1664683909735" duration="1253000" />
+      <workItem from="1664800585866" duration="712000" />
+      <workItem from="1664811963820" duration="1879000" />
+      <workItem from="1664855748937" duration="1323000" />
+      <workItem from="1668146569205" duration="687000" />
+      <workItem from="1668343638627" duration="8757000" />
+      <workItem from="1668745508275" duration="501000" />
+      <workItem from="1668746383193" duration="1229000" />
+      <workItem from="1668755458905" duration="1320000" />
     </task>
     <servers />
   </component>
@@ -119,9 +175,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="452" y="119" key="FileChooserDialogImpl" timestamp="1661947693250">
+    <state x="452" y="119" key="FileChooserDialogImpl" timestamp="1668358397741">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="452" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1661947693250" />
+    <state x="452" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1668358397741" />
   </component>
 </project>

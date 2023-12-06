@@ -1,0 +1,75 @@
+.btn-back {
+  width: 140px;
+  height: 45px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: rgb(29, 25, 145);
+  background-color: #e5eaff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 8px 15px rgba(120, 158, 233, 0.4);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+}
+
+.btn-back:hover {
+  background-color: #c7defa;
+  box-shadow: 0px 8px 15px rgba(81, 125, 214, 0.4);
+  color: rgb(23, 20, 58);
+}
+
+.btn-print {
+  width: 140px;
+  height: 45px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: rgb(221, 221, 221);
+  background-color: #0f57b3;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 8px 15px rgba(44, 81, 154, 0.4);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+}
+
+.btn-print:hover {
+  background-color: #0d4287;
+  box-shadow: 0px 8px 15px rgba(56, 95, 173, 0.57);
+  color: #fff;
+}
+
+.table {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 8px 15px rgba(44, 81, 154, 0.4);
+}
+
+.table-total {
+  height: 250px;
+}
+
+.table-detail {
+  height: 400px;
+}
+
+thead {
+  background-color: #270082;
+  color:  rgb(221, 221, 221);
+}
+
+* {
+  font-family: 'Segoe UI Variable', sans-serif;
+}
+
+h3 {
+  font-weight: 700;
+}
+

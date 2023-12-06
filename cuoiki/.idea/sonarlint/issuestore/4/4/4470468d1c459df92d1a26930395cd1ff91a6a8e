@@ -1,0 +1,7 @@
+
+pjavascript:S3776&"URefactor this function to reduce its Cognitive Complexity from 103 to the 15 allowed.(à›œB
+~javascript:S1172&"cRemove the unused function parameter "window" or rename it to "_window" to make intention explicit.(à›œB
+‚javascript:S1172&"gRemove the unused function parameter "document" or rename it to "_document" to make intention explicit.(à›œB
+\javascript:S2137&"ADo not use "undefined" to declare a parameter - use another name.(à›œB
+„javascript:S1172&"iRemove the unused function parameter "undefined" or rename it to "_undefined" to make intention explicit.(à›œB
+Rjavascript:S1117J"1'buttons' is already declared in the upper scope.(àâ¸ïûÿÿÿÿ

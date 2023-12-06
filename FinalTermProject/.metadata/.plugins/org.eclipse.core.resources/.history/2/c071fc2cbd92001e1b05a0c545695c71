@@ -1,0 +1,44 @@
+package springdemo.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import springdemo.model.bean.Fruit;
+
+public class FruitDAO implements IFruitDAO{
+	
+    private String jdbcURL = "jdbc:mysql://localhost:3306/fruitDB";
+    private String jdbcUsername = "root";
+    private String jdbcPassword = "Ntrunghieu27";
+
+	@Override
+	public void insertFruit(Fruit fruit) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Fruit selectFruit(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Fruit> selectAllFruits() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean deleteFruit(int id) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateUser(Fruit fruit) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

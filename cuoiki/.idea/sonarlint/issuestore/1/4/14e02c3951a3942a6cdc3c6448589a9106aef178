@@ -1,0 +1,214 @@
+
+Gjavascript:S1472;"+Make those call arguments start on line 58.(ÿ¨±Ö
+]javascript:S2137;"ADo not use "undefined" to declare a parameter - use another name.(ÿ¨±Ö
+vjavascript:S3776^"URefactor this function to reduce its Cognitive Complexity from 220 to the 15 allowed.(Ûşûüÿÿÿÿ
+Šjavascript:S1172É"mRemove the unused function parameter "bShowGlobal" or rename it to "_bShowGlobal" to make intention explicit.(´Ùœ±
+Tjavascript:S1481î"2Remove the declaration of the unused 'j' variable.(Üº™ìúÿÿÿÿ
+Wjavascript:S1481î"5Remove the declaration of the unused 'jLen' variable.(Üº™ìúÿÿÿÿ
+Tjavascript:S1481î"2Remove the declaration of the unused 'k' variable.(Üº™ìúÿÿÿÿ
+Wjavascript:S1481î"5Remove the declaration of the unused 'kLen' variable.(Üº™ìúÿÿÿÿ
+{javascript:S1172Û"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(÷ŸµÀûÿÿÿÿ
+Mjavascript:S1117Û"+'i' is already declared in the upper scope.(÷ŸµÀûÿÿÿÿ
+Hjavascript:S1117	"+'i' is already declared in the upper scope.(Ò™ 
+Qjavascript:S1135©	"4Complete the task associated to this "TODO" comment.(œ½
+vjavascript:S1172À	"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(•ÿÌ
+Hjavascript:S1117À	"+'i' is already declared in the upper scope.(•ÿÌ
+fjavascript:S3358"DExtract this nested ternary operation into an independent statement.(²Ğ–ÿÿÿÿÿ
+]javascript:S1119£";Refactor the code to remove this label and the need for it.(º¿ûşÿÿÿÿ
+zjavascript:S1172ÿ"]Remove the unused function parameter "val" or rename it to "_val" to make intention explicit.(ÁÑšë
+yjavascript:S1172¥"]Remove the unused function parameter "val" or rename it to "_val" to make intention explicit.(–×ˆq
+fjavascript:S3358¸"DExtract this nested ternary operation into an independent statement.(ã’°Ùøÿÿÿÿ
+qjavascript:S3776Ñ"TRefactor this function to reduce its Cognitive Complexity from 36 to the 15 allowed.(®”·Å
+{javascript:S1172š"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(„Òäêûÿÿÿÿ
+qjavascript:S3776¿"TRefactor this function to reduce its Cognitive Complexity from 35 to the 15 allowed.(ÿƒì÷
+Wjavascript:S1481Å"5Remove the declaration of the unused 'cell' variable.(î­Ñşÿÿÿÿÿ
+vjavascript:S3776†"TRefactor this function to reduce its Cognitive Complexity from 40 to the 15 allowed.(â˜é¤şÿÿÿÿ
+Qjavascript:S1481ã"4Remove the declaration of the unused 'nTd' variable.(øÁ¼î
+Wjavascript:S1481ã":Remove the declaration of the unused 'sThisType' variable.(øÁ¼î
+{javascript:S1172‘"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(Ïôşÿÿÿÿ
+†javascript:S1172Ÿ"iRemove the unused function parameter "oSettings" or rename it to "_oSettings" to make intention explicit.(£â€­
+vjavascript:S3776‘"TRefactor this function to reduce its Cognitive Complexity from 58 to the 15 allowed.(Ş•¹¦ûÿÿÿÿ
+javascript:S1172€"_Remove the unused function parameter "type" or rename it to "_type" to make intention explicit.(ª­õÍùÿÿÿÿ
+vjavascript:S3776"TRefactor this function to reduce its Cognitive Complexity from 36 to the 15 allowed.(“ş­Âúÿÿÿÿ
+<javascript:S1186œ"Unexpected empty function.(ß¸Ï°ÿÿÿÿÿ
+Ojavascript:S1854ç"2Remove this useless assignment to variable "data".(“Õš
+Vjavascript:S1135Ã"4Complete the task associated to this "TODO" comment.(Ğëõúÿÿÿÿ
+qjavascript:S3776Ç"TRefactor this function to reduce its Cognitive Complexity from 22 to the 15 allowed.(•ÏÃæ
+qjavascript:S3776•"TRefactor this function to reduce its Cognitive Complexity from 40 to the 15 allowed.(œ¸”ê
+Tjavascript:S1481š"2Remove the declaration of the unused 'o' variable.(¬™“øÿÿÿÿ
+ajavascript:S3358¡"DExtract this nested ternary operation into an independent statement.(ß¢ù
+Njavascript:S1117¥",'td' is already declared in the upper scope.(İ‹¸íşÿÿÿÿ
+Kjavascript:S1117ª".'attr' is already declared in the upper scope.(À¹Œ
+vjavascript:S3776‚"TRefactor this function to reduce its Cognitive Complexity from 28 to the 15 allowed.(İñËŸÿÿÿÿÿ
+qjavascript:S3776ÿ"TRefactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.(ØÓÊ¡
+qjavascript:S3776Õ"TRefactor this function to reduce its Cognitive Complexity from 35 to the 15 allowed.(¢†µ©
+Rjavascript:S1481×"5Remove the declaration of the unused 'kLen' variable.(áÊ’¬
+qjavascript:S3776·"TRefactor this function to reduce its Cognitive Complexity from 37 to the 15 allowed.(Ç•ÿá
+Ojavascript:S1481Á"2Remove the declaration of the unused 'i' variable.(¶î¨Ã
+Rjavascript:S1481Á"5Remove the declaration of the unused 'iLen' variable.(¶î¨Ã
+Ojavascript:S1481Á"2Remove the declaration of the unused 'n' variable.(¶î¨Ã
+Wjavascript:S1481Æ":Remove the declaration of the unused 'iOpenRows' variable.(‡±İ 
+Tjavascript:S1854Æ"7Remove this useless assignment to variable "iOpenRows".(‡±İ 
+fjavascript:S3358Ó"DExtract this nested ternary operation into an independent statement.(û²»¾øÿÿÿÿ
+qjavascript:S3776ê"TRefactor this function to reduce its Cognitive Complexity from 48 to the 15 allowed.(™§‚Û
+Vjavascript:S1135”"4Complete the task associated to this "TODO" comment.( ¥¦Øøÿÿÿÿ
+@javascript:S2310°"Remove this assignment of "i".(ƒô¶üÿÿÿÿ
+Vjavascript:S1135»"4Complete the task associated to this "TODO" comment.(í¢ôÿÿÿÿÿ
+qjavascript:S3776†"TRefactor this function to reduce its Cognitive Complexity from 33 to the 15 allowed.(Õ¹Õ–
+Wjavascript:S1481Š"5Remove the declaration of the unused 'jLen' variable.(÷Ü²€øÿÿÿÿ
+Hjavascript:S1117Œ"+'i' is already declared in the upper scope.(îá™
+Hjavascript:S1117"+'k' is already declared in the upper scope.(–öË‰
+vjavascript:S3776ö"TRefactor this function to reduce its Cognitive Complexity from 32 to the 15 allowed.(şÁ»šúÿÿÿÿ
+zjavascript:S1172"]Remove the unused function parameter "key" or rename it to "_key" to make intention explicit.(Çí©Ù
+€javascript:S1172¼"cRemove the unused function parameter "thrown" or rename it to "_thrown" to make intention explicit.(åœÓó
+Mjavascript:S1117ä"+'i' is already declared in the upper scope.(ºÙü¦ûÿÿÿÿ
+qjavascript:S3776Ï "TRefactor this function to reduce its Cognitive Complexity from 20 to the 15 allowed.(ƒ¨¤ô
+Tjavascript:S1481å "2Remove the declaration of the unused 'n' variable.(î§¥‘ıÿÿÿÿ
+Qjavascript:S1854å "/Remove this useless assignment to variable "n".(î§¥‘ıÿÿÿÿ
+ajavascript:S3358ù "DExtract this nested ternary operation into an independent statement.(ç•¢¿
+{javascript:S1172†!"YRemove the unused function parameter "e" or rename it to "_e" to make intention explicit.(Ë£¬Îûÿÿÿÿ
+xjavascript:S1172—!"[Remove the unused function parameter "ev" or rename it to "_ev" to make intention explicit.(Ú±Ê·
+Qjavascript:S1135À!"4Complete the task associated to this "TODO" comment.(‘Éê
+njavascript:S4138”""LExpected a `for-of` loop instead of a `for` loop with this simple iteration.(îë•ãùÿÿÿÿ
+qjavascript:S3776Œ#"TRefactor this function to reduce its Cognitive Complexity from 41 to the 15 allowed.(¸ùÂ
+Xjavascript:S930%"7This function expects 3 arguments, but 4 were provided.(ë¹§Ïüÿÿÿÿ
+vjavascript:S1172ö%"YRemove the unused function parameter "e" or rename it to "_e" to make intention explicit.(°‰æ¡
+{javascript:S1172ü%"YRemove the unused function parameter "e" or rename it to "_e" to make intention explicit.(ˆ‹áßüÿÿÿÿ
+vjavascript:S3776’&"TRefactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.(Úîä¢øÿÿÿÿ
+Ojavascript:S1117˜&"2'settings' is already declared in the upper scope.(Ã­ãã
+Ojavascript:S1117¨&"2'settings' is already declared in the upper scope.(Êøä•
+qjavascript:S3776Ï&"TRefactor this function to reduce its Cognitive Complexity from 19 to the 15 allowed.(ªÛÀ
+qjavascript:S3776¸'"TRefactor this function to reduce its Cognitive Complexity from 20 to the 15 allowed.(á™Ãù
+vjavascript:S1172©("YRemove the unused function parameter "e" or rename it to "_e" to make intention explicit.(€úŞ™
+vjavascript:S3776Ö("TRefactor this function to reduce its Cognitive Complexity from 42 to the 15 allowed.(íüø—üÿÿÿÿ
+Cjavascript:S1110*"!Remove these useless parentheses.(ç•ş«ûÿÿÿÿ
+vjavascript:S3776ñ*"TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(ÈÕë×üÿÿÿÿ
+pjavascript:S3776˜+"TRefactor this function to reduce its Cognitive Complexity from 54 to the 15 allowed.(õ‰ó&
+Sjavascript:S1481§+"6Remove the declaration of the unused 'width' variable.(ŒÍ „
+Xjavascript:S1481§+";Remove the declaration of the unused 'outerWidth' variable.(ŒÍ „
+vjavascript:S3776à-"TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(±äŸ”ùÿÿÿÿ
+Qjavascript:S1481ã-"5Remove the declaration of the unused 'iLen' variable.(Ãê®S
+Yjavascript:S1481å-"7Remove the declaration of the unused 'aiOrig' variable.(ñÇÈÇùÿÿÿÿ
+Pjavascript:S1135¦."4Complete the task associated to this "TODO" comment.(ôÀƒ
+qjavascript:S3776¨."TRefactor this function to reduce its Cognitive Complexity from 64 to the 15 allowed.(ˆÛî‰
+Tjavascript:S1481«."2Remove the declaration of the unused 'j' variable.(Ø¼Óûşÿÿÿÿ
+Wjavascript:S1481«."5Remove the declaration of the unused 'jLen' variable.(Ø¼Óûşÿÿÿÿ
+Tjavascript:S1481«."2Remove the declaration of the unused 'k' variable.(Ø¼Óûşÿÿÿÿ
+Wjavascript:S1481«."5Remove the declaration of the unused 'kLen' variable.(Ø¼Óûşÿÿÿÿ
+Vjavascript:S1481¬.":Remove the declaration of the unused 'sDataType' variable.(°r
+Pjavascript:S1481¬."4Remove the declaration of the unused 'nTh' variable.(°r
+Wjavascript:S1481°.":Remove the declaration of the unused 'aoColumns' variable.(èû÷¶
+Tjavascript:S1854°."7Remove this useless assignment to variable "aoColumns".(èû÷¶
+Wjavascript:S1481±.":Remove the declaration of the unused 'aDataSort' variable.(‚¶Îç
+Rjavascript:S1481±."5Remove the declaration of the unused 'data' variable.(‚¶Îç
+Rjavascript:S1481±."5Remove the declaration of the unused 'iCol' variable.(‚¶Îç
+Sjavascript:S1481±."6Remove the declaration of the unused 'sType' variable.(‚¶Îç
+Sjavascript:S1481±."6Remove the declaration of the unused 'oSort' variable.(‚¶Îç
+Vjavascript:S1135¸."4Complete the task associated to this "TODO" comment.(Ü€Õäşÿÿÿÿ
+Mjavascript:S1117ì."+'k' is already declared in the upper scope.(ã€©ÿÿÿÿÿ
+fjavascript:S3358÷."DExtract this nested ternary operation into an independent statement.(¤ İûÿÿÿÿ
+ajavascript:S3358ÿ."DExtract this nested ternary operation into an independent statement.(ËÔ
+Hjavascript:S1117ˆ/"+'k' is already declared in the upper scope.(•ÄŞ„
+Ojavascript:S1481ˆ/"2Remove the declaration of the unused 'l' variable.(•ÄŞ„
+ajavascript:S3358œ/"DExtract this nested ternary operation into an independent statement.(ËÔ
+vjavascript:S3776¦/"TRefactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.(º“•Îøÿÿÿÿ
+vjavascript:S3776İ/"TRefactor this function to reduce its Cognitive Complexity from 25 to the 15 allowed.(©©ôéøÿÿÿÿ
+ajavascript:S3358ë/"DExtract this nested ternary operation into an independent statement.(æ°¦Ü
+vjavascript:S3776Ç1"TRefactor this function to reduce its Cognitive Complexity from 38 to the 15 allowed.(µ–ùğûÿÿÿÿ
+ƒjavascript:S1172Ç1"aRemove the unused function parameter "oInit" or rename it to "_oInit" to make intention explicit.(µ–ùğûÿÿÿÿ
+Qjavascript:S1135é1"4Complete the task associated to this "TODO" comment.(ĞÎä¼
+{javascript:S1172ö1"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(ÆûÂ’úÿÿÿÿ
+Mjavascript:S1117ö1"+'i' is already declared in the upper scope.(ÆûÂ’úÿÿÿÿ
+Ojavascript:S1117ö1"-'col' is already declared in the upper scope.(ÆûÂ’úÿÿÿÿ
+vjavascript:S1172î2"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(ñğÛú
+Vjavascript:S1135“3"4Complete the task associated to this "TODO" comment.(ÕéèÛùÿÿÿÿ
+vjavascript:S1172õ3"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(‹Úˆ
+vjavascript:S1172’5"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(³ıåü
+ujavascript:S1172¯5"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(ïÀÄ5
+qjavascript:S3776é6"TRefactor this function to reduce its Cognitive Complexity from 33 to the 15 allowed.(•ÿ¶Î
+Ljavascript:S1117¢8"/'scope' is already declared in the upper scope.(£…›
+fjavascript:S3358²8"DExtract this nested ternary operation into an independent statement.(º’Ñ˜ûÿÿÿÿ
+Qjavascript:S1135¾8"4Complete the task associated to this "TODO" comment.(İ¶Ô¸
+;javascript:S125Ä8"Remove this commented out code.(àèú“
+vjavascript:S3776ß8"TRefactor this function to reduce its Cognitive Complexity from 26 to the 15 allowed.(Ú‹ÑÏûÿÿÿÿ
+Ijavascript:S1117î8"-'src' is already declared in the upper scope.(‰øŒP
+Jjavascript:S1117î8".'name' is already declared in the upper scope.(‰øŒP
+Mjavascript:S1117ï8"+'i' is already declared in the upper scope.(¨™âöşÿÿÿÿ
+Ojavascript:S1117ï8"-'ien' is already declared in the upper scope.(¨™âöşÿÿÿÿ
+fjavascript:S33589"DExtract this nested ternary operation into an independent statement.(Â¨‘»üÿÿÿÿ
+fjavascript:S3358§9"DExtract this nested ternary operation into an independent statement.(¢Èõöıÿÿÿÿ
+vjavascript:S1172Ê9"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(øºıÉ
+{javascript:S1172Ğ9"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(ø÷¬¶øÿÿÿÿ
+€javascript:S1172ã:"cRemove the unused function parameter "action" or rename it to "_action" to make intention explicit.(©‚Ø
+fjavascript:S3358†<"DExtract this nested ternary operation into an independent statement.(ÕÃÎ‹ÿÿÿÿÿ
+vjavascript:S3776¯<"TRefactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.(áÿßùÿÿÿÿ
+qjavascript:S3776="TRefactor this function to reduce its Cognitive Complexity from 34 to the 15 allowed.(¼Ò×
+4javascript:S2814©="'i' is already defined.(œÑÁ
+tjavascript:S2392©="WConsider moving declaration of 'i' as it is referenced outside current binding context.(œÑÁ
+6javascript:S2814©="'ien' is already defined.(œÑÁ
+vjavascript:S2392©="YConsider moving declaration of 'ien' as it is referenced outside current binding context.(œÑÁ
+pjavascript:S3776Ó="TRefactor this function to reduce its Cognitive Complexity from 43 to the 15 allowed.(ÒÕ¬!
+Ojavascript:S1481Ø="2Remove the declaration of the unused 'i' variable.(™Ûœ
+Qjavascript:S1481Ø="4Remove the declaration of the unused 'ien' variable.(™Ûœ
+‰javascript:S1172è>"gRemove the unused function parameter "settings" or rename it to "_settings" to make intention explicit.(üüâ¥şÿÿÿÿ
+qjavascript:S3776ü>"TRefactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.(ÈìşÚ
+qjavascript:S3776é@"TRefactor this function to reduce its Cognitive Complexity from 28 to the 15 allowed.(­Á¹ß
+vjavascript:S1172ö@"YRemove the unused function parameter "e" or rename it to "_e" to make intention explicit.(  Ò÷
+vjavascript:S1172†A"YRemove the unused function parameter "e" or rename it to "_e" to make intention explicit.(¢ÃÆí
+zjavascript:S1172†A"]Remove the unused function parameter "idx" or rename it to "_idx" to make intention explicit.(¢ÃÆí
+zjavascript:S1172†A"]Remove the unused function parameter "vis" or rename it to "_vis" to make intention explicit.(¢ÃÆí
+{javascript:S1172™A"YRemove the unused function parameter "e" or rename it to "_e" to make intention explicit.(‰®–îıÿÿÿÿ
+javascript:S1172ÍA"_Remove the unused function parameter "show" or rename it to "_show" to make intention explicit.(Êò³™ıÿÿÿÿ
+}javascript:S1172„B"[Remove the unused function parameter "r1" or rename it to "_r1" to make intention explicit.(¬ŸÛÜÿÿÿÿÿ
+}javascript:S1172„B"[Remove the unused function parameter "r2" or rename it to "_r2" to make intention explicit.(¬ŸÛÜÿÿÿÿÿ
+vjavascript:S3776B"TRefactor this function to reduce its Cognitive Complexity from 43 to the 15 allowed.(äå„Äÿÿÿÿÿ
+javascript:S1172¨B"]Remove the unused function parameter "col" or rename it to "_col" to make intention explicit.(±íë–ùÿÿÿÿ
+Ojavascript:S1117¨B"-'idx' is already declared in the upper scope.(±íë–ùÿÿÿÿ
+Vjavascript:S1481óB"4Remove the declaration of the unused 'row' variable.(›Àåµıÿÿÿÿ
+‰javascript:S1172°C"gRemove the unused function parameter "selector" or rename it to "_selector" to make intention explicit.(ö›¯éÿÿÿÿÿ
+javascript:S1172°C"_Remove the unused function parameter "opts" or rename it to "_opts" to make intention explicit.(ö›¯éÿÿÿÿÿ
+„javascript:S1172¶C"gRemove the unused function parameter "selector" or rename it to "_selector" to make intention explicit.(Âå©²
+|javascript:S1172¶C"_Remove the unused function parameter "opts" or rename it to "_opts" to make intention explicit.(Âå©²
+{javascript:S1172ÇC"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(ã“·àøÿÿÿÿ
+{javascript:S1172ÇC"YRemove the unused function parameter "j" or rename it to "_j" to make intention explicit.(ã“·àøÿÿÿÿ
+{javascript:S1172ÏC"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(ã“·àøÿÿÿÿ
+{javascript:S1172ÏC"YRemove the unused function parameter "j" or rename it to "_j" to make intention explicit.(ã“·àøÿÿÿÿ
+Tjavascript:S1117íC"2'settings' is already declared in the upper scope.(úÛÒ‡úÿÿÿÿ
+vjavascript:S3776›D"TRefactor this function to reduce its Cognitive Complexity from 39 to the 15 allowed.(›ç¯±ÿÿÿÿÿ
+{javascript:S1172ÒD"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(œ‹ÓÆûÿÿÿÿ
+Mjavascript:S1117ÒD"+'i' is already declared in the upper scope.(œ‹ÓÆûÿÿÿÿ
+‰javascript:S1172—E"gRemove the unused function parameter "settings" or rename it to "_settings" to make intention explicit.(»æ”üùÿÿÿÿ
+{javascript:S1172éF"YRemove the unused function parameter "j" or rename it to "_j" to make intention explicit.(é·’ ûÿÿÿÿ
+vjavascript:S1172ŠH"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(Â­½Æ
+{javascript:S1172İH"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(³ë‡øÿÿÿÿ
+qjavascript:S3776ˆI"TRefactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.(ÕÚºš
+Ojavascript:S1481–I"2Remove the declaration of the unused 'i' variable.(™Ûœ
+Mjavascript:S1117ÙI"+'i' is already declared in the upper scope.(è†Š±ûÿÿÿÿ
+vjavascript:S1172éI"YRemove the unused function parameter "i" or rename it to "_i" to make intention explicit.(¡€Á‰
+‰javascript:S1172îI"gRemove the unused function parameter "settings" or rename it to "_settings" to make intention explicit.(ğÇ›Öøÿÿÿÿ
+Vjavascript:S1135µe"4Complete the task associated to this "TODO" comment.(°Êöşÿÿÿÿ
+Qjavascript:S1135şg"4Complete the task associated to this "TODO" comment.(ÃÁ„
+Tjavascript:S1481£q"2Remove the declaration of the unused 'i' variable.(ÍĞÇ³øÿÿÿÿ
+{javascript:S1172Àq"_Remove the unused function parameter "page" or rename it to "_page" to make intention explicit.(½ÁÃ7
+}javascript:S1172Àq"aRemove the unused function parameter "pages" or rename it to "_pages" to make intention explicit.(½ÁÃ7
+javascript:S1172Äq"_Remove the unused function parameter "page" or rename it to "_page" to make intention explicit.(úäŒÕøÿÿÿÿ
+ƒjavascript:S1172Äq"aRemove the unused function parameter "pages" or rename it to "_pages" to make intention explicit.(úäŒÕøÿÿÿÿ
+vjavascript:S3776âq"TRefactor this function to reduce its Cognitive Complexity from 50 to the 15 allowed.(Ñˆ¦øÿÿÿÿ
+Sjavascript:S1117èq"1'buttons' is already declared in the upper scope.(àâ¸ïûÿÿÿÿ
+„javascript:S1172ér"gRemove the unused function parameter "settings" or rename it to "_settings" to make intention explicit.(áÉ—ı
+„javascript:S1172‹s"gRemove the unused function parameter "settings" or rename it to "_settings" to make intention explicit.(áÉ—ı
+ajavascript:S3358 s"DExtract this nested ternary operation into an independent statement.(ø›Á
+ajavascript:S3358ªs"DExtract this nested ternary operation into an independent statement.(ø›Á
+fjavascript:S3358ÿs"DExtract this nested ternary operation into an independent statement.(ÒŸñ¿üÿÿÿÿ
+ajavascript:S3358Št"DExtract this nested ternary operation into an independent statement.(ãÇãÏ
+fjavascript:S3358Œt"DExtract this nested ternary operation into an independent statement.(Å´ô™şÿÿÿÿ
+fjavascript:S3358”t"DExtract this nested ternary operation into an independent statement.(ŠÎÈãøÿÿÿÿ
+fjavascript:S3358˜t"DExtract this nested ternary operation into an independent statement.(­©À†øÿÿÿÿ
+{javascript:S1172©t"YRemove the unused function parameter "e" or rename it to "_e" to make intention explicit.(À±“Ğÿÿÿÿÿ
+‡javascript:S1172©t"eRemove the unused function parameter "sorting" or rename it to "_sorting" to make intention explicit.(À±“Ğÿÿÿÿÿ
+fjavascript:S3358·t"DExtract this nested ternary operation into an independent statement.(ßÓƒ×şÿÿÿÿ
+{javascript:S1172Èt"YRemove the unused function parameter "e" or rename it to "_e" to make intention explicit.(À±“Ğÿÿÿÿÿ
+‡javascript:S1172Èt"eRemove the unused function parameter "sorting" or rename it to "_sorting" to make intention explicit.(À±“Ğÿÿÿÿÿ
+fjavascript:S3358Òt"DExtract this nested ternary operation into an independent statement.(ßÓƒ×şÿÿÿÿ
+fjavascript:S3358át"DExtract this nested ternary operation into an independent statement.(ÕğÏ¿ùÿÿÿÿ
+Ljavascript:S1186ºv"*Unexpected empty method '_fnCalculateEnd'.(¶şÃÒÿÿÿÿÿ

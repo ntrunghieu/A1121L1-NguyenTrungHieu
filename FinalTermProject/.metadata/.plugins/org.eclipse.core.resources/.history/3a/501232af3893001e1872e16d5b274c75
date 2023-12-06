@@ -1,0 +1,5 @@
+package springdemo.model.bean;
+
+public class Patient {
+
+}

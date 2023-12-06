@@ -30,7 +30,7 @@ public class BookRepository implements IBookRepository{
     public List<Book> selectAllBook() {
         Session currentSession = sessionFactory.getCurrentSession();
         //create a query
-        Query<Book> theQuery=currentSession.createQuery("from Book ",Book.class);
+        Query<Book> theQuery=currentSession.createQuery("from Book ",Book.class);//lay lisst
         // execute query and get result list
         List<Book> bookList = theQuery.getResultList();
         for (Book book: bookList) {
@@ -41,7 +41,7 @@ public class BookRepository implements IBookRepository{
 
     @Transactional
     @Override
-    public List<Book> getBooks(String kw) {
+    public List<Book> getBooks(String kw) {//tim kiem theo ten
         Session currentSession = this.sessionFactory.getCurrentSession();
         CriteriaBuilder builder = currentSession.getCriteriaBuilder();
         CriteriaQuery<Book> query = builder.createQuery(Book.class);
@@ -50,7 +50,7 @@ public class BookRepository implements IBookRepository{
 
         if (!kw.isEmpty() && kw != null){
             Predicate p = builder.like(root.get("bookName").as(String.class),
-                    String.format("%%%s%%",kw));
+                    String.format("%%%s%%",kw));//tuong doi
 
             query = query.where(p);
         }
@@ -103,7 +103,7 @@ public class BookRepository implements IBookRepository{
     @Override
     public void updateBook(Book book) {
         Session session = sessionFactory.getCurrentSession();
-        session.update(book);
+        session.update(book);//update
 
 //        Query query = session.createQuery("from Book WHERE book_id = :bookId");
 //        query.setLong("bookId", book.getBookId());

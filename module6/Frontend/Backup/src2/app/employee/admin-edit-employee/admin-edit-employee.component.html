@@ -1,0 +1,95 @@
+<link rel="stylesheet" href="admin-edit-employee.component.css">
+<div class="container mt-5">
+  <h1 class="font-text-footer" style="text-align: -webkit-center;">Edit Employee</h1>
+  <form [formGroup]="formEdit" (ngSubmit)="onSubmit()">
+    <div class="content-create">
+      <div class="content-left">
+        <img src="" alt="" class="content-image">
+      </div>
+      <div class="content-right">
+        <div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Employee Code</span>
+            <input type="text" class="form-control me-2" placeholder="employeeCode" formControlName="employeeCode">
+          </div>
+          <span class="text-danger mb-0 pb-0"
+                *ngIf="formEdit.get('employeeCode').invalid && (formEdit.get('employeeCode').touched||formEdit.get('employeeCode').dirty)">
+           Employee code malformed !! Must have format is "MNV-XXX"
+        </span>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Employee Name</span>
+            <input type="text" class="form-control me-2" placeholder="employeeName" formControlName="employeeName">
+          </div>
+          <span class="text-danger mb-0 pb-0"
+                *ngIf="formEdit.get('employeeName').invalid && (formEdit.get('employeeName').touched||formEdit.get('employeeName').dirty)">
+          Material Name can't required and length from 5 to 25 characters!
+        </span>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Employee Gender: </span>
+            <div class="child">
+              <input type="radio" id=" male" formControlName="employeeGender" value="Nam">
+              <label for=" male">Nam</label>
+              <input class="ml-4" type="radio" formControlName="employeeGender" id=" female" value="Nữ">
+              <label for=" female">Nữ</label>
+              <input class="ml-4" type="radio" formControlName="employeeGender" id=" others" value="Khác">
+              <label for=" others">Khác</label>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Employee Date Of Birth</span>
+            <input type="date" class="form-control me-2" placeholder="employeeDateOfBirth" formControlName="employeeDateOfBirth">
+          </div>
+          <span class="text-danger mb-0 pb-0"
+                *ngIf="formEdit.get('employeeDateOfBirth').invalid && (formEdit.get('employeeDateOfBirth').touched||formEdit.get('employeeDateOfBirth').dirty)">
+          Employee date of birth can't required!
+        </span>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Employee address</span>
+            <input type="number" class="form-control me-2" placeholder="employeeAddress" formControlName="employeeAddress">
+          </div>
+          <span class="text-danger mb-0 pb-0"
+                *ngIf="formEdit.get('employeeAddress').invalid && (formEdit.get('employeeAddress').touched||formEdit.get('employeeAddress').dirty)">
+          Employee address can't required!
+        </span>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Employee phone</span>
+            <input type="date" class="form-control me-2" placeholder="employeePhone" formControlName="employeePhone">
+          </div>
+          <span class="text-danger mb-0 pb-0"
+                *ngIf="formEdit.get('employeePhone').invalid && (formEdit.get('employeePhone').touched||formEdit.get('employeePhone').dirty)">
+          Material Expiridate can't required!
+        </span>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Employee salary</span>
+            <input type="text" class="form-control me-2" placeholder="employeeSalary" formControlName="employeeSalary">
+          </div>
+          <span class="text-danger mb-0 pb-0"
+                *ngIf="formEdit.get('employeeSalary').invalid && (formEdit.get('employeeSalary').touched||formEdit.get('employeeSalary').dirty)">
+          Employee Salary can't required!
+        </span>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Position</span>
+            <select class="me-2" [compareWith]="compareFn" formControlName="employeePositionId" >
+              <option selected disabled value="">Chọn</option>
+              <option *ngFor="let data of positions" [ngValue]="data">{{data?.positionName}}
+              </option>
+            </select>
+          </div>
+          <span class="text-danger mb-0 pb-0"
+                *ngIf="formEdit.get('employeePositionId').invalid && (formEdit.get('employeePositionId').touched||formEdit.get('employeePositionId').dirty)">
+          Position can't required!
+        </span>
+          <br>
+          <div class="input-group d-flex align-content-center justify-content-center">
+            <button type="submit" class="btn__primary"  >Edit</button>
+            <button type="button" class="bt btn__cancel"><a style="text-decoration: none"
+                                                            class="text-light"
+                                                            routerLink='/employee/list'>Cancle</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>

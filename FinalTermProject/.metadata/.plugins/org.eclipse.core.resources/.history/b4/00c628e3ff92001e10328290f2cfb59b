@@ -1,0 +1,15 @@
+package springdemo.model.service;
+
+import java.util.List;
+
+import springdemo.model.bean.Fruit;
+
+public class FruitServiceImpl implements FruitService{
+
+	@Override
+	public List<Fruit> getListFruits() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

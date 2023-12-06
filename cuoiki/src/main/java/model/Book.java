@@ -2,12 +2,12 @@ package model;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "book")
+@Entity//khai bao doi tuong
+@Table(name = "book")// de mapping data
 public class Book {
     @Id
     @Column(name="book_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//tang
     private Long bookId;
 
     @Column(name="book_code")

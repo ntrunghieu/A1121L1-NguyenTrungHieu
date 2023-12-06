@@ -1,0 +1,34 @@
+package springdemo.controller;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import springdemo.dao.FruitDAO;
+import springdemo.dao.HibernateDatabaseConnection;
+import springdemo.model.bean.Fruit;
+
+@Controller
+public class HomeController {
+	
+	@RequestMapping("/home")
+	private String homePage(Model model) {
+		// TODO Auto-generated method stub
+		Session session = null;
+		session = HibernateDatabaseConnection.getSessionFactory().openSession();
+		Transaction t = session.beginTransaction();
+		List<Fruit> fruits = session.createQuery("FROM Fruit ORDER BY id ASC", Fruit.class)
+                .getResultList();
+		
+		
+        
+        model.addAttribute("fruits", fruits);		
+        t.commit();
+		return "view/main-list.jsp";
+	}
+}

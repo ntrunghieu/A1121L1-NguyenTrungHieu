@@ -1,0 +1,112 @@
+
+<link rel="stylesheet" href="edit-material.component.css">
+<div class="container mt-5" style="margin-top: 100px " >
+  <h1 class="font-text-footer" style="text-align: -webkit-center;">Chỉnh Sửa Vật Tư</h1>
+  <form [formGroup]="formEdit" (ngSubmit)="onSubmit()">
+  <div class="content-create">
+    <div class="content-left content-group">
+      <!--      image-->
+      <img [src]="formEdit.controls.materialImage.value "   class="content-image"> <br>
+      <input #imgUpload type="file" class="form-control-file" (change)="showPreview($event)" >
+      <button class="btn-image" type="button" (click)="imgUpload.click()"> Chọn ảnh</button>
+    </div>
+    <div class="content-right">
+<!--      <form [formGroup]="formEdit" (ngSubmit)="onSubmit()">-->
+        <div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Mã Vật Tư <span class="cl-red">*</span> </span>
+          <input type="text" class="form-control me-2" placeholder="Mã vật tư" formControlName="materialCode" disabled>
+        </div>
+          <span *ngIf="formEdit.controls.materialCode.touched
+&&formEdit.controls.materialCode.errors?.required" class="text-danger">Không được để trống trường này!</span>
+          <span *ngIf="formEdit.controls.materialCode.touched
+&&formEdit.controls.materialCode.errors?.pattern" class="text-danger">Chưa đúng định dạng. Cần nhập đúng định dạng: "MVT-XXX"</span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Tên Vật Tư<span class="cl-red">*</span></span>
+          <input type="text" class="form-control me-2" placeholder="Tên vật tư" formControlName="materialName">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialName').invalid && (formEdit.get('materialName').touched||formEdit.get('materialName').dirty)">
+          Không được để trống trường này và độ dại từ 5 đến 25 ký tự!
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Giá Vật Tư (VND)<span class="cl-red">*</span></span>
+          <input type="number" class="form-control me-2" placeholder="materialPrice" formControlName="materialPrice">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialPrice').invalid && (formEdit.get('materialPrice').touched||formEdit.get('materialPrice').dirty)">
+          Không được để trống trường này!
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Số Lượng<span class="cl-red">*</span></span>
+          <input type="number" class="form-control me-2" placeholder="Số lượng" formControlName="materialQuantity">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialQuantity').invalid && (formEdit.get('materialQuantity').touched||formEdit.get('materialQuantity').dirty)">
+          Không được để trống trường này! Và phải có số lượng >= 0.
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Hạn Sử Dụng<span class="cl-red">*</span></span>
+          <input type="date" class="form-control me-2" placeholder="materialExpiridate" formControlName="materialExpiridate">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialExpiridate').invalid && (formEdit.get('materialExpiridate').touched||formEdit.get('materialExpiridate').dirty)">
+          Không được để trống trường này!
+        </span>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Đơn Vị<span class="cl-red">*</span></span>
+          <input type="text" class="form-control me-2" placeholder="Đơn cị" formControlName="materialUnit">
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialUnit').invalid && (formEdit.get('materialUnit').touched||formEdit.get('materialUnit').dirty)">
+          Không được để trống trường này!
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Loại Vật Tư<span class="cl-red">*</span></span>
+          <select class="me-2" [compareWith]="compareFn" formControlName="materialTypeId" >
+            <option selected disabled value="">Chọn</option>
+            <option *ngFor="let data of listDataType" [ngValue]="data">{{data?.materialTypeName}}
+            </option>
+          </select>
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialTypeId').invalid && (formEdit.get('materialTypeId').touched||formEdit.get('materialTypeId').dirty)">
+          Không được để trống trường này!
+        </span>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Nhà Cung Cấp<span class="cl-red">*</span></span>
+          <select class="me-2" [compareWith]="compareFn1" formControlName="materialCustomerId" >
+            <option selected disabled value="">Chọn</option>
+            <option *ngFor="let data of listDataCus" [ngValue]="data">{{data?.customerName}}</option>
+          </select>
+        </div>
+        <span class="text-danger mb-0 pb-0"
+              *ngIf="formEdit.get('materialCustomerId').invalid && (formEdit.get('materialCustomerId').touched||formEdit.get('materialCustomerId').dirty)">
+          Không được để trống trường này!
+        </span>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Mô Tả<span class="cl-red">*</span></span>
+            <textarea type="text" class="form-control me-2" placeholder="materialDescribe" formControlName="materialDescribe"></textarea>
+          </div>
+          <span class="text-danger mb-0 pb-0"
+                *ngIf="formEdit.get('materialDescribe').invalid && (formEdit.get('materialDescribe').touched||formEdit.get('materialDescribe').dirty)">
+          Không được để trống trường này!
+        </span>
+        <br>
+          <span *ngIf="checkEdit" style="color: red">Cần phải nhập thông tin đầy đủ các trường trên!</span>
+        <div class="input-group d-flex align-content-center justify-content-center">
+          <button type="submit" class="btn__primary"  >Chỉnh sửa</button>
+          <button type="button" class="bt btn__cancel"><a style="text-decoration: none"
+                                                          class="text-light"
+                                                          routerLink=''>Huỷ</a>
+          </button>
+        </div>
+        </div>
+<!--      </form>-->
+    </div>
+  </div>
+  </form>
+
+</div>
+<notifier-container></notifier-container>

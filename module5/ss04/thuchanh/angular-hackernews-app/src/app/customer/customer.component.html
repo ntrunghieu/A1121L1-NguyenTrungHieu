@@ -1,0 +1,147 @@
+<div class="all">
+  <div class="info-search">
+    <h3 style="text-align: center"> Thông tin khách hàng</h3>
+    <form [noValidate]="" style="background:#270082; color: white" action="" id="search-box">
+      <input style="color: white"  name="name"
+             type="text" id="search-text" required>
+      <button style="background:#270082; color: white" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+  </div>
+  <div class="container table-wrapper-scroll-y my-custom-scrollbar">
+    <div  class="search">
+      <div>
+        <label for="date">Start date: </label>
+        <input id="date" type="date">
+      </div>
+      <div>
+        <label>End date: </label>
+        <input type="date">
+      </div>
+    </div>
+
+      <table class="table table-striped ">
+
+
+        <thead>
+        <tr style="background: #270082; color: white" class="header-fixed">
+          <th><input type="checkbox" id="selectAll" class="checkbox1" name="check[]"></th>
+          <th scope="col">Mã KH</th>
+          <th scope="col">Tên KH</th>
+          <th scope="col">Địa chỉ</th>
+          <th scope="col">Số điện thoại</th>
+          <th ></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th><input type="checkbox" class="checkbox1" name="check[]"></th>
+          <td  scope="row">KH-001</td>
+          <td contenteditable="true">Mark</td>
+          <td contenteditable="true">USA</td>
+          <td contenteditable="true">0908678876</td>
+          <td >
+            <button class="btn btn-primary" type="button">Xem</button>
+            <button class="btn btn-primary" type="button">Sua</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" type="button">Xoa</button>
+          </td>
+
+        </tr>
+        <tr>
+          <th><input type="checkbox" class="checkbox1" name="check[]"></th>
+          <td scope="row">KH-002</td>
+          <td>Jacob</td>
+          <td>LONDON</td>
+          <td>0908678876</td>
+          <td >
+            <button class="btn btn-primary" type="button">Xem</button>
+            <button class="btn btn-primary" type="button">Sua</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" type="button">Xoa</button>
+          </td>
+        </tr>
+        <tr>
+          <th><input type="checkbox" class="checkbox1" name="check[]"></th>
+          <td scope="row">KH-003</td>
+          <td>Larry</td>
+          <td>THAILAND</td>
+          <td>0908678876</td>
+          <td >
+            <button class="btn btn-primary" type="button">Xem</button>
+            <button class="btn btn-primary" type="button">Sua</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" type="button">Xoa</button>
+          </td>
+        </tr>
+        <tr>
+          <th><input type="checkbox" class="checkbox1" name="check[]"></th>
+          <td scope="row">KH-004</td>
+          <td>Larry</td>
+          <td>MALAYSIA</td>
+          <td>0908678876</td>
+          <td >
+            <button class="btn btn-primary" type="button">Xem</button>
+            <button class="btn btn-primary" type="button">Sua</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" type="button">Xoa</button>
+          </td>
+        </tr>
+        <tr>
+          <th><input type="checkbox" class="checkbox1" name="check[]"></th>
+          <td scope="row">KH-005</td>
+          <td>Larry</td>
+          <td>FRANCE</td>
+          <td>0908678876</td>
+          <td >
+            <button class="btn btn-primary" type="button">Xem</button>
+            <button class="btn btn-primary" type="button">Sua</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" type="button">Xoa</button>
+          </td>
+        </tr>
+        <tr>
+          <th><input type="checkbox" class="checkbox1" name="check[]"></th>
+          <td scope="row">KH-006</td>
+          <td>Larry</td>
+          <td>GERMANY</td>
+          <td>0908678876</td>
+          <td >
+            <button class="btn btn-primary" type="button">Xem</button>
+            <button class="btn btn-primary" type="button">Sua</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" type="button">Xoa</button>
+          </td>
+        </tr>
+        <tr>
+          <th><input type="checkbox" class="checkbox1" name="check[]"></th>
+          <td scope="row">KH-007</td>
+          <td>Larry</td>
+          <td>Italy</td>
+          <td>0908678876</td>
+          <td >
+            <button class="btn btn-primary" type="button">Xem</button>
+            <button class="btn btn-primary"  type="button">Sua</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" type="button">Xoa</button>
+          </td>
+        </tr>
+        </tbody>
+
+      </table>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <span>Bạn có muốn xóa khách hàng <span style="color: #270082; font-weight: bolder">Mark</span>  không ?</span>
+      </div>
+      <div class="modal-footer">
+        <button style="background:white; color:#270082 " type="button" class="btn btn-secondary" data-dismiss="modal">Quay lại</button>
+        <button style="background:#270082; color: white" type="button" class="btn btn-primary">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>

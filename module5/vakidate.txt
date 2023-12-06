@@ -1,0 +1,92 @@
+<div  *ngIf="formCreate.hasError('dateError')" class="alert alert-danger" role="alert">
+  Ngay bat dau phai truoc ngay ket thuc
+</div>
+[6:25 PM] import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {ICustomer} from "../../models/ICustomer";
+import {IFacility} from "../../models/IFacility";
+import {FacilityService} from "../../services/facility.service";
+import {ContractService} from "../../services/contract.service";
+import {Router} from "@angular/router";
+import {CustomerService} from "../../services/customer.service";
+import {formatDate} from "@angular/common";
+import {identityRevealedValidator} from "./contract.validator";
+
+@Component({
+  selector: 'app-new-contract',
+  templateUrl: './new-contract.component.html',
+  styleUrls: ['./new-contract.component.css']
+})
+export class NewContractComponent implements OnInit {
+  formCreate: FormGroup;
+  customers : ICustomer[] = [];
+  facilities : IFacility[] = [];
+  date1 = formatDate(new Date(),'yyyy-MM-dd','en_US');
+  constructor( private  customerService: CustomerService,
+               private facilityService:FacilityService,
+               private contractService: ContractService,
+               private router: Router) {
+
+
+    this.formCreate = new FormGroup({
+
+        startDate : new FormControl( this.date1, [Validators.required]),
+        endDate :   new FormControl( this.date1, [Validators.required]),
+      deposit : new FormControl("", [Validators.required, Validators.minLength(2)]),
+      totalMoney : new FormControl("", [Validators.required, Validators.min(5), Validators.max(10)]),
+      employee : new FormControl("", [Validators.required, Validators.minLength(5)]),
+      customer : new FormControl("", [Validators.required]),
+      service : new FormControl("", [Validators.required]),
+    }, identityRevealedValidator );
+
+    // dateCheck : new FormGroup({
+    //   startDate : new FormControl( this.date1, [Validators.required]),
+    //   endDate :   new FormControl( this.date1, [Validators.required]),
+    // }, identityRevealedValidator),
+
+    this.facilityService.getAll().subscribe((data)=>{
+      this.facilities = data;
+    });
+
+    this.customerService.getAll().subscribe((data)=>{
+      this.customers = data;
+    });
+
+
+
+  }
+
+  ngOnInit( ): void {
+  }
+
+  save() {
+    const  contract = this.formCreate.value;
+         this.contractService.save( contract ).subscribe(
+
+           (data)=>{
+             this.router.navigateByUrl("/contract/list");}
+         );
+  }
+}
+[6:26 PM] import {AbstractControl, FormControl, FormGroup, ValidationErrors} from '@angular/forms';
+import {formatDate} from "@angular/common";
+
+export function comparePassword(control: AbstractControl): ValidationErrors | null {
+  const check = control.value;
+  return (check.pass === check.confirmPass) ? null : {passwordNotMatch: true};
+}
+
+// TEST CUSTOM VALIDATE
+export function checkEmail(control: FormControl): ValidationErrors|null {
+  const check = control.value;
+  return (check.includes('an')) ? null : {emailError: true}; }
+
+
+
+export function identityRevealedValidator(control: AbstractControl): ValidationErrors|null {
+  const startDate = control.value.startDate ;
+  const endDate =  control.value.endDate ;
+
+  const date1 = formatDate( startDate,'yyyy-MM-dd','en_US');
+  const date2  = formatDate( endDate,'yyyy-MM-dd','en_US');
+  return date1<=date2 ? null : {dateError: true}; }

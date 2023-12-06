@@ -1,0 +1,5 @@
+package springdemo.dao;
+
+public class FruitDAO {
+
+}

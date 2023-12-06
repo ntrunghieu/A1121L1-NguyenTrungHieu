@@ -1,0 +1,114 @@
+
+<!--/versin 2-->
+<!-- nav -->
+<nav class="sidebar">
+    <div class="nav-header">
+        <div class="logo-wrap">
+            <a class="logo-icon"><img alt="logo-icon" src="/assets/images/infor-material/logo1.png" width="60"></a>
+            <a class="logo-text">EquipStore</a>
+        </div>
+
+    </div>
+    <ul class="nav-categories ul-base">
+        <li><a routerLink="">Trang chủ</a></li>
+        <li><a routerLink="/material/infor">Sản phẩm</a></li>
+        <li><a>Chứng nhận</a></li>
+        <li><a>Hoạt động</a></li>
+        <li><a>Đối tác</a></li>
+        <li><a>Liên hệ</a></li>
+    </ul>
+    <ul class="social ul-base">
+        <li><a class="twitter" target="_blank"><i class="fa fa-instagram"></i></a></li>
+        <li><a class="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="google-plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+        <li><a class="rss" target="_blank"><i class="fa-solid fa-cart-plus"></i></a></li>
+    </ul>
+    <div class="copyright">
+        <span>&copy; 2022 <a class="link">codegymA1121i1.com</a> Made in Vietnam</span>
+        <span>Designed by A1121i1 <a target="_blank">Sprint1</a></span>
+    </div>
+</nav><!-- @end nav -->
+
+<!-- header -->
+<header>
+    <div class="header-inner clearfix">
+        <div class="nav-btn nav-slider">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="header-logo" >
+            <a routerLink="" ><img alt="logo"  src="assets/images/infor-material/logo1.png" width="30px" height="30px"></a>
+    </div>
+        <div class="header-categories">
+            <!--            Chưa login-->
+            <ul class="ul-base" *ngIf="!isLoggedIn">
+            </ul>
+            <!--            Đã loagin -->
+            <ul class="ul-base" *ngIf="isLoggedIn">
+                <li class="dropdown" *ngIf="showAdminBoard">
+                    <a class="dropdown-toggle" href="#"><span>Hệ thống</span> <i class="material-icons"></i></a>
+                    <ul class="dropdown-menu ul-base">
+                        <li><a routerLink="/account/create">Tạo tài khoản</a></li>
+                        <!--            <li><a >Thay đổi mật khẩu</a></li>-->
+                    </ul>
+                </li>
+                <li class="dropdown" *ngIf="showAdminBoard || showAccountantBoard">
+                    <a class="dropdown-toggle" ><span>Quản lí kho</span> <i class="material-icons"></i></a>
+                    <ul class="dropdown-menu ul-base">
+                        <li><a routerLink="/import">Nhập kho</a></li>
+                        <li><a>Xuất kho</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" *ngIf="showSellBoard">
+                    <!--                    <a class="dropdown-toggle" ><span>Quản lí kho</span> <i class="material-icons"></i></a>-->
+                    <!--                    <ul class="dropdown-menu ul-base">-->
+                    <!--                        <li><a routerLink="/import">Nhập kho</a></li>-->
+                    <!--                        <li><a>Xuất kho</a></li>-->
+                    <!--                    </ul>-->
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle"><span>Quản lí thông tin</span> <i class="material-icons"></i></a>
+                    <ul class="dropdown-menu ul-base">
+                        <li><a routerLink="/employee/list">Thông tin nhân viên</a></li>
+                        <li><a routerLink="/customer/list">Thông tin khách hàng</a></li>
+                        <li><a routerLink="/material/list">Thông tin vật tư</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" *ngIf="showAdminBoard || showAccountantBoard"><span>Quản lí tài chính</span> <i class="material-icons"></i></a>
+                    <ul class="dropdown-menu ul-base">
+                        <li><a  routerLink="statistic/financial">Thống kê tài chính</a></li>
+                        <li><a  routerLink="statistic/material">Thống kê vật tư</a></li>
+                        <li><a  routerLink="statistic/customer">Thống kê khách hàng</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="header-menu">
+            <ul class="ul-base" *ngIf="!isLoggedIn">
+                <li><a routerLink="/login">Sign in</a></li>
+            </ul>
+            <ul class="ul-base" *ngIf="isLoggedIn">
+                <li class="dropdown">
+                    <a class="dropdown-toggle"><span>{{userName}}</span><i class="material-icons"></i></a>
+                    <ul class="dropdown-menu ul-base">
+                        <li><a >Thông tin</a></li>
+                        <li><a routerLink="/account/update/password">Đổi mật khẩu</a></li>
+                    </ul>
+                </li>
+                <li><a (click)="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</header><!-- @end header -->
+
+<!-- Main content -->
+<main role="main"></main><!-- @end main -->
+
+<!-- Footer -->
+
+
+<div class="overlay"></div>

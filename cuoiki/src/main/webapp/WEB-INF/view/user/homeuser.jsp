@@ -56,12 +56,17 @@
 <body>
 <form  action="/user" id="search-box">
     <input name="kw"  type="text" id="search-text" required style=" border-radius: 5px">
-    <button type="submit" id="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+    <button type="submit" id="search-btn"><i class="fa fa-search" aria-hidden="true">Tim</i></button>
 </form>
+
+    <select name="nameCate">
+        <c:forEach var="cate" items="${category}" varStatus="status">
+            <option selected href="" value="${cate.categoryId}">${cate.categoryName}</option>
+        </c:forEach>
+    </select>
+
 <div class="container">
-    <div class="info">
-        <h1>Article News Card</h1><span>Made with <i class='fa fa-heart animated infinite pulse'></i> by <a href='http://andy.design'>Andy Tran</a> | Designed by <a href='http://justinkwak.com'>JustinKwak</a></span>
-    </div>
+
     <!-- Normal Demo-->
     <c:forEach items="${listBook}" var="book" varStatus="status">
         <div class="column">

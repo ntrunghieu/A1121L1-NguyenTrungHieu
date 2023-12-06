@@ -1,0 +1,64 @@
+{
+  "benhNhan": [
+    {
+      "id": 1,
+      "maBA": "BA000",
+      "maBN": "BN000",
+      "ten": "Hieu",
+      "ngayNhap": "2002-03-13",
+      "ngayRa": "2002-03-30",
+      "phuongPhap": "náds",
+      "bacSi": "Thọ Phước",
+      "lyDo": "avs"
+    },
+    {
+      "id": 2,
+      "maBA": "BA001",
+      "maBN": "BN001",
+      "ten": "Hieu",
+      "ngayNhap": "2002-03-13",
+      "ngayRa": "2002-03-30",
+      "phuongPhap": "náds",
+      "bacSi": "Thọ Phước",
+      "lyDo": "avs"
+    }
+  ],
+  "sanpham": [
+    {
+      "id":1,
+      "ten": "sting",
+      "xuatXu": "TQ",
+      "giaTien": 225000,
+      "donVi": "Thung"
+    },
+    {
+      "id":2,
+      "ten": "tiger",
+      "xuatXu": "VN",
+      "giaTien": 225000,
+      "donVi": "Thung"
+    },
+    {
+      "id":3,
+      "ten": "oashi",
+      "xuatXu": "USA",
+      "giaTien": 225000,
+      "donVi": "Thung"
+    }
+  ],
+  "lohang": {
+    "id":1,
+    "maLoHang": "LH-0001",
+    "sanpham": {
+      "id":1,
+      "ten": "sting",
+      "xuatXu": "TQ",
+      "giaTien": 225000,
+      "donVi": "Thung"
+    },
+    "soLuong": 5,
+    "ngayNhap": "2002-03-13",
+    "ngaySX": "2003-03-13",
+    "ngayHetHan": "2005-03-13"
+  }
+}

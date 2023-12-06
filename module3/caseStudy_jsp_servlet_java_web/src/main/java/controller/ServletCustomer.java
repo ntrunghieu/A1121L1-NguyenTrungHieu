@@ -92,7 +92,7 @@ public class ServletCustomer extends HttpServlet {
     }
 
     private void updateCustomer(HttpServletRequest request, HttpServletResponse response) {
-        int id=Integer.parseInt(request.getParameter("id"));
+        int id=Integer.parseInt(request.getParrameter("id"));
         List<CustomerType> customerTypes = customerService.selectAllTypeCustomers();
 
         String customer_type = request.getParameter("customer_type");

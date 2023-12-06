@@ -42,6 +42,7 @@
                 <th>Loại sách:</th>
                 <td>
                     <form:select name="category" id="category" path="bookCategoryId.categoryId">
+                        //lay das = ten ben ussercontrooller thong qua modelattribute
                         <c:forEach var="cate" items="${category}" varStatus="status">
                             <option  value="${cate.categoryId}">${cate.categoryName}</option>
                         </c:forEach>

@@ -1,0 +1,145 @@
+
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 mr-auto">
+        <h3 style="color: #cbbe73;
+  font-style: normal;font-family: Playfair Display; font-size: 24px; line-height: 36px" class="mb-3">FURAMA TỰ HÀO LÀ KHU NGHỉ DƯỠNG ẨM THỰC VIỆT NAM</h3>
+        <p>Hướng ra bãi biển Đà Nẵng trải dài cát trắng, Furama Resort Đà Nẵng là cửa ngõ đến với 3 di sản văn hoá thế giới: Hội An (20 phút), Mỹ Sơn (90 phút) và Huế (2 tiếng. 196 phòng hạng sang</p>
+        <p> cùng với 70 căn biệt thự từ hai đến bốn phòng ngủ có hồ bơi riêng đều được trang trí trang nhã, theo phong cách thiết kế truyền thống của Việt Nam và kiến trúc thuộc địa của Pháp, </p>
+        <p>biến Furama thành khu nghỉ dưỡng danh giá nhất tại Việt Nam – vinh dự được đón tiếp nhiều người nổi tiếng, giới hoàng gia, chính khách, ngôi sao điện ảnh và các nhà lãnh đạo kinh doanh quốc tế.<a href="#">info@mywebsite.com</a></p>
+
+      </div>
+
+      <!--validate so luong-->
+      <!--      <div *ngIf="!numVal.valid && (numVal.dirty ||numVal.touched)">-->
+      <!--        <div *ngIf="numVal.errors.gte">-->
+      <!--          The number should be greater than-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <!--      myForm = new FormGroup({-->
+      <!--      numVal: new FormControl('', [gte]),-->
+      <!--      })-->
+
+
+      <div class="col-md-6">
+        <div class="box">
+          <h3 class="heading">Sửa đề tài</h3>
+          <form [formGroup]="suaForm" (ngSubmit)="submit()" class="mb-5" method="post" id="contactForm" name="contactForm">
+            <div class="row">
+              <div hidden class="col-md-6 form-group">
+                <label for="id" class="col-form-label">ID <span style="color: red">*</span> </label>
+                <input type="text" formControlName="id" class="form-control" name="id" id="id" placeholder="id">
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="tenSV" class="col-form-label">Tên SV<span style="color: red">*</span> </label>
+                <input type="text" formControlName="tenSV" class="form-control" name="tenSV" id="tenSV" placeholder="Tên SV">
+                <div *ngIf="!suaForm.get('tenSV')?.valid && suaForm.get('tenSV').touched">
+                  <p *ngIf="suaForm.get('tenSV').errors.required" class="text-danger">Không được để trống</p>
+                  <p *ngIf="suaForm.get('tenSV').errors.pattern" class="text-danger">Tên không chứa kí tự đặc biệt</p>
+                </div>
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="tenNhom" class="col-form-label">Tên nhóm<span style="color: red">*</span></label>
+                <input type="text" formControlName="tenNhom" class="form-control" name="tenNhom" id="tenNhom" placeholder="Tên nhóm">
+                <div *ngIf="!suaForm.get('tenNhom')?.valid && suaForm.get('tenNhom').touched">
+                  <p *ngIf="suaForm.get('tenNhom').errors.required" class="text-danger">Không được để trống</p>
+                  <p *ngIf="suaForm.get('tenNhom').errors.pattern" class="text-danger">Phải là NHÓM 1, NHÓM 2 , NHÓM 3</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <label for="tenDeTai" class="col-form-label">Tên đề tài <span style="color: #6c1010">*</span> </label>
+                <input type="text" formControlName="tenDeTai" class="form-control" name="tenDeTai" id="tenDeTai" placeholder="Tên đề tài">
+                <div *ngIf="!suaForm.get('tenDeTai')?.valid && suaForm.get('tenDeTai').touched">
+                  <p *ngIf="suaForm.get('tenDeTai').errors.required" class="text-danger">Không được để trống</p>
+
+                </div>
+              </div>
+              <div class="col-md-6 form-group">
+                <!--                <label for="giaoVien" class="col-form-label">Giáo viên hướng dẫn <span style="color: #6c1010">*</span> </label>-->
+
+                <label for="giaoVien" class="col-form-label ">Giáo viên hướng dẫn <span style="color: #6c1010">*</span> </label>
+                <select [compareWith]="compareObjects"  formControlName="giaoVien" class="custom-select" name="giaoVien" id="giaoVien"   >
+                  <option >Choose...</option>
+                  <option selected value="Phuong">Phuong</option>
+                  <option  value="Trinh">Trinh</option>
+                  <option  value="Thao">Thao</option>
+                </select>
+                <div *ngIf="!suaForm.get('giaoVien')?.valid && suaForm.get('giaoVien').touched">
+                  <p *ngIf="suaForm.get('giaoVien').errors.required" class="text-danger">Chưa chọn</p>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="email" class="col-form-label">Email <span style="color: red">*</span> </label>
+                <input type="text" formControlName="email" class="form-control" name="email" id="email" placeholder="abc@def.com" >
+                <div *ngIf="!suaForm.get('email')?.valid && suaForm.get('email').touched">
+                  <p *ngIf="suaForm.get('email').errors.required" class="text-danger">Chua chọn ngày</p>
+                  <p *ngIf="suaForm.get('email').errors.pattern" class="text-danger">không đúng định dạng abc@def.com</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="sdt" class="col-form-label">Số điện thoại <span style="color: red">*</span> </label>
+                <input type="text" formControlName="sdt" class="form-control" name="sdt" id="sdt" >
+                <div *ngIf="!suaForm.get('sdt')?.valid && suaForm.get('sdt').touched">
+                  <p *ngIf="suaForm.get('sdt').errors.required" class="text-danger">Không được trống</p>
+                  <p *ngIf="suaForm.get('sdt').errors.pattern" class="text-danger">SDT không đúng định dạng</p>
+                </div>
+              </div>
+            </div>
+
+            <!--            <div class="row">-->
+            <!--              <div class="col-md-12 form-group">-->
+            <!--                <label for="message" class="col-form-label">Project Description *</label>-->
+            <!--                <textarea class="form-control" name="message" id="message" cols="30" rows="7"></textarea>-->
+            <!--              </div>-->
+            <!--            </div>-->
+            <!--            <div class="row mb-3">-->
+            <!--              <div class="col-md-6 form-group">-->
+            <!--                            <label for="budget" class="col-form-label">Budget: </label>-->
+            <!--                            <select class="custom-select" id="budget" name="budget">-->
+            <!--                              <option selected>Choose...</option>-->
+            <!--                              <option value="$1000 below">< $1,000</option>-->
+            <!--                              <option value="$2,000 - $5,000">$2,000 - $5,000</option>-->
+            <!--                              <option value="$5,000 - $15,000">$5,000 - $15,000</option>-->
+            <!--                              <option value="$15,000 - $25,000">$15,000 - $25,000</option>-->
+            <!--                              <option value="$25,000 >">$25,000 ></option>-->
+            <!--                            </select>-->
+            <!--              </div>-->
+            <!--              <div class="col-md-6 form-group">-->
+            <!--                <label for="message" class="col-form-label">Target Lunch</label>-->
+            <!--                <input type="text" class="form-control" name="date" id="date" placeholder="Example: January 15th">-->
+
+
+            <!--              </div>-->
+            <!--            </div>-->
+
+            <div class="row d-flex">
+              <div style="margin-top: 100px; margin-left: 250px; width: 40%; display: flex; " class="col-md-12 middle">
+                <button type="submit" class="rounded-0 py-2 px-4 btnHover btnHover1"  >Gui</button>
+                <!--        <a href="" class="btnHover btnHover2">Hover Me</a>-->
+                <a class="rounded-0 py-2 px-4 btnHover btnHover1" routerLink="">Quay lai</a>
+              </div>
+              <!--              <div style="margin-top: 558px; margin-left: 150px; width: 30%; display: flex; " class="col-md-12 middle">-->
+              <!--                <a class="rounded-0 py-2 px-4 btnHover btnHover1" routerLink="">Quay lai</a>-->
+              <!--              </div>-->
+            </div>
+          </form>
+
+          <div id="form-message-warning mt-4"></div>
+          <div id="form-message-success">
+            Your message was sent, thank you!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

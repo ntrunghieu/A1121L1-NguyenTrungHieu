@@ -1,0 +1,25 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ä”òª
+œ
+java:S1186)"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(œ«ÜŸÿÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(”ž°ç
+Z
+java:S21472"DCombine this catch with the one at line 47, which has the same body.(ýàÑÎ
+H
+java:S4925-"-Remove this "Class.forName()", it is useless.(¹µÖÁüÿÿÿÿ
+M
+java:S11350"2Complete the task associated to this TODO comment.(ÕÌ®þÿÿÿÿ
+M
+java:S11353"2Complete the task associated to this TODO comment.(ÕÌ®þÿÿÿÿ
+S	java:S106B"9Replace this use of System.out or System.err by a logger.(µâ£äþÿÿÿÿ
+V	java:S125A"<This block of commented-out lines of code should be removed.(ïº¿Åùÿÿÿÿ
+N	java:S106T"9Replace this use of System.out or System.err by a logger.(Ž±îÔ
+V	java:S125V"<This block of commented-out lines of code should be removed.(•ƒôâøÿÿÿÿ
+x
+java:S4087}"bRemove this "close" call; closing the resource is handled automatically by the try-with-resources.(ôêÂœ
+u
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡ž¸Îùÿÿÿÿ8¼ÉÖ–Ë0
+i
+java:S1128"GRemove this unused import 'org.springframework.jdbc.core.JdbcTemplate'.(å ê‹ÿÿÿÿÿ8¼ÉÖ–Ë0
+f
+java:S1128"DRemove this unused import 'org.springframework.jdbc.core.RowMapper'.(¦¬ÀÙùÿÿÿÿ8½ÉÖ–Ë0

@@ -1,1 +1,55 @@
-<router-outlet></router-outlet>
+<div class="container">
+  <div class="title">Thêm Mới Khách Hàng</div>
+  <form class="col-md-12" >
+    <div class="user-details">
+      <div hidden class="input-box" >
+        <span class="details" >Mã khách hàng <sup style="color: red">(*)</sup></span>
+        <input type="text"  formControlName="id" >
+      </div>
+      <div class="input-box">
+        <span class="details">Họ và tên <sup style="color: red">(*)</sup></span>
+        <input type="text" class="form-control">
+      </div>
+      <div class="input-box">
+        <label for="type" class="details">Loại khách <sup style="color: red">(*)</sup></label>
+        <select id="type" class="form-control">
+          <option value="Sỉ">Sỉ</option>
+          <option value="Lẻ"> Lẻ</option>
+          <option value="Nhà cung cấp">Nhà cung cấp</option>
+        </select>
+        <!--                    <input type="text" class="form-control">-->
+      </div>
+      <div class="input-box">
+        <span class="details">Điện Thoại <sup style="color: red">(*)</sup></span>
+        <input type="text" class="form-control">
+      </div>
+      <div class="input-box">
+        <span class="details">Địa Chỉ <sup style="color: red">(*)</sup></span>
+        <input type="text" class="form-control">
+      </div>
+      <!--                <div class="input-box">-->
+      <!--                    <span class="details">Hình ảnh <sup style="color: red">(*)</sup></span>-->
+      <!--                    <input type="file" class="form-control">-->
+      <!--                </div>-->
+      <div class="container1" >
+        <div class="wrapper">
+          <div class="image">
+            <img src=" " alt="">
+          </div>
+          <div class="content">
+            <div class="icon">icon</div>
+            <div class="text">No file choosen, yet!</div>
+          </div>
+          <div id="cancel-btn">x</div>
+          <div class="file-name">File name here</div>
+        </div>
+        <input type="file" id="default-btn" hidden>
+        <button  id="custom-btn">Choose a file</button>
+      </div>
+    </div>
+    <div class="button" style="margin-left: 230px; margin-top: 60px" >
+      <input class="btn__primary"  type="submit" value="Lưu">
+      <input class="btn__cancel" type="button" value="Hủy">
+    </div>
+  </form>
+</div>

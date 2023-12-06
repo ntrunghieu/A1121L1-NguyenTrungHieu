@@ -1,0 +1,10 @@
+
+ojavascript:S3776&"TRefactor this function to reduce its Cognitive Complexity from 26 to the 15 allowed.(à›œB
+~javascript:S1172&"cRemove the unused function parameter "window" or rename it to "_window" to make intention explicit.(à›œB
+‚javascript:S1172&"gRemove the unused function parameter "document" or rename it to "_document" to make intention explicit.(à›œB
+\javascript:S2137&"ADo not use "undefined" to declare a parameter - use another name.(à›œB
+„javascript:S1172&"iRemove the unused function parameter "undefined" or rename it to "_undefined" to make intention explicit.(à›œB
+zjavascript:S1172q"YRemove the unused function parameter "e" or rename it to "_e" to make intention explicit.(âóàşÿÿÿÿ
+†javascript:S1172q"eRemove the unused function parameter "sorting" or rename it to "_sorting" to make intention explicit.(âóàşÿÿÿÿ
+ejavascript:S3358{"DExtract this nested ternary operation into an independent statement.(ßÓƒ×şÿÿÿÿ
+ajavascript:S3358Š"DExtract this nested ternary operation into an independent statement.(§Ñµ

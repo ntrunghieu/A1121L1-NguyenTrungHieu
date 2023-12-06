@@ -1,0 +1,107 @@
+<body>
+<div class="container">
+  <h1 class="title" *ngIf="customerId === 0">Thêm Mới Khách Hàng</h1>
+  <h1 class="title" *ngIf="customerId > 0">Chỉnh Sửa Khách Hàng</h1>
+  <!--  <div class="title">Chỉnh Sửa Khách Hàng</div>-->
+  <form class="col-md-12" [formGroup]="form" (ngSubmit)="submit()" #f="ngForm">
+    <div class="user-details">
+
+      <div class="input-box form-field" hidden>
+        <input name="id" type="text" class="form-input" placeholder=" " formControlName="customerId">
+        <!--          <input name="id" type="text" class="form-input" placeholder=" " formControlName="customerId" *ngIf="customerId === 0">-->
+        <label class="form-label">id</label>
+      </div>
+
+      <div style="margin-top: 8px" class="input-box form-field">
+        <input name="code" type="text" class="form-input" placeholder=" " formControlName="customerCode"
+               *ngIf="customerId > 0" readonly disabled>
+        <input name="code" type="text" class="form-input" placeholder=" " formControlName="customerCode"
+               *ngIf="customerId === 0">
+        <label class="form-label">Mã khách hàng <span style="color: red">(*)</span></label>
+        <div *ngFor="let validation of validationMessages.customerCode">
+          <div
+            *ngIf="this.form.get('customerCode').hasError(validation.type) && (this.form.get('customerCode').touched || f.submitted)"
+            class="text-danger">{{validation.message}}
+          </div>
+        </div>
+      </div>
+
+      <div class="input-box form-field">
+        <select formControlName="customerTypeId" [compareWith]="compare" style="z-index: 100" id="type"
+                class="form-input">
+          <option [selected]="true" value="null" disabled>Chọn Loại Khách Hàng</option>
+          <option *ngFor="let customerType of customerTypes"
+                  [ngValue]="customerType.customerTypeId">{{customerType.customerTypeName}}</option>
+        </select>
+        <label for="type" class="form-label">Loại khách <span style="color: red">(*)</span></label>
+      </div>
+
+      <div class="input-box form-field">
+        <input name="name" id="name" type="text" class="form-input" placeholder=" " formControlName="customerName">
+        <label for="name" class="form-label">Họ và tên <span style="color: red">(*)</span></label>
+        <div *ngFor="let validation of validationMessages.customerName">
+          <div
+            *ngIf="this.form.get('customerName').hasError(validation.type) && (this.form.get('customerName').touched || f.submitted)"
+            class="text-danger">{{validation.message}}
+          </div>
+        </div>
+      </div>
+
+      <div class="input-box form-field">
+        <input name="phone" id="phone" type="text" class="form-input" placeholder=" " formControlName="customerPhone">
+        <label for="phone" class="form-label">Điện thoại <span style="color: red">(*)</span></label>
+        <div *ngFor="let validation of validationMessages.customerPhone">
+          <div
+            *ngIf="this.form.get('customerPhone').hasError(validation.type) && (this.form.get('customerPhone').touched || f.submitted)"
+            class="text-danger">{{validation.message}}
+          </div>
+        </div>
+      </div>
+
+      <div class="input-box form-field" style="margin-top: 8px">
+        <input name="email" id="email" type="text" class="form-input" placeholder=" " formControlName="customerEmail">
+        <label for="email" class="form-label">Email <span style="color: red">(*)</span></label>
+        <div *ngFor="let validation of validationMessages.customerEmail">
+          <div
+            *ngIf="this.form.get('customerEmail').hasError(validation.type) && (this.form.get('customerEmail').touched || f.submitted)"
+            class="text-danger">{{validation.message}}
+          </div>
+        </div>
+      </div>
+
+      <div class="input-box form-field" style="margin-top: 8px">
+        <input name="address" id="address" type="text" class="form-input" placeholder=" "
+               formControlName="customerAddress">
+        <label for="address" class="form-label">Địa chỉ <span style="color: red">(*)</span></label>
+        <div *ngFor="let validation of validationMessages.customerAddress">
+          <div
+            *ngIf="this.form.get('customerAddress').hasError(validation.type) && (this.form.get('customerAddress').touched || f.submitted)"
+            class="text-danger">{{validation.message}}
+          </div>
+        </div>
+      </div>
+
+      <div class="container1">
+        <div class="wrapper">
+          <div class="image">
+            <img [src]="url" alt="">
+          </div>
+          <div class="content">
+            <div class="text">No file choosen, yet!</div>
+          </div>
+          <div class="file-name">File name here</div>
+        </div>
+        <input (change)="onSelectFile($event)" type="file" id="default-btn" style="margin-left: 240px; margin-top: 90px"
+               #fileInput>
+        <!--        <button (click)="fileInput.click()" id="custom-btn">Choose a file</button>-->
+      </div>
+
+    </div>
+    <div class="button" style="margin-left: 230px; margin-top: 60px">
+      <input class="btn__primary" type="submit" [disabled]="!form.valid" value="Lưu">
+      <input class="btn__cancel" type="button"  value="Hủy" routerLink="/customer/list">
+    </div>
+  </form>
+</div>
+</body>
+<!--<h1>Hello</h1>-->

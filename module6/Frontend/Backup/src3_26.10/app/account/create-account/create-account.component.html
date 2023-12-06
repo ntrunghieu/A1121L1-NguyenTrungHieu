@@ -1,0 +1,270 @@
+<div class="container" style="margin-top: 100px">
+  <form [formGroup]="createForm">
+    <div class="h4">
+      <h4>Thêm thông tin tài khoản nhân viên</h4>
+    </div>
+    <div class="row d-flex">
+      <!-- Column 1 !-->
+      <div class="col-6 col__container">
+        <div formGroupName="account">
+          <!-- TÊN TÀI KHOẢN !-->
+          <div class="input-group">
+            <label for="username">Tên tài khoản<span class="text-danger"> (*)</span></label>
+            <input type="text" class="form-control" id="username" minlength="5" maxlength="20" formControlName="username"
+                   placeholder="Nhập tên tài khoản" [(ngModel)]="existUsername" (ngModelChange)="checkUsername()" >
+          </div>
+          <div
+            *ngIf="createForm.get('account').get('username')?.invalid && (createForm.get('account').get('username')?.touched||createForm.get('account').get('username')?.dirty)">
+            <div [hidden]="!createForm.get('account').get('username').errors.required">
+              <small class="form-text mess">
+                Tên tài khoản không được để trống.</small>
+            </div>
+          </div>
+          <div *ngIf="createForm.get('account').get('username')?.invalid && (createForm.get('account').get('username')?.touched||createForm.get('account').get('username')?.dirty)">
+            <div [hidden]="!createForm.get('account').get('username').hasError('maxlength')">
+              <small class="form-text mess">
+                Tên tài khoản chỉ chứa tối đa 20 kí tự.</small>
+            </div>
+          </div>
+          <div *ngIf="createForm.get('account').get('username')?.invalid && (createForm.get('account').get('username')?.touched||createForm.get('account').get('username')?.dirty)">
+            <div [hidden]="!createForm.get('account').get('username').hasError('minlength')">
+              <small class="form-text mess">
+                Tên tài khoản chứa tối thiểu 5 kí tự.</small>
+            </div>
+          </div>
+          <div
+            *ngIf="createForm.get('account').get('username')?.invalid && (createForm.get('account').get('username')?.touched||createForm.get('account').get('username')?.dirty)">
+            <div [hidden]="!createForm.get('account').get('username').errors.pattern">
+              <small class="form-text mess">
+                Tên tài khoản không được chứa kí tự hoa hoặc kí tự đặc biệt.</small>
+            </div>
+          </div>
+          <div>
+            <small class="form-text mess">{{usernameAlreadyExist}}</small>
+          </div>
+
+          <!-- MẬT KHẨU !-->
+          <div class="input-group">
+            <label for="password">Mật khẩu<span class="text-danger"> (*)</span></label>
+            <input type="password" class="form-control" id="password" minlength="8" maxlength="20" placeholder="Nhập mật khẩu"
+                   formControlName="password">
+          </div>
+          <div *ngIf="createForm.get('account').get('password')?.invalid && (createForm.get('account').get('password')?.touched||createForm.get('account').get('password')?.dirty)">
+            <div [hidden]="!createForm.get('account').get('password').errors.required">
+              <small class="form-text mess">
+                Mật khẩu không được để trống.</small>
+            </div>
+          </div>
+          <div *ngIf="createForm.get('account').get('password')?.invalid && (createForm.get('account').get('password')?.touched||createForm.get('account').get('password')?.dirty)">
+            <div [hidden]="!createForm.get('account').get('password').hasError('maxlength')">
+              <small class="form-text mess">
+                Mật khẩu chỉ chứa tối đa 20 kí tự.</small>
+            </div>
+          </div>
+          <div
+            *ngIf="createForm.get('account').get('password')?.invalid && (createForm.get('account').get('password')?.touched||createForm.get('account').get('password')?.dirty)">
+            <div [hidden]="!createForm.get('account').get('password').errors.pattern">
+              <small class="form-text mess">
+                Mật khẩu phải chứa tối thiểu 8 kí tự, chứa ít nhất một kí tự hoa, một kí tự thường, một kí tự số và một kí tự đặc biệt.</small>
+            </div>
+          </div>
+
+          <!-- NHẬP LẠI MẬT KHẨU !-->
+          <div class="input-group">
+            <label for="confirmPassword1">Nhập lại mật khẩu<span class="text-danger"> (*)</span></label>
+            <input type="password" class="form-control" id="confirmPassword1" maxlength="20"
+                   placeholder="Nhập lại mật khẩu" formControlName="confirmPassword">
+          </div>
+          <div *ngIf="createForm.get('account').get('confirmPassword')?.invalid && (createForm.get('account').get('confirmPassword')?.touched||createForm.get('account').get('confirmPassword')?.dirty)">
+            <div [hidden]="!createForm.get('account').get('confirmPassword').errors.required">
+              <small class="form-text mess">Nhập lại mật khẩu không được để trống.</small>
+            </div>
+          </div>
+          <div>
+            <small class="form-text mess">{{confirmPassCheck}}</small>
+          </div>
+        </div>
+
+        <div formGroupName="employee">
+          <!-- QUYỀN !-->
+          <div class="input-group">
+            <label for="role">Quyền<span class="text-danger"> (*)</span></label>
+            <select id="role" class="form-select" aria-label="Default select example" formControlName="employeePositionId">
+              <option value="" disabled selected>Chọn quyền</option>
+              <option [ngValue]="position" *ngFor="let position of positionList">{{position.positionName}}</option>
+            </select>
+          </div>
+          <div
+            *ngIf="createForm.get('employee').get('employeePositionId')?.invalid && (createForm.get('employee').get('employeePositionId')?.touched||createForm.get('employee').get('employeePositionId')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeePositionId').errors.required">
+              <small class="form-text mess">
+                Quyền nhân viên không được để trống.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2 !-->
+      <div class="col-6 col__container">
+        <div formGroupName="employee">
+          <!-- MÃ NHÂN VIÊN !-->
+          <div class="input-group">
+            <label for="code">Mã nhân viên<span class="text-danger"> (*)</span></label>
+            <input type="text" class="form-control" id="code" maxlength="20" placeholder="Nhập mã nhân viên" [(ngModel)]="existCode" (ngModelChange)="checkCode()" formControlName="employeeCode">
+          </div>
+          <div *ngIf="createForm.get('employee').get('employeeCode')?.invalid && (createForm.get('employee').get('employeeCode')?.touched||createForm.get('employee').get('employeeCode')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeeCode').errors.required">
+              <small class="form-text mess">
+                Mã nhân viên không được để trống.</small>
+            </div>
+          </div>
+          <div *ngIf="createForm.get('employee').get('employeeCode')?.invalid && (createForm.get('employee').get('employeeCode')?.touched||createForm.get('employee').get('employeeCode')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeeCode').hasError('maxlength')">
+              <small class="form-text mess">
+                Mã nhân viên chỉ chứa tối đa 20 kí tự.</small>
+            </div>
+          </div>
+          <div
+            *ngIf="createForm.get('employee').get('employeeCode')?.invalid && (createForm.get('employee').get('employeeCode')?.touched||createForm.get('employee').get('employeeCode')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeeCode').errors.pattern">
+              <small class="form-text mess">
+                Mã nhân viên chưa đúng dịnh dạng MNV-XXX.</small>
+            </div>
+          </div>
+          <div>
+            <small class="form-text mess">{{errorMessageAccountAndEmployeeExist}}</small>
+          </div>
+
+          <!-- HỌ VÀ TÊN !-->
+          <div class="input-group">
+            <label for="name">Họ và tên<span class="text-danger"> (*)</span></label>
+            <input type="text" class="form-control" id="name" minlength="8" maxlength="50" placeholder="Nhập họ và tên"
+                   formControlName="employeeName">
+          </div>
+          <div
+            *ngIf="createForm.get('employee').get('employeeName')?.invalid && (createForm.get('employee').get('employeeName')?.touched||createForm.get('employee').get('employeeName')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeeName').errors.required">
+              <small class="form-text mess">
+                Họ và tên không được để trống.</small>
+            </div>
+          </div>
+          <div *ngIf="createForm.get('employee').get('employeeName')?.invalid && (createForm.get('employee').get('employeeName')?.touched||createForm.get('employee').get('employeeName')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeeName').hasError('maxlength')">
+              <small class="form-text mess">
+                Họ và tên chỉ chứa tối đa 50 kí tự.</small>
+            </div>
+          </div>
+          <div *ngIf="createForm.get('employee').get('employeeName')?.invalid && (createForm.get('employee').get('employeeName')?.touched||createForm.get('employee').get('employeeName')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeeName').hasError('minlength')">
+              <small class="form-text mess">
+                Họ và tên chứa tối thiểu 8 kí tự.</small>
+            </div>
+          </div>
+          <div
+            *ngIf="createForm.get('employee').get('employeeName')?.invalid && (createForm.get('employee').get('employeeName')?.touched||createForm.get('employee').get('employeeName')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeeName').errors.pattern">
+              <small class="form-text mess">Họ và tên chưa đúng định dạng in hoa kí tự đầu.</small>
+            </div>
+          </div>
+
+          <!-- NGÀY SINH !-->
+          <div class="input-group">
+            <label for="birthday">Ngày sinh<span class="text-danger"> (*)</span></label>
+            <input type="date" class="form-control" id="birthday" formControlName="employeeDateOfBirth" [(ngModel)]="date">
+          </div>
+          <div *ngIf="createForm.get('employee').get('employeeDateOfBirth')?.invalid && (createForm.get('employee').get('employeeDateOfBirth')?.touched||createForm.get('employee').get('employeeDateOfBirth')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeeDateOfBirth').errors.required">
+              <small class="form-text mess">
+                Ngày sinh không được để trống.</small>
+            </div>
+          </div>
+          <div *ngIf="createForm.get('employee').get('employeeDateOfBirth')?.invalid && createForm.get('employee').get('employeeDateOfBirth')?.dirty">
+            <div [hidden]="!createForm.get('employee').get('employeeDateOfBirth').hasError('invalidAge')">
+              <small class="form-text mess">
+                Tuổi phải lớn hơn 18.</small>
+            </div>
+          </div>
+<!--          <div>-->
+<!--            <small class="form-text mess">{{checkBirth}}</small>-->
+<!--          </div>-->
+
+          <!-- GIỚI TÍNH !-->
+          <div class="input-group">
+            <label for="gender1">Giới tính<span class="text-danger"> (*)</span></label>
+            <select id="gender1" class="form-select" aria-label="Default select example"
+                    formControlName="employeeGender">
+              <option value="" disabled selected>Giới tính</option>
+              <option value="Nam">Nam</option>
+              <option value="Nữ">Nữ</option>
+              <option value="Khác">Khác</option>
+            </select>
+          </div>
+          <div
+            *ngIf="createForm.get('employee').get('employeeGender')?.invalid && (createForm.get('employee').get('employeeGender')?.touched||createForm.get('employee').get('employeeGender')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeeGender').errors.required">
+              <small class="form-text mess">
+                Giới tính không được để trống.</small>
+            </div>
+          </div>
+
+          <!-- ĐỊA CHỈ !-->
+          <div class="input-group">
+            <label for="address">Địa chỉ<span class="text-danger"> (*)</span></label>
+            <input type="text" class="form-control" id="address" placeholder="Nhập địa chỉ" formControlName="employeeAddress" maxlength="60">
+          </div>
+          <div *ngIf="createForm.get('employee').get('employeeAddress')?.invalid && (createForm.get('employee').get('employeeAddress')?.touched||createForm.get('employee').get('employeeAddress')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeeAddress').errors.required">
+              <small class="form-text mess">
+                Địa chỉ không được để trống.</small>
+            </div>
+          </div>
+          <div *ngIf="createForm.get('employee').get('employeeAddress')?.invalid && (createForm.get('employee').get('employeeAddress')?.touched||createForm.get('employee').get('employeeAddress')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeeAddress').hasError('maxlength')">
+              <small class="form-text mess">
+                Địa chỉ chỉ chứa tối đa 60 kí tự.</small>
+            </div>
+          </div>
+          <div *ngIf="createForm.get('employee').get('employeeAddress')?.invalid && (createForm.get('employee').get('employeeAddress')?.touched||createForm.get('employee').get('employeeAddress')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeeAddress').hasError('minlength')">
+              <small class="form-text mess">
+                Địa chỉ chứa tối thiểu 5 kí tự.</small>
+            </div>
+          </div>
+
+          <!-- SỐ ĐIỆN THOẠI !-->
+          <div class="input-group">
+            <label for="phone">Điện thoại<span class="text-danger"> (*)</span></label>
+            <input type="text" class="form-control" id="phone" maxlength="20" [(ngModel)]="existPhone" (ngModelChange)="checkPhone()" placeholder="Nhập số điện thoại" formControlName="employeePhone">
+          </div>
+          <div *ngIf="createForm.get('employee').get('employeePhone')?.invalid && (createForm.get('employee').get('employeePhone')?.touched||createForm.get('employee').get('employeePhone')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeePhone').errors.required">
+              <small class="form-text mess">
+                Điện thoại không được để trống.</small>
+            </div>
+          </div>
+          <div *ngIf="createForm.get('employee').get('employeePhone')?.invalid && (createForm.get('employee').get('employeePhone')?.touched||createForm.get('employee').get('employeePhone')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeePhone').hasError('maxlength')">
+              <small class="form-text mess">
+                Điện thoại chỉ chứa tối đa 20 kí tự.</small>
+            </div>
+          </div>
+          <div *ngIf="createForm.get('employee').get('employeePhone')?.invalid && (createForm.get('employee').get('employeePhone')?.touched||createForm.get('employee').get('employeePhone')?.dirty)">
+            <div [hidden]="!createForm.get('employee').get('employeePhone').errors.pattern">
+              <small class="form-text mess">
+                Điện thoại chưa đúng định dạng 03x hoặc 05x hoặc 07x hoặc 08x hoặc 09x.</small>
+            </div>
+          </div>
+          <div>
+            <small class="form-text mess">{{phoneAlreadyExist}}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="button__container">
+      <button type="button" id="btnAdd" class="btn__primary" (click)="submit()" [disabled]="!createForm.valid || usernameAlreadyExist !== '' || errorMessageAccountAndEmployeeExist !== '' || phoneAlreadyExist != ''">Thêm</button>
+      <button class="bt btn__cancel" (click)="backToHome()">Trở về</button>
+    </div>
+  </form>
+</div>
+
+<notifier-container></notifier-container>

@@ -23,79 +23,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0c68399-0e84-42db-851f-c638574cb499" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ss07_thiet_ke_bo_cuc_web/thuchanh/ajax.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/caseStudy/src/main/java/casestudy/formatter/DateConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/caseStudy/src/main/java/casestudy/formatter/DateFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/config/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/controller/TinTucController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/controller/TinTucControllerRest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/entity/DanhMuc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/entity/TinTuc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/formatter/DanhMucFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/formatter/DateConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/formatter/DateFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/repository/IDanhMucRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/repository/ITinTucRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/service/danhmuc/DanhMucService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/service/tintuc/TinTucService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/service/tintuc/impl/ITinTucService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/java/exam/validate/TinTucValidate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/resources/message.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/resources/templates/tintuc/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/resources/templates/tintuc/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam/src/main/resources/templates/tintuc/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/config/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/controller/KhuyenMaiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/entity/KhuyenMai.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/formatter/DateConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/formatter/DateFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/repository/IKhuyenMaiRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/service/IKhuyenMaiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/service/KhuyenMaiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/java/exam2/validate/KhuyenMaiValidate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/resources/message.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/resources/templates/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/resources/templates/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module4/exam2/src/main/resources/templates/update.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module5/caseStudy/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module2/src/PT/PT/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module5/webst/profile/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/DemoLogin/Be/src/main/java/com/codegym/demo/config/ApplicationSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/DemoLogin/Be/src/main/java/com/codegym/demo/entity/account/Auditing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/DemoLogin/Be/src/main/java/com/codegym/demo/repository/IAccountRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/DemoLogin/Be/src/main/java/com/codegym/demo/security/jwt/AuthApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/DemoLogin/Be/src/main/java/com/codegym/demo/security/jwt/AuthRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/DemoLogin/Be/src/main/java/com/codegym/demo/security/jwt/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/DemoLogin/Be/src/main/java/com/codegym/demo/security/jwt/JwtResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/DemoLogin/Be/src/main/java/com/codegym/demo/security/utils/JwtServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/DemoLogin/Be/src/main/java/com/codegym/demo/security/utils/JwtTokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/DemoLogin/Be/src/main/java/com/codegym/demo/security/utils/JwtTokenUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/DemoLogin/Be/src/main/java/com/codegym/demo/util/BeanUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/DemoLogin/Be/src/test/java/com/codegym/demo/AccountRepoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/Sprint2/Prototype/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/Sprint2/Prototype/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/Sprint2/bookstore/myjs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/Sprint2/details-product/details-product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/Sprint2/e-shop/e-shop.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/Sprint2/navbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/[A1121I1]_Prototype_HieuNT/inputeffect.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/[A1121I1]_Prototype_HieuNT/mycss.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/[A1121I1]_Prototype_HieuNT/stickytable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/[A1121I1]_Prototype_HieuNT/stickytable.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module2/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module2/src/caseStudy/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/caseStudy/models/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module2/src/PT/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module2/src/out/production/module2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../module2/src/out/production/module2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/java/model/bean/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/java/model/bean/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/webapp/bootstrap-4.6.1-dist/bootstrap-4.6.1-dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/webapp/bootstrap-4.6.1-dist/bootstrap-4.6.1-dist/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/webapp/bootstrap413/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/webapp/bootstrap413/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/src/main/webapp/exam2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/src/main/webapp/exam2.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/build/libs/caseStudy_jsp_servlet_java_web-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/build/libs/caseStudy_jsp_servlet_java_web-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/src/main/webapp/bootstrap4.6.0/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/src/main/webapp/bootstrap4.6.0/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/src/main/webapp/codegym.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/src/main/webapp/view/employee/listEmployee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/src/main/webapp/view/employee/listEmployee.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss07_thiet_ke_bo_cuc_web/btap/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ss07_thiet_ke_bo_cuc_web/btap/demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss07_thiet_ke_bo_cuc_web/thuchanh/nutphantrang.html" beforeDir="false" afterPath="$PROJECT_DIR$/ss07_thiet_ke_bo_cuc_web/thuchanh/nutphantrang.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss10_jstl/btap/list_customer/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ss10_jstl/btap/list_customer/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss10_jstl/thuchanh/jsp/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ss10_jstl/thuchanh/jsp/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_mvc/thuchanh/customerManage/src/main/webapp/view/customer/listCustomer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc/thuchanh/customerManage/src/main/webapp/view/customer/listCustomer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/load.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/load.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/caseStudy/src/main/java/casestudy/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/caseStudy/src/main/java/casestudy/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/caseStudy/src/main/java/casestudy/repository/customer/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/caseStudy/src/main/java/casestudy/repository/customer/ICustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/caseStudy/src/main/resources/static/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/caseStudy/src/main/resources/static/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/caseStudy/src/main/resources/templates/customer/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/caseStudy/src/main/resources/templates/customer/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/ss02/btap/Calculator/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/ss02/btap/Calculator/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/ss02/btap/Calculator/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/ss02/btap/Calculator/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/ss02/btap/Calculator/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/ss02/btap/Calculator/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/ss02/thuchanh/email_Validate_Gradle/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/ss02/thuchanh/email_Validate_Gradle/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module4/ss02/thuchanh/email_Validate_Gradle/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/ss02/thuchanh/email_Validate_Gradle/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy_database/case_study.sql" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_database/case_study.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/src/main/java/controller/ServletCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/caseStudy_jsp_servlet_java_web/src/main/java/controller/ServletCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module4/caseStudy/src/main/java/casestudy/controller/CustomerControllerRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/caseStudy/src/main/java/casestudy/controller/CustomerControllerRest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module4/ss05/thuchanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/ss05/thuchanh/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module4/ss09/thuchanh/customer/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/ss09/thuchanh/customer/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/caseStudy/dropdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/caseStudy/dropdown.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/caseStudyAngular/caseStudy/src/app/customer-all/customer/customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/caseStudyAngular/caseStudy/src/app/customer-all/customer/customer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/caseStudyAngular/caseStudy/src/app/service/customer-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/caseStudyAngular/caseStudy/src/app/service/customer-service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss04/thuchanh/angular-hackernews-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/ss04/thuchanh/angular-hackernews-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss04/thuchanh/angular-hackernews-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/ss04/thuchanh/angular-hackernews-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss04/thuchanh/angular-hackernews-app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/ss04/thuchanh/angular-hackernews-app/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss04/thuchanh/angular-hackernews-app/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/ss04/thuchanh/angular-hackernews-app/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss04/thuchanh/angular-hackernews-app/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/ss04/thuchanh/angular-hackernews-app/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss04/thuchanh/angular-hackernews-app/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/ss04/thuchanh/angular-hackernews-app/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss06/thuchanh/angular-name-card/src/app/form-register/form-register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/ss06/thuchanh/angular-name-card/src/app/form-register/form-register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss09/baitap/product-management/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/ss09/baitap/product-management/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss09/baitap/product-management/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/ss09/baitap/product-management/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss09/baitap/product-management/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/ss09/baitap/product-management/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss09/baitap/product-management/src/app/todo-app/todo-app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/webst/profile/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss09/baitap/product-management/src/app/todo-app/todo-app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss09/baitap/product-management/src/app/todo-app/todo-app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss09/baitap/product-management/src/app/todo-app/todo-app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss09/baitap/product-management/src/app/todo-service.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/ss09/baitap/product-management/src/app/todo.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/webst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/webst/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/webst/buutonHover.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/webst/buutonHover.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/webst/card.css" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/webst/card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/webst/card.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/webst/card.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/webst/dropdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/webst/dropdown.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/webst/dropdown.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/webst/dropdown.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/webst/pureCSS.css" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/webst/pureCSS.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/webst/pureCSSToolTip.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/webst/pureCSSToolTip.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +132,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../module5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -164,7 +151,7 @@
       <recent name="D:\CODE\A1121L1-NguyenTrungHieu\module3\ss07_thiet_ke_bo_cuc_web\btap" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.63">
     <configuration name="TomEE 9.0.63" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="TomEE 9.0.63" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8091" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -355,6 +342,7 @@
       <workItem from="1660315648442" duration="3784000" />
       <workItem from="1660525895790" duration="3486000" />
       <workItem from="1660739265955" duration="642000" />
+      <workItem from="1668685961988" duration="242000" />
     </task>
     <servers />
   </component>

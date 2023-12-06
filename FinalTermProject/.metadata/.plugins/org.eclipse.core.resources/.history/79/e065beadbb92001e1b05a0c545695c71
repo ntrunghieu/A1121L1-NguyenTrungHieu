@@ -1,0 +1,84 @@
+package springdemo.dao;
+
+import java.util.LinkedHashMap;
+
+public class Student {
+	private String firstName;
+	private String lastName;
+	private String country;
+	private String favouriteLanguage;
+	private LinkedHashMap<String, String> countryOptions;
+	
+	public Student() {
+		countryOptions = new LinkedHashMap<>();
+		countryOptions.put("DN", "Da Nang");
+		countryOptions.put("HN", "Ha Noi");
+		countryOptions.put("HCM", "Ho Chi Minh");
+		
+	}
+	
+	public Student(String firstName, String lastName) {
+		
+		this.firstName = firstName;
+		this.lastName = lastName;
+		
+	}
+	
+public Student(String firstName, String lastName, String country, String favouriteLanguage) {
+		
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.country = country;
+		this.favouriteLanguage = favouriteLanguage;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+	
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	
+
+	public String getFavouriteLanguage() {
+		return favouriteLanguage;
+	}
+
+	public void setFavouriteLanguage(String favouriteLanguage) {
+		this.favouriteLanguage = favouriteLanguage;
+	}
+	
+	
+
+	public LinkedHashMap<String, String> getCountryOptions() {
+		return countryOptions;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Student[ firstName = " + this.firstName + ", lastName = "  + this.lastName + ", country = " + this.country          ;
+	}
+	
+	
+	
+}

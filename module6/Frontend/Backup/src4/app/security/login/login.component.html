@@ -1,0 +1,51 @@
+<div class="container">
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+<!--        <i class="fas fa-paper-plane"></i>-->
+        <div class="login_text">
+            <h2>Đăng nhập</h2>
+        </div>
+        <div style="height: 79px">
+            <div class="input-group">
+                <label>Tài khoản <span style="color: red">(*)</span></label>
+                <input type="text" class="input__text" placeholder="Tài khoản" formControlName="username" name="username" id="username" maxlength="40" autofocus>
+            </div>
+            <small class="fs-6 text__error"
+                   style="color: red"
+                   *ngIf="loginForm.get('username').errors?.required && (loginForm.get('username').dirty ||loginForm.get('username').touched)">
+                Tài khoản không được để trống.
+            </small>
+            <small class="fs-6 text__error"
+                   style="color: red"
+                   *ngIf="this.loginForm.value.username === '' && checkUserName == true">
+                Tài khoản không được để trống.
+            </small>
+        </div>
+        <div style="height: 79px">
+            <div class="input-group">
+                <label>Mật khẩu <span style="color: red">(*)</span></label>
+                <input type="password" class="input__text" placeholder="Mật khẩu" formControlName="password" name="password" id="password" maxlength="40">
+            </div>
+            <small class="fs-6 text__error" style="color: red"
+                   *ngIf="loginForm.get('password').errors?.required && (loginForm.get('password').dirty ||loginForm.get('password').touched)">
+                Mật khẩu không được để trống.
+            </small>
+            <small class="fs-6 text__error"
+                   style="color: red"
+                   *ngIf="this.loginForm.value.password === '' && checkPassWord == true">
+                Mật khẩu không được để trống.
+            </small>
+        </div>
+        <div class="checkbox__line">
+            <input type="checkbox" class="my-checkbox" value="1" formControlName="remember_me"/>
+            Ghi nhớ tài khoản
+        </div>
+        <small class="fs-6 text__error" style="color: red" *ngIf="errorMessage">Tài khoản hoặc mật khẩu không đúng.</small>
+        <div class="button__container">
+            <button class="btn__login" type="submit" value="Login">Đăng nhập</button>
+            <button class="btn__back" routerLink="">Trở về</button>
+        </div>
+
+    </form>
+
+</div>

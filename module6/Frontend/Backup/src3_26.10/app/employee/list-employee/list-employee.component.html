@@ -1,0 +1,141 @@
+<div class="container-fluid" style="margin-top: 100px">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 style="margin-top: 20px;margin-left: 20px;text-align: center; color: #270082">Danh sách thông tin nhân viên</h2>
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-lg-6">
+          <button class="btn__create" routerLink="/employee/create">
+            Thêm mới nhân viên
+          </button>
+        </div>
+        <form [formGroup]="searchNameForm" (ngSubmit)="send()">
+          <div class="input-group info-search"
+               style="margin: 8px 8px 8px 6%; text-align: center; vertical-align: middle">
+            <div class="form-outline form-field " style="margin-right: 5px" >
+              <input formControlName="name" id="name" type="text" class="form-control rounded" placeholder="Tìm kiếm họ tên...">
+            </div>
+            <button type="submit" class="btn__primary" id="search-addon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+            </button>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">Số thứ tự nhân viên</th>
+          <th scope="col">Mã nhân viên</th>
+          <th scope="col">Họ tên</th>
+          <th scope="col">Avatar nhân viên</th>
+          <th scope="col">Ngày sinh</th>
+          <th scope="col">Giới tính</th>
+          <th scope="col">Địa chỉ</th>
+          <th scope="col">Số điện thoại</th>
+          <th scope="col">Lương nhân viên</th>
+          <!--          <th scope="col">Nhân viên Flag</th>-->
+          <th scope="col">Tên tài khoản</th>
+          <th scope="col">Chức vụ</th>
+          <th scope="col">Chi tiết</th>
+          <th scope="col">Chỉnh sửa</th>
+          <th scope="col">Xóa</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let emp of listEmployee ">
+          <th scope="row">{{emp.employeeId}}</th>
+          <td>{{emp.employeeCode}}</td>
+          <td>{{emp.employeeName}}</td>
+          <td>{{emp.employeeAvatar}}</td>
+          <td>{{emp.employeeDateOfBirth}}</td>
+          <td>{{emp.employeeGender}}</td>
+          <td>{{emp.employeeAddress}}</td>
+          <td>{{emp.employeePhone}}</td>
+          <td>{{emp.employeeSalary}}</td>
+          <!--          <td>{{emp.employeeFlag}}</td>-->
+          <td>{{emp.employeeAccountId.username}}</td>
+          <td>{{emp.employeePositionId.positionName}}</td>
+          <td>
+            <a class="btn btn-primary btn__primary" [routerLink]="['/employee/detail',emp.employeeId]"
+               style=" cursor: pointer">Chi tiết</a>
+          </td>
+          <td>
+            <a class="btn btn-primary btn__edit" [routerLink]="['/employee-admin/edit/',emp.employeeId]"
+               style=" cursor: pointer">Chỉnh sửa</a>
+          </td>
+          <td>
+            <button class="btn btn-primary btn__delete"  data-toggle="modal" data-target="#exampleModal"
+                    type="button" (click)="sendEmployeeToDelete(emp.employeeCode, emp.employeeName)">Xóa
+            </button>
+          </td>
+        </tr>
+
+        </tbody>
+
+
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-bottom: 10px">
+  <div class="pagination">
+    <a href="#" (click)="previous($event)">Previous</a>
+    <div *ngFor="let p of totalPagination; let i = index">
+      <a class="active" *ngIf="page <= 25 && i <= 5" href="" (click)="setPage(i,$event)" [ngClass]="{'active':i*5 == page}">{{i+1}}</a>
+      <a class="active" *ngIf="i > 5 && page > 25"  href="" (click)="setPage(i,$event)" [ngClass]="{'active':i*5 == page}">{{i+1}}</a>
+    </div>
+    <a href="#" (click)="next($event)">Next</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-4">
+    <div style="text-align:right">
+      <button type="button" class="btn__primary" routerLink=""> Trở về</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="font-weight: 500; color: crimson">Lưu ý: Nội dung này không hoàn tác</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <span>Bạn có muốn xóa nhân viên,  <span style="color: #0f57b3; font-weight: bolder">{{name}}</span>
+              có mã nhân viên là <span style="color: #0f57b3; font-weight: bolder">{{id}}</span> không ?
+        </span>
+      </div>
+      <div class="modal-footer">
+        <button style="background:white; color:#0f57b3 " type="button" class="btn btn-secondary"
+                data-dismiss="modal">Quay lại
+        </button>
+        <button style="background:#0f57b3; color: white" type="button" class="btn btn-primary"data-dismiss="modal" (click)="deleteEmployeeById(id)">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

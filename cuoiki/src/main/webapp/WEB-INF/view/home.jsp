@@ -211,7 +211,7 @@
                 <td>${book.bookPrice}</td>
                 <td>${book.bookCategoryId.categoryName}</td>
                 <td>
-                    <a style="width: 88px" class="btn btn-primary " href="/admin/book-detail/${book.bookId}">Chi tiết</a>
+                    <a hidden style="width: 88px" class="btn btn-primary " href="/admin/book-detail/${book.bookId}">Chi tiết</a>
                     <a style="width: 88px" class="btn btn-primary " href="/admin/book-edit/${book.bookId}">Sửa</a>
 <%--                    <button type="button"><span><a href="/admin/book-edit?id=${book.bookId}">Xóa</a></span>--%>
 <%--                    </button>--%>
@@ -272,8 +272,9 @@
     </div>
 </div>
 
-
-<script src="../../resources/jquery/jquery-3.6.0.min.js"></script>
+</body>
+</html>
+<script src="../../resources/jquery/jquery-3.5.1.min.js"></script>
 <script src="../../resources/datatables/js/jquery.dataTables.min.js"></script>
 <script src="../../resources/datatables/js/dataTables.bootstrap4.min.js"></script>
 <script>
@@ -295,5 +296,3 @@
         document.getElementById("main").style.marginLeft= "0";
     }
 </script>
-</body>
-</html>

@@ -1,0 +1,28 @@
+package springdemo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import springdemo.dao.FruitDAO;
+import springdemo.model.bean.Fruit;
+
+@Controller
+public class HomeController {
+	
+	@Autowired
+	private FruitDAO fruitDAO;
+	
+	@RequestMapping("/home")
+	private String homePage(Model model) {
+		// TODO Auto-generated method stub
+		List<Fruit> fruits = fruitDAO.selectAllFruits();
+        
+        model.addAttribute("fruits", fruits);		
+		
+		return "main-list";
+	}
+}

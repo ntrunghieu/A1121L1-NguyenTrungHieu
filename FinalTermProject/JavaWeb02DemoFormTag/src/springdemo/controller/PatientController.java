@@ -1,0 +1,103 @@
+package springdemo.controller;
+import org.hibernate.query.Query;
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import springdemo.dao.HibernateDatabaseConnection;
+import springdemo.model.bean.Patient;
+
+@Controller
+@RequestMapping("/patient")
+public class PatientController {
+
+	@RequestMapping("/create")
+	private String createProductPage() {
+		// TODO Auto-generated method stub
+		return "create";
+	}
+	
+	@RequestMapping(value="add_patient_action", method = RequestMethod.POST)
+	public void addStudent(HttpServletResponse res, 
+			@ModelAttribute("patient") Patient patient) throws IOException {
+		
+		System.out.println(patient.getName());
+		
+		Session session = null;
+		session = HibernateDatabaseConnection.getSessionFactory().openSession();
+		
+		Transaction t = session.beginTransaction();
+		session.save(patient);
+		t.commit();
+		
+		res.sendRedirect("create");
+	}
+	
+	@RequestMapping("/edit")
+	public String getEditForm(HttpServletResponse res, 
+			Model m,
+			@RequestParam("id") Long id) throws IOException {
+		
+		Session session = null;
+		session = HibernateDatabaseConnection.getSessionFactory().openSession();
+		Query query2 = session.createQuery("FROM Patient WHERE id = :id");		
+		query2.setParameter("id", id);
+		
+		Patient std_obj = (Patient)query2.getSingleResult();
+		
+		m.addAttribute("patient", std_obj);
+		
+		return "edit";
+	}
+
+	
+	@RequestMapping(value="edit_patient_action", method = RequestMethod.POST)
+	public void editStudent(HttpServletResponse res, 
+			@ModelAttribute("patient") Patient patient) throws IOException {
+		
+		Session session = null;
+		session = HibernateDatabaseConnection.getSessionFactory().openSession();
+		
+		Transaction t = session.beginTransaction();
+		session.saveOrUpdate(patient);
+		
+		t.commit();
+		
+		res.sendRedirect("edit");
+	}
+	
+	@RequestMapping("/delete")
+	public void deleteUser(HttpServletResponse res, 
+			@RequestParam("id") Long id) throws IOException {
+		
+		System.out.println("\n\n===== Id : " + id +  "=====\n\n");
+		
+		Session session = null;
+		session = HibernateDatabaseConnection.getSessionFactory().openSession();
+		
+		Transaction t = session.beginTransaction();
+		
+		Patient std_obj = new Patient();
+		std_obj.setId(id);
+		
+		session.delete(std_obj); // DELETE FROM student WHERE id = 2
+		
+		t.commit();
+		
+		res.sendRedirect("home");
+	}
+
+
+
+	
+
+}

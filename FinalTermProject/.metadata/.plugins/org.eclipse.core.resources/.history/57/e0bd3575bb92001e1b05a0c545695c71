@@ -1,0 +1,5 @@
+package springdemo.model.service.copy;
+
+public class FruitService {
+
+}

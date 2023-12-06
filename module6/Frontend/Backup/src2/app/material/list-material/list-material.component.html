@@ -1,0 +1,75 @@
+<body style="margin-top: 100px">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Danh mục<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Thống kê</a>
+      <a class="nav-item nav-link" href="#">Trợ giúp  </a>
+    </div>
+  </div>
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchVal">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="search()">Search</button>
+</nav>
+<button class="btn btn-outline-primary" routerLink="/material/create">Thêm mới vật tư</button>
+<h3 style="text-align: center; margin: 20px  ">Thông tin vật tư</h3>
+<table class="table table-hover table-css">
+  <thead>
+  <tr>
+    <th scope="col">Mã VT </th>
+    <th scope="col">Tên vật tư </th>
+    <th scope="col">Loại vật tư</th>
+    <th scope="col">Giá thành </th>
+    <th scope="col">Hạn sử dụng </th>
+    <th scope="col">Nhà cung cấp </th>
+    <th scope="col">Sửa </th>
+    <th scope="col">Xoá</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let material of materialList">
+    <td scope="col">{{material?.materialCode}}</td>
+    <td scope="col">{{material?.materialName}}</td>
+    <td scope="col">{{material?.materialTypeId.materialTypeName}}</td>
+    <td scope="col">{{material?.materialPrice | currency: "VND"}}</td>
+    <td scope="col">{{material?.materialExpiridate | date: "dd-MM-yyyy"}}</td>
+    <td scope="col">{{material?.materialCustomerId.customerName}}</td>
+    <td scope="col" ><button class="team-css1"><a [routerLink]="['/material/edit',material.materialId]">Sửa</a></button></td>
+    <td scope="col">
+      <button class=" team-css"  data-toggle="modal" data-target="#modalDelete" (click)="findMaterialDelete(material.materialId)">Xoá</button>
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+
+<div style="text-align: center">
+  <button class="btn btn-outline-primary" [disabled]="indexPage == 0" (click)="previousPage()">Previous</button>
+  {{indexPage+1}}/{{totalPages}}
+  <button class="btn btn-outline-primary" [disabled]="indexPage + 1 == totalPages" (click)="nextPage()">Next</button>
+</div>
+
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bạn có muốn xoá vật tư này không?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>Mã vật tư: {{materialDelete?.materialCode}}</div>
+        <div>Tên vật tư: {{materialDelete?.materialName}}</div>
+        <div>Loại vật tư: {{materialDelete?.materialTypeId.materialTypeName}}</div>
+        <div>Hạn sử dụng: {{materialDelete?.materialExpiridate}}</div>
+        <div>Nhà cung cấp: {{materialDelete?.materialCustomerId.customerName}}</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete()">Xác nhận</button>
+      </div>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-secondary">Trở về trang chủ</button>
+</body>

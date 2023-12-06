@@ -1,0 +1,197 @@
+<div class="sticky-wrapper" style="margin-bottom: 60px">
+  <div class="header-nav js-header-nav sticky">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <div class="navbar-collapse">
+          <ul id="menu-furama-vi" class="menu navbar-nav w-100 js-main-menu">
+            <li id="nav-menu-item-5006"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="https://furamavietnam.com/vi/the-resort/" class="nav-link main-menu-link">INTRODUCE</a></li>
+            <li id="nav-menu-item-5007"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/customer" class="nav-link main-menu-link">CUSTOMER</a></li>
+            <li id="nav-menu-item-5008"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/employee" class="nav-link main-menu-link">EMPLOYEE</a>
+            </li>
+            <li id="nav-menu-item-5009"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/contract" class="nav-link main-menu-link">CONTRACT</a></li>
+            <li id="nav-menu-item-5010"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="/"
+                 class="nav-link main-menu-link">SERVICE</a></li>
+            <li id="nav-menu-item-5011"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a routerLink="" class="nav-link main-menu-link">SALE</a></li>
+            <li id="nav-menu-item-5012"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="https://furamavietnam.com/vi/destination/" class="nav-link main-menu-link">DESTINATION</a></li>
+            <li id="nav-menu-item-5013"
+                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">
+              <a href="https://furamavietnam.com/vi/furama-special-offers/"
+                 class="nav-link main-menu-link">ENDOW</a></li>
+            <!--            <li style="min-height: 10px" id="nav-menu-item-5014"-->
+            <!--                class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">-->
+            <form style="" action="" id="search-box">
+              <input placeholder="Ban muon tim gi?" [(ngModel)]="name" name="name" (ngModelChange)="search()"
+                     type="text" id="search-text" required>
+              <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <!--            </li>-->
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+<div style="margin-top: 30px" class=" middle">
+  <a href="" class="btnHover btnHover1" routerLink="/tao">Them mới đề tài</a>
+  <!--        <a href="" class="btnHover btnHover2">Hover Me</a>-->
+</div>
+
+
+<div  class="col-md-6" style="background: #088b6d; max-width: 570px; margin-left: 27%; margin-top: 120px">
+  <form style="margin: 30px" [formGroup]="searchForm" (ngSubmit)="send()">
+    <div class="row">
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <label for="nsx" class="col-form-label">Ngày sản xuất: </label>
+          <input type="date" class="mx-md-4 form-control" id="nsx" formControlName="nsx" name="nsx">
+        </div>
+        <div class="col-md-6 form-group">
+          <label for="hsd" class="col-form-label">Hạn sử dụng: </label>
+          <input type="date" class="mx-md-4 form-control" id="hsd" formControlName="hsd" name="hsd">
+        </div>
+      </div>
+
+
+      <!--      <div class="row d-flex">-->
+      <!--        <div class="col-md-6 mx-3 ">-->
+      <!--          <label for="nsx">NgaySX: </label>-->
+      <!--          <input type="date" class="mx-md-4" id="nsx" formControlName="nsx" name="nsx">-->
+      <!--        </div>-->
+      <!--        <div class="col-md-3 ">-->
+      <!--          <label for="hsd">NgayHH: </label>-->
+      <!--          <input type="date" class="mx-md-4" id="hsd" formControlName="hsd" name="hsd">-->
+      <!--        </div>-->
+      <!--  <input type="text" class="mx-md-4"  formControlName="name" name="name">-->
+      <!--        <div class="col-md-3 mb-3">-->
+      <!--          &lt;!&ndash;          <label for="id">Type: </label>&ndash;&gt;-->
+      <!--          &lt;!&ndash;          <select formControlName="id" id="id" name="id">&ndash;&gt;-->
+      <!--          &lt;!&ndash;            <option *ngFor="let l of level" [value]="l.id" aria-checked="true" selected>{{l.name}}</option>&ndash;&gt;-->
+      <!--          &lt;!&ndash;          </select>&ndash;&gt;-->
+      <!--        </div>-->
+      <div  class="col-md-6 " style="margin-left: 35%">
+        <button style="background:#cbbe73;" type="submit" class="rounded-0 py-2 px-4 btnHover btnHover1">Tìm kiếm</button>
+        <!--          <button style="margin: 18px" class="btn btn-primary" type="submit"> Search</button>-->
+      </div>
+      <!--      </div>-->
+    </div>
+  </form>
+</div>
+
+
+
+<!--danh sach sp-->
+<div style="margin-left: 3px" class="container-fluid">
+  <table class="table table-responsive table-hover">
+    <thead class="table table-dark text-center">
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">ID</th>
+      <th scope="col">Tên SV</th>
+      <th scope="col">Tên Nhóm</th>
+      <th scope="col">Tên Đề tài</th>
+      <th scope="col">Giáo viên</th>
+      <th  scope="col">Email</th>
+      <th  scope="col">Số điện thoại</th>
+      <th hidden scope="col">Chinh sua</th>
+      <th  class="table-light" scope="col">Hanh dong</th>
+    </tr>
+    </thead>
+    <tbody class="text-center">
+    <tr
+      *ngFor="let dt of detai |paginate : { itemsPerPage: 3, currentPage: p, totalItems: totalLength }, index as index">
+      <td>{{index + 1}}</td>
+      <td >{{dt.id}}</td>
+      <td>{{dt.tenSV | titlecase}}</td>
+      <td>{{dt.tenNhom | titlecase}}</td>
+      <td>{{dt.tenDeTai | titlecase}}</td>
+      <td>{{dt.giaoVien | titlecase}}</td>
+      <td >{{dt.email}}</td>
+      <td >{{dt.sdt}}</td>
+      <td class="d-flex table-light" style="align-items: center">
+        <button style="color: red; background:transparent; border: none " type="button" class="btn btn-primary"
+                data-bs-toggle="modal" data-bs-target="#bn" (click)="guiIdSP(dt.id, dt.tenSV)">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+
+        <!--        <button hidden type="button" class="btn btn-primary"  (click)="openPopup()" >-->
+        <!--          Xoa-->
+        <!--        </button>-->
+        <a style="margin:3px; text-decoration: none; color: #0e0d0d " [routerLink]="['/chinhsua', dt.id]">
+          <i class="fa-regular fa-pen-to-square"></i>
+        </a>
+        <button style="border: none;background:none; color: #0e6290" type="button" class="btn btn-primary"
+                data-bs-toggle="modal" data-bs-target="#bn1" (click)="xemChiTiet(dt.id)">
+          <i class="fa-sharp fa-solid fa-circle-info"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div style="justify-content: space-around;display: flex;">
+    <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>
+  </div>
+</div>
+
+
+
+<!--modal san pham-->
+<div class="modal fade" id="bn" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><i style="color: red"
+                                                          class="fa-solid fa-triangle-exclamation"></i> Xóa sinh viên
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="">Bán có muốn xóa sinh viên: <span class="text-warning">{{ten}}</span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="xoa(id)">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--modal xem chi tiet-->
+<div class="modal fade" id="bn1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Xem chi tiet</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>Tên SV: {{detai1.tenSV}}</h4>
+        <h4>Tên Nhóm: {{detai1.tenNhom}}</h4>
+        <h4>Tên Đề tài : {{detai1.tenDeTai}}</h4>
+        <h4>Giáo viên: {{detai1.giaoVien}}</h4>
+        <h4>Email: {{detai1.email}}</h4>
+        <h4>Sđt: {{detai1.sdt}}</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+

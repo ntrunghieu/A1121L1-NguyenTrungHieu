@@ -1,0 +1,91 @@
+<body style="background-color: #f6f6f9">
+  <h2 class="text-center title" style="color: #270082; margin-top: 90px">Thông tin nhân viên</h2>
+  <div class="d-flex justify-content-center">
+    <div class="container">
+      <nav class="mb-5">
+        <div class="ml-4">
+          <div>
+            <img *ngIf="employeeDetail.employeeAvatar" class="fa-paper-plane" style="object-fit: cover"
+                 src="{{employeeDetail.employeeAvatar}}"
+                 alt="Error">
+            <img *ngIf="employeeDetail.employeeAvatar == null || employeeDetail.employeeAvatar == '' "
+                 class="fa-paper-plane" width="18%"
+                 src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+                 alt="Error">
+          </div>
+          <div class="input-group mt-4">
+            <label>Tên tài khoản:</label>
+            <a>{{employeeDetail.employeeAccountId.username}}</a>
+          </div>
+
+          <div class="input-group">
+            <label>Mã nhân viên:</label>
+            <a>{{employeeDetail.employeeCode}}</a>
+          </div>
+
+          <div class="input-group">
+            <label>Họ và tên:</label>
+            <a>{{employeeDetail.employeeName}}</a>
+          </div>
+
+          <div class="input-group">
+            <label>Địa chỉ:</label>
+            <a>{{employeeDetail.employeeAddress}}</a>
+          </div>
+
+          <div class="input-group">
+            <label>Giới tính:</label>
+            <a style="display: flex; align-items: center"
+               *ngIf="employeeDetail.employeeGender == 'Nữ'">{{employeeDetail.employeeGender}}
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="red"
+                   class="ml-1 bi bi-gender-female" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M8 1a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3 5a5 5 0 1 1 5.5 4.975V12h2a.5.5 0 0 1 0 1h-2v2.5a.5.5 0 0 1-1 0V13h-2a.5.5 0 0 1 0-1h2V9.975A5 5 0 0 1 3 5z"/>
+              </svg>
+            </a>
+            <a style="display: flex; align-items: center"
+               *ngIf="employeeDetail.employeeGender == 'Nam'">{{employeeDetail.employeeGender}}
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="blue" class="ml-1 bi bi-gender-male "
+                   viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M9.5 2a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.707L9.871 6.836a5 5 0 1 1-.707-.707L13.293 2H9.5zM6 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+              </svg>
+            </a>
+            <a style="display: flex; align-items: center"
+               *ngIf="employeeDetail.employeeGender == 'Khác'">{{employeeDetail.employeeGender}}
+            </a>
+          </div>
+
+          <div class="input-group">
+            <label>Số điện thoại:</label>
+            <a>{{employeeDetail.employeePhone}}</a>
+          </div>
+
+          <div class="input-group">
+            <label>Ngày sinh:</label>
+            <a>{{employeeDetail.employeeDateOfBirth | date :"dd/MM/yyyy"}}</a>
+          </div>
+
+          <div class="input-group">
+            <label>Lương:</label>
+            <a>{{employeeDetail.employeeSalary | currency: "VNĐ"}}</a>
+          </div>
+
+          <div class="input-group">
+            <label>Chức vụ:</label>
+            <a>{{employeeDetail.employeePositionId.positionName}}</a>
+          </div>
+        </div>
+        <div class="row button__container d-flex justify-content-center mt-3">
+          <button class="bt btn__cancel col-md-3 col-sm-7 mx-4 my-2" routerLink="/employee/list">Quay về</button>
+          <button class="bt btn__primary col-md-3 col-sm-7 mx-4 my-2"
+                  [routerLink]="['/employee-admin/edit/',employeeDetail.employeeId]">Cập nhật
+          </button>
+          <button class="bt btn__delete col-md-3 col-sm-7 mx-4 my-2"
+                  [routerLink]="['/account/update/password/']">Đổi mật khẩu
+          </button>
+        </div>
+      </nav>
+    </div>
+  </div>
+</body>

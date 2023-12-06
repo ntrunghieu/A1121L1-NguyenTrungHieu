@@ -1,0 +1,177 @@
+<!--<mat-spinner *ngIf="loading" class="spinner"></mat-spinner>-->
+<!--<mat-dialog-content *ngIf="loading"-->
+<!--&gt;<div class="black_loading_dialog"></div>-->
+<!--</mat-dialog-content>-->
+<div class="loading" *ngIf="loading">
+  <div class="loader">
+  </div>
+</div>
+<link rel="stylesheet" href="create-material.component.css">
+<div class="container" style="margin-top: 100px">
+  <div style="background-color: white;">
+    <form [formGroup]="materialForm" (ngSubmit)="createMaterial()" class="p-3">
+      <h1 class="text-center font-weight-bold" style="color:#270082;">Thêm Mới Vật Tư</h1>
+      <div class="row mt-3">
+        <div class="col-md-4">
+          <div class="image-wh">
+            <img *ngIf="!url" src="../../../assets/images/infor-material/images.jpg" height="370px"
+                 class="content-image">
+            <img *ngIf="url" [src]="url" height="370px" class="content-image">
+          </div>
+          <input #imgUpload type="file" class="form-control-file" (change)="showPreview($event)">
+          <button class="btn-image" type="button" (click)="imgUpload.click()"> Chọn ảnh</button>
+        </div>
+        <div class="col-md-8">
+          <div class="row mt-3">
+            <div class="col-md-2 input-group" style="align-content: center">
+              Mã Vật Tư
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <input type="text" formControlName="materialCode">
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="materialForm.controls.materialCode.touched
+&&materialForm.controls.materialCode.errors?.required">Không được để trống trường này!
+              </small>
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="materialForm.controls.materialCode.touched
+&&materialForm.controls.materialCode.errors?.pattern">Chưa đúng định dạng. Cần nhập đúng định dạng: "MVT-XXX"
+              </small>
+              <small style="color: red" *ngIf="materialErr?.materialCode ">{{materialErr?.materialCode}}</small>
+            </div>
+            <div class="col-md-2 input-group" style="align-content: center">
+              Tên Vật Tư
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <input type="text" formControlName="materialName">
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="materialForm.get('materialName').invalid && (materialForm.get('materialName').touched||materialForm.get('materialName').dirty)">
+                Không được để trống trường này và độ dại từ 5 đến 25 ký tự!
+              </small>
+              <small style="color: red" *ngIf="materialErr?.materialName ">{{materialErr?.materialName}}</small>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-2 input-group" style="align-content: center">
+              Giá Vật Tư(VND)
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <input type="number" formControlName="materialPrice">
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="materialForm.get('materialPrice').invalid && (materialForm.get('materialPrice').touched||materialForm.get('materialPrice').dirty)">
+                Không được để trống trường này! Và Giá phải lớn hơn 0.
+              </small>
+              <small style="color: red" *ngIf="materialErr?.materialPrice ">{{materialErr?.materialPrice}}</small>
+            </div>
+            <div class="col-md-2 input-group" style="align-content: center">
+              Số Lượng
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <input type="number" formControlName="materialQuantity">
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="materialForm.get('materialQuantity').invalid && (materialForm.get('materialQuantity').touched||materialForm.get('materialQuantity').dirty)">
+                Không được để trống trường này! Và phải có số lượng >= 0.
+              </small>
+              <small style="color: red" *ngIf="materialErr?.materialQuantity ">{{materialErr?.materialQuantity}}</small>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-2 input-group" style="align-content: center">
+              Hạn Sử Dụng
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <input type="date" formControlName="materialExpiridate">
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="materialForm.get('materialExpiridate').invalid && (materialForm.get('materialExpiridate').touched||materialForm.get('materialExpiridate').dirty)">
+                Không được để trống trường này!
+              </small>
+            <small style="color: red"
+                *ngIf="(materialForm.get('materialExpiridate').valid) && materialForm.hasError('dateError')">
+                Hạn sử dụng phải lớn hơn hoặc bằng ngày hiện tại!
+            </small>
+              <small style="color: red"
+                     *ngIf="materialErr?.materialExpiridate ">{{materialErr?.materialExpiridate}}</small>
+            </div>
+            <div class="col-md-2 input-group" style="align-content: center">
+              Nhà Cung Cấp:
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <select style="height: 100%;" formControlName="materialCustomerId">
+                <option selected disabled value='null'>Chọn</option>
+                <option *ngFor="let data of listDataCus"
+                        [ngValue]="data">{{data.customerName}}</option>
+              </select>
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="materialForm.get('materialCustomerId').invalid && (materialForm.get('materialCustomerId').touched||materialForm.get('materialCustomerId').dirty)">
+                Không được để trống trường này!
+              </small>
+              <small style="color: red"
+                     *ngIf="materialErr?.materialCustomerId ">{{materialErr?.materialCustomerId}}</small>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-2 input-group" style="align-content: center">
+              Đơn Vị
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <input type="text" formControlName="materialUnit">
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="materialForm.get('materialUnit').invalid && (materialForm.get('materialUnit').touched||materialForm.get('materialUnit').dirty)">
+                Không được để trống trường này!
+              </small>
+              <small style="color: red" *ngIf="materialErr?.materialUnit ">{{materialErr?.materialUnit}}</small>
+            </div>
+            <div class="col-md-2 input-group" style="align-content: center">
+              Loại Vật tư:
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-4 input-group">
+              <select style="height: 100%;" formControlName="materialTypeId">
+                <option selected disabled value='null'>Chọn</option>
+                <option *ngFor="let materialType of listDataType"
+                        [ngValue]="materialType">{{materialType.materialTypeName}}</option>
+              </select>
+              <small class="text-danger mb-0 pb-0"
+                     *ngIf="materialForm.get('materialTypeId').invalid && (materialForm.get('materialTypeId').touched||materialForm.get('materialTypeId').dirty)">
+                Không được để trống trường này!
+              </small>
+              <small style="color: red" *ngIf="materialErr?.materialTypeId ">{{materialErr?.materialTypeId}}</small>
+            </div>
+          </div>
+          <div class="row mt-3">
+
+            <div class="col-md-2 input-group" style="align-content: center">
+              Mô Tả
+              <span style="color: red">(*)</span>
+            </div>
+            <div class="col-md-10 input-group">
+              <textarea type="text" formControlName="materialDescribe"></textarea>
+
+            </div>
+            <small class="text-danger mb-0 pb-0 mrg-30"
+                   *ngIf="materialForm.get('materialDescribe').invalid && (materialForm.get('materialDescribe').touched||materialForm.get('materialDescribe').dirty)">
+              Không được để trống trường này!
+            </small>
+            <small style="color: red" *ngIf="materialErr?.materialDescribe ">{{materialErr?.materialDescribe}}</small>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="input-group d-flex align-content-center justify-content-center ">
+        <button type="submit" class="btn__primary">Thêm Mới</button>
+        <button type="button" routerLink='/material/list' class="bt btn__cancel"><a style="text-decoration: none"
+                                                                                    class="text-light"
+        >Huỷ</a>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<notifier-container></notifier-container>

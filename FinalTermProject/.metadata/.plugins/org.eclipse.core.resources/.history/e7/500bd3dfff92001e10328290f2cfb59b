@@ -1,0 +1,10 @@
+package springdemo.model.repository;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import springdemo.model.bean.Fruit;
+
+public interface FruitRepository  {
+	
+}

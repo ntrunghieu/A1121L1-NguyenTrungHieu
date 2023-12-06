@@ -1,0 +1,14 @@
+package springdemo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HomeController {
+	
+	@RequestMapping("/")
+	private String showPage() {
+		// TODO Auto-generated method stub
+		return "create";
+	}
+}

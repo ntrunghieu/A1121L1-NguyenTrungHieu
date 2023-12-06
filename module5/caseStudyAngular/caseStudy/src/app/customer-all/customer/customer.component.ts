@@ -13,7 +13,7 @@ import {FormGroup} from '@angular/forms';
 export class CustomerComponent implements OnInit {
   searchForm: FormGroup;
   name: any;
-   page: number = 0;
+  page: number = 0;
 
 
   // indexPagination: number = 0;

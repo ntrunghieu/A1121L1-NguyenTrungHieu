@@ -1,0 +1,96 @@
+<div class="container">
+    <form [formGroup]="employeeForm" (ngSubmit)="createEmployee()" class="mb-5">
+        <div class="ml-2">
+            <div>
+                <label for="file"><img class="fa-paper-plane" width="20%"
+                                       alt="error" [src]="url">
+                </label>
+                <div class="text-center">
+                    <input type="file" name="file" id="file" class="inputFile" (change)="getAvatar($event)"/>
+                </div>
+            </div>
+
+            <div class="h4 d-flex justify-content-center">
+                <h4 style="color: #270082">Thêm mới nhân viên</h4>
+            </div>
+
+            <div class="input-group">
+                <label>Mã nhân viên:</label>
+                <input type="text" formControlName="employeeCode">
+                <div>
+                    <p class="text-warning" *ngIf="employeeForm?.get('employeeCode').hasError('required') && employeeForm?.get('employeeCode')?.touched">Mã nhân viên không được để trống</p>
+                    <p class="text-warning" *ngIf="employeeForm?.get('employeeCode').hasError('pattern') && employeeForm?.get('employeeCode')?.touched">Mã nhân viên chưa đúng định dạng - Ví dụ: MNV-000</p>
+                    <span style="color: red" *ngIf="employeeErr?.employeeCode">{{employeeErr?.employeeCode}}</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label >Họ và tên:</label>
+                <input type="text" formControlName="employeeName">
+                <div>
+                    <p class="text-warning" *ngIf="employeeForm?.get('employeeName').hasError('maxlength') && employeeForm?.get('employeeName')?.touched">Họ và tên chỉ chứa tối đa 50 kí tự</p>
+                    <p class="text-warning" *ngIf="employeeForm?.get('employeeName').hasError('required') && employeeForm?.get('employeeName')?.touched">Họ và tên không được để trống</p>
+                    <p class="text-warning" *ngIf="employeeForm?.get('employeeName').hasError('pattern') && employeeForm?.get('employeeName')?.touched">Họ và tên chưa đúng định dạng in hoa kí tự đầu - Ví dụ: Nguyễn Văn A</p>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label >Địa chỉ: </label>
+                <input type="text" formControlName="employeeAddress">
+                <div>
+                    <p class="text-warning" *ngIf="employeeForm?.get('employeeAddress').hasError('maxlength') && employeeForm?.get('employeeAddress')?.touched">Địa chỉ chứa tối đa 50 kí tự</p>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label class="title" style="">Giới tính: </label>
+                <div class="child">
+                    <input type="radio" id="male" formControlName="employeeGender" value="Nam">
+                    <label for="male">Nam</label>
+                    <input class="ml-4" type="radio" formControlName="employeeGender" id="female" value="Nữ">
+                    <label for="female">Nữ</label>
+                    <input class="ml-4" type="radio" formControlName="employeeGender" id="others" value="Khác">
+                    <label for="others">Khác</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label >Số điện thoại: </label>
+                <input  type="text" formControlName="employeePhone">
+                <div>
+                    <p class="text-warning" *ngIf="employeeForm?.get('employeePhone').hasError('pattern') && employeeForm?.get('employeePhone')?.touched">Số điện thoại chưa đúng định dạng 03x hoặc 05x hoặc 07x hoặc 08x hoặc 09x</p>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label >Ngày sinh: </label>
+                <input type="date" formControlName="employeeDateOfBirth">
+                <div>
+                    <p class="text-warning" *ngIf="employeeForm?.get('employeeDateOfBirth').hasError('pattern') && employeeForm?.get('employeeName')?.touched">Ngày sinh phải đúng định dạng năm-tháng-ngày</p>
+                    <p class="text-warning" *ngIf="employeeForm?.get('employeeDateOfBirth').hasError('invalidAge') && employeeForm?.get('employeeDateOfBirth')?.touched">Tuổi phải lớn hơn 18</p>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Lương:</label>
+                <input type="text" formControlName="employeeSalary">
+                <div>
+                    <p class="text-warnng" *ngIf="employeeForm?.get('employeeSalary').hasError('required') && employeeForm?.get('employeeSalary')?.touched">Lương không được để trống</p>
+                    <span style="color: red" *ngIf="employeeErr?.employeeSalary">{{employeeErr?.employeeSalary}}</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Chức vụ</label>
+                <select formControlName="employeePositionId">
+                    <option *ngFor="let item of positions" [ngValue]="item" >{{item.positionName}}
+                    </option>
+                </select>
+            </div>
+            <div class=" button__container d-flex justify-content-between mt-5">
+                <button type="submit" class="bt btn__primary" [disabled]="employeeForm?.invalid" >Tạo mới</button>
+                <button type="button" class="bt btn__delete" [routerLink]="['/employee/list']">Quay về</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,61 @@
+<div class="container mt-3">
+  <div style="background-color: white">
+    <form class="p-3">
+      <h1 class="text-center font-weight-bold" style="color:#270082;">Thống kê vật tư</h1>
+      <div class="row mt-3">
+        <div class="col-md-2 input-group" style="align-content: center">
+          Từ ngày:
+        </div>
+        <div class="col-md-3 input-group">
+          <input type="date">
+        </div>
+        <div class="col-md-2"></div>
+
+        <div class="col-md-2 input-group" style="align-content: center">
+          Đến ngày:
+        </div>
+        <div class="col-md-3 input-group">
+          <input type="date">
+        </div>
+      </div>
+
+      <br>
+      <div style="width:100%; height:250px; overflow:auto;" class="table-responsive">
+        <table class="table table-hover">
+          <thead style="background-color: #270082; color: #e6ebf1; overflow: hidden; white-space: nowrap;">
+          <tr>
+            <th scope="col">Mã VT</th>
+            <th scope="col">Tên vật tư</th>
+            <th scope="col">Vật tư nhập</th>
+            <th scope="col">Vật tư bán được</th>
+            <th scope="col">Vật tư tồn kho</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let material of materials1">
+            <th>{{material[0]}}</th>
+            <td>{{material[1]}}</td>
+            <td>{{material[2]}}</td>
+            <td>{{material[3]}}</td>
+            <td>{{material[4]}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <div class="row button__container text-center">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+          <button class="btn__primary">Xem</button>
+        </div>
+        <div class="col-md-3">
+          <button class="bt btn__delete" (click)="exportPDF()">In</button>
+        </div>
+        <div class="col-md-3">
+          <button class="bt btn__cancel">Trở về</button>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </form>
+  </div>
+</div>

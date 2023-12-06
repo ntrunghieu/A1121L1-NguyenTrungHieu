@@ -1,0 +1,60 @@
+
+d
+java:S1192"GDefine a constant instead of duplicating this literal "/users" 3 times.(È –æ8€ÉÊ–Ë0
+f
+java:S1192P"IDefine a constant instead of duplicating this literal "listUser" 3 times.(ð‡ÇÂ8€ÉÊ–Ë0
+t
+java:S1192Q"XDefine a constant instead of duplicating this literal "view/user/listUsers.jsp" 3 times.(Öö©I8ƒÉÊ–Ë0
+W
+java:S1161":Add the "@Override" annotation above this method signature( Üó8ÒÊÊ–Ë0
+W
+java:S1161":Add the "@Override" annotation above this method signature(‹¨¯¿8ÙÊÊ–Ë0
+
+java:S1989%"dHandle the following exceptions that could be thrown by "insertUser": ServletException, IOException.(Ì¼¬Ø8äÊÊ–Ë0
+†
+java:S1989."dHandle the following exceptions that could be thrown by "updateUser": ServletException, IOException.(©ÛÖíùÿÿÿÿ8çÊÊ–Ë0
+‚
+java:S19897"`Handle the following exceptions that could be thrown by "delete": IOException, ServletException.(ž¾úÉýÿÿÿÿ8êÊÊ–Ë0
+U	java:S106N"9Replace this use of System.out or System.err by a logger.(œ·ž¾8ôÊÊ–Ë0
+a
+java:S2147V"DCombine this catch with the one at line 84, which has the same body.(ï­£Ä8‚ËÊ–Ë0
+U	java:S106`"9Replace this use of System.out or System.err by a logger.(«‹Îõ8‘ËÊ–Ë0
+b
+java:S2147h"ECombine this catch with the one at line 102, which has the same body.(ï­£Ä8•ËÊ–Ë0
+[
+java:S1854{">Remove this useless assignment to local variable "dispatcher".(µ²Ä²8—ËÊ–Ë0
+™
+java:S1130m"wRemove the declaration of thrown exception 'javax.servlet.ServletException', as it cannot be thrown from method's body.(û½à´øÿÿÿÿ8˜ËÊ–Ë0
+]	java:S125o"<This block of commented-out lines of code should be removed.(¬òÓúÿÿÿÿ8ŸËÊ–Ë0
+X	java:S125q"<This block of commented-out lines of code should be removed.(Ó£õÛ8 ËÊ–Ë0
+X	java:S125s"<This block of commented-out lines of code should be removed.(Æ»±€8 ËÊ–Ë0
+L
+java:S1481y"/Remove this unused "dispatcher" local variable.(º³Í8£ËÊ–Ë0
+•
+java:S1130‡"wRemove the declaration of thrown exception 'javax.servlet.ServletException', as it cannot be thrown from method's body.(¹©»“8àËÊ–Ë0
+X	java:S125‘"<This block of commented-out lines of code should be removed.(Ã±ß%8üËÊ–Ë0
+š
+java:S1130¤"wRemove the declaration of thrown exception 'javax.servlet.ServletException', as it cannot be thrown from method's body.(Ã©Óýÿÿÿÿ8ƒÌÊ–Ë0
+Y	java:S125º"<This block of commented-out lines of code should be removed.(Ü–ø»8ŒÌÊ–Ë0
+^	java:S125Á"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8ÌÊ–Ë0
+]
+java:S1161Ê":Add the "@Override" annotation above this method signature(Ïû©Öûÿÿÿÿ8ŽÌÊ–Ë0
+…
+java:S1989Ü"bHandle the following exceptions that could be thrown by "viewUser": ServletException, IOException.(…³•øùÿÿÿÿ8–ÌÊ–Ë0
+_
+java:S1172ó"<Remove these unused method parameters "request", "response".(ïóïîþÿÿÿÿ8›ÌÊ–Ë0
+_
+java:S1172÷"<Remove these unused method parameters "request", "response".(ª±ªéÿÿÿÿÿ8žÌÊ–Ë0
+Z
+java:S1172û"<Remove these unused method parameters "request", "response".(‘éõÍ8 ÌÊ–Ë0
+c
+java:S2147•"ECombine this catch with the one at line 275, which has the same body.(ï­£Ä8«ÌÊ–Ë0
+c
+java:S2147¦"ECombine this catch with the one at line 292, which has the same body.(ï­£Ä8°ÌÊ–Ë0
+Y	java:S125Ÿ"<This block of commented-out lines of code should be removed.(›Ë™ô8²ÌÊ–Ë0
+c
+java:S2147²"ECombine this catch with the one at line 304, which has the same body.(ï­£Ä8¶ÌÊ–Ë0
+c
+java:S2147¿"ECombine this catch with the one at line 317, which has the same body.(ï­£Ä8»ÌÊ–Ë0
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¼ÌÊ–Ë0

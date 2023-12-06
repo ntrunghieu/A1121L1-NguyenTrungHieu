@@ -1,0 +1,33 @@
+
+c
+java:S1192R"HDefine a constant instead of duplicating this literal "product" 4 times.( Ô›‡şÿÿÿÿ
+d
+java:S11927"NDefine a constant instead of duplicating this literal "error-404.jsp" 5 times.(µ²Ä²
+P
+java:S1161":Add the "@Override" annotation above this method signature(‹¨¯¿
+f	java:S128("LEnd this switch case with an unconditional break, return or throw statement.(Øšë¢ıÿÿÿÿ
+Q	java:S125$"<This block of commented-out lines of code should be removed.(Íá¹Í
+T
+java:S18547">Remove this useless assignment to local variable "dispatcher".(µ²Ä²
+E
+java:S14815"/Remove this unused "dispatcher" local variable.(º³Í
+Q	java:S125S"<This block of commented-out lines of code should be removed.(¾­ì
+Z
+java:S2147Z"DCombine this catch with the one at line 88, which has the same body.(ï­£Ä
+U
+java:S1161_":Add the "@Override" annotation above this method signature(Ïû©Öûÿÿÿÿ
+Q	java:S125i"<This block of commented-out lines of code should be removed.(€ı£
+Q	java:S125w"<This block of commented-out lines of code should be removed.(£ã‰
+\
+java:S2147š"ECombine this catch with the one at line 152, which has the same body.(ï­£Ä
+\
+java:S2147­"ECombine this catch with the one at line 171, which has the same body.(ï­£Ä
+R	java:S125²"<This block of commented-out lines of code should be removed.(å½æ¦
+\
+java:S2147Ä"ECombine this catch with the one at line 194, which has the same body.(ï­£Ä
+\
+java:S2147Ğ"ECombine this catch with the one at line 206, which has the same body.(ï­£Ä
+\
+java:S2147İ"ECombine this catch with the one at line 219, which has the same body.(ï­£Ä
+m
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(«ç•

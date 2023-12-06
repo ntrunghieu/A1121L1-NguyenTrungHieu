@@ -77,7 +77,7 @@ public class CustomerControllerRest {
             Customer customer = iCustomerService.findById1(id);
             return new ResponseEntity<>(customer, HttpStatus.OK);
         }
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 //    chinh sua thong tin khach hang
     @PatchMapping(value = "/api/customer/update/{id}")
@@ -123,7 +123,7 @@ public class CustomerControllerRest {
 //        return new ResponseEntity<Page<Customer>>(customers, HttpStatus.OK);
 //    }
     @GetMapping("/api/pagination/customer")
-    public ResponseEntity<Page<Customer>> getAllCustomer(@PageableDefault(value = 5, sort = "customerId", direction = Sort.Direction.ASC) Pageable pageable) {
+    public ResponseEntity<Page<Customer>> getAllCustomer(@PageableDefault(value = 3, sort = "customerId", direction = Sort.Direction.ASC) Pageable pageable) {
         Page<Customer> customers = iCustomerService.findAll(pageable);
         if (customers.isEmpty()) {
             return new ResponseEntity<Page<Customer>>(HttpStatus.NO_CONTENT);

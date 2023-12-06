@@ -1,0 +1,7 @@
+package springdemo.model.repository;
+
+
+public class FruitRepositoryImpl{
+
+
+}

@@ -495,3 +495,5 @@ where nhan_vien.dia_chi = "Hải Châu" and date(hop_dong.ngay_lam)="2019-12-12"
 group by hop_dong.ma_nhan_vien
 having sum(hop_dong.ma_nhan_vien) > 10;
 select * from v_nhanvien;
+
+select * from khach_hang;

@@ -1,0 +1,45 @@
+{
+  "sanpham": [
+    {
+      "id": 2,
+      "ten": "tiger",
+      "xuatXu": "VN",
+      "giaTien": 225000,
+      "donVi": "Thung",
+      "ngaySX": "2003-03-13",
+      "ngayHetHan": "2005-03-13"
+    },
+    {
+      "id": 3,
+      "ten": "oashi",
+      "xuatXu": "USA",
+      "giaTien": 225000,
+      "donVi": "Thung",
+      "ngaySX": "2003-03-13",
+      "ngayHetHan": "2005-03-13"
+    }
+  ],
+  "detai": [
+    {
+      "id": 2,
+      "tenSV": "hieu",
+      "tenNhom": "abc",
+      "tenDeTai": "sfd",
+      "giaoVien": "thao",
+      "email": "abc@def.com",
+      "sdt": "1232131123"
+    },
+    {
+      "id": 4,
+      "tenSV": "khai",
+      "tenNhom": "nhóm 1",
+      "tenDeTai": "sad",
+      "giaoVien": "Hương ",
+      "email": "abc@def.com",
+      "sdt": "09123842123423"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

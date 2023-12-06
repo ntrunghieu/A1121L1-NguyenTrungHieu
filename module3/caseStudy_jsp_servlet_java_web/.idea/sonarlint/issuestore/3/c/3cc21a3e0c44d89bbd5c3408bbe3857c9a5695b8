@@ -1,0 +1,46 @@
+
+m
+java:S1192İ"QDefine a constant instead of duplicating this literal "customerTypeList" 3 times.(¢éŞÂúÿÿÿÿ
+]
+java:S1192V"GDefine a constant instead of duplicating this literal "/admin" 3 times.(ÉŒåÍ
+k	java:S117b"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üúšøşÿÿÿÿ
+k	java:S117c"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â•Ú¥øÿÿÿÿ
+k	java:S117k"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛëÉüÿÿÿÿ
+f	java:S117l"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü«º
+k	java:S117t"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éÀÁ¥ıÿÿÿÿ
+k	java:S117u"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÄÁÀûÿÿÿÿ
+k	java:S117v"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïõÛÄøÿÿÿÿ
+f	java:S117w"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÒÇå
+k	java:S117x"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏÚˆÙÿÿÿÿÿ
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üúšøşÿÿÿÿ
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â•Ú¥øÿÿÿÿ
+l	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛëÉüÿÿÿÿ
+g	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü«º
+l	java:S117¡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éÀÁ¥ıÿÿÿÿ
+l	java:S117¢"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÄÁÀûÿÿÿÿ
+l	java:S117£"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïõÛÄøÿÿÿÿ
+g	java:S117¤"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÒÇå
+l	java:S117¥"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏÚˆÙÿÿÿÿÿ
+P
+java:S1161":Add the "@Override" annotation above this method signature(‹¨¯¿
+a	java:S1280"LEnd this switch case with an unconditional break, return or throw statement.(äõŒ…
+N	java:S106>"9Replace this use of System.out or System.err by a logger.(«‹Îõ
+Z
+java:S2147G"DCombine this catch with the one at line 69, which has the same body.(ï­£Ä
+T
+java:S1854R">Remove this useless assignment to local variable "dispatcher".(µ²Ä²
+E
+java:S1481P"/Remove this unused "dispatcher" local variable.(º³Í
+W	java:S125˜"<This block of commented-out lines of code should be removed.(öğ§Çùÿÿÿÿ
+V
+java:S1161¹":Add the "@Override" annotation above this method signature(Ïû©Öûÿÿÿÿ
+R	java:S125Ä"<This block of commented-out lines of code should be removed.(Ë ¼Û
+R	java:S125Ò"<This block of commented-out lines of code should be removed.(ù©óó
+\
+java:S2147æ"ECombine this catch with the one at line 228, which has the same body.(ï­£Ä
+\
+java:S2147ó"ECombine this catch with the one at line 241, which has the same body.(ï­£Ä
+\
+java:S2147ƒ"ECombine this catch with the one at line 257, which has the same body.(ï­£Ä
+n
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(¯û

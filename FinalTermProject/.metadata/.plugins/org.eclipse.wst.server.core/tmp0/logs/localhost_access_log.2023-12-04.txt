@@ -1,0 +1,12 @@
+127.0.0.1 - - [04/Dec/2023:22:28:41 +0700] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [04/Dec/2023:22:28:43 +0700] "GET /JavaWeb02DemoFormTag/WEB-INF/classes/springdemo/HomeController.java HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [04/Dec/2023:22:29:57 +0700] "GET /JavaWeb02DemoFormTag/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [04/Dec/2023:22:29:57 +0700] "GET /JavaWeb02DemoFormTag/JavaWeb02DemoFormTag/home;jsessionid=B1B28D35D33B34601E98A524FAFD7D5D HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [04/Dec/2023:22:30:03 +0700] "GET /JavaWeb02DemoFormTag/JavaWeb02DemoFormTag/home HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [04/Dec/2023:22:30:05 +0700] "GET /JavaWeb02DemoFormTag/JavaWeb02DemoFormTag/home HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [04/Dec/2023:22:30:11 +0700] "GET /JavaWeb02DemoFormTag/home HTTP/1.1" 200 1739
+0:0:0:0:0:0:0:1 - - [04/Dec/2023:22:33:03 +0700] "GET /JavaWeb02DemoFormTag/index.jsp HTTP/1.1" 200 150
+0:0:0:0:0:0:0:1 - - [04/Dec/2023:22:33:26 +0700] "GET /JavaWeb02DemoFormTag/index.jsp HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [04/Dec/2023:22:33:26 +0700] "GET /JavaWeb02DemoFormTag/JavaWeb02DemoFormTag/home HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [04/Dec/2023:22:33:44 +0700] "GET /JavaWeb02DemoFormTag/index.jsp HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [04/Dec/2023:22:33:44 +0700] "GET /JavaWeb02DemoFormTag/home HTTP/1.1" 200 1739

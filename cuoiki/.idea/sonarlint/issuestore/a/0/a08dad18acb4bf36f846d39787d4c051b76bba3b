@@ -1,0 +1,5 @@
+
+~javascript:S1172)"cRemove the unused function parameter "window" or rename it to "_window" to make intention explicit.(à›œB
+\javascript:S2137)"ADo not use "undefined" to declare a parameter - use another name.(à›œB
+ujavascript:S3776C"TRefactor this function to reduce its Cognitive Complexity from 52 to the 15 allowed.(ßÂ€ûÿÿÿÿ
+Rjavascript:S1117J"1'buttons' is already declared in the upper scope.(àâ¸ïûÿÿÿÿ

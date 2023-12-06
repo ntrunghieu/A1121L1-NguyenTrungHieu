@@ -1,0 +1,87 @@
+div.header, div#body {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px;
+
+}
+div.header{
+  padding-top: 10px;
+  padding-bottom: 12px;
+  margin-left: 10px;
+  width: 70%;
+  height: 150px;
+
+}
+
+div.header div {
+  /*margin-left: 6px;*/
+  max-height: 93px;
+  margin-top: 4px;
+}
+.align-items-center{
+  -webkit-box-align: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+.d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+@media (min-width: 1024px){
+  .col-auto.col-sm-5.col-lg-3.d-flex.align-items-center.bestel-logo, .col-lg-3.features-list-area {
+    flex: 0 0 24%;
+    -ms-flex: 0 0 24%;
+  }
+}
+@media (min-width: 1024px){
+  .col-lg-3 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 24%;
+    flex: 0 0 24%;
+    max-width: 25%;
+  }
+}
+@media (min-width: 576px){
+  .col-sm-5 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 41.6666666667%;
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
+  }
+}
+
+
+
+.col-auto {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+}
+
+#backtop{
+  width: 50px;
+  height: 50px;
+  background: #046056;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+}
+
+

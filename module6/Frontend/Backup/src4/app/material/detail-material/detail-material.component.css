@@ -1,0 +1,94 @@
+* {
+
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin-top: 100px;
+  overflow: unset !important;
+  background: #f6f6f9;
+}
+
+.info-product {
+  /*border-bottom: 1px solid rgba(128, 128, 128, 0.37);*/
+}
+
+.product-heading {
+  position: relative;
+}
+
+.product-heading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: gray;
+}
+
+.product-heading h5 {
+  font-family: 'collegeregular';
+  display: inline-block;
+  background: white;
+  position: relative;
+  z-index: 99;
+  padding: 0 15px;
+}
+
+.item {
+  overflow: hidden;
+}
+
+.item-img {
+  max-height: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.item img {
+  transition: 2s;
+  object-fit: contain;
+}
+
+.img-fluid {
+  height: 100% !important;
+}
+
+.item:hover img {
+  transform: scale(1.5);
+  transition: 2s;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+
+#custCarousel .carousel-indicators {
+  position: static;
+  margin-top: 20px;
+}
+
+#custCarousel .carousel-indicators > li {
+  width: 100px;
+}
+
+#custCarousel .carousel-indicators li img {
+  display: block;
+  opacity: 0.5;
+}
+
+#custCarousel .carousel-indicators li.active img {
+  opacity: 1;
+}
+
+#custCarousel .carousel-indicators li:hover img {
+  opacity: 0.75;
+}
+
+.carousel-item img {
+
+  width: 80%;
+}

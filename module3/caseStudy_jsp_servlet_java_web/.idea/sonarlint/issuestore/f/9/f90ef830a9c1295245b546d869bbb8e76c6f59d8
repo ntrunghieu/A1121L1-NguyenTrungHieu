@@ -1,0 +1,47 @@
+
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Å´á
+—
+java:S11868"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ô‘ö
+A
+java:S11684"+Return an empty collection instead of null.(¥¹ï
+A
+java:S1168H"+Return an empty collection instead of null.(¥¹ï
+A
+java:S1168a"+Return an empty collection instead of null.(¥¹ï
+A
+java:S1168f"+Return an empty collection instead of null.(¥¹ï
+G
+java:S1068
+",Remove this unused "baseRepo" private field.(õŠîğùÿÿÿÿ
+I
+java:S1068"3Remove this unused "SELECT_TYPE_CUS" private field.(Ôì·¿
+R
+java:S1068"7Remove this unused "INSERT_EMPLOYEE_SQL" private field.(„¥íùÿÿÿÿ
+@
+java:S1068"*Remove this unused "SET_ID" private field.(éæó¤
+O
+java:S1068"9Remove this unused "SELECT_CUSTOMER_BY_ID" private field.(ÓÜå«
+N
+java:S1068"8Remove this unused "SELECT_ALL_CUSTOMERS" private field.(†¤¹ã
+O
+java:S1068"4Remove this unused "DELETE_USERS_SQL" private field.(Ëÿ­úıÿÿÿÿ
+O
+java:S1068"4Remove this unused "UPDATE_USERS_SQL" private field.(¯ÆğÌùÿÿÿÿ
+T
+java:S1068"9Remove this unused "DELETE_TRUNCATE_TABLE" private field.(êú¦¾øÿÿÿÿ
+J
+java:S1068"5Remove this unused "SEARCH_BY_COUNTRY" private field.(¢äİ$
+M
+java:S1068"7Remove this unused "SORT_USERS_SQL_NAME" private field.(Ëú¡
+S
+java:S1068"8Remove this unused "SORT_USERS_SQL_EMAIL" private field.(Ñ°«¨ıÿÿÿÿ
+P
+java:S1068":Remove this unused "SORT_USERS_SQL_COUNTRY" private field.(í÷Ö·
+D
+java:S1068".Remove this unused "SQL_INSERT" private field.(îÚ®š
+I
+java:S1068".Remove this unused "SQL_UPDATE" private field.(Ùá¹İùÿÿÿÿ
+O
+java:S1068 "4Remove this unused "SQL_TABLE_CREATE" private field.(„‰Ë’üÿÿÿÿ
+H
+java:S10680"2Remove this unused "SQL_TABLE_DROP" private field.(Ó Æı

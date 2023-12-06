@@ -1,0 +1,104 @@
+<body style="margin-top: 100px">
+<div class="row mt-5 mb-5 justify-content-center">
+  <h3>Thống kê - Báo cáo tài chính</h3>
+</div>
+
+<div class="container overflow-hidden text-center">
+  <div class="row gy-5">
+    <div class="col-6">
+      <div class="mt-5" style="color: red">Bảng thống kê chi tiết</div>
+      <table class="table-detail table table-hover mt-3">
+        <thead>
+        <tr>
+          <th scope="col">Hoạt động</th>
+          <th scope="col">Trị giá</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Bán hàng</td>
+          <td>{{ban}}</td>
+        </tr>
+        <tr>
+          <td>Nhập hàng</td>
+          <td>{{nhap}}</td>
+        </tr>
+        <tr>
+          <td>Hủy hàng</td>
+          <td>{{huy}}</td>
+        </tr>
+        <tr>
+          <td>Trả hàng</td>
+          <td>{{tra}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-6">
+      <div class="mt-1">
+        <span style="margin-right: 30px">Tháng:</span>
+        <span class="select">
+        <select (change)="search($event.target)">
+          <option selected disabled>Chọn tháng</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+        </select>
+      </span>
+      </div>
+      <div class="mt-4">
+        <span style="margin-right: 30px">Năm:</span>
+        <span class="select">
+        <select (change)="search($event.target)">
+          <option selected disabled>Chọn năm</option>
+          <option>2021</option>
+          <option>2022</option>
+          <!--          <option >2012</option>-->
+          <!--          <option >2013</option>-->
+          <!--          <option >2014</option>-->
+          <!--          <option >2015</option>-->
+        </select>
+      </span>
+      </div>
+      <div class="mt-5" style="color: red">Tổng doanh thu</div>
+      <div>
+        <table class="table-total table table-hover mt-3">
+          <thead>
+          <tr>
+            <th scope="col">Hoạt động</th>
+            <th scope="col">Trị giá</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Tổng thu</td>
+            <td>{{tongthu}}</td>
+          </tr>
+          <tr>
+            <td>Tổng chi</td>
+            <td>{{tongchi}}</td>
+          </tr>
+          <tr>
+            <td>Doanh thu</td>
+            <td>{{doanhthu}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="margin: 50px 50px 50px 400px">
+    <button class="btn-print p-1 border" style="margin-right: 50px" (click)="exportPDF()">In</button>
+    <button class="btn-back p-1 border">Trở về</button>
+  </div>
+</div>
+</body>

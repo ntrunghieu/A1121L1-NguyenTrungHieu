@@ -1,0 +1,55 @@
+$roboto: 'Roboto', sans-serif;
+$rufina:  'Rufina', serif;
+$primary-clr: #ff817e;
+
+@mixin pseudo($t:0, $l:0, $r:0, $b:0) {
+    content: '';
+    position: absolute;
+    top: $t;
+    left: $l;
+    right: $r;
+    bottom: $b;
+}
+
+@mixin mq($w) {
+    @media screen and (max-width: $w+px) {
+        @content;
+    }
+}
+
+@mixin min-mq($w:992) {
+    @media screen and (min-width: $w+px) {
+        @content;
+    }
+}
+
+@mixin mq-btwn($mw, $mxw) {
+    @media (min-width: $mw+px) and (max-width: $mxw+px) {
+        @content;
+    }
+}
+
+
+@mixin bg-props($s:cover, $p:center top, $r:no-repeat) {
+    background-size: $s;
+    background-position: $p;
+    background-repeat: $r;
+}
+
+@mixin overlay($c, $i) {
+    background-image: linear-gradient(to right, $c, $c), 
+                        url($i);
+}
+
+@include min-mq(768) {
+    .nopadd-ltf  {
+        padding-left: 0;
+    }
+    .nopadd-rth {
+        padding-right: 0;
+    }
+    .nopadd {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
